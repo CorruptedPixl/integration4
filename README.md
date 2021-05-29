@@ -8,7 +8,7 @@
   <h3 align="center">CTRL.</h3>
 
   <p align="center">
-    ctrl. aims to inform you about tracking on the web and how algorithms influence your behaviour all in a interactive 3D experience.
+    ctrl. aims to inform you about tracking on the web and how algorithms influence your behaviour all in an interactive 3D experience.
     <br />
     <br />
     <a href="https://ctrl.corruptedpixl.com">Visit the experience</a>
