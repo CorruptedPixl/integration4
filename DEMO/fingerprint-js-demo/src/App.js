@@ -1,7 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { useEffect, useState } from "react";
+import FingerprintJS from "@fingerprintjs/fingerprintjs-pro";
 
 function App() {
+  const [visitorInfo, setVisitorInfo] = useState();
+
+  useEffect(() => {
+    FingerprintJS.load({
+      token: process.env.REACT_APP_FPJS_TOKEN,
+      region: process.env.REACT_APP_FPJS_REGION,
+    })
+      .then((fp) => fp.get())
+      .then((result) => {
+        setVisitorInfo(result);
+      });
+  }, []);
+
+  visitorInfo && console.log(visitorInfo);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -9,14 +26,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>Visitor id: {visitorInfo && visitorInfo.visitorId}</p>
       </header>
     </div>
   );
