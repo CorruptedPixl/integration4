@@ -65,9 +65,8 @@ We'll assume you have the latest node version and yarn installed already.
    yarn
    ```
 3. Run the app
-
-```sh
-cd MAIN/app/ && yarn dev
-```
+   ```sh
+     cd MAIN/app/ && yarn dev
+   ```
 
 You're good to go. Have fun!
