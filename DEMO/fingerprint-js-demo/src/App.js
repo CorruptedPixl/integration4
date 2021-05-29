@@ -36,7 +36,7 @@ function App() {
       })
       .then((data) => {
         console.log(data.visits);
-        setResponseSummary(`Received history of ${data.visits.length} visits:`);
+        setResponseSummary(`Received history of ${data.visits.length} visits`);
         setServerData(data);
         // data = JSON.stringify(data.visits, null, 4);
       });
