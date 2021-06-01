@@ -20,15 +20,25 @@ export default function Home() {
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
-        <img href="./laptop.png"></img>
+        {/* <Image src="/laptop.png" alt="laptop dude" width={640} height={496} /> */}
 
         <Parallax
           blur={10}
-          bgImage={process.env.PUBLIC_URL + "/laptop.png"}
+          bgImage="../laptop.png"
           bgImageAlt="the cat"
           strength={200}
         >
           Content goes here. Parallax height grows with content height.
+          <Image src="/laptop.png" alt="laptop dude" width={640} height={496} />
+          <Image src="/laptop.png" alt="laptop dude" width={640} height={496} />
+          <Image src="/laptop.png" alt="laptop dude" width={640} height={496} />
+          <Image src="/laptop.png" alt="laptop dude" width={640} height={496} />
+          <Image src="/laptop.png" alt="laptop dude" width={640} height={496} />
+          <Image src="/laptop.png" alt="laptop dude" width={640} height={496} />
+          <Image src="/laptop.png" alt="laptop dude" width={640} height={496} />
+          <Image src="/laptop.png" alt="laptop dude" width={640} height={496} />
+          <Image src="/laptop.png" alt="laptop dude" width={640} height={496} />
+          <Image src="/laptop.png" alt="laptop dude" width={640} height={496} />
         </Parallax>
 
         <p className={styles.description}>
