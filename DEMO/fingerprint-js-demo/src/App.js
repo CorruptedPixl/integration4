@@ -12,6 +12,7 @@ function App() {
     FingerprintJS.load({
       token: process.env.REACT_APP_FPJS_TOKEN,
       region: process.env.REACT_APP_FPJS_REGION,
+      endpoint: "https://metrics.pxl.zone",
     })
       .then((fp) => fp.get())
       .then((result) => {
