@@ -59,6 +59,7 @@
 .description {
   line-height: 1.5;
   font-size: 1.5rem;
+  // crt overlay effect
   &:before {
     background: linear-gradient(
         0deg,
@@ -84,7 +85,7 @@
       ),
       linear-gradient(90deg, #fff 25%, #000 50%, #000 75%, #fff);
     background-repeat: repeat;
-    background-size: 0.2em 0.6em;
+    background-size: 0.6em 1em;
     mix-blend-mode: overlay;
     opacity: 0.15;
     // SPACER
@@ -97,6 +98,23 @@
     top: 0;
     z-index: 20;
     position: fixed;
+
+    animation: Animation 5s linear infinite;
+  }
+
+  @keyframes Animation {
+    0% {
+      background-position: 0;
+    }
+    98% {
+      background-position: 0;
+    }
+    99% {
+      background-position: 3% 6%;
+    }
+    100% {
+      background-position: 0;
+    }
   }
 }
 
