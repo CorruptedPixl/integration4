@@ -1408,6 +1408,11 @@ react-is@16.13.1, react-is@^16.8.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
+react-parallax-mousemove@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/react-parallax-mousemove/-/react-parallax-mousemove-1.1.0.tgz#5f6738140cf87ca386f71beaa531397d7ff3d1ad"
+  integrity sha1-X2c4FAz4fKOG9xvqpTE5fX/z0a0=
+
 react-parallax@^3.3.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/react-parallax/-/react-parallax-3.3.0.tgz#79f7a33451e7a419d0052f795c5d3655aa1e20b4"

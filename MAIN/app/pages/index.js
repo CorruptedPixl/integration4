@@ -1,7 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.scss";
-import { Parallax } from "react-parallax";
+import { Parallax } from "react-parallax"; // Scroll parallax
+import ParallaxMousemove from "react-parallax-mousemove"; // Mouse parallax
 import { useEffect, useRef } from "react";
 
 // import landing from "/landing.png";
@@ -20,13 +21,36 @@ export default function Home() {
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
-        <Parallax
-          blur={10}
-          bgImage="../laptop.png"
-          bgImageAlt="the cat"
-          strength={200}
+        <ParallaxMousemove
+        // containerStyle={styles.parallaxContainer}
+        // fullHeight={true}
         >
-          Content goes here. Parallax height grows with content height.
+          <Parallax
+            blur={10}
+            bgImage="/laptop.png"
+            bgImageAlt="the cat"
+            strength={600}
+          >
+            <ParallaxMousemove.Layer
+              layerStyle={styles.infoLayerStyle}
+              config={{
+                xFactor: 0.4,
+                yFactor: 0,
+                springSettings: {
+                  stiffness: 50,
+                  damping: 30,
+                },
+              }}
+            >
+              <Image
+                src="/laptop.png"
+                alt="laptop dude"
+                width={640}
+                height={496}
+              />
+            </ParallaxMousemove.Layer>
+            Content goes here. Parallax height grows with content height.
+            {/* <Image src="/laptop.png" alt="laptop dude" width={640} height={496} />
           <Image src="/laptop.png" alt="laptop dude" width={640} height={496} />
           <Image src="/laptop.png" alt="laptop dude" width={640} height={496} />
           <Image src="/laptop.png" alt="laptop dude" width={640} height={496} />
@@ -34,10 +58,9 @@ export default function Home() {
           <Image src="/laptop.png" alt="laptop dude" width={640} height={496} />
           <Image src="/laptop.png" alt="laptop dude" width={640} height={496} />
           <Image src="/laptop.png" alt="laptop dude" width={640} height={496} />
-          <Image src="/laptop.png" alt="laptop dude" width={640} height={496} />
-          <Image src="/laptop.png" alt="laptop dude" width={640} height={496} />
-          <Image src="/laptop.png" alt="laptop dude" width={640} height={496} />
-        </Parallax>
+          <Image src="/laptop.png" alt="laptop dude" width={640} height={496} /> */}
+          </Parallax>
+        </ParallaxMousemove>
 
         <p className={styles.description}>
           Lopem ipsum or something I don't know the actual text but there's

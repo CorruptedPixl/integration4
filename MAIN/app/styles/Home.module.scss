@@ -15,6 +15,19 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.parallaxContainer {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.infolayerstyle {
+  position: relative;
+  margin-top: -60px;
 }
 
 .footer {
