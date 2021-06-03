@@ -28,7 +28,7 @@ function App() {
 
   const callServerAPI = () => {
     fetch(
-      `https://eu.api.fpjs.io/visitors/${
+      `https://metrics.pxl.zone/visitors/${
         visitorInfo.visitorId
       }?limit=${1000}&token=${process.env.REACT_APP_FPJS_APIKEY}`
     )
