@@ -1,8 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.scss";
-import ParallaxJS from "parallax-js";
 import { Parallax } from "react-parallax";
+import { useEffect, useRef } from "react";
 
 // import landing from "/landing.png";
 
@@ -19,8 +19,6 @@ export default function Home() {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
-
-        {/* <Image src="/laptop.png" alt="laptop dude" width={640} height={496} /> */}
 
         <Parallax
           blur={10}
