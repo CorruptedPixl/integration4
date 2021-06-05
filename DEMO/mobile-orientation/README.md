@@ -16,13 +16,13 @@ We'll assume you have the latest node version and yarn installed already.
    ```sh
    git clone https://github.com/CorruptedPixl/integration4.git
    ```
-2. Install packages
+2. Navigate to folder and install packages
    ```sh
-   yarn
+   cd DEMO/screen-orientation && yarn
    ```
 3. Run this demo
    ```sh
-   cd DEMO/mobile-orientation && yarn dev
+   yarn dev
    ```
 
 You're good to go. Have fun!
