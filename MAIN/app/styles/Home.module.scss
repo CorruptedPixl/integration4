@@ -145,3 +145,33 @@
   width: 45vw;
   height: 45vw;
 }
+
+.parallax__img_fullwidth {
+  // position: absolute;
+  overflow: visible;
+  min-width: 140%;
+  margin-left: -10%;
+}
+
+.parallax__img_surfer {
+  position: absolute;
+  top: 20vh;
+  right: 18vw;
+  z-index: 100;
+}
+
+.parallax__img_bgWave {
+  position: absolute;
+  top: 18vh;
+  right: 2vw;
+  // margin-bottom: 0;
+  z-index: 1;
+}
+
+.parallax__img_mainWave {
+  // position: absolute;
+  top: 20vh;
+  right: 18vw;
+  margin-top: 30vh;
+  z-index: 10;
+}

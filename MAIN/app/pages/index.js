@@ -11,14 +11,14 @@ export default function Home() {
     x - window.innerWidth / 2,
     y - window.innerHeight / 2,
   ];
-  const trans1 = (x, y) => `translate3d(${x / 10}rem,${y / 10}rem,0)`;
-  const trans2 = (x, y) => `translate3d(${x / 8}rem,${y / 8}rem,0)`;
-  const trans3 = (x, y) => `translate3d(${x / 6}rem,${y / 6}rem,0)`;
-  const trans4 = (x, y) => `translate3d(${x / 3.5}rem,${y / 3.5}rem,0)`;
+  const trans1 = (x, y) => `translate3d(${x / 10 / 8}rem,${y / 10 / 8}rem,0)`;
+  const trans2 = (x, y) => `translate3d(${x / 8 / 8}rem,${y / 8 / 8}rem,0)`;
+  const trans3 = (x, y) => `translate3d(${x / 6 / 8}rem,${y / 6 / 8}rem,0)`;
+  const trans4 = (x, y) => `translate3d(${x / 3.5 / 8}rem,${y / 3.5 / 8}rem,0)`;
 
   const [props, set] = useSpring(() => ({
     xy: [0, 0],
-    config: { mass: 10, tension: 550, friction: 140 },
+    config: { mass: 10, tension: 600, friction: 100 },
   }));
 
   return (
@@ -46,31 +46,47 @@ export default function Home() {
           >
             {/* This component MUST be in a container for the mouseMove event
               to fire. The Parallax scroll bg does not register it */}
-            <animated.div style={{ transform: props.xy.to(trans1) }}>
+            <animated.div
+              style={{ transform: props.xy.to(trans3) }}
+              className={styles.parallax__img_surfer}
+            >
               <Image
-                className={styles.parallax__img}
-                src="/laptop.png"
+                src="/surfer.png"
                 alt="laptop dude"
                 width={640}
                 height={496}
               />
             </animated.div>
-            Content goes here. Parallax height grows with content height.
-            <animated.div style={{ transform: props.xy.to(trans2) }}>
+            <animated.div
+              style={{ transform: props.xy.to(trans1) }}
+              className={styles.parallax__img_bgWave}
+            >
               <Image
-                src="/laptop.png"
+                src="/Smallwave.png"
                 alt="laptop dude"
-                width={640}
-                height={496}
+                width={800}
+                height={600}
               />
             </animated.div>
-            <animated.div style={{ transform: props.xy.to(trans3) }}>
-              <Image
-                src="/laptop.png"
-                alt="laptop dude"
-                width={640}
-                height={496}
-              />
+            <animated.div
+              style={{ transform: props.xy.to(trans2) }}
+              className={styles.parallax__img_mainWave}
+            >
+              <div className={styles.parallax__img_fullwidth}>
+                {/* Wrapped this image in a div in order to extend outside the viewport width and still have parallax without ugly borders*/}
+                <Image
+                  className={styles.parallax__img}
+                  style={{
+                    overflow: "visible",
+                    minWidth: "150%",
+                    left: "-25%",
+                  }}
+                  src="/Bigwave.png"
+                  alt="laptop dude"
+                  width={3000}
+                  height={800}
+                />
+              </div>
             </animated.div>
             <animated.div style={{ transform: props.xy.to(trans4) }}>
               <Image
