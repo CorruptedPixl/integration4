@@ -2,7 +2,9 @@
 
 ![Fingerprint.js Demo](./fingerprintjs-demo.gif)
 
-A temporary live demo is available at [demo.cpixl.com](https://cpixl.com/int4-fingerprint-demo)
+A temporary live demo is available at [demo.cpixl.com](https://cpixl.com/int4-fingerprint-demo)  
+
+This demo shocases the tracking abilities of fingerprint.js and tests integration with React, Next.js, and deployment on Cloudflare Pages. Everything worked perfectly so this is ready to implement into the main app.
 
 ## Try it yourself
 

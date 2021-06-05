@@ -2,6 +2,8 @@
 
 ![Mouse Parallax Demo](./mouse-parallax.gif)
 
+This demo showcases the parallax effect based on mouse position. Using React Spring we move the images based on the mouse position with a factor based on layer position (z index).
+
 ## Try it yourself
 
 To get a local copy up and running follow these simple steps.
