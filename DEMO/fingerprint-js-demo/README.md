@@ -25,13 +25,13 @@ REACT_APP_FPJS_REGION=
    ```sh
    git clone https://github.com/CorruptedPixl/integration4.git
    ```
-2. Install packages
+2. Navigate to folder and install packages
    ```sh
-   yarn
+   cd DEMO/fingerprint-js-demo && yarn
    ```
 3. Run this demo
    ```sh
-   cd DEMO/fingerprint-js-demo && yarn dev
+   yarn dev
    ```
 
 You're good to go. Have fun!

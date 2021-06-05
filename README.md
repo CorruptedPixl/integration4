@@ -60,13 +60,13 @@ We'll assume you have the latest node version and yarn installed already.
    ```sh
    git clone https://github.com/CorruptedPixl/integration4.git
    ```
-2. Install packages
+2. Navigate to folder and install packages
    ```sh
-   yarn
+   cd MAIN/app/ && yarn
    ```
 3. Run the app
    ```sh
-     cd MAIN/app/ && yarn dev
+   yarn dev
    ```
 
 You're good to go. Have fun!
