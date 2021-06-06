@@ -30,9 +30,23 @@ export default function Home() {
         />
         <link rel="icon" href="/ctrl.logo.svg" />
       </Head>
-
+      <header>
+        <img src="/ctrl.logo.svg" alt="Ctrl. Logo"></img>
+      </header>
       <main className={styles.main__container}>
-        <h1 className={styles.title}>Welcome to ctrl!</h1>
+        <section>
+          <h1>Throught you were safe surfing the web?</h1>
+          <p>
+            Well you aren't. You're far from safe. Every move you make online is constantly being watched, tracked,
+            saved in a profile and used against you to not only show you targeted ads, but in the long term influence
+            the way you think.
+          </p>
+          <section>
+            <button>Experience how they do it</button>
+            <p>or</p>
+            <button>Learn to protect yourself</button>
+          </section>
+        </section>
 
         <Parallax blur={10} bgImage="/laptop.png" bgImageAlt="laptop dude" strength={600}>
           <div // Is necessary for mouseMove event to fire for mouse parallax
@@ -43,16 +57,16 @@ export default function Home() {
               to fire. The Parallax scroll bg does not register it */}
 
             <ParallaxMouse
-              xFactor={6}
+              xFactor={5}
               className={styles.parallax__img_surfer}
               globalFactor={globalFactor}
               springProps={springProps}
             >
-              <Image src="/surfer.png" alt="businessman on surfboard with suitcase" width={640} height={496} />
+              <Image src="/surfer.png" alt="businessman on surfboard with suitcase" width={520} height={496} />
             </ParallaxMouse>
 
             <ParallaxMouse
-              xFactor={10}
+              xFactor={50}
               className={styles.parallax__img_bgWave}
               globalFactor={globalFactor}
               springProps={springProps}
@@ -61,7 +75,7 @@ export default function Home() {
             </ParallaxMouse>
 
             <ParallaxMouse
-              xFactor={8}
+              xFactor={50}
               className={styles.parallax__img_mainWave}
               globalFactor={globalFactor}
               springProps={springProps}
@@ -82,28 +96,31 @@ export default function Home() {
                 />
               </div>
             </ParallaxMouse>
-            <ParallaxMouse xFactor={4} globalFactor={globalFactor} springProps={springProps}>
-              <Image src="/laptop.png" alt="laptop dude" width={640} height={496} />
-            </ParallaxMouse>
-
-            <ParallaxMouse xFactor={10} globalFactor={globalFactor} springProps={springProps}>
-              <Image src="/laptop.png" alt="laptop dude" width={640} height={496} />
-            </ParallaxMouse>
-            <ParallaxMouse xFactor={8} globalFactor={globalFactor} springProps={springProps}>
-              <Image src="/laptop.png" alt="laptop dude" width={640} height={496} />
-            </ParallaxMouse>
-            <ParallaxMouse xFactor={6} globalFactor={globalFactor} springProps={springProps}>
-              <Image src="/laptop.png" alt="laptop dude" width={640} height={496} />
-            </ParallaxMouse>
-            <ParallaxMouse xFactor={3.5} globalFactor={globalFactor} springProps={springProps}>
-              <Image src="/laptop.png" alt="laptop dude" width={640} height={496} />
-            </ParallaxMouse>
           </div>
         </Parallax>
-
-        <p className={styles.description}>
-          Lopem ipsum or something I don't know the actual text but there's probably a dolor summet or something in it.
-        </p>
+        <section>
+          <section>
+            <h1>Become the eyes behind everything</h1>
+            <p>
+              We've created an experience were we take you through the dark algoritm of the internet. We'll show you
+              what happens when you blindly accept cookies and you will decide Tom's fate.
+            </p>
+            <button>Become big brother</button>
+          </section>
+          <img></img>
+        </section>
+        <section>
+          <img></img>
+          <section>
+            <h1>What can I do?</h1>
+            <p>
+              Now you might be wondering what you can do to prevent such activities. Don't worry we've listed everything
+              you can do and we created a tool to scan yourself in which you can see everything companies can track
+              about you when you accept cookies.
+            </p>
+            <button>Become big brother</button>
+          </section>
+        </section>
       </main>
     </div>
   );
