@@ -56,30 +56,15 @@ export default function Home() {
             {/* This component MUST be in a container for the mouseMove event
               to fire. The Parallax scroll bg does not register it */}
 
-            <ParallaxMouse
-              xFactor={5}
-              className={styles.parallax__img_surfer}
-              globalFactor={globalFactor}
-              springProps={springProps}
-            >
+            <ParallaxMouse xFactor={5} className={styles.parallax__img_surfer} springProps={springProps}>
               <Image src="/surfer.png" alt="businessman on surfboard with briefcase" width={520} height={496} />
             </ParallaxMouse>
 
-            <ParallaxMouse
-              xFactor={50}
-              className={styles.parallax__img_bgWave}
-              globalFactor={globalFactor}
-              springProps={springProps}
-            >
+            <ParallaxMouse xFactor={50} className={styles.parallax__img_bgWave} springProps={springProps}>
               <Image src="/Smallwave.png" alt="smaller wave in the background" width={800} height={600} />
             </ParallaxMouse>
 
-            <ParallaxMouse
-              xFactor={50}
-              className={styles.parallax__img_mainWave}
-              globalFactor={globalFactor}
-              springProps={springProps}
-            >
+            <ParallaxMouse xFactor={50} className={styles.parallax__img_mainWave} springProps={springProps}>
               <div className={styles.parallax__img_fullwidth}>
                 {/* Wrapped this image in a div in order to extend outside the viewport width and still have parallax without ugly borders*/}
                 <Image
