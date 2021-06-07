@@ -55,10 +55,10 @@ export default function Home() {
           </ParallaxMouse>
 
           <ParallaxMouse xFactor={50} className={styles.parallax__img_bgWave} springProps={springProps}>
-            <Image src="/Smallwave.png" alt="smaller wave in the background" width={800} height={600} />
+            <Image src="/datawave.png" alt="smaller wave in the background" width={1000} height={400} />
           </ParallaxMouse>
 
-          <ParallaxMouse xFactor={50} className={styles.parallax__img_mainWave} springProps={springProps}>
+          <ParallaxMouse xFactor={30} className={styles.parallax__img_mainWave} springProps={springProps}>
             <div className={styles.parallax__img_fullwidth}>
               {/* Wrapped this image in a div in order to extend outside the viewport width and still have parallax without ugly borders*/}
               <Image
@@ -68,7 +68,7 @@ export default function Home() {
                   minWidth: "150%",
                   left: "-25%",
                 }}
-                src="/Bigwave.png"
+                src="/mainwave.png"
                 alt="Wave in the background where the surfer is surfing on"
                 width={3000}
                 height={800}
@@ -89,7 +89,7 @@ export default function Home() {
               <button className={styles.become__text_button}>Become big brother</button>
             </section>
             <ParallaxMouse xFactor={10} className={styles.container__become_img} springProps={springProps}>
-              <Image src="/computerguy.png" alt="smaller wave in the background" width={712 * 2} height={642 * 2} />
+              <Image src="/pcmeneer.gif" alt="smaller wave in the background" width={712 * 2} height={642 * 2} />
             </ParallaxMouse>
           </section>
           <section className={styles.main__container_whatcanido}>
