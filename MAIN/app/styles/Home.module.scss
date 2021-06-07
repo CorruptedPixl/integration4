@@ -27,7 +27,7 @@
 
 .main__container_intro {
   width: 60vw;
-  margin: 12vw 0 26vw 10vw;
+  margin: 20vh 0 26vw 10vw;
 }
 
 .container__intro_title {
@@ -136,7 +136,9 @@
   display: flex;
   flex-direction: column;
   gap: 1.5vw;
-  width: 50%;
+  // width: 70%;
+  width: fit-content;
+  width: -moz-fit-content;
 }
 
 .text__buttons_ctrl {
@@ -332,12 +334,17 @@
   font-size: 2.8rem;
 }
 
-.footer__names_dot {
-  width: 1rem;
-}
+// .footer__names_dot {
+//   width: 1rem;
+// }
 
 .footer__bg {
   position: absolute;
   left: 0;
+  width: 100%;
+  height: 90rem;
+  background-repeat: no-repeat;
+  background-size: cover;
   z-index: -1;
+  background-image: url("/footer_bg.svg");
 }
