@@ -76,6 +76,7 @@ export default function Home() {
             </div>
           </ParallaxMouse>
           {/*</Parallax></div>*/}
+          <ThreejsObjects className={styles.threejs__object} />
           <section className={styles.main__container_become}>
             <section className={styles.container__become_text}>
               <h1 className={`${styles.become__text_title} ${styles.title}`}>

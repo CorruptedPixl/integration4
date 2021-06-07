@@ -9,7 +9,7 @@ const textureLoader = new THREE.TextureLoader(loadingManager);
 //const textureBinary = textureLoader.load("/texture.png");
 //const [textureBinary] = useLoader(THREE.ImageLoader, ["/texture.png"]);
 
-const ThreejsObjects = () => {
+const ThreejsObjects = ({ className }) => {
   const mountRef = useRef(null);
 
   useEffect(() => {
@@ -19,9 +19,9 @@ const ThreejsObjects = () => {
 
     camera.position.z = 3;
     const renderer = new THREE.WebGLRenderer({ alpha: true });
-    renderer.setClearColor("0xFF5C00", 1);
+    renderer.setClearColor("0xFF5C00", 0);
 
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(window.innerWidth / 2, window.innerHeight / 2);
     mountRef.current.appendChild(renderer.domElement);
 
     const group = new THREE.Group();
@@ -105,7 +105,7 @@ const ThreejsObjects = () => {
     return () => mountRef.current.removeChild(renderer.domElement);
   }, []);
 
-  return <div ref={mountRef}></div>;
+  return <div className={className} ref={mountRef}></div>;
 };
 
 export default ThreejsObjects;
