@@ -5,7 +5,7 @@ const ParallaxMouse = ({
   yFactor, // Optional: Defaults to the same value as xFactor
   className, // Optional
   springProps, // Required
-  globalFactor, // Required
+  globalFactor, // Optional: Defaults to 8
   children, // Default prop
 }) => {
   const transformFunc = (propsX, propsY) =>
@@ -20,6 +20,7 @@ const ParallaxMouse = ({
 
 ParallaxMouse.defaultProps = {
   xFactor: 5,
+  globalFactor: 8,
 };
 
 export default ParallaxMouse;

@@ -17,8 +17,8 @@ export default function Home() {
   // Used to set the new position of the cursor in order for Spring to react to
   const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
 
-  // Set global factor that mouse parallax should be lowered by
-  const [globalFactor, setGlobalFactor] = useState(8);
+  // // Set global factor that mouse parallax should be lowered by
+  // const [globalFactor, setGlobalFactor] = useState(8);
 
   return (
     <div className={styles.container}>
