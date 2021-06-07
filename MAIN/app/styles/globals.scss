@@ -1,8 +1,9 @@
 :root {
   --background: #070707;
   --accent: #ff5c00;
-  --text: #fff6f1;
-  --text-dark: #272625;
+  --light: #e8e8e8;
+  --text: #fff;
+  --text-dark: #000;
 }
 
 // Import Renogare font
@@ -23,6 +24,8 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  font-family: Poppins, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
+    Droid Sans, Helvetica Neue, sans-serif; // Fix Arial font issue on windows?
 }
 html,
 body {
