@@ -62,7 +62,7 @@ export default function Home() {
               globalFactor={globalFactor}
               springProps={springProps}
             >
-              <Image src="/surfer.png" alt="businessman on surfboard with suitcase" width={520} height={496} />
+              <Image src="/surfer.png" alt="businessman on surfboard with briefcase" width={520} height={496} />
             </ParallaxMouse>
 
             <ParallaxMouse
