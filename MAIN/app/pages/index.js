@@ -81,7 +81,7 @@ export default function Home() {
           {/*</Parallax></div>*/}
           <section className={styles.main__container_become}>
             <section className={styles.container__become_text}>
-              <h1 className={(styles.become__text_title, styles.title)}>
+              <h1 className={`${styles.become__text_title} ${styles.title}`}>
                 Become the eyes behind <span className={styles.highlight}>everything</span>
               </h1>
               <p className={styles.become__text_body}>
@@ -90,23 +90,53 @@ export default function Home() {
               </p>
               <button className={styles.become__text_button}>Become big brother</button>
             </section>
-            <img className={styles.container__become_img}></img>
+            <ParallaxMouse xFactor={10} className={styles.container__become_img} springProps={springProps}>
+              <Image src="/computerguy.png" alt="smaller wave in the background" width={712 * 2} height={642 * 2} />
+            </ParallaxMouse>
           </section>
           <section className={styles.main__container_whatcanido}>
-            <img className={styles.container__whatcanido_img}></img>
+            <ParallaxMouse xFactor={10} className={styles.container__whatcanido_img} springProps={springProps}>
+              <Image
+                src="/datarays.png"
+                alt="smaller wave in the background"
+                width={598 * (3 / 4)}
+                height={1021 * (3 / 4)}
+              />
+            </ParallaxMouse>
             <section className={styles.container__whatcanido_text}>
-              <h1 className={(styles.whatcanido__text_title, styles.title)}>What can I do?</h1>
+              <h1 className={`${styles.whatcanido__text_title} ${styles.title}`}>What can I do?</h1>
               <p className={styles.whatcanido__text_body}>
                 Now you might be wondering what you can do to prevent such activities. Don't worry we've listed
                 everything you can do and we created a tool to scan yourself in which you can see everything companies
                 can track about you when you accept cookies.
               </p>
-              <button className={styles.whatcanido__text_button}>Become big brother</button>
+              <section className={styles.whatcanido__text_buttons}>
+                <button className={styles.text__buttons_ctrl}>
+                  ctrl. your <span className={styles.highlight2}>identity</span>
+                </button>
+                <button className={styles.text__buttons_experience}>Experience how they do it</button>
+              </section>
             </section>
           </section>
         </Parallax>
-        <ThreejsObjects />
+        {/*<ThreejsObjects />*/}
       </main>
+      <footer className={styles.footer}>
+        <h1 className={styles.footer__title}>Integration 4</h1>
+        <p className={styles.footer__body}>an experience brought to life by</p>
+        <ul className={styles.footer__names}>
+          <li className={styles.footer__names_name}>Noa Lambert</li>
+          <li>
+            <img className={styles.footer__names_dot} src="/footerlistdot.png"></img>
+          </li>
+          <li className={styles.footer__names_name}>Kenzo Dewaegenaere</li>
+          <li>
+            <img className={styles.footer__names_dot} src="/footerlistdot.png"></img>
+          </li>
+          <li className={styles.footer__names_name}>Samuel Vanhaecke</li>
+        </ul>
+        <img className={styles.footer__bg} src="/footer_bg.png"></img>
+      </footer>
     </div>
   );
 }

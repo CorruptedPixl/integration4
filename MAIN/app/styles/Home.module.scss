@@ -18,12 +18,16 @@
 //}
 
 .highlight {
-  color: #ff5c00;
+  color: var(--accent);
+}
+
+.highlight2 {
+  color: var(--text);
 }
 
 .main__container_intro {
   width: 60vw;
-  margin: 12vw 0 30vw 10vw;
+  margin: 12vw 0 26vw 10vw;
 }
 
 .container__intro_title {
@@ -73,6 +77,84 @@
   background-color: black;
   height: 100%;
   z-index: -100;
+  padding-bottom: 30vw;
+}
+
+.main__container_become {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 80vw;
+  margin: 0 auto 4vw;
+}
+
+.become__text_title {
+  margin-bottom: 2.8vw;
+}
+
+.become__text_body {
+  width: 70%;
+  margin-bottom: 4vw;
+}
+
+.become__text_button {
+  background-color: var(--accent);
+  height: 7rem;
+  border: none;
+  font-weight: bold;
+  font-size: 2.4rem;
+  padding: 0 5rem;
+}
+
+.main__container_whatcanido {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 80vw;
+  margin: auto;
+}
+
+.container__whatcanido_img {
+  padding: 2rem;
+  z-index: 5;
+}
+
+.container__whatcanido_text {
+  width: 50%;
+}
+
+.whatcanido__text_title {
+  margin-bottom: 2.8vw;
+}
+
+.whatcanido__text_body {
+  margin-bottom: 4vw;
+}
+
+.whatcanido__text_buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vw;
+  width: 50%;
+}
+
+.text__buttons_ctrl {
+  background-color: var(--accent);
+  border: none;
+  font-weight: bold;
+  font-size: 2.4rem;
+  padding: 0 4rem;
+  height: 7rem;
+}
+
+.text__buttons_experience {
+  background-color: var(--text);
+  border: none;
+  font-weight: bold;
+  font-size: 2.4rem;
+  padding: 0 4rem;
+  height: 7rem;
 }
 
 /*.parallaxContainer {
@@ -213,4 +295,49 @@
   top: 28vh;
   right: 18vw;
   z-index: -2;
+}
+
+.footer {
+  border: none;
+  padding: 0 10% 2vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+  margin-top: -26vw;
+}
+
+.footer__title {
+  color: black;
+  font-size: 5rem;
+  font-family: renogare;
+  margin-bottom: 1.8rem;
+}
+
+.footer__body {
+  color: var(--accent);
+  font-size: 2.8rem;
+  font-weight: 100;
+  margin-bottom: 4rem;
+}
+
+.footer__names {
+  color: black;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.footer__names_name {
+  font-size: 2.8rem;
+}
+
+.footer__names_dot {
+  width: 1rem;
+}
+
+.footer__bg {
+  position: absolute;
+  left: 0;
+  z-index: -1;
 }
