@@ -3,8 +3,8 @@ import { animated } from "react-spring";
 const ParallaxMouse = ({
   xFactor, // Optional: Defaults to 5
   yFactor, // Optional: Defaults to the same value as xFactor
-  springProps, // Required
   className, // Optional
+  springProps, // Required
   globalFactor, // Required
   children, // Default prop
 }) => {
