@@ -17,9 +17,6 @@ export default function Home() {
   // Used to set the new position of the cursor in order for Spring to react to
   const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
 
-  // // Set global factor that mouse parallax should be lowered by
-  // const [globalFactor, setGlobalFactor] = useState(8);
-
   return (
     <div className={styles.container}>
       <Head>
@@ -97,7 +94,7 @@ export default function Home() {
           <section className={styles.main__container_whatcanido}>
             <ParallaxMouse xFactor={10} className={styles.container__whatcanido_img} springProps={springProps}>
               <Image
-                src="/datarays.png"
+                src="/paraplu-dame.png"
                 alt="smaller wave in the background"
                 width={598 * (3 / 4)}
                 height={1021 * (3 / 4)}
@@ -127,15 +124,18 @@ export default function Home() {
         <ul className={styles.footer__names}>
           <li className={styles.footer__names_name}>Noa Lambert</li>
           <li>
-            <img className={styles.footer__names_dot} src="/footerlistdot.png"></img>
+            <Image src="/footerlistdot.svg" alt="orange delimiter dot" width={15} height={15} />
           </li>
           <li className={styles.footer__names_name}>Kenzo Dewaegenaere</li>
           <li>
-            <img className={styles.footer__names_dot} src="/footerlistdot.png"></img>
+            <Image src="/footerlistdot.svg" alt="orange delimiter dot" width={15} height={15} />
           </li>
           <li className={styles.footer__names_name}>Samuel Vanhaecke</li>
         </ul>
-        <img className={styles.footer__bg} src="/footer_bg.png"></img>
+        {/* <img className={styles.footer__bg} src="/footer_bg.svg"></img> */}
+        <div className={styles.footer__bg}>
+          {/* <Image src="/footer_bg.svg" alt="footer triangle" width={1920} height={913} /> */}
+        </div>
       </footer>
     </div>
   );
