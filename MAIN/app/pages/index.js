@@ -30,24 +30,22 @@ export default function Home() {
         />
         <link rel="icon" href="/ctrl.logo.svg" />
       </Head>
-      <header>
-        <img src="/ctrl.logo.svg" alt="Ctrl. Logo"></img>
-      </header>
       <main className={styles.main__container}>
-        <section>
-          <h1>Throught you were safe surfing the web?</h1>
-          <p>
+        <section className={styles.main__container_intro}>
+          <h1 className={(styles.container__intro_title, styles.title)}>
+            Thought you were safe surfing <span className={styles.highlight}>the web?</span>
+          </h1>
+          <p className={styles.container__intro_text}>
             Well you aren't. You're far from safe. Every move you make online is constantly being watched, tracked,
             saved in a profile and used against you to not only show you targeted ads, but in the long term influence
             the way you think.
           </p>
-          <section>
-            <button>Experience how they do it</button>
-            <p>or</p>
-            <button>Learn to protect yourself</button>
+          <section className={styles.container__intro_buttons}>
+            <button className={styles.intro__buttons_button}>Experience how they do it</button>
+            <p className={styles.intro__buttons_or}>or</p>
+            <button className={styles.intro__buttons_button}>Learn to protect yourself</button>
           </section>
         </section>
-
         <Parallax blur={10} bgImage="/laptop.png" bgImageAlt="laptop dude" strength={600}>
           <div // Is necessary for mouseMove event to fire for mouse parallax
             className={styles.parallaxContainer}
@@ -98,27 +96,29 @@ export default function Home() {
             </ParallaxMouse>
           </div>
         </Parallax>
-        <section>
-          <section>
-            <h1>Become the eyes behind everything</h1>
-            <p>
+        <section className={styles.main__container_become}>
+          <section className={styles.container__become_text}>
+            <h1 className={(styles.become__text_title, styles.title)}>
+              Become the eyes behind <span className={styles.highlight}>everything</span>
+            </h1>
+            <p className={styles.become__text_body}>
               We've created an experience were we take you through the dark algoritm of the internet. We'll show you
               what happens when you blindly accept cookies and you will decide Tom's fate.
             </p>
-            <button>Become big brother</button>
+            <button className={styles.become__text_button}>Become big brother</button>
           </section>
-          <img></img>
+          <img className={styles.container__become_img}></img>
         </section>
-        <section>
-          <img></img>
-          <section>
-            <h1>What can I do?</h1>
-            <p>
+        <section className={styles.main__container_whatcanido}>
+          <img className={styles.container__whatcanido_img}></img>
+          <section className={styles.container__whatcanido_text}>
+            <h1 className={(styles.whatcanido__text_title, styles.title)}>What can I do?</h1>
+            <p className={styles.whatcanido__text_body}>
               Now you might be wondering what you can do to prevent such activities. Don't worry we've listed everything
               you can do and we created a tool to scan yourself in which you can see everything companies can track
               about you when you accept cookies.
             </p>
-            <button>Become big brother</button>
+            <button className={styles.whatcanido__text_button}>Become big brother</button>
           </section>
         </section>
       </main>

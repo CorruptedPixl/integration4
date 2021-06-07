@@ -8,10 +8,8 @@
 // Import Renogare font
 @font-face {
   font-family: "Renogare";
-  src: url("https://cdn.cpixl.com/fonts/renogare/Renogare-Regular.woff2")
-      format("woff2"),
-    url("https://cdn.cpixl.com/fonts/renogare/Renogare-Regular.woff")
-      format("woff");
+  src: url("https://cdn.cpixl.com/fonts/renogare/Renogare-Regular.woff2") format("woff2"),
+    url("https://cdn.cpixl.com/fonts/renogare/Renogare-Regular.woff") format("woff");
   font-display: swap;
   font-weight: normal;
   font-style: normal;
@@ -32,8 +30,8 @@ body {
   box-sizing: inherit;
   padding: 0;
   margin: 0;
-  font-family: Poppins, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Poppins, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
+    Droid Sans, Helvetica Neue, sans-serif;
   background-color: var(--background);
   color: var(--text);
   width: 100%;

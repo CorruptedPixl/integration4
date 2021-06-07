@@ -8,13 +8,17 @@
 //   height: 100vh;
 // }
 
-.main__container {
-  // flex: 1;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
-  // position: relative;
+//.main__container {
+// flex: 1;
+// display: flex;
+// flex-direction: column;
+// justify-content: center;
+// align-items: center;
+// position: relative;
+//}
+
+.highlight {
+  color: #ff5c00;
 }
 
 .parallaxContainer {
@@ -60,7 +64,8 @@
 .title {
   margin: 0;
   line-height: 1.15;
-  font-size: 4rem;
+  font-size: 7rem;
+  font-family: Renogare;
 }
 
 .title,
