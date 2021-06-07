@@ -3,9 +3,9 @@ import { animated } from "react-spring";
 const ParallaxMouse = ({
   xFactor, // Optional: Defaults to 5
   yFactor, // Optional: Defaults to the same value as xFactor
-  springProps, // Required
   className, // Optional
-  globalFactor, // Required
+  springProps, // Required
+  globalFactor, // Optional: Defaults to 8
   children, // Default prop
 }) => {
   const transformFunc = (propsX, propsY) =>
@@ -20,6 +20,7 @@ const ParallaxMouse = ({
 
 ParallaxMouse.defaultProps = {
   xFactor: 5,
+  globalFactor: 8,
 };
 
 export default ParallaxMouse;
