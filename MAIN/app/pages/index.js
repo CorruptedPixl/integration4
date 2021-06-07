@@ -42,9 +42,9 @@ export default function Home() {
               the way you think.
             </p>
             <section className={styles.container__intro_buttons}>
-              <button className={styles.intro__buttons_button}>Experience how they do it</button>
+              <button className={styles.intro__buttons_primary}>Experience how they do it</button>
               <p className={styles.intro__buttons_or}>or</p>
-              <button className={styles.intro__buttons_button}>Learn to protect yourself</button>
+              <button className={styles.intro__buttons_secondary}>Learn to protect yourself</button>
             </section>
           </section>
           {/*<div // Is necessary for mouseMove event to fire for mouse parallax
@@ -54,7 +54,7 @@ export default function Home() {
               to fire. The Parallax scroll bg does not register it */}
 
           <ParallaxMouse xFactor={10} className={styles.parallax__img_surfer} springProps={springProps}>
-            <Image src="/surfer.png" alt="businessman on surfboard with briefcase" width={520} height={496} />
+            <Image src="/surfer.png" alt="businessman on surfboard with briefcase" width={550} height={550} />
           </ParallaxMouse>
 
           <ParallaxMouse xFactor={50} className={styles.parallax__img_bgWave} springProps={springProps}>
