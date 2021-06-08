@@ -18,7 +18,8 @@ export default function Home() {
   const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
 
   return (
-    <div className={styles.container}>
+    <>
+      {/* <div className={styles.container}> */}
       <Head>
         <title>ctrl.</title>
         <meta
@@ -29,21 +30,23 @@ export default function Home() {
       </Head>
       <main className={styles.main__container} onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}>
         <Parallax className={styles.main__container_introparallax} blur={10} strength={600}>
-          <section className={styles.main__container_intro}>
-            <h1 className={`${styles.title} ${styles.container__intro_title}`}>
-              Thought you were safe <br /> surfing <span className={styles.highlight}>the web?</span>
-            </h1>
-            <p className={styles.container__intro_text}>
-              Well you aren't. You're far from safe. Every move you make online is constantly being watched, tracked,
-              saved in a profile and used against you to not only show you targeted ads, but in the long term influence
-              the way you think.
-            </p>
-            <section className={styles.container__intro_buttons}>
-              <button className={styles.intro__buttons_primary}>Experience how they do it</button>
-              <p className={styles.intro__buttons_or}>or</p>
-              <button className={styles.intro__buttons_secondary}>Learn to protect yourself</button>
+          <ParallaxMouse xFactor={100} springProps={springProps}>
+            <section className={styles.main__container_intro}>
+              <h1 className={`${styles.title} ${styles.container__intro_title}`}>
+                Thought you were safe <br /> surfing <span className={styles.highlight}>the web?</span>
+              </h1>
+              <p className={styles.container__intro_text}>
+                Well you aren't. You're far from safe. Every move you make online is constantly being watched, tracked,
+                saved in a profile and used against you to not only show you targeted ads, but in the long term
+                influence the way you think.
+              </p>
+              <section className={styles.container__intro_buttons}>
+                <button className={styles.intro__buttons_primary}>Experience how they do it</button>
+                <p className={styles.intro__buttons_or}>or</p>
+                <button className={styles.intro__buttons_secondary}>Learn to protect yourself</button>
+              </section>
             </section>
-          </section>
+          </ParallaxMouse>
           {/*<div // Is necessary for mouseMove event to fire for mouse parallax
             className={styles.parallaxContainer}
           >*/}
@@ -88,8 +91,13 @@ export default function Home() {
               </p>
               <button className={styles.become__text_button}>Become big brother</button>
             </section>
-            <ParallaxMouse xFactor={10} className={styles.container__become_img} springProps={springProps}>
-              <Image src="/pcmeneer.gif" alt="smaller wave in the background" width={712 * 2} height={642 * 2} />
+            <ParallaxMouse
+              xFactor={Infinity}
+              yFactor={10}
+              className={styles.container__become_img}
+              springProps={springProps}
+            >
+              <Image src="/pcmeneer.gif" alt="smaller wave in the background" width={900} height={650} />
             </ParallaxMouse>
           </section>
           <section className={styles.main__container_whatcanido}>
@@ -108,11 +116,11 @@ export default function Home() {
                 everything you can do and we created a tool to scan yourself in which you can see everything companies
                 can track about you when you accept cookies.
               </p>
-              <section className={styles.whatcanido__text_buttons}>
-                <button className={styles.text__buttons_ctrl}>
+              <section className={styles.button__container}>
+                <button className={styles.button}>
                   ctrl. your <span className={styles.highlight2}>identity</span>
                 </button>
-                <button className={styles.text__buttons_experience}>Experience how they do it</button>
+                <button className={`${styles.button} ${styles.light}`}>Experience how they do it</button>
               </section>
             </section>
           </section>
@@ -138,6 +146,7 @@ export default function Home() {
           {/* <Image src="/footer_bg.svg" alt="footer triangle" width={1920} height={913} /> */}
         </div>
       </footer>
-    </div>
+      {/* </div> */}
+    </>
   );
 }
