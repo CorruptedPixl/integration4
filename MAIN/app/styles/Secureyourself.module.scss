@@ -1,3 +1,175 @@
-.main__container {
-  background-color: var(--background);
+.main__container_intro {
+  padding: 10vh 10vw 0;
+}
+
+.container__intro_title {
+  margin-bottom: 5vh;
+  width: 80%;
+}
+
+.container__intro_text {
+  width: 54%;
+  margin-bottom: 5vh;
+}
+
+.container__intro_expl {
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+}
+
+.intro__expl_title {
+  font-family: renogare;
+  font-size: 2.8rem;
+}
+
+.intro__expl_text {
+  width: 40%;
+}
+
+.intro__expl_text:nth-child(3) {
+  margin-left: 5vw;
+}
+
+.intro__expl_text:nth-child(4) {
+  margin-left: 10vw;
+}
+
+.main__container_tips {
+  margin: 30vh auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--text-dark);
+}
+
+.container__tips_bg {
+  position: absolute;
+  top: 26vh;
+  z-index: -1;
+}
+
+.container__tips_title {
+  width: 50%;
+  margin-bottom: 5vh;
+}
+
+.container__tips_text {
+  font-size: 2.4rem;
+  width: 50%;
+  margin-bottom: 8vh;
+}
+
+.container__tips_list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.tips__list_tip {
+  width: 30%;
+}
+
+.list__tip_title {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-bottom: 2vh;
+}
+
+.list__tip_img {
+  max-width: 50px;
+}
+
+.list__tip_text {
+  margin-top: 2vh;
+  width: 80%;
+  margin: auto;
+}
+
+.main__container_mydata {
+  padding: 0 10vw 20vh;
+}
+
+.container__mydata_title {
+  width: 80%;
+  margin-bottom: 8vh;
+}
+
+.container__mydata_contents {
+  display: flex;
+  flex-direction: row;
+  gap: 7vw;
+}
+
+.container__mydata_text {
+  width: 36%;
+  display: flex;
+  flex-direction: column;
+  gap: 8vh;
+}
+
+.container__mydata_img {
+  margin-top: -12vh;
+}
+
+.button {
+  border: none;
+  font-weight: bold;
+  font-size: 2.4rem;
+  padding: 0 4rem;
+  height: 7rem;
+  background-color: var(--accent);
+
+  &.light {
+    background-color: var(--light);
+  }
+
+  &.dark {
+    background-color: var(--background);
+  }
+}
+
+.title {
+  line-height: 1.15;
+  font-size: 7rem;
+  font-family: Renogare;
+}
+
+.highlight {
+  color: var(--accent);
+}
+
+.footer {
+  border: none;
+  padding: 0 10vw 8vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+}
+
+.footer__title {
+  color: var(--text);
+  font-size: 5rem;
+  font-family: renogare;
+  margin-bottom: 1.8rem;
+}
+
+.footer__body {
+  color: var(--accent);
+  font-size: 2.8rem;
+  font-weight: 100;
+  margin-bottom: 6rem;
+}
+
+.footer__names {
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.footer__names_name {
+  font-size: 2.8rem;
 }
