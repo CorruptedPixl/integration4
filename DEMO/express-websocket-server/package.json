@@ -1,0 +1,16 @@
+{
+  "name": "express-websocket-server",
+  "version": "1.0.0",
+  "description": "Backend websocket server",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pixl",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^4.1.2"
+  }
+}
