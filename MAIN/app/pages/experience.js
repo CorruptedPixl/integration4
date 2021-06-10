@@ -10,18 +10,18 @@ const experience = () => {
     <>
       <main className={styles.main__container}>
         <section className={styles.main__container_intro}>
-          <h1>Welcome ... are you ready to become Big Brother?</h1>
-          <p>
+          <h1 className={styles.title}>Welcome ... are you ready to become Big Brother?</h1>
+          <p className={styles.container__intro_text}>
             Let’s take a dive into the algorithm and get to know Sam from the data that’s being tracked. Your name will
             be used to personalize this webpage locally and will not be sent to our servers.
           </p>
-          <button className={styles.button}></button>
-          <small>By continuing you accept the necessary cookies to make this experience work</small>
+          <button className={`${styles.button} ${styles.container__intro_button}`}>Start the experience</button>
+          <small className={styles.container__intro_disclaimer}>By continuing you accept the necessary cookies to make this experience work</small>
           <Image src="/experience/sound_on.svg" width="56px" height="51px"></Image>
-          <small>For the ultimate experience please use sound and disable your add-blocker</small>
+          <small className={styles.container__intro_info}>For the ultimate experience please use sound and disable your add-blocker</small>
         </section>
         <section>
-          <h1>
+          <h1 className={styles.title}>
             You are right on time, Noa. Sam just accepted <span className={styles.highlight}>cookies</span> again.
           </h1>
           <section>
@@ -40,7 +40,7 @@ const experience = () => {
           </section>
         </section>
         <section>
-          <h1>
+          <h1 className={styles.title}>
             But first, how do we track Sam? One word: <span className={styles.highlight}>Fingerprints.</span>
           </h1>
           <section>
@@ -62,7 +62,7 @@ const experience = () => {
           </section>
         </section>
         <section>
-          <h1>
+          <h1 className={styles.title}>
             Since he <span>gave acces</span> we can track... pretty much everything.
           </h1>
           <section>
@@ -82,7 +82,7 @@ const experience = () => {
           </section>
         </section>
         <section>
-          <h1>
+          <h1 className={styles.title}>
             Well yeah that's right <span className={styles.highlight}>every move</span> you make gets stored in a
             profile.
           </h1>
@@ -98,7 +98,7 @@ const experience = () => {
           </section>
         </section>
         <section>
-          <h1>
+          <h1 className={styles.title}>
             Done!
             <br />
             Well I guess you can <span>see what he's doing.</span>
@@ -116,7 +116,7 @@ const experience = () => {
           </section>
         </section>
         <section>
-          <h1>
+          <h1 className={styles.title}>
             Nice, <span className={styles.highlight}>your ad worked</span>, we got him to look at (choice) related
             products!
           </h1>
@@ -139,13 +139,13 @@ const experience = () => {
                 <br />
                 That's the algorithm baby!
               </p>
-              <button>Skip add>></button>
+              <button>Skip add</button>
             </section>
             {/*<Image></Image>*/}
           </section>
         </section>
         <section>
-          <h1>
+          <h1 className={styles.title}>
             We see Sam <span className={styles.highlight}>lives near Bruges</span> based on his{" "}
             <span className={styles.highlight}>IP</span> and it's almost dinner time.
           </h1>
@@ -165,7 +165,7 @@ const experience = () => {
           </section>
         </section>
         <section>
-          <h1>
+          <h1 className={styles.title}>
             We know Sam has a partner due to his <span className={styles.highlight}>shared IP</span> and
             <span className={styles.highlight}>GPS location.</span>
           </h1>
@@ -184,7 +184,7 @@ const experience = () => {
           </section>
         </section>
         <section>
-          <h1>
+          <h1 className={styles.title}>
             His partner has been looking at <span className={styles.highlight}>wedding rings</span>
           </h1>
           <section>
@@ -204,7 +204,7 @@ const experience = () => {
           </section>
         </section>
         <section>
-          <h1>
+          <h1 className={styles.title}>
             Jewelry stores will be very grateful for these <span className={styles.highlight}>potential customers</span>
           </h1>
           <section>
@@ -224,7 +224,7 @@ const experience = () => {
           </section>
         </section>
         <section>
-          <h1>
+          <h1 className={styles.title}>
             I guess it's clear what we can do with <span className={styles.highlight}>your data</span>
           </h1>
           <section>
