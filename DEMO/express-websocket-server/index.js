@@ -15,6 +15,7 @@ const io = new Server(server, {
       /\.\.com$/,
       /\.samuelvanhaecke\.com$/,
       /\.kenzodewaegenaere\.be$/,
+      /\.vercel\.app$/,
     ],
     methods: ["GET", "POST"],
   },
