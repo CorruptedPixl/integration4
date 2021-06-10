@@ -6,6 +6,7 @@ import { useSpring } from "react-spring"; // Mouse parallax
 import { useState } from "react";
 import ThreejsObjects from "../components/ThreejsObjects.js";
 import ParallaxMouse from "../components/ParallaxMouse";
+import Console from "../components/Console";
 
 export default function Home() {
   // Initialize Spring for mouse parallax
@@ -24,13 +25,14 @@ export default function Home() {
         <title>ctrl.</title>
         <meta
           name="description"
-          content="ctrl. exposes what sites can track of you and how they do it. Experience the internet from the other side of the screen, become the algorithm and track Tom during his time online."
+          content="ctrl. exposes what sites can track of you and how they do it. Experience the internet from the other side of the screen, become the algorithm and track Sam during their time online."
         />
         <link rel="icon" href="/ctrl.logo.svg" />
       </Head>
       <main className={styles.main__container} onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}>
+        <Console />
         <Parallax className={styles.main__container_introparallax} blur={10} strength={600}>
-          <ParallaxMouse xFactor={100} springProps={springProps}>
+          <ParallaxMouse xFactor={230} springProps={springProps}>
             <section className={styles.main__container_intro}>
               <h1 className={`${styles.title} ${styles.container__intro_title}`}>
                 Thought you were safe <br /> surfing <span className={styles.highlight}>the web?</span>
