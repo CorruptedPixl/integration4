@@ -366,3 +366,9 @@
   width: fit-content;
   width: -moz-fit-content;
 }
+
+@media only screen and (min-width: var(--small-screen)) and (max-width: var(--medium-screen)) {
+  .main__container {
+    color: green;
+  }
+}
