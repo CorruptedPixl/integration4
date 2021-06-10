@@ -1,0 +1,10 @@
+.container {
+  position: absolute;
+  width: 100vw;
+  overflow: auto;
+  top: 0;
+  height: 30vh;
+  background-color: var(--accent);
+  //   background-color: rgba(var(--accent));
+  color: white;
+}
