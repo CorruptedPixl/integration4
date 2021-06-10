@@ -1,0 +1,59 @@
+.main__container > section {
+  height: 100vh;
+  width: 100vw;
+  padding: 10vh 10vw 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.main__container_intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container__intro_text {
+  width: 60%;
+  margin: 10vh 0 24vh;
+  text-align: center;
+}
+
+.container__intro_button {
+  margin-bottom: 1vh;
+}
+
+.container__intro_disclaimer {
+  font-size: 1.2rem;
+  color: grey;
+  margin-bottom: 4vh;
+}
+
+.container__intro_info {
+  width: 40%;
+  text-align: center;
+  margin-top: 2vh;
+}
+
+.title {
+  line-height: 1.15;
+  font-size: 7rem;
+  font-family: Renogare;
+  margin-bottom: 4vh;
+}
+
+.button {
+  border: none;
+  font-weight: bold;
+  font-size: 2.4rem;
+  padding: 0 4rem;
+  height: 7rem;
+  background-color: var(--accent);
+
+  &.light {
+    background-color: var(--light);
+  }
+
+  &.dark {
+    background-color: var(--background);
+  }
+}
