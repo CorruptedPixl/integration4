@@ -6,7 +6,6 @@ const { Server } = require("socket.io");
 const port = process.env.PORT || 3000;
 const io = new Server(server, {
   cors: {
-    //   origin: "https://example.com",
     origin: [
       "http://localhost:3000",
       /\.corruptedpixl\.com$/,
@@ -34,9 +33,9 @@ app.get("/console/external", (req, res) => {
 });
 
 io.on("connection", (socket) => {
-  console.log("a user connected");
-  socket.on("chat message", (msg) => {
-    io.emit("chat message", msg);
+  console.log("New connection");
+  socket.on("consoleMessage", (msg) => {
+    io.emit("consoleMessage", msg);
   });
 });
 
