@@ -3,12 +3,30 @@ const app = express();
 const http = require("http");
 const server = http.createServer(app);
 const { Server } = require("socket.io");
-const io = new Server(server);
 const port = process.env.PORT || 3000;
+const io = new Server(server, {
+  cors: {
+    //   origin: "https://example.com",
+    origin: [
+      "http://localhost:3000",
+      /\.corruptedpixl\.com$/,
+      /\.cpixl\.com$/,
+      /\.pxl\.zone$/,
+      /\.pxl\.rip$/,
+      /\.\.com$/,
+      /\.samuelvanhaecke\.com$/,
+      /\.kenzodewaegenaere\.be$/,
+    ],
+    methods: ["GET", "POST"],
+  },
+});
 
 app.get("/", (req, res) => {
-  //   res.sendFile(__dirname + "/index.html");
-  res.status(400).send("Bad request. Only wss:// protocol supported.");
+  res
+    .status(400)
+    .send(
+      "Bad request. Only wss:// protocol supported. <a href='https://http.cat/400'>https://http.cat/400</a>"
+    );
 });
 
 app.get("/console/external", (req, res) => {
