@@ -22,6 +22,6 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(3000, () => {
+server.listen(port, () => {
   console.log(`listening on http://localhost:${port}`);
 });
