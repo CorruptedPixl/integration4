@@ -139,7 +139,7 @@ const experience = () => {
                 <br />
                 That's the algorithm baby!
               </p>
-              <button>Skip add>></button>
+              <button>Skip add</button>
             </section>
             {/*<Image></Image>*/}
           </section>
