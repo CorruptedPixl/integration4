@@ -74,7 +74,7 @@ export default function secureyourself() {
                 If you want to know the things we’ve tracked about you, you can track all your data right now. You can
                 also see what’s happening right now by pressing F1 and find some dark secrets.
               </p>
-              <button className={`${styles.mydata__text_button} ${styles.button}`}>Scan my data now</button>
+              <button className={`${styles.button} ${styles.mydata__text_button}`}>Scan my data now</button>
             </section>
             <div className={styles.container__mydata_img}>
               <Image src="/trackme.png" width={700} height={730}></Image>
