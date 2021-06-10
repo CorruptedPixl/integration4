@@ -1,9 +1,14 @@
 :root {
+  //colors
   --background: #070707;
   --accent: #ff5c00;
   --light: #e8e8e8;
   --text: #fff;
   --text-dark: #000;
+  //media-queries
+  --small-screen: 640px;
+  --medium-screen: 1200px;
+  --large-screen: 1920px;
 }
 
 // Import Renogare font
