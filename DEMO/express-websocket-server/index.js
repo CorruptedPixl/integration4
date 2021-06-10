@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
   res
     .status(400)
     .send(
-      "Bad request. Only wss:// protocol supported. <a href='https://http.cat/400'>https://http.cat/400</a>"
+      "Bad request. Only wss:// protocol supported. <br><img src='https://http.cat/400'></img>"
     );
 });
 
