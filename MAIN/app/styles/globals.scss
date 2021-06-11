@@ -61,4 +61,12 @@ a {
 
 * {
   box-sizing: border-box;
+  &::selection {
+    background: var(--accent); /* WebKit/Blink Browsers */
+    color: var(--text-dark);
+  }
+  &::-moz-selection {
+    background: var(--accent); /* Gecko Browsers */
+    color: var(--text-dark);
+  }
 }
