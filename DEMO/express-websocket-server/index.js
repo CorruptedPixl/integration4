@@ -12,7 +12,6 @@ const io = new Server(server, {
       /\.cpixl\.com$/,
       /\.pxl\.zone$/,
       /\.pxl\.rip$/,
-      /\.\.com$/,
       /\.samuelvanhaecke\.com$/,
       /\.kenzodewaegenaere\.be$/,
       /\.vercel\.app$/,
