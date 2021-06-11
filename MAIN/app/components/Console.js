@@ -38,16 +38,23 @@ const Console = () => {
   return (
     <>
       <section className={styles.container}>
-        <form action="" onSubmit={(e) => handleSubmitMessage(e)}>
-          <input autoComplete="off" value={currentInput} onChange={(input) => setCurrentInput(input.target.value)} />
-          <input type="submit" value="Send" />
+        <form className={styles.commandInput} action="" onSubmit={(e) => handleSubmitMessage(e)}>
+          <input
+            className={styles.inputField}
+            autoComplete="off"
+            value={currentInput}
+            onChange={(input) => setCurrentInput(input.target.value)}
+          />
+          <input className={styles.submitBtn} type="submit" value="Send" />
         </form>
         <ul id="messages">
           {messageLog
             .slice(0)
             .reverse()
             .map((message, index) => (
-              <li key={index}>{message}</li>
+              <li className={styles.message} key={index}>
+                {message}
+              </li>
             ))}
         </ul>
       </section>
