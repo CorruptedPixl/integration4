@@ -8,6 +8,7 @@
   //   background-color: var(--accent);
   background-color: rgba(255, 113, 30, 0.5);
   color: white;
+  z-index: 420;
 }
 
 .commandInput {
@@ -23,4 +24,8 @@
     width: 10rem;
     margin-left: 2rem;
   }
+}
+
+.visuallyHidden {
+  z-index: -666;
 }
