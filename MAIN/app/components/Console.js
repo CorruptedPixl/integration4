@@ -7,7 +7,7 @@ const Console = () => {
   const [socket, setSocket] = useState();
   const [messageLog, setMessageLog] = useLocalStorage("messageLog", []);
   const [currentInput, setCurrentInput] = useState("");
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const socketIo = io(process.env.NEXT_PUBLIC_WEBSOCKET_URL || "http://localhost:3001"); // Local socket.io server must be running on port 3001 for local testing
