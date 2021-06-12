@@ -1,14 +1,13 @@
 import io from "socket.io-client";
 import styles from "../styles/Console.module.scss";
 import { useState, useEffect } from "react";
-//TODO  Stylingk
-//TODO Localstrg
+import useLocalStorage from "../hooks/useLocalStorage";
 
 const Console = () => {
   const [socket, setSocket] = useState();
-  const [messageLog, setMessageLog] = useState([]);
+  const [messageLog, setMessageLog] = useLocalStorage("messageLog", []);
   const [currentInput, setCurrentInput] = useState("");
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     const socketIo = io(process.env.NEXT_PUBLIC_WEBSOCKET_URL || "http://localhost:3001"); // Local socket.io server must be running on port 3001 for local testing
@@ -19,15 +18,13 @@ const Console = () => {
   }, []);
 
   useEffect(() => {
-    const handleEvent = (payload) => {
-      console.log(payload);
-
-      setMessageLog((currentArray) => [...currentArray, payload.toString()]);
+    const handleEvent = (message) => {
+      setMessageLog((currentArray) => [...currentArray, message.toString()]);
     };
     if (socket) {
       socket.on("consoleMessage", handleEvent);
     }
-  }, [socket]);
+  }, [socket, messageLog]);
 
   useEffect(() => {
     // Add eventlistener for '/ or :' key to show/hide console
@@ -46,16 +43,23 @@ const Console = () => {
 
   const handleSubmitMessage = (message) => {
     message.preventDefault();
-    console.log(message);
     if (currentInput) {
       socket.emit("consoleMessage", currentInput);
       setCurrentInput("");
     }
   };
 
+  const clearConsole = () => {
+    setMessageLog([]);
+  };
+
   return (
     <>
       <section className={isVisible ? `${styles.container}` : `${styles.container} ${styles.visuallyHidden}`}>
+        <p>
+          Press <code className={styles.code}>/</code> again to close the console.
+        </p>
+        <button onClick={clearConsole}>Clear console</button>
         <form className={styles.commandInput} action="" onSubmit={(e) => handleSubmitMessage(e)}>
           <input
             className={styles.inputField}
@@ -66,14 +70,15 @@ const Console = () => {
           <input className={styles.submitBtn} type="submit" value="Send" />
         </form>
         <ul id="messages">
-          {messageLog
-            .slice(0)
-            .reverse()
-            .map((message, index) => (
-              <li className={styles.message} key={index}>
-                {message}
-              </li>
-            ))}
+          {messageLog &&
+            messageLog
+              .slice(0)
+              .reverse()
+              .map((message, index) => (
+                <li className={styles.message} key={index}>
+                  {message}
+                </li>
+              ))}
         </ul>
       </section>
     </>

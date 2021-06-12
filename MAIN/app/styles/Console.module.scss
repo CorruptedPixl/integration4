@@ -28,4 +28,14 @@
 
 .visuallyHidden {
   z-index: -666;
+  opacity: 0;
+}
+
+.code {
+  background: #222;
+  border-radius: 5px;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New,
+    monospace;
 }
