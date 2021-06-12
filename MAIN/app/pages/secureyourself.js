@@ -11,9 +11,9 @@ export default function secureyourself() {
     <>
       <main className={styles.main__container}>
         <section className={styles.main__container_intro}>
-          <h1 className={`${styles.container__intro_title} ${styles.title}`}>
+          <h2 className={`${styles.container__intro_title} ${styles.title}`}>
             Let's grab some <span className={styles.highlight}>cookies</span> and talk about it
-          </h1>
+          </h2>
           <p className={styles.container__intro_text}>
             Before we give you tips on what you can do to <b>prevent</b> data tracking we want to tell you that{" "}
             <b>not all cookies are bad</b> and most of them are created to give you a better experience.
@@ -35,24 +35,24 @@ export default function secureyourself() {
           <div className={styles.container__tips_bg}>
             <Image src="/tips_bg.svg" width={1920} height={2211}></Image>
           </div>
-          <h1 className={`${styles.container__tips_title} ${styles.title}`}>Some tips that can help you right now!</h1>
+          <h2 className={`${styles.container__tips_title} ${styles.title}`}>Some tips that can help you right now!</h2>
           <p className={styles.container__tips_text}>
             We've listed some things that will prevent most data tracking. It's a great step towards safer browsing
             through the internet!
           </p>
           <ul className={styles.container__tips_list}>
             <li className={styles.tips__list_tip}>
-              <h2 className={styles.list__tip_title}>Use adblocker</h2>
+              <h3 className={styles.list__tip_title}>Use adblocker</h3>
               <Image className={styles.list__tip_img} src="/adblocker.svg" width={170} height={180}></Image>
               <p className={styles.list__tip_text}>Install an adblocker, this will prevent data tracking.</p>
             </li>
             <li className={styles.tips__list_tip}>
-              <h2 className={styles.list__tip_title}>Don't accept all cookies</h2>
+              <h3 className={styles.list__tip_title}>Don't accept all cookies</h3>
               <Image className={styles.list__tip_img} src="/cookie.svg" width={170} height={180}></Image>
               <p className={styles.list__tip_text}>Only accept necessary cookies.</p>
             </li>
             <li className={styles.tips__list_tip}>
-              <h2 className={styles.list__tip_title}>Use incognito</h2>
+              <h3 className={styles.list__tip_title}>Use incognito</h3>
               <Image className={styles.list__tip_img} src="/incognito.svg" width={180} height={180}></Image>
               <p className={styles.list__tip_text}>
                 Use incognito if you don't want any cookies, those cookies get deleted when you close the tab.
@@ -61,9 +61,9 @@ export default function secureyourself() {
           </ul>
         </section>
         <section className={styles.main__container_mydata}>
-          <h1 className={`${styles.container__mydata_title} ${styles.title}`}>
+          <h2 className={`${styles.container__mydata_title} ${styles.title}`}>
             Let's find out what we know about you!
-          </h1>
+          </h2>
           <section className={styles.container__mydata_contents}>
             <section className={styles.container__mydata_text}>
               <p className={styles.mydata__text_paragraph}>
@@ -83,7 +83,7 @@ export default function secureyourself() {
         </section>
       </main>
       <footer className={styles.footer}>
-        <h1 className={styles.footer__title}>Integration 4</h1>
+        <h2 className={styles.footer__title}>Integration 4</h2>
         <p className={styles.footer__body}>an experience brought to life by</p>
         <ul className={styles.footer__names}>
           <li className={styles.footer__names_name}>Noa Lambert</li>

@@ -34,9 +34,9 @@ export default function Home() {
         <Parallax className={styles.main__container_introparallax} blur={10} strength={600}>
           <ParallaxMouse xFactor={230} springProps={springProps}>
             <section className={styles.main__container_intro}>
-              <h1 className={`${styles.title} ${styles.container__intro_title}`}>
+              <h2 className={`${styles.title} ${styles.container__intro_title}`}>
                 Thought you were safe <br /> surfing <span className={styles.highlight}>the web?</span>
-              </h1>
+              </h2>
               <p className={styles.container__intro_text}>
                 Well you aren't. You're far from safe. Every move you make online is constantly being watched, tracked,
                 saved in a profile and used against you to not only show you targeted ads, but in the long term
@@ -84,9 +84,9 @@ export default function Home() {
           <ThreejsObjects className={styles.threejs__object} />
           <section className={styles.main__container_become}>
             <section className={styles.container__become_text}>
-              <h1 className={`${styles.become__text_title} ${styles.title}`}>
+              <h2 className={`${styles.become__text_title} ${styles.title}`}>
                 Become the eyes behind <span className={styles.highlight}>everything</span>
-              </h1>
+              </h2>
               <p className={styles.become__text_body}>
                 We've created an experience were we take you through the dark algoritm of the internet. We'll show you
                 what happens when you blindly accept cookies and you will decide Tom's fate.
@@ -112,7 +112,7 @@ export default function Home() {
               />
             </ParallaxMouse>
             <section className={styles.container__whatcanido_text}>
-              <h1 className={`${styles.whatcanido__text_title} ${styles.title}`}>What can I do?</h1>
+              <h2 className={`${styles.whatcanido__text_title} ${styles.title}`}>What can I do?</h2>
               <p className={styles.whatcanido__text_body}>
                 Now you might be wondering what you can do to prevent such activities. Don't worry we've listed
                 everything you can do and we created a tool to scan yourself in which you can see everything companies
@@ -130,7 +130,7 @@ export default function Home() {
         {/*<ThreejsObjects />*/}
       </main>
       <footer className={styles.footer}>
-        <h1 className={styles.footer__title}>Integration 4</h1>
+        <h2 className={styles.footer__title}>Integration 4</h2>
         <p className={styles.footer__body}>an experience brought to life by</p>
         <ul className={styles.footer__names}>
           <li className={styles.footer__names_name}>Noa Lambert</li>
