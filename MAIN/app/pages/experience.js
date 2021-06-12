@@ -41,7 +41,7 @@ const experience = () => {
               <button className={styles.button}>Start tracking Sam</button>
             </section>
             <Image
-              src="/images/experience/experience_start/cookiebike2.gif"
+              src="/images/experience/experience_start/cookiestart.webp"
               alt="Girls riding on a bike with binary code in the wheels"
               width={400}
               height={400}
@@ -286,7 +286,12 @@ const experience = () => {
               <button>Show me what you can track</button>
               <button>give me tips!</button>
             </section>
-            <Image src="/images/experience/final/final.png" alt="Guy holding up an advertisement" width={400} height={500}></Image>
+            <Image
+              src="/images/experience/final/final.png"
+              alt="Guy holding up an advertisement"
+              width={400}
+              height={500}
+            ></Image>
           </section>
         </section>
       </main>
