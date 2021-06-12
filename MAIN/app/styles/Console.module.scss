@@ -1,0 +1,31 @@
+.container {
+  position: absolute;
+  width: 100%;
+  overflow: auto;
+  top: 0;
+  height: 30vh;
+  padding: 2rem;
+  //   background-color: var(--accent);
+  background-color: rgba(255, 113, 30, 0.5);
+  color: white;
+  z-index: 420;
+}
+
+.commandInput {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+
+  & .inputField {
+    width: calc(100% - 10rem);
+  }
+  & .submitBtn {
+    width: 10rem;
+    margin-left: 2rem;
+  }
+}
+
+.visuallyHidden {
+  z-index: -666;
+}

@@ -6,16 +6,15 @@ const { Server } = require("socket.io");
 const port = process.env.PORT || 3000;
 const io = new Server(server, {
   cors: {
-    //   origin: "https://example.com",
     origin: [
       "http://localhost:3000",
       /\.corruptedpixl\.com$/,
       /\.cpixl\.com$/,
       /\.pxl\.zone$/,
       /\.pxl\.rip$/,
-      /\.\.com$/,
       /\.samuelvanhaecke\.com$/,
       /\.kenzodewaegenaere\.be$/,
+      /\.vercel\.app$/,
     ],
     methods: ["GET", "POST"],
   },
@@ -25,7 +24,7 @@ app.get("/", (req, res) => {
   res
     .status(400)
     .send(
-      "Bad request. Only wss:// protocol supported. <a href='https://http.cat/400'>https://http.cat/400</a>"
+      "Bad request. Only wss:// protocol supported. <br><img src='https://http.cat/400'></img>"
     );
 });
 
@@ -34,9 +33,9 @@ app.get("/console/external", (req, res) => {
 });
 
 io.on("connection", (socket) => {
-  console.log("a user connected");
-  socket.on("chat message", (msg) => {
-    io.emit("chat message", msg);
+  console.log("New connection");
+  socket.on("consoleMessage", (msg) => {
+    io.emit("consoleMessage", msg);
   });
 });
 
