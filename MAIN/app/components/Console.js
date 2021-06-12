@@ -1,6 +1,6 @@
 import io from "socket.io-client";
 import styles from "../styles/Console.module.scss";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 //TODO  Stylingk
 //TODO Localstrg
 
@@ -11,7 +11,7 @@ const Console = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const socketIo = io(process.env.NEXT_PUBLIC_WEBSOCKET_URL || "ws://localhost:3001"); // Local socket.io server must be running on port 3001 for local testing
+    const socketIo = io(process.env.NEXT_PUBLIC_WEBSOCKET_URL || "http://localhost:3001"); // Local socket.io server must be running on port 3001 for local testing
     setSocket(socketIo);
     return () => {
       socketIo.disconnect();
