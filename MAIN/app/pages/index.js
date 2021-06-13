@@ -103,7 +103,7 @@ export default function Home() {
               className={styles.container__become_img}
               springProps={springProps}
             >
-              <Image src="/pcmeneer.gif" alt="smaller wave in the background" width={900} height={650} />
+              <Image src="/pcmeneer.gif" alt="computer with a person inside" width={900} height={650} />
             </ParallaxMouse>
           </section>
           <section className={styles.main__container_whatcanido}>
