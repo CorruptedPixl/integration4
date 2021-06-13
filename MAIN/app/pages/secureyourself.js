@@ -3,10 +3,17 @@ import Image from "next/image";
 import { Parallax } from "react-parallax"; // Scroll parallax
 import { useSpring } from "react-spring"; // Mouse parallax
 import { useState } from "react";
+import Scanner from "../components/Scanner";
 import ThreejsObjects from "../components/ThreejsObjects.js";
 import ParallaxMouse from "../components/ParallaxMouse";
 
 export default function secureyourself() {
+  const [scannerVisible, setScannerVisible] = useState(false);
+
+  const handleClickScan = () => {
+    setScannerVisible(!scannerVisible);
+  };
+
   return (
     <>
       <main className={styles.main__container}>
@@ -64,22 +71,30 @@ export default function secureyourself() {
           <h2 className={`${styles.container__mydata_title} ${styles.title}`}>
             Let's find out what we know about you!
           </h2>
-          <section className={styles.container__mydata_contents}>
-            <section className={styles.container__mydata_text}>
-              <p className={styles.mydata__text_paragraph}>
-                It’s common sense that we like our privacy isn’t it? Sometimes it feels like google knows what we really
-                want. isn’t that a bit scary?
-              </p>
-              <p className={styles.mydata__text_paragraph}>
-                If you want to know the things we’ve tracked about you, you can track all your data right now. You can
-                also see what’s happening right now by pressing F1 and find some dark secrets.
-              </p>
-              <button className={`${styles.button} ${styles.mydata__text_button}`}>Scan my data now</button>
-            </section>
-            <div className={styles.container__mydata_img}>
-              <Image src="/trackme.png" width={700} height={730}></Image>
-            </div>
-          </section>
+          {scannerVisible ? (
+            <Scanner />
+          ) : (
+            <>
+              <section className={styles.container__mydata_contents}>
+                <section className={styles.container__mydata_text}>
+                  <p className={styles.mydata__text_paragraph}>
+                    It’s common sense that we like our privacy isn’t it? Sometimes it feels like google knows what we
+                    really want. isn’t that a bit scary?
+                  </p>
+                  <p className={styles.mydata__text_paragraph}>
+                    If you want to know the things we’ve tracked about you, you can track all your data right now. You
+                    can also see what’s happening right now by pressing F1 and find some dark secrets.
+                  </p>
+                  <button className={`${styles.button} ${styles.mydata__text_button}`} onClick={handleClickScan}>
+                    Scan my data now
+                  </button>
+                </section>
+                <div className={styles.container__mydata_img}>
+                  <Image src="/trackme.png" width={700} height={730}></Image>
+                </div>
+              </section>
+            </>
+          )}
         </section>
       </main>
       <footer className={styles.footer}>
