@@ -34,19 +34,23 @@ export default function Home() {
         <Parallax className={styles.main__container_introparallax} blur={10} strength={600}>
           <ParallaxMouse xFactor={230} springProps={springProps}>
             <section className={styles.main__container_intro}>
-              <h2 className={`${styles.title} ${styles.container__intro_title}`}>
-                Thought you were safe <br /> surfing <span className={styles.highlight}>the web?</span>
-              </h2>
+              <ParallaxMouse xFactor={0} springProps={springProps}>
+                <h2 className={`${styles.title} ${styles.container__intro_title}`}>
+                  Thought you were safe <br /> surfing <span className={styles.highlight}>the web?</span>
+                </h2>
+              </ParallaxMouse>
               <p className={styles.container__intro_text}>
                 Well you aren't. You're far from safe. Every move you make online is constantly being watched, tracked,
                 saved in a profile and used against you to not only show you targeted ads, but in the long term
                 influence the way you think.
               </p>
-              <section className={styles.container__intro_buttons}>
-                <button className={styles.intro__buttons_primary}>Experience how they do it</button>
-                <p className={styles.intro__buttons_or}>or</p>
-                <button className={styles.intro__buttons_secondary}>Learn to protect yourself</button>
-              </section>
+              <ParallaxMouse xFactor={50} springProps={springProps}>
+                <section className={styles.container__intro_buttons}>
+                  <button className={styles.intro__buttons_primary}>Experience how they do it</button>
+                  <p className={styles.intro__buttons_or}>or</p>
+                  <button className={styles.intro__buttons_secondary}>Learn to protect yourself</button>
+                </section>
+              </ParallaxMouse>
             </section>
           </ParallaxMouse>
           {/*<div // Is necessary for mouseMove event to fire for mouse parallax
