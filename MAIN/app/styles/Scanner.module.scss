@@ -1,0 +1,33 @@
+.emphasized {
+  font-style: italic;
+}
+
+.code {
+  background: #222;
+  border-radius: 0.5rem;
+  padding: 0.8rem;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New,
+    monospace;
+}
+
+.subtitle {
+  margin-bottom: 2rem;
+  font-size: 4rem;
+  font-weight: 400;
+  font-family: Renogare;
+}
+
+.container {
+  line-height: 4rem;
+  font-size: 2rem;
+}
+
+.visit__list {
+  background-color: rgba(34, 34, 34, 0.5);
+  border-radius: 0.5rem;
+  padding: 0.8rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New,
+    monospace;
+}
