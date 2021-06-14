@@ -50,16 +50,10 @@ const ThreejsObjects = ({ className }) => {
     scene.add(group);
 
     const sphere = new THREE.Mesh(new THREE.SphereBufferGeometry(0.5, 16, 16), material);
-    const box = new THREE.Mesh(new THREE.BoxBufferGeometry(1, 1, 1), material);
-    const cone = new THREE.Mesh(new THREE.ConeGeometry(0.75, 1, 3), material);
-
-    sphere.position.x = -1.5;
-    cone.position.x = 1.5;
-
-    group.add(sphere, box, cone);
+    group.add(sphere);
 
     loader.load(
-      "https://cdn.cpixl.com/img/ctrl_texture.jpg",
+      "https://cdn.cpixl.com/img/ctrl_cookieTexture.png",
       (texture) => {
         //Update Texture
         material.map = texture;
@@ -85,13 +79,8 @@ const ThreejsObjects = ({ className }) => {
       const elapsedTime = clock.getElapsedTime();
       //update objects
       sphere.rotation.y = 0.1 * elapsedTime;
-      box.rotation.y = 0.21 * elapsedTime;
-      cone.rotation.y = 0.1 * elapsedTime;
 
       sphere.rotation.x = 0.16 * elapsedTime;
-      box.rotation.x = 0.16 * elapsedTime;
-      cone.rotation.x = 0.16 * elapsedTime;
-      cone.rotation.z = 0.3 * elapsedTime;
 
       const yOff = Math.sin(elapsedTime * 4);
       // move the sphere up and down
