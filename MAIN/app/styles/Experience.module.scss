@@ -39,6 +39,26 @@
   flex-direction: column;
 }
 
+.experience__step_content {
+  margin-top: 5vh;
+  display: flex;
+  flex-direction: row;
+  gap: 5vw;
+}
+
+.step__content_text {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  &.right {
+    align-items: flex-end;
+  }
+}
+
+.step__content_text > p {
+  margin-bottom: 2vh;
+}
+
 .title {
   line-height: 1.15;
   font-size: 7rem;
@@ -46,11 +66,17 @@
   margin-bottom: 4vh;
 }
 
+.highlight {
+  color: var(--accent);
+}
+
 .button {
   border: none;
+  margin-top: 4vh;
   font-weight: bold;
   font-size: 2.4rem;
   padding: 0 4rem;
+  width: 400px;
   height: 7rem;
   background-color: var(--accent);
 
