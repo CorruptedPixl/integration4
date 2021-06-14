@@ -4,7 +4,7 @@ import { Math as ThreeMath } from "three";
 
 const loader = new THREE.TextureLoader();
 
-const ThreejsObjects = ({ className }) => {
+const ThreejsCookieObject = ({ className }) => {
   const mountRef = useRef(null);
 
   useEffect(() => {
@@ -16,7 +16,7 @@ const ThreejsObjects = ({ className }) => {
     const renderer = new THREE.WebGLRenderer({ alpha: true });
     renderer.setClearColor("0xFF5C00", 0);
 
-    renderer.setSize(window.innerWidth / 2, window.innerHeight / 2);
+    renderer.setSize(window.innerWidth / 3, window.innerHeight / 3);
     mountRef.current.appendChild(renderer.domElement);
 
     const group = new THREE.Group();
@@ -49,8 +49,12 @@ const ThreejsObjects = ({ className }) => {
 
     scene.add(group);
 
-    const sphere = new THREE.Mesh(new THREE.SphereBufferGeometry(0.5, 16, 16), material);
+    const sphere = new THREE.Mesh(new THREE.CylinderGeometry(1, 1, 0.21, 25), material);
+
     group.add(sphere);
+
+    sphere.position.y = -0.91;
+    sphere.position.z = 1;
 
     loader.load(
       "https://cdn.cpixl.com/img/ctrl_cookieTexture.png",
@@ -78,9 +82,6 @@ const ThreejsObjects = ({ className }) => {
       //clock elapsed used for same speeed on difrent monitors speed
       const elapsedTime = clock.getElapsedTime();
       //update objects
-      sphere.rotation.y = 0.1 * elapsedTime;
-
-      sphere.rotation.x = 0.16 * elapsedTime;
 
       const yOff = Math.sin(elapsedTime * 4);
       // move the sphere up and down
@@ -110,4 +111,4 @@ const ThreejsObjects = ({ className }) => {
   return <div className={className} ref={mountRef}></div>;
 };
 
-export default ThreejsObjects;
+export default ThreejsCookieObject;
