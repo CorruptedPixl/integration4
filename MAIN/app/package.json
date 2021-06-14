@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@fingerprintjs/fingerprintjs-pro": "^3.3.2",
+    "@react-three/fiber": "^7.0.1",
     "next": "10.2.3",
     "react": "17.0.2",
     "react-dom": "17.0.2",

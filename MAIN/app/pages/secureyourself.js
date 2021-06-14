@@ -4,6 +4,7 @@ import { Parallax } from "react-parallax"; // Scroll parallax
 import { useSpring } from "react-spring"; // Mouse parallax
 import { useState } from "react";
 import Scanner from "../components/Scanner";
+import ThreejsCookieObject from "../components/ThreejsCookieObject.js";
 import ThreejsObjects from "../components/ThreejsObjects.js";
 import ParallaxMouse from "../components/ParallaxMouse";
 
@@ -17,27 +18,31 @@ export default function secureyourself() {
   return (
     <>
       <main className={styles.main__container}>
-        <section className={styles.main__container_intro}>
-          <h2 className={`${styles.container__intro_title} ${styles.title}`}>
-            Let's grab some <span className={styles.highlight}>cookies</span> and talk about it
-          </h2>
-          <p className={styles.container__intro_text}>
-            Before we give you tips on what you can do to <b>prevent</b> data tracking we want to tell you that{" "}
-            <b>not all cookies are bad</b> and most of them are created to give you a better experience.
-          </p>
-          <section className={styles.container__intro_expl}>
-            <h2 className={styles.intro__expl_title}>
-              But who doesn't like a <span className={styles.highlight}>cookie</span>?
+        <section className={styles.cookie__container}>
+          <section className={styles.main__container_intro}>
+            <h2 className={`${styles.container__intro_title} ${styles.title}`}>
+              Let's grab some <span className={styles.highlight}>cookies</span> and talk about it
             </h2>
-            <p className={styles.intro__expl_text}>
-              There are some cookies that <b>take advantage</b> of your data and that's what we want to protect.
+            <p className={styles.container__intro_text}>
+              Before we give you tips on what you can do to <b>prevent</b> data tracking we want to tell you that{" "}
+              <b>not all cookies are bad</b> and most of them are created to give you a better experience.
             </p>
-            <p className={styles.intro__expl_text}>
-              That's why you should always <b>be careful</b> accepting things left, right and center.
-            </p>
-            <p className={styles.intro__expl_text}>Below we've listed some tips that can help keep your data safe!</p>
+            <section className={styles.container__intro_expl}>
+              <h2 className={styles.intro__expl_title}>
+                But who doesn't like a <span className={styles.highlight}>cookie</span>?
+              </h2>
+              <p className={styles.intro__expl_text}>
+                There are some cookies that <b>take advantage</b> of your data and that's what we want to protect.
+              </p>
+              <p className={styles.intro__expl_text}>
+                That's why you should always <b>be careful</b> accepting things left, right and center.
+              </p>
+              <p className={styles.intro__expl_text}>Below we've listed some tips that can help keep your data safe!</p>
+            </section>
           </section>
+          <ThreejsCookieObject className={styles.threejs__cookie__object} />
         </section>
+
         <section className={styles.main__container_tips}>
           <div className={styles.container__tips_bg}>
             <Image src="/tips_bg.svg" width={1920} height={2211}></Image>
