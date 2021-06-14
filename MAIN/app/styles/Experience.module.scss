@@ -87,4 +87,8 @@
   &.dark {
     background-color: var(--background);
   }
+
+  &:hover {
+    cursor: pointer;
+  }
 }
