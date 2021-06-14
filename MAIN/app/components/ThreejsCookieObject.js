@@ -21,7 +21,7 @@ const ThreejsCookieObject = ({ className }) => {
 
     const group = new THREE.Group();
 
-    const material = new THREE.MeshStandardMaterial({
+    const material = new THREE.MeshMatcapMaterial({
       color: 0xff5c00,
     });
 
@@ -30,18 +30,8 @@ const ThreejsCookieObject = ({ className }) => {
 
     //lights
 
-    const rectLight = new THREE.RectAreaLight(0xffffff, 0.5, 6, Math.PI * 0.1, 0.25, 1);
-    rectLight.position.set(-1.5, 0, 1.5);
-    rectLight.lookAt(new THREE.Vector3());
-
-    const spotLight = new THREE.SpotLight(0xffffff);
-    spotLight.position.set(0, 2, 3);
-
-    const pointLight = new THREE.PointLight(0xffffff);
-    pointLight.position.set(0, 2, 3);
-
-    scene.add(rectLight, spotLight, pointLight);
-    spotLight.target.position.x = -0.75;
+    const light = new THREE.AmbientLight(0xffffff); // soft white light
+    scene.add(light);
 
     //helpers
 
