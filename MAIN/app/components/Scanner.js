@@ -2,7 +2,7 @@ import styles from "../styles/Scanner.module.scss";
 import { useEffect, useState } from "react";
 import FingerprintJS from "@fingerprintjs/fingerprintjs-pro";
 
-const Scanner = () => {
+const Scanner = ({ visible, setVisitorData }) => {
   const [visitorInfo, setVisitorInfo] = useState();
   const [responseSummary, setResponseSummary] = useState();
   const [serverData, setServerData] = useState();
@@ -38,7 +38,9 @@ const Scanner = () => {
         console.log(data.visits);
         setResponseSummary(
           data.visits.length >= 100 ? (
-            `You've visited this site <code className=${styles.code}>100+</code> times already.`
+            <p>
+              You've visited this site <code className={styles.code}>100+</code> times already.
+            </p>
           ) : (
             <p>
               You've visited this site <code className={styles.code}>{data.visits.length}</code> times already.
@@ -49,11 +51,12 @@ const Scanner = () => {
       });
   };
 
+  if (serverData && setVisitorData != false) setVisitorData(serverData);
   visitorInfo && console.log(visitorInfo);
   serverData && console.log(serverData);
 
   return (
-    <section className={styles.container}>
+    <section className={visible ? styles.container : `${styles.container} ${styles.visuallyHidden}`}>
       {serverData ? (
         <>
           {/* Would've used <Suspense/> but react dom doesn't support that right now, so we're doing it the old school way */}
@@ -82,14 +85,27 @@ const Scanner = () => {
           <p>
             Your IP address is <code className={styles.code}>{serverData && serverData.visits[0].ip}</code>
           </p>
-          <p>
-            Based on your IP, you're probably in or close to{" "}
+
+          {serverData.visits[0].ipLocation.city.name &&
+          serverData.visits[0].ipLocation.postalCode &&
+          serverData.visits[0].ipLocation.country.name ? (
+            <>
+              <p>
+                Based on your IP, you're probably in or close to{" "}
+                <code className={styles.code}>
+                  {serverData.visits[0].ipLocation.city.name}, {serverData.visits[0].ipLocation.postalCode},{" "}
+                  {serverData.visits[0].ipLocation.country.name}
+                </code>{" "}
+                right now.
+              </p>
+            </>
+          ) : (
             <code className={styles.code}>
-              {serverData.visits[0].ipLocation.city.name}, {serverData.visits[0].ipLocation.postalCode},{" "}
-              {serverData.visits[0].ipLocation.country.name}
-            </code>{" "}
-            right now.
-          </p>
+              Hmm, we can't seem to find your location based on your IP address right now. Good job! In case this is an
+              error, our apologies.
+            </code>
+          )}
+
           {/*weather api, mcdonalds*/}
           <p>Feel free to copy and paste that next time you need to fill in your address online 😉</p>
 
@@ -100,9 +116,10 @@ const Scanner = () => {
               return (
                 <li key={index}>
                   {visitTime.getDate() === new Date().getDate()
-                    ? "Today, at "
+                    ? "Today at "
                     : `${visitTime.getFullYear()}/${visitTime.getMonth()}/${visitTime.getDate()}`}{" "}
-                  {visitTime.getHours()}:{visitTime.getMinutes()} from {visit.ipLocation.city.name}
+                  {visitTime.getHours()}:{visitTime.getMinutes()}{" "}
+                  {visit.ipLocation.city.name && `from ${visit.ipLocation.city.name}`}
                 </li>
               );
             })}
@@ -116,6 +133,11 @@ const Scanner = () => {
       )}
     </section>
   );
+};
+
+Scanner.defaultProps = {
+  visible: true,
+  setVisitorData: false,
 };
 
 export default Scanner;
