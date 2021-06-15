@@ -1,15 +1,50 @@
 import styles from "../styles/Experience.module.scss";
 import Image from "next/image";
-import { Parallax } from "react-parallax"; // Scroll parallax
+import { gsap } from "gsap";
 import { useSpring } from "react-spring"; // Mouse parallax
 import { useState } from "react";
+import { useEffect } from "react";
 import ParallaxMouse from "../components/ParallaxMouse";
 
 const experience = () => {
+  const [vw, setVw] = useState();
+  const [vh, setVh] = useState();
+
+  useEffect(() => {
+    setVw(window.innerWidth);
+    setVh(window.innerHeight);
+  });
+
   const [experience, setExperience] = useState(false);
 
   const handleExperienceStart = () => {
     setExperience(true);
+  };
+
+  const handleMovement = (data) => {
+    console.log(data.first);
+    console.log(data.second);
+    console.log(data.direction);
+
+    if (data.direction === "right") {
+      console.log("going right");
+      gsap.to(data.first, { duration: 1, x: -2 * vw });
+      gsap.to(data.second, { duration: 1, x: -vw });
+    } else if (data.direction === "down") {
+      console.log("going right down");
+      gsap.to(data.first, { duration: 1, y: -2 * vh });
+      gsap.to(data.second, { duration: 1, y: -vh });
+    } else if (data.direction === "left") {
+      console.log("going left");
+      gsap.to(data.first, { duration: 1, x: +2 * vw });
+      gsap.to(data.second, { duration: 1, x: +vw });
+    } else if (data.direction === "left_down") {
+      console.log("going left down");
+      gsap.to(data.first, { duration: 1, x: +2 * vw, y: -2 * vh });
+      gsap.to(data.second, { duration: 1, x: +vw, y: -vh });
+    } else {
+      console.log("Movement Error");
+    }
   };
 
   return (
@@ -38,7 +73,7 @@ const experience = () => {
           </section>
         ) : (
           <>
-            <section className={styles.experience__step}>
+            <section className={`${styles.experience__step} ${styles.experience__1}`} id="experience__1">
               <h2 className={styles.title}>
                 You are right on time, Noa. Sam just accepted <span className={styles.highlight}>cookies</span> again.
               </h2>
@@ -52,7 +87,14 @@ const experience = () => {
                     Maybe you don’t know who Sam is but by the end of this you will know more about them than you could
                     ever image. Let’s get to know them!
                   </p>
-                  <button className={styles.button}>Start tracking Sam</button>
+                  <button
+                    onClick={() =>
+                      handleMovement({ first: "#experience__1", second: "#experience__2", direction: "right" })
+                    }
+                    className={styles.button}
+                  >
+                    Start tracking Sam
+                  </button>
                 </section>
                 <Image
                   src="/images/experience/experience_start/cookiestart.webp"
@@ -62,7 +104,7 @@ const experience = () => {
                 ></Image>
               </section>
             </section>
-            <section className={styles.experience__step}>
+            <section className={`${styles.experience__step} ${styles.experience__2}`} id="experience__2">
               <h2 className={styles.title}>
                 But first, how do we track Sam? One word: <span className={styles.highlight}>Fingerprints.</span>
               </h2>
@@ -81,7 +123,14 @@ const experience = () => {
                   <p>
                     Tom’s browser fingerprint is <span className={styles.highlight}>(fpjs fingerprint of user)</span>
                   </p>
-                  <button className={styles.button}>Look at what he's doing</button>
+                  <button
+                    onClick={() =>
+                      handleMovement({ first: "#experience__2", second: "#experience__3", direction: "right" })
+                    }
+                    className={styles.button}
+                  >
+                    Look at what he's doing
+                  </button>
                 </section>
                 <Image
                   src="/images/experience/fingerprinting/dame-met-hondje.png"
@@ -91,7 +140,7 @@ const experience = () => {
                 ></Image>
               </section>
             </section>
-            <section className={styles.experience__step}>
+            <section className={`${styles.experience__step} ${styles.experience__3}`} id="experience__3">
               <h2 className={styles.title}>
                 Since he <span>gave acces</span> we can track... pretty much everything.
               </h2>
@@ -112,11 +161,18 @@ const experience = () => {
                     some advertisements...
                   </p>
                   <button className={`${styles.button} ${styles.light}`}>What does this do?</button>
-                  <button className={styles.button}>Let's unlock some data</button>
+                  <button
+                    onClick={() =>
+                      handleMovement({ first: "#experience__3", second: "#experience__4", direction: "right" })
+                    }
+                    className={styles.button}
+                  >
+                    Let's unlock some data
+                  </button>
                 </section>
               </section>
             </section>
-            <section className={styles.experience__step}>
+            <section className={`${styles.experience__step} ${styles.experience__4}`} id="experience__4">
               <h2 className={styles.title}>
                 Well yeah that's right <span className={styles.highlight}>every move</span> you make gets stored in a
                 profile.
@@ -127,7 +183,14 @@ const experience = () => {
                     The internet doesn’t just look at what you’re doing. It stores all your preferences, interests, ...
                     in your personal profile. That way it’s ready for the next time we need to throw you some ads.
                   </p>
-                  <button className={styles.button}>Generate his profile</button>
+                  <button
+                    onClick={() =>
+                      handleMovement({ first: "#experience__4", second: "#experience__5", direction: "down" })
+                    }
+                    className={styles.button}
+                  >
+                    Generate his profile
+                  </button>
                 </section>
                 <Image
                   src="/images/experience/bunny/bunny.gif"
@@ -137,7 +200,7 @@ const experience = () => {
                 ></Image>
               </section>
             </section>
-            <section className={styles.experience__step}>
+            <section className={`${styles.experience__step} ${styles.experience__5}`} id="experience__5">
               <h2 className={styles.title}>
                 Done!
                 <br />
@@ -156,11 +219,18 @@ const experience = () => {
                     You can choose what advertisements we should send him. Keep in mind what he’s looking at to give him
                     the best ads.
                   </p>
-                  <button className={styles.button}>Advertise ...</button>
+                  <button
+                    onClick={() =>
+                      handleMovement({ first: "#experience__5", second: "#experience__6", direction: "left_down" })
+                    }
+                    className={styles.button}
+                  >
+                    Advertise ...
+                  </button>
                 </section>
               </section>
             </section>
-            <section className={styles.experience__step}>
+            <section className={`${styles.experience__step} ${styles.experience__6}`} id="experience__6">
               <h2 className={styles.title}>
                 Nice, <span className={styles.highlight}>your ad worked</span>, we got him to look at (choice) related
                 products!
@@ -184,7 +254,14 @@ const experience = () => {
                     <br />
                     That's the algorithm baby!
                   </p>
-                  <button className={styles.button}>Skip add</button>
+                  <button
+                    onClick={() =>
+                      handleMovement({ first: "#experience__6", second: "#experience__7", direction: "left_down" })
+                    }
+                    className={styles.button}
+                  >
+                    Skip add
+                  </button>
                 </section>
                 <Image
                   src="/images/experience/advertisement/car.png"
@@ -194,7 +271,7 @@ const experience = () => {
                 ></Image>
               </section>
             </section>
-            <section className={styles.experience__step}>
+            <section className={`${styles.experience__step} ${styles.experience__7}`} id="experience__7">
               <h2 className={styles.title}>
                 We see Sam <span className={styles.highlight}>lives near Bruges</span> based on his{" "}
                 <span className={styles.highlight}>IP</span> and it's almost dinner time.
@@ -209,7 +286,14 @@ const experience = () => {
                     In the meantime let’s choose something for him to eat. We know he likes pizza based on his profile,
                     but what do you think he should be offered tonight?
                   </p>
-                  <button className={styles.button}>Advertise Pizza.be</button>
+                  <button
+                    onClick={() =>
+                      handleMovement({ first: "#experience__7", second: "#experience__8", direction: "left_down" })
+                    }
+                    className={styles.button}
+                  >
+                    Advertise Pizza.be
+                  </button>
                 </section>
                 <Image
                   src="/images/experience/mailbox/mailbox.gif"
@@ -219,7 +303,7 @@ const experience = () => {
                 ></Image>
               </section>
             </section>
-            <section className={styles.experience__step}>
+            <section className={`${styles.experience__step} ${styles.experience__8}`} id="experience__8">
               <h2 className={styles.title}>
                 We know Sam has a partner due to his <span className={styles.highlight}>shared IP</span> and
                 <span className={styles.highlight}>GPS location.</span>
@@ -232,7 +316,14 @@ const experience = () => {
                     a relationship.
                   </p>
                   <p>Maybe we can help them to take the next step, and make some money doing it?</p>
-                  <button className={styles.button}>Let's help them!</button>
+                  <button
+                    onClick={() =>
+                      handleMovement({ first: "#experience__8", second: "#experience__9", direction: "down" })
+                    }
+                    className={styles.button}
+                  >
+                    Let's help them!
+                  </button>
                   <button className={`${styles.button} ${styles.light}`}>Naaaaaah...</button>
                 </section>
                 <Image
@@ -243,7 +334,7 @@ const experience = () => {
                 ></Image>
               </section>
             </section>
-            <section className={styles.experience__step}>
+            <section className={`${styles.experience__step} ${styles.experience__9}`} id="experience__9">
               <section className={styles.experience__step_content}>
                 <section className={styles.step__content_text}>
                   <h2 className={styles.title}>
@@ -258,7 +349,14 @@ const experience = () => {
                     <br />
                     That was a rhetorical question, we don’t care about that, we only care about money.
                   </p>
-                  <button className={styles.button}>Let's make some bank</button>
+                  <button
+                    onClick={() =>
+                      handleMovement({ first: "#experience__9", second: "#experience__10", direction: "right" })
+                    }
+                    className={styles.button}
+                  >
+                    Let's make some bank
+                  </button>
                 </section>
                 <Image
                   src="/images/experience/couple1/couple.png"
@@ -268,7 +366,7 @@ const experience = () => {
                 ></Image>
               </section>
             </section>
-            <section className={styles.experience__step}>
+            <section className={`${styles.experience__step} ${styles.experience__10}`} id="experience__10">
               <h2 className={styles.title}>
                 Jewelry stores will be very grateful for these{" "}
                 <span className={styles.highlight}>potential customers</span>
@@ -286,10 +384,17 @@ const experience = () => {
                     We’ll sell his data to all of them anyways, but it’s up to you to decide who gets it first.
                   </p>
                 </section>
-                <button className={styles.button}>Advertise Cartier</button>
+                <button
+                  onClick={() =>
+                    handleMovement({ first: "#experience__10", second: "#experience__11", direction: "right" })
+                  }
+                  className={styles.button}
+                >
+                  Advertise Cartier
+                </button>
               </section>
             </section>
-            <section className={styles.experience__step}>
+            <section className={`${styles.experience__step} ${styles.experience__11}`} id="experience__11">
               <h2 className={styles.title}>
                 I guess it's clear what we can do with <span className={styles.highlight}>your data</span>
               </h2>
