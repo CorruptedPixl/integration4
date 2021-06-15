@@ -301,7 +301,6 @@
   right: 3vw;
 }
 
-
 .footer {
   border: none;
   padding: 0 10% 2vw;
@@ -348,22 +347,26 @@
   background-image: url("/footer_bg.svg");
 }
 
-.button {
-  border: none;
-  font-weight: bold;
-  font-size: 2.4rem;
-  padding: 0 4rem;
-  height: 7rem;
-  background-color: var(--accent);
+// .button {
+//   display: grid;
+//   place-content: center;
+//   border: none;
+//   font-weight: bold;
+//   font-size: 2.4rem;
+//   padding: 0 4rem;
+//   height: 7rem;
+//   background-color: var(--accent);
+//   color: var(--text-dark);
 
-  &.light {
-    background-color: var(--light);
-  }
+//   &.light {
+//     background-color: var(--light);
+//   }
 
-  &.dark {
-    background-color: var(--background);
-  }
-}
+//   &.dark {
+//     background-color: var(--background);
+//     color: var(--text);
+//   }
+// }
 
 .button__container {
   display: flex;
