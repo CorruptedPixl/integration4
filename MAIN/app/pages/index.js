@@ -106,7 +106,9 @@ export default function Home() {
                 We've created an experience were we take you through the dark algoritm of the internet. We'll show you
                 what happens when you blindly accept cookies and you will decide Tom's fate.
               </p>
-              <button className={styles.become__text_button}>Become big brother</button>
+              <a href="/experience" className={buttons.button}>
+                Become big brother
+              </a>
             </section>
             <ParallaxMouse
               xFactor={Infinity}
@@ -134,10 +136,14 @@ export default function Home() {
                 can track about you when you accept cookies.
               </p>
               <section className={styles.button__container}>
-                <button className={styles.button}>
-                  ctrl. your <span className={styles.highlight2}>identity</span>
-                </button>
-                <button className={`${styles.button} ${styles.light}`}>Experience how they do it</button>
+                <a href="/secureyourself" className={`${buttons.button} ${buttons.light}`}>
+                  <div>
+                    ctrl. your <span className={styles.highlight}>identity</span>
+                  </div>
+                </a>
+                <a href="/experience" className={buttons.button}>
+                  Experience how they do it
+                </a>
               </section>
             </section>
           </section>
