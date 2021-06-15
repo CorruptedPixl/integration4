@@ -1,4 +1,5 @@
 import styles from "../styles/Home.module.scss";
+import buttons from "../styles/Buttons.module.scss";
 import Head from "next/head";
 import Image from "next/image";
 import { Parallax } from "react-parallax"; // Scroll parallax
@@ -48,14 +49,17 @@ export default function Home() {
               </p>
               <ParallaxMouse xFactor={50} springProps={springProps}>
                 <section className={styles.container__intro_buttons}>
-                  <button
+                  <a
+                    href="/experience"
                     onClick={() => socket.emit("consoleMessage", "Nice, it works!")}
-                    className={styles.intro__buttons_primary}
+                    className={buttons.button}
                   >
-                    Experience how they do it
-                  </button>
-                  <p className={styles.intro__buttons_or}>or</p>
-                  <button className={styles.intro__buttons_secondary}>Learn to protect yourself</button>
+                    Experience how they track you
+                  </a>
+                  <p className={`${buttons.button} ${buttons.light}`}>or</p>
+                  <a href="/secureyourself" className={`${buttons.button} ${buttons.dark}`}>
+                    Learn to protect yourself
+                  </a>
                 </section>
               </ParallaxMouse>
             </section>
