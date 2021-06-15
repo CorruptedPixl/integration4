@@ -10,6 +10,7 @@ import ParallaxMouse from "../components/ParallaxMouse";
 
 export default function secureyourself() {
   const [scannerVisible, setScannerVisible] = useState(false);
+  const [visitorData, setVisitorData] = useState();
 
   const handleClickScan = () => {
     setScannerVisible(!scannerVisible);
@@ -77,7 +78,7 @@ export default function secureyourself() {
             Let's find out what we know about you!
           </h2>
           {scannerVisible ? (
-            <Scanner />
+            <Scanner setVisitorData={setVisitorData} />
           ) : (
             <>
               <section className={styles.container__mydata_contents}>
