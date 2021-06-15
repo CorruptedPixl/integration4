@@ -1,3 +1,8 @@
+.main__container {
+  position: fixed;
+  overflow: hidden;
+}
+
 .main__container > section {
   height: 100vh;
   width: 100vw;
@@ -91,4 +96,55 @@
   &:hover {
     cursor: pointer;
   }
+}
+
+.experience__1 {
+}
+.experience__2 {
+  position: absolute;
+  left: 100vw;
+  top: 0;
+}
+.experience__3 {
+  position: absolute;
+  left: 100vw;
+  top: 0;
+}
+.experience__4 {
+  position: absolute;
+  left: 100vw;
+  top: 0;
+}
+.experience__5 {
+  position: absolute;
+  top: 100vh;
+}
+.experience__6 {
+  position: absolute;
+  top: 100vh;
+  right: 100vw;
+}
+.experience__7 {
+  position: absolute;
+  top: 100vh;
+  right: 100vw;
+}
+.experience__8 {
+  position: absolute;
+  top: 100vh;
+  right: 100vw;
+}
+.experience__9 {
+  position: absolute;
+  top: 100vh;
+}
+.experience__10 {
+  position: absolute;
+  left: 100vw;
+  top: 0;
+}
+.experience__11 {
+  position: absolute;
+  left: 100vw;
+  top: 0;
 }
