@@ -97,9 +97,6 @@
     cursor: pointer;
   }
 }
-
-.experience__1 {
-}
 .experience__2 {
   position: absolute;
   left: 100vw;
@@ -147,4 +144,13 @@
   position: absolute;
   left: 100vw;
   top: 0;
+}
+
+.experience__path {
+  width: 1000vw;
+  height: 1000vh;
+  position: absolute;
+  top: 50vh;
+  left: 10vw;
+  z-index: -1;
 }

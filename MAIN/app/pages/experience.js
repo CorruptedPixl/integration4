@@ -31,7 +31,7 @@ const experience = () => {
       gsap.to(data.first, { duration: 1, x: -2 * vw });
       gsap.to(data.second, { duration: 1, x: -vw });
     } else if (data.direction === "down") {
-      console.log("going right down");
+      console.log("going down");
       gsap.to(data.first, { duration: 1, y: -2 * vh });
       gsap.to(data.second, { duration: 1, y: -vh });
     } else if (data.direction === "left") {
@@ -45,6 +45,8 @@ const experience = () => {
     } else {
       console.log("Movement Error");
     }
+
+    gsap.to("#experience_path", { duration: 1, x: -data.path_inc_x * vw, y: data.path_inc_y * vh });
   };
 
   return (
@@ -89,7 +91,12 @@ const experience = () => {
                   </p>
                   <button
                     onClick={() =>
-                      handleMovement({ first: "#experience__1", second: "#experience__2", direction: "right" })
+                      handleMovement({
+                        first: "#experience__1",
+                        second: "#experience__2",
+                        direction: "right",
+                        path_inc_x: "1",
+                      })
                     }
                     className={styles.button}
                   >
@@ -125,7 +132,12 @@ const experience = () => {
                   </p>
                   <button
                     onClick={() =>
-                      handleMovement({ first: "#experience__2", second: "#experience__3", direction: "right" })
+                      handleMovement({
+                        first: "#experience__2",
+                        second: "#experience__3",
+                        direction: "right",
+                        path_inc_x: "2",
+                      })
                     }
                     className={styles.button}
                   >
@@ -163,7 +175,12 @@ const experience = () => {
                   <button className={`${styles.button} ${styles.light}`}>What does this do?</button>
                   <button
                     onClick={() =>
-                      handleMovement({ first: "#experience__3", second: "#experience__4", direction: "right" })
+                      handleMovement({
+                        first: "#experience__3",
+                        second: "#experience__4",
+                        direction: "right",
+                        path_inc_x: "3",
+                      })
                     }
                     className={styles.button}
                   >
@@ -185,7 +202,13 @@ const experience = () => {
                   </p>
                   <button
                     onClick={() =>
-                      handleMovement({ first: "#experience__4", second: "#experience__5", direction: "down" })
+                      handleMovement({
+                        first: "#experience__4",
+                        second: "#experience__5",
+                        direction: "down",
+                        path_inc_x: "3",
+                        path_inc_y: "-1",
+                      })
                     }
                     className={styles.button}
                   >
@@ -221,7 +244,13 @@ const experience = () => {
                   </p>
                   <button
                     onClick={() =>
-                      handleMovement({ first: "#experience__5", second: "#experience__6", direction: "left_down" })
+                      handleMovement({
+                        first: "#experience__5",
+                        second: "#experience__6",
+                        direction: "left_down",
+                        path_inc_x: "2",
+                        path_inc_y: "-2",
+                      })
                     }
                     className={styles.button}
                   >
@@ -256,7 +285,13 @@ const experience = () => {
                   </p>
                   <button
                     onClick={() =>
-                      handleMovement({ first: "#experience__6", second: "#experience__7", direction: "left_down" })
+                      handleMovement({
+                        first: "#experience__6",
+                        second: "#experience__7",
+                        direction: "left_down",
+                        path_inc_x: "1",
+                        path_inc_y: "-3",
+                      })
                     }
                     className={styles.button}
                   >
@@ -288,7 +323,13 @@ const experience = () => {
                   </p>
                   <button
                     onClick={() =>
-                      handleMovement({ first: "#experience__7", second: "#experience__8", direction: "left_down" })
+                      handleMovement({
+                        first: "#experience__7",
+                        second: "#experience__8",
+                        direction: "left_down",
+                        path_inc_x: "0",
+                        path_inc_y: "-4",
+                      })
                     }
                     className={styles.button}
                   >
@@ -318,7 +359,13 @@ const experience = () => {
                   <p>Maybe we can help them to take the next step, and make some money doing it?</p>
                   <button
                     onClick={() =>
-                      handleMovement({ first: "#experience__8", second: "#experience__9", direction: "down" })
+                      handleMovement({
+                        first: "#experience__8",
+                        second: "#experience__9",
+                        direction: "down",
+                        path_inc_x: "1",
+                        path_inc_y: "-5",
+                      })
                     }
                     className={styles.button}
                   >
@@ -351,7 +398,13 @@ const experience = () => {
                   </p>
                   <button
                     onClick={() =>
-                      handleMovement({ first: "#experience__9", second: "#experience__10", direction: "right" })
+                      handleMovement({
+                        first: "#experience__9",
+                        second: "#experience__10",
+                        direction: "right",
+                        path_inc_x: "2",
+                        path_inc_y: "-4.8",
+                      })
                     }
                     className={styles.button}
                   >
@@ -386,7 +439,13 @@ const experience = () => {
                 </section>
                 <button
                   onClick={() =>
-                    handleMovement({ first: "#experience__10", second: "#experience__11", direction: "right" })
+                    handleMovement({
+                      first: "#experience__10",
+                      second: "#experience__11",
+                      direction: "right",
+                      path_inc_x: "3",
+                      path_inc_y: "-4.8",
+                    })
                   }
                   className={styles.button}
                 >
@@ -418,6 +477,14 @@ const experience = () => {
                 </div>
               </section>
             </section>
+            <div className={styles.experience__path} id="experience_path">
+              <Image
+                src="/images/experience/experience_path.svg"
+                width={10770}
+                height={5512}
+                alt="A path through the whole experience"
+              ></Image>
+            </div>
           </>
         )}
       </main>
