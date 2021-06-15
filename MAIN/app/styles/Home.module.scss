@@ -7,6 +7,11 @@
 // position: relative;
 //}
 
+.main__container {
+  position: relative;
+  z-index: 0;
+}
+
 .highlight {
   color: var(--accent);
 }

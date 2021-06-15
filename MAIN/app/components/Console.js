@@ -3,8 +3,8 @@ import styles from "../styles/Console.module.scss";
 import { useState, useEffect } from "react";
 import useLocalStorage from "../hooks/useLocalStorage";
 
-const Console = () => {
-  const [socket, setSocket] = useState();
+const Console = ({ socket, setSocket }) => {
+  // const [socket, setSocket] = useState();
   const [messageLog, setMessageLog] = useLocalStorage("messageLog", []);
   const [currentInput, setCurrentInput] = useState("");
   const [isVisible, setIsVisible] = useState(false);
