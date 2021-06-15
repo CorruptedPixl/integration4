@@ -1,4 +1,5 @@
 import styles from "../styles/Experience.module.scss";
+import buttons from "../styles/Buttons.module.scss";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { useSpring } from "react-spring"; // Mouse parallax
@@ -61,7 +62,7 @@ const experience = () => {
             </p>
             <button
               onClick={() => handleExperienceStart()}
-              className={`${styles.button} ${styles.container__intro_button}`}
+              className={`${buttons.button} ${styles.container__intro_button}`}
             >
               Start the experience
             </button>
@@ -98,7 +99,7 @@ const experience = () => {
                         path_inc_x: "1",
                       })
                     }
-                    className={styles.button}
+                    className={buttons.button}
                   >
                     Start tracking Sam
                   </button>
@@ -139,7 +140,7 @@ const experience = () => {
                         path_inc_x: "2",
                       })
                     }
-                    className={styles.button}
+                    className={buttons.button}
                   >
                     Look at what he's doing
                   </button>
@@ -182,7 +183,7 @@ const experience = () => {
                         path_inc_x: "3",
                       })
                     }
-                    className={styles.button}
+                    className={buttons.button}
                   >
                     Let's unlock some data
                   </button>
@@ -210,7 +211,7 @@ const experience = () => {
                         path_inc_y: "-1",
                       })
                     }
-                    className={styles.button}
+                    className={buttons.button}
                   >
                     Generate his profile
                   </button>
@@ -252,7 +253,7 @@ const experience = () => {
                         path_inc_y: "-2",
                       })
                     }
-                    className={styles.button}
+                    className={buttons.button}
                   >
                     Advertise ...
                   </button>
@@ -293,7 +294,7 @@ const experience = () => {
                         path_inc_y: "-3",
                       })
                     }
-                    className={styles.button}
+                    className={buttons.button}
                   >
                     Skip add
                   </button>
@@ -331,7 +332,7 @@ const experience = () => {
                         path_inc_y: "-4",
                       })
                     }
-                    className={styles.button}
+                    className={buttons.button}
                   >
                     Advertise Pizza.be
                   </button>
@@ -367,7 +368,7 @@ const experience = () => {
                         path_inc_y: "-5",
                       })
                     }
-                    className={styles.button}
+                    className={buttons.button}
                   >
                     Let's help them!
                   </button>
@@ -406,7 +407,7 @@ const experience = () => {
                         path_inc_y: "-4.8",
                       })
                     }
-                    className={styles.button}
+                    className={buttons.button}
                   >
                     Let's make some bank
                   </button>
@@ -447,7 +448,7 @@ const experience = () => {
                       path_inc_y: "-4.8",
                     })
                   }
-                  className={styles.button}
+                  className={buttons.button}
                 >
                   Advertise Cartier
                 </button>
@@ -464,8 +465,8 @@ const experience = () => {
                     manipulation of the corporate world. If you want to see all data that is available to the internet
                     at this exact moment, take a look below.
                   </p>
-                  <button className={styles.button}>Show me what you can track</button>
-                  <button className={`${styles.button} ${styles.light}`}>give me tips!</button>
+                  <button className={buttons.button}>Show me what you can track</button>
+                  <button className={`${buttons.button} ${buttons.light}`}>give me tips!</button>
                 </section>
                 <div>
                   <Image
