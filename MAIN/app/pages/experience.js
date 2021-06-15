@@ -243,7 +243,82 @@ const experience = () => {
                     You can choose what advertisements we should send him. Keep in mind what he’s looking at to give him
                     the best ads.
                   </p>
-                  <button
+                  <div className={styles.content__text_selection}>
+                    <p className={styles.text__selection_adv}>Advertise</p>
+                    <ul className={styles.text__selection_list}>
+                      <li
+                        className={styles.selection__list_item}
+                        onClick={() =>
+                          handleMovement({
+                            first: "#experience__5",
+                            second: "#experience__6",
+                            direction: "left_down",
+                            path_inc_x: "2",
+                            path_inc_y: "-2",
+                          })
+                        }
+                      >
+                        clothing
+                      </li>
+                      <li
+                        className={styles.selection__list_item}
+                        onClick={() =>
+                          handleMovement({
+                            first: "#experience__5",
+                            second: "#experience__6",
+                            direction: "left_down",
+                            path_inc_x: "2",
+                            path_inc_y: "-2",
+                          })
+                        }
+                      >
+                        cars
+                      </li>
+                      <li
+                        className={styles.selection__list_item}
+                        onClick={() =>
+                          handleMovement({
+                            first: "#experience__5",
+                            second: "#experience__6",
+                            direction: "left_down",
+                            path_inc_x: "2",
+                            path_inc_y: "-2",
+                          })
+                        }
+                      >
+                        cats
+                      </li>
+                      <li
+                        className={styles.selection__list_item}
+                        onClick={() =>
+                          handleMovement({
+                            first: "#experience__5",
+                            second: "#experience__6",
+                            direction: "left_down",
+                            path_inc_x: "2",
+                            path_inc_y: "-2",
+                          })
+                        }
+                      >
+                        food
+                      </li>
+                      <li
+                        className={styles.selection__list_item}
+                        onClick={() =>
+                          handleMovement({
+                            first: "#experience__5",
+                            second: "#experience__6",
+                            direction: "left_down",
+                            path_inc_x: "2",
+                            path_inc_y: "-2",
+                          })
+                        }
+                      >
+                        dating
+                      </li>
+                    </ul>
+                  </div>
+                  {/*<button
                     onClick={() =>
                       handleMovement({
                         first: "#experience__5",
@@ -256,7 +331,7 @@ const experience = () => {
                     className={buttons.button}
                   >
                     Advertise ...
-                  </button>
+                  </button>*/}
                 </section>
               </section>
             </section>

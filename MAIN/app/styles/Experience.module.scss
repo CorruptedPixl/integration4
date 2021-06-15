@@ -64,6 +64,38 @@
   margin-bottom: 2vh;
 }
 
+.content__text_selection {
+  margin-top: 5vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+}
+
+.text__selection_adv {
+  font-size: 4.2rem;
+  font-weight: bold;
+}
+
+.text__selection_list {
+  font-size: 4.2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.selection__list_item {
+  color: var(--accent);
+  opacity: 50%;
+  padding: 1rem;
+  border: solid transparent 2px;
+
+  &:hover {
+    opacity: 100%;
+    border: solid var(--accent) 2px;
+    cursor: pointer;
+  }
+}
+
 .title {
   line-height: 1.15;
   font-size: 7rem;
