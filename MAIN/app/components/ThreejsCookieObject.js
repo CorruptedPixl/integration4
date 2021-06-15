@@ -4,7 +4,7 @@ import { Math as ThreeMath } from "three";
 
 const loader = new THREE.TextureLoader();
 
-const ThreejsObjects = ({ className }) => {
+const ThreejsCookieObject = ({ className }) => {
   const mountRef = useRef(null);
 
   useEffect(() => {
@@ -16,12 +16,12 @@ const ThreejsObjects = ({ className }) => {
     const renderer = new THREE.WebGLRenderer({ alpha: true });
     renderer.setClearColor("0xFF5C00", 0);
 
-    renderer.setSize(window.innerWidth / 2, window.innerHeight / 2);
+    renderer.setSize(window.innerWidth / 3, window.innerHeight / 3);
     mountRef.current.appendChild(renderer.domElement);
 
     const group = new THREE.Group();
 
-    const material = new THREE.MeshStandardMaterial({
+    const material = new THREE.MeshMatcapMaterial({
       color: 0xff5c00,
     });
 
@@ -30,18 +30,8 @@ const ThreejsObjects = ({ className }) => {
 
     //lights
 
-    const rectLight = new THREE.RectAreaLight(0xffffff, 0.5, 6, Math.PI * 0.1, 0.25, 1);
-    rectLight.position.set(-1.5, 0, 1.5);
-    rectLight.lookAt(new THREE.Vector3());
-
-    const spotLight = new THREE.SpotLight(0xffffff);
-    spotLight.position.set(0, 2, 3);
-
-    const pointLight = new THREE.PointLight(0xffffff);
-    pointLight.position.set(0, 2, 3);
-
-    scene.add(rectLight, spotLight, pointLight);
-    spotLight.target.position.x = -0.75;
+    const light = new THREE.AmbientLight(0xffffff); // soft white light
+    scene.add(light);
 
     //helpers
 
@@ -49,8 +39,12 @@ const ThreejsObjects = ({ className }) => {
 
     scene.add(group);
 
-    const sphere = new THREE.Mesh(new THREE.SphereBufferGeometry(0.5, 16, 16), material);
+    const sphere = new THREE.Mesh(new THREE.CylinderGeometry(1, 1, 0.21, 25), material);
+
     group.add(sphere);
+
+    sphere.position.y = -0.91;
+    sphere.position.z = 1;
 
     loader.load(
       "https://cdn.cpixl.com/img/ctrl_cookieTexture.png",
@@ -78,9 +72,6 @@ const ThreejsObjects = ({ className }) => {
       //clock elapsed used for same speeed on difrent monitors speed
       const elapsedTime = clock.getElapsedTime();
       //update objects
-      sphere.rotation.y = 0.1 * elapsedTime;
-
-      sphere.rotation.x = 0.16 * elapsedTime;
 
       const yOff = Math.sin(elapsedTime * 4);
       // move the sphere up and down
@@ -110,4 +101,4 @@ const ThreejsObjects = ({ className }) => {
   return <div className={className} ref={mountRef}></div>;
 };
 
-export default ThreejsObjects;
+export default ThreejsCookieObject;

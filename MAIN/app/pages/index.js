@@ -18,6 +18,8 @@ export default function Home() {
   // Used to set the new position of the cursor in order for Spring to react to
   const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
 
+  const [socket, setSocket] = useState();
+
   return (
     <>
       {/* <div className={styles.container}> */}
@@ -30,7 +32,7 @@ export default function Home() {
         <link rel="icon" href="/ctrl.logo.svg" />
       </Head>
       <main className={styles.main__container} onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}>
-        <Console />
+        <Console socket={socket} setSocket={setSocket} />
         <Parallax className={styles.main__container_introparallax} blur={10} strength={600}>
           <ParallaxMouse xFactor={230} springProps={springProps}>
             <section className={styles.main__container_intro}>
@@ -46,7 +48,12 @@ export default function Home() {
               </p>
               <ParallaxMouse xFactor={50} springProps={springProps}>
                 <section className={styles.container__intro_buttons}>
-                  <button className={styles.intro__buttons_primary}>Experience how they do it</button>
+                  <button
+                    onClick={() => socket.emit("consoleMessage", "Nice, it works!")}
+                    className={styles.intro__buttons_primary}
+                  >
+                    Experience how they do it
+                  </button>
                   <p className={styles.intro__buttons_or}>or</p>
                   <button className={styles.intro__buttons_secondary}>Learn to protect yourself</button>
                 </section>

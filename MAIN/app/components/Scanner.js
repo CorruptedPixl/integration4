@@ -1,5 +1,5 @@
 import styles from "../styles/Scanner.module.scss";
-import { Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import FingerprintJS from "@fingerprintjs/fingerprintjs-pro";
 
 const Scanner = () => {
@@ -27,7 +27,7 @@ const Scanner = () => {
 
   const callServerAPI = () => {
     fetch(
-      `https://metrics.pxl.zone/visitors/${visitorInfo.visitorId}?limit=${1000}&token=${
+      `https://metrics.pxl.zone/visitors/${visitorInfo.visitorId}?limit=${100}&token=${
         process.env.NEXT_PUBLIC_FPJS_APIKEY
       }`
     )
@@ -56,6 +56,7 @@ const Scanner = () => {
     <section className={styles.container}>
       {serverData ? (
         <>
+          {/* Would've used <Suspense/> but react dom doesn't support that right now, so we're doing it the old school way */}
           <h3 className={styles.subtitle}>Right now, this is what we can track about you</h3>
           <p>
             You <em className={styles.emphasized}>unique</em> visitor id is:{" "}
@@ -101,7 +102,7 @@ const Scanner = () => {
                   {visitTime.getDate() === new Date().getDate()
                     ? "Today, at "
                     : `${visitTime.getFullYear()}/${visitTime.getMonth()}/${visitTime.getDate()}`}{" "}
-                  {visitTime.getHours()}:{visitTime.getMinutes()}
+                  {visitTime.getHours()}:{visitTime.getMinutes()} from {visit.ipLocation.city.name}
                 </li>
               );
             })}
