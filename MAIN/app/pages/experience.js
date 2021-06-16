@@ -11,9 +11,25 @@ const experience = () => {
   const [vw, setVw] = useState();
   const [vh, setVh] = useState();
 
+  const adImageArray = new Array("cars.png", "cats.png", "clothing.png", "food.png", "singles.png");
+  const [adImage, setAdImage] = useState();
+
+  // Set adImage every 10 seconds
+
+  /*const handleAdImage = () => {
+    setTimeout(function () {
+      let whichImage = adImageArray[Math.round(Math.random() * (adImageArray.length - 1))];
+      setAdImage(whichImage);
+      console.log("setting image");
+    }, 10000);
+  };*/
+
   useEffect(() => {
     setVw(window.innerWidth);
     setVh(window.innerHeight);
+
+    let whichImage = adImageArray[Math.round(Math.random() * (adImageArray.length - 1))];
+    setAdImage(whichImage);
   });
 
   const [experience, setExperience] = useState(false);
@@ -22,25 +38,33 @@ const experience = () => {
     setExperience(true);
   };
 
-  const handleMovement = (data) => {
-    console.log(data.first);
-    console.log(data.second);
-    console.log(data.direction);
+  const handleAdImage = (selected) => {
+    console.log(selected);
 
+    if (selected === adImage) {
+      handleMovement({
+        first: "#experience__5",
+        second: "#experience__6",
+        direction: "left_down",
+        path_inc_x: "2",
+        path_inc_y: "-2",
+      });
+    } else {
+      console.log("nah G");
+    }
+  };
+
+  const handleMovement = (data) => {
     if (data.direction === "right") {
-      console.log("going right");
       gsap.to(data.first, { duration: 1, x: -2 * vw });
       gsap.to(data.second, { duration: 1, x: -vw });
     } else if (data.direction === "down") {
-      console.log("going down");
       gsap.to(data.first, { duration: 1, y: -2 * vh });
       gsap.to(data.second, { duration: 1, y: -vh });
     } else if (data.direction === "left") {
-      console.log("going left");
       gsap.to(data.first, { duration: 1, x: +2 * vw });
       gsap.to(data.second, { duration: 1, x: +vw });
     } else if (data.direction === "left_down") {
-      console.log("going left down");
       gsap.to(data.first, { duration: 1, x: +2 * vw, y: -2 * vh });
       gsap.to(data.second, { duration: 1, x: +vw, y: -vh });
     } else {
@@ -49,7 +73,6 @@ const experience = () => {
 
     gsap.to("#experience_path", { duration: 1, x: -data.path_inc_x * vw, y: data.path_inc_y * vh });
   };
-
   return (
     <>
       <main className={styles.main__container}>
@@ -211,6 +234,8 @@ const experience = () => {
                         path_inc_y: "-1",
                       })
                     }
+                    //() => handleAdImage())
+
                     className={buttons.button}
                   >
                     Generate his profile
@@ -232,7 +257,7 @@ const experience = () => {
               </h2>
               <section className={styles.experience__step_content}>
                 <Image
-                  src="/images/experience/guessthead/cars.png"
+                  src={`/images/experience/guessthead/${adImage}`}
                   alt="guy sitting on a computer that displays an ad"
                   width={500}
                   height={560}
@@ -246,74 +271,19 @@ const experience = () => {
                   <div className={styles.content__text_selection}>
                     <p className={styles.text__selection_adv}>Advertise</p>
                     <ul className={styles.text__selection_list}>
-                      <li
-                        className={styles.selection__list_item}
-                        onClick={() =>
-                          handleMovement({
-                            first: "#experience__5",
-                            second: "#experience__6",
-                            direction: "left_down",
-                            path_inc_x: "2",
-                            path_inc_y: "-2",
-                          })
-                        }
-                      >
+                      <li className={styles.selection__list_item} onClick={() => handleAdImage("clothing.png")}>
                         clothing
                       </li>
-                      <li
-                        className={styles.selection__list_item}
-                        onClick={() =>
-                          handleMovement({
-                            first: "#experience__5",
-                            second: "#experience__6",
-                            direction: "left_down",
-                            path_inc_x: "2",
-                            path_inc_y: "-2",
-                          })
-                        }
-                      >
+                      <li className={styles.selection__list_item} onClick={() => handleAdImage("cars.png")}>
                         cars
                       </li>
-                      <li
-                        className={styles.selection__list_item}
-                        onClick={() =>
-                          handleMovement({
-                            first: "#experience__5",
-                            second: "#experience__6",
-                            direction: "left_down",
-                            path_inc_x: "2",
-                            path_inc_y: "-2",
-                          })
-                        }
-                      >
+                      <li className={styles.selection__list_item} onClick={() => handleAdImage("cats.png")}>
                         cats
                       </li>
-                      <li
-                        className={styles.selection__list_item}
-                        onClick={() =>
-                          handleMovement({
-                            first: "#experience__5",
-                            second: "#experience__6",
-                            direction: "left_down",
-                            path_inc_x: "2",
-                            path_inc_y: "-2",
-                          })
-                        }
-                      >
+                      <li className={styles.selection__list_item} onClick={() => handleAdImage("food.png")}>
                         food
                       </li>
-                      <li
-                        className={styles.selection__list_item}
-                        onClick={() =>
-                          handleMovement({
-                            first: "#experience__5",
-                            second: "#experience__6",
-                            direction: "left_down",
-                            path_inc_x: "2",
-                            path_inc_y: "-2",
-                          })
-                        }
-                      >
+                      <li className={styles.selection__list_item} onClick={() => handleAdImage("dating.png")}>
                         dating
                       </li>
                     </ul>
