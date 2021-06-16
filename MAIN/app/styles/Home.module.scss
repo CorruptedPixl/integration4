@@ -415,6 +415,12 @@
   width: -moz-fit-content;
 }
 
+.toggleSwitch {
+  position: absolute;
+  right: 5rem;
+  top: -15rem;
+}
+
 @media only screen and (min-width: var(--small-screen)) and (max-width: var(--medium-screen)) {
   .main__container {
     color: green;
