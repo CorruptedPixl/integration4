@@ -8,6 +8,7 @@ import { useState } from "react";
 import ThreejsObjects from "../components/ThreejsObjects.js";
 import ParallaxMouse from "../components/ParallaxMouse";
 import Console from "../components/Console";
+import Toggle from "../components/Toggle";
 
 export default function Home() {
   // Initialize Spring for mouse parallax
@@ -20,6 +21,7 @@ export default function Home() {
   const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
 
   const [socket, setSocket] = useState();
+  const [toggleLangState, setToggleLangState] = useState(false);
 
   return (
     <>
@@ -35,6 +37,13 @@ export default function Home() {
       <main className={styles.main__container} onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}>
         <Console socket={socket} setSocket={setSocket} />
         <Parallax className={styles.main__container_introparallax} blur={10} strength={600}>
+          <Toggle
+            className={styles.toggleSwitch}
+            toggleState={toggleLangState}
+            setToggleState={setToggleLangState}
+            valueLeft={"nl"}
+            valueRight={"en"}
+          />
           <ParallaxMouse xFactor={230} springProps={springProps}>
             <section className={styles.main__container_intro}>
               <ParallaxMouse xFactor={0} springProps={springProps}>
