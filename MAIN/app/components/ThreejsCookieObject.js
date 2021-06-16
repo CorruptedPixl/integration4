@@ -41,12 +41,13 @@ const ThreejsCookieObject = ({ className }) => {
 
     const sphere = new THREE.Mesh(new THREE.CylinderGeometry(1, 1, 0.21, 25), material);
 
-    const sphere1 = new THREE.Mesh(new THREE.CylinderGeometry(1, 1, 0.21, 25), material);
-    const sphere2 = new THREE.Mesh(new THREE.CylinderGeometry(1, 1, 0.21, 25), material);
-    const sphere3 = new THREE.Mesh(new THREE.CylinderGeometry(1, 1, 0.21, 25), material);
+    //const sphere1 = new THREE.Mesh(new THREE.CylinderGeometry(1, 1, 0.21, 25), material);
+    //const sphere2 = new THREE.Mesh(new THREE.CylinderGeometry(1, 1, 0.21, 25), material);
+    //const sphere3 = new THREE.Mesh(new THREE.CylinderGeometry(1, 1, 0.21, 25), material);
 
-    group.add(sphere, sphere1, sphere2, sphere3);
+    group.add(sphere);
 
+    /*
     sphere1.position.z = -6;
     sphere1.position.y = -0.7;
     sphere2.position.z = -6;
@@ -55,6 +56,7 @@ const ThreejsCookieObject = ({ className }) => {
     sphere3.position.y = -0.7;
     sphere1.position.x = -2.4;
     sphere2.position.x = 2.4;
+    */
 
     sphere.position.y = -0.91;
     sphere.position.z = 1;
@@ -94,9 +96,9 @@ const ThreejsCookieObject = ({ className }) => {
       sphere.rotation.y += 0.01;
       sphere.rotation.z += 0.01;
 
-      sphere1.rotation.x += 0.025;
-      sphere1.rotation.y += 0.05;
-      sphere1.rotation.z += 0.015;
+      //sphere1.rotation.x += 0.025;
+      //sphere1.rotation.y += 0.05;
+      //sphere1.rotation.z += 0.015;
 
       //rerender
       renderer.render(scene, camera);
