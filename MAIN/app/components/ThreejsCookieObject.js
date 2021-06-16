@@ -16,7 +16,7 @@ const ThreejsCookieObject = ({ className }) => {
     const renderer = new THREE.WebGLRenderer({ alpha: true });
     renderer.setClearColor("0xFF5C00", 0);
 
-    renderer.setSize(window.innerWidth / 3, window.innerHeight / 3);
+    renderer.setSize(window.innerWidth, window.innerHeight);
     mountRef.current.appendChild(renderer.domElement);
 
     const group = new THREE.Group();

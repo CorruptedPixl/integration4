@@ -41,7 +41,9 @@ export default function secureyourself() {
               <p className={styles.intro__expl_text}>Below we've listed some tips that can help keep your data safe!</p>
             </section>
           </section>
-          <ThreejsCookieObject className={styles.threejs__cookie__object} />
+          <div className={styles.threejs__cookie__object__pos}>
+            <ThreejsCookieObject className={styles.threejs__cookie__object} />
+          </div>
         </section>
 
         <section className={styles.main__container_tips}>
