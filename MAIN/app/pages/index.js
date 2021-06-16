@@ -56,7 +56,7 @@ export default function Home() {
                   >
                     Experience how they track you
                   </a>
-                  <p className={`${buttons.button} ${buttons.light}`}>or</p>
+                  <p className={styles.intro__buttons_or}>or</p>
                   <a href="/secureyourself" className={`${buttons.button} ${buttons.dark}`}>
                     Learn to protect yourself
                   </a>

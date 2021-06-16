@@ -9,13 +9,45 @@
   max-width: 600px;
   background-color: var(--accent);
   color: var(--text-dark);
+  transition: transform 0.2s 0.1s ease-out;
 
   &.light {
     background-color: var(--light);
+
+    &:hover {
+      background-color: #e8e8e8;
+      color: #464646;
+    }
+
+    &:active {
+      box-shadow: 0 2rem 15rem rgba(255, 255, 255, 0.4);
+      transform: scale(0.9);
+    }
   }
 
   &.dark {
     background-color: var(--background);
     color: var(--text);
+
+    &:hover {
+      background-color: #2f2f2f;
+      cursor: pointer;
+    }
+    &:active {
+      background-color: #47230f;
+      box-shadow: 0 2rem 15rem rgba(255, 255, 255, 0.4);
+      transform: scale(0.9);
+    }
+  }
+
+  &:hover {
+    background-color: #ff782d;
+    cursor: pointer;
+  }
+
+  &:active {
+    background-color: #ffa16c;
+    box-shadow: 0 2rem 15rem rgba(255, 255, 255, 0.4);
+    transform: scale(0.9);
   }
 }
