@@ -194,8 +194,8 @@
   z-index: 0;
 
   // crt overlay effect
-  line-height: 1.5;
-  font-size: 1.5rem;
+  // line-height: 1.5;
+  // font-size: 1.5rem;
   &:before {
     background: linear-gradient(
         0deg,
@@ -223,7 +223,7 @@
     background-repeat: repeat;
     background-size: 0.6em 1em;
     mix-blend-mode: overlay;
-    opacity: 0.15;
+    opacity: 0.08;
     // SPACER
     bottom: 0;
     content: "";
@@ -235,7 +235,7 @@
     z-index: 20;
     position: fixed;
 
-    animation: Animation 5s linear infinite;
+    // animation: Animation 5s linear infinite;
   }
 
   @keyframes Animation {
@@ -409,6 +409,12 @@
   gap: 1.5vw;
   width: fit-content;
   width: -moz-fit-content;
+}
+
+.toggleSwitch {
+  position: absolute;
+  right: 5rem;
+  top: -15rem;
 }
 
 @media only screen and (min-width: var(--small-screen)) and (max-width: var(--medium-screen)) {
