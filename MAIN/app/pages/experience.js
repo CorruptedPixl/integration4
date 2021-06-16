@@ -40,6 +40,7 @@ const experience = () => {
 
   const handleAdImage = (selected) => {
     console.log(selected);
+    console.log(adImage);
 
     if (selected === adImage) {
       handleMovement({
