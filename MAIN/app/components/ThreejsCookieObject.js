@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
-import { Math as ThreeMath } from "three";
+import { Group, Math as ThreeMath } from "three";
 
 const loader = new THREE.TextureLoader();
 
@@ -41,7 +41,20 @@ const ThreejsCookieObject = ({ className }) => {
 
     const sphere = new THREE.Mesh(new THREE.CylinderGeometry(1, 1, 0.21, 25), material);
 
-    group.add(sphere);
+    const sphere1 = new THREE.Mesh(new THREE.CylinderGeometry(1, 1, 0.21, 25), material);
+    const sphere2 = new THREE.Mesh(new THREE.CylinderGeometry(1, 1, 0.21, 25), material);
+    const sphere3 = new THREE.Mesh(new THREE.CylinderGeometry(1, 1, 0.21, 25), material);
+
+    group.add(sphere, sphere1, sphere2, sphere3);
+
+    sphere1.position.z = -6;
+    sphere1.position.y = -0.7;
+    sphere2.position.z = -6;
+    sphere2.position.y = -0.7;
+    sphere3.position.z = -6;
+    sphere3.position.y = -0.7;
+    sphere1.position.x = -2.4;
+    sphere2.position.x = 2.4;
 
     sphere.position.y = -0.91;
     sphere.position.z = 1;
@@ -76,6 +89,14 @@ const ThreejsCookieObject = ({ className }) => {
       const yOff = Math.sin(elapsedTime * 4);
       // move the sphere up and down
       group.position.y = ThreeMath.lerp(0, 0.05, yOff);
+
+      sphere.rotation.x += 0.01;
+      sphere.rotation.y += 0.01;
+      sphere.rotation.z += 0.01;
+
+      sphere1.rotation.x += 0.025;
+      sphere1.rotation.y += 0.05;
+      sphere1.rotation.z += 0.015;
 
       //rerender
       renderer.render(scene, camera);
