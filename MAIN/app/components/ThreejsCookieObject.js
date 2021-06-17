@@ -39,7 +39,7 @@ const ThreejsCookieObject = ({ className }) => {
 
     scene.add(group);
 
-    const sphere = new THREE.Mesh(new THREE.CylinderGeometry(1, 1, 0.21, 25), material);
+    const sphere = new THREE.Mesh(new THREE.CylinderGeometry(1, 1, 0.11, 25), material);
 
     //const sphere1 = new THREE.Mesh(new THREE.CylinderGeometry(1, 1, 0.21, 25), material);
     //const sphere2 = new THREE.Mesh(new THREE.CylinderGeometry(1, 1, 0.21, 25), material);
@@ -92,9 +92,9 @@ const ThreejsCookieObject = ({ className }) => {
       // move the sphere up and down
       group.position.y = ThreeMath.lerp(0, 0.05, yOff);
 
-      sphere.rotation.x += 0.01;
-      sphere.rotation.y += 0.01;
-      sphere.rotation.z += 0.01;
+      sphere.rotation.x += 0.005;
+      sphere.rotation.y += 0.005;
+      sphere.rotation.z += 0.005;
 
       //sphere1.rotation.x += 0.025;
       //sphere1.rotation.y += 0.05;
