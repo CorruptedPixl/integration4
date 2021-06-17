@@ -1,5 +1,6 @@
 import styles from "../styles/Secureyourself.module.scss";
 import Image from "next/image";
+import Head from "next/head";
 import { Parallax } from "react-parallax"; // Scroll parallax
 import { useSpring } from "react-spring"; // Mouse parallax
 import { useState } from "react";

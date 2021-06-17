@@ -1,5 +1,6 @@
 import styles from "../styles/Experience.module.scss";
 import buttons from "../styles/Buttons.module.scss";
+import Head from "next/head";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { useSpring } from "react-spring"; // Mouse parallax
