@@ -27,7 +27,7 @@ export default function Home() {
     <>
       {/* <div className={styles.container}> */}
       <Head>
-        <title>ctrl.</title>
+        <title>ctrl. | Home</title>
         <meta
           name="description"
           content="ctrl. exposes what sites can track of you and how they do it. Experience the internet from the other side of the screen, become the algorithm and track Sam during their time online."
@@ -171,6 +171,14 @@ export default function Home() {
             width={582 * 0.5}
             height={1137 * 0.5}
           />
+        </div>
+        <div className={styles.footer__logo}>
+          <Image src="/lion_icon.svg" alt={"Logo of the Flemish Government"} width={180} height={250} />
+          <p className={styles.footer__logo_sub}>
+            Met steun van
+            <br />
+            de Vlaamse Overheid
+          </p>
         </div>
         <div className={styles.footer__text}>
           <h2 className={styles.footer__title}>Integration 4</h2>
