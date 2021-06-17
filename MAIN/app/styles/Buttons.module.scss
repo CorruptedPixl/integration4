@@ -31,7 +31,8 @@
 
     &:hover {
       background-color: #2f2f2f;
-      cursor: pointer;
+      // cursor: pointer;
+      cursor: url("/cursor_pointer.svg"), url("/cursor_pointer.png"), pointer;
     }
     &:active {
       background-color: #47230f;
@@ -42,7 +43,8 @@
 
   &:hover {
     background-color: #ff782d;
-    cursor: pointer;
+    // cursor: pointer;
+    cursor: url("/cursor_pointer.png"), pointer;
   }
 
   &:active {
