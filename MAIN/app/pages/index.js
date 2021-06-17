@@ -131,14 +131,16 @@ export default function Home() {
             </ParallaxMouse>
           </section>
           <section className={styles.main__container_whatcanido}>
-            <ParallaxMouse xFactor={10} className={styles.container__whatcanido_img} springProps={springProps}>
-              <Image
-                src="/paraplu-dame.png"
-                alt="smaller wave in the background"
-                width={598 * (3 / 4)}
-                height={1021 * (3 / 4)}
-              />
-            </ParallaxMouse>
+            <div>
+              <ParallaxMouse xFactor={-80} className={styles.container__whatcanido_img} springProps={springProps}>
+                <Image
+                  src="/images/index/paraplu/satelietje.gif"
+                  alt="satellite beaming data down"
+                  width={1123 * 0.4}
+                  height={987 * 0.4}
+                />
+              </ParallaxMouse>
+            </div>
             <section className={styles.container__whatcanido_text}>
               <h2 className={`${styles.whatcanido__text_title} ${styles.title}`}>What can I do?</h2>
               <p className={styles.whatcanido__text_body}>
@@ -162,22 +164,32 @@ export default function Home() {
         {/*<ThreejsObjects />*/}
       </main>
       <footer className={styles.footer}>
-        <h2 className={styles.footer__title}>Integration 4</h2>
-        <p className={styles.footer__body}>an experience brought to life by</p>
-        <ul className={styles.footer__names}>
-          <li className={styles.footer__names_name}>Noa Lambert</li>
-          <li>
-            <Image src="/footerlistdot.svg" alt="orange delimiter dot" width={15} height={15} />
-          </li>
-          <li className={styles.footer__names_name}>Kenzo Dewaegenaere</li>
-          <li>
-            <Image src="/footerlistdot.svg" alt="orange delimiter dot" width={15} height={15} />
-          </li>
-          <li className={styles.footer__names_name}>Samuel Vanhaecke</li>
-        </ul>
-        {/* <img className={styles.footer__bg} src="/footer_bg.svg"></img> */}
-        <div className={styles.footer__bg}>
-          {/* <Image src="/footer_bg.svg" alt="footer triangle" width={1920} height={913} /> */}
+        <div className={styles.footer__img}>
+          <Image
+            src="/images/index/paraplu/paraplu.png"
+            alt="woman with umbrella shielding her from the data from the satellite"
+            width={582 * 0.5}
+            height={1137 * 0.5}
+          />
+        </div>
+        <div className={styles.footer__text}>
+          <h2 className={styles.footer__title}>Integration 4</h2>
+          <p className={styles.footer__body}>an experience brought to life by</p>
+          <ul className={styles.footer__names}>
+            <li className={styles.footer__names_name}>Noa Lambert</li>
+            <li>
+              <Image src="/footerlistdot.svg" alt="orange delimiter dot" width={15} height={15} />
+            </li>
+            <li className={styles.footer__names_name}>Kenzo Dewaegenaere</li>
+            <li>
+              <Image src="/footerlistdot.svg" alt="orange delimiter dot" width={15} height={15} />
+            </li>
+            <li className={styles.footer__names_name}>Samuel Vanhaecke</li>
+          </ul>
+          {/* <img className={styles.footer__bg} src="/footer_bg.svg"></img> */}
+          <div className={styles.footer__bg}>
+            {/* <Image src="/footer_bg.svg" alt="footer triangle" width={1920} height={913} /> */}
+          </div>
         </div>
       </footer>
       {/* </div> */}

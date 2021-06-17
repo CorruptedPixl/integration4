@@ -69,7 +69,7 @@
 }
 
 .main__container_introparallax {
-  background-color: black;
+  background-color: var(--background);
   height: 100%;
   z-index: -100;
   padding-bottom: 10rem;
@@ -102,17 +102,23 @@
 }
 
 .main__container_whatcanido {
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   width: 80vw;
   margin: auto;
+  margin-bottom: 7rem;
+  margin-top: 30rem;
 }
 
 .container__whatcanido_img {
-  padding: 2rem;
-  z-index: 5;
+  // padding: 2rem;
+  // z-index: 5;
+  position: absolute;
+  left: 2vw;
+  top: 5rem;
 }
 
 .container__whatcanido_text {
@@ -167,26 +173,27 @@
   top: 85vh;
   width: 200px;
   height: 200px;
+  z-index: -1;
 }
 .infolayerstyle {
   position: absolute;
 }
 
-.footer {
-  width: 100%;
-  height: 100px;
-  border-top: 1px solid #eaeaea;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+// .footer {
+//   width: 100%;
+//   height: 100px;
+//   border-top: 1px solid #eaeaea;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
 
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-}
+// .footer a {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   flex-grow: 1;
+// }
 
 .title {
   line-height: 1.15;
@@ -358,7 +365,16 @@
 // }
 
 .footer {
+  position: relative;
   width: 100%;
+  // height: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // padding: 25rem 0;
+  height: 50rem;
+  // margin-top: 21rem;
+
   // background: linear-gradient(to bottom left, var(--accent), var(--text) 50%);
   // background-color: var(--text);
   // &:before {
@@ -379,13 +395,42 @@
     // top: 0;
     right: 0;
     // bottom: -65vh;
-    height: 50rem;
+    height: 100%;
+    // max-height: 50rem;
     // background-color: var(--text);
     background-image: linear-gradient(to bottom left, rgba(0, 0, 0, 0) 50%, var(--text) 50%);
+    background-color: var(--background);
     // transform: skewY(10deg);
-    transform-origin: 0;
-    overflow: hidden;
+    // transform-origin: 0;
+    // overflow: hidden;
+    z-index: 0;
   }
+
+  & * {
+    z-index: 100;
+  }
+}
+
+.footer__img {
+  position: absolute;
+  left: 22vw;
+  top: -34rem;
+}
+
+.footer__text {
+  position: relative;
+  margin-top: 20rem;
+  // &:after {
+  //   //TODO FIX THIS OR DELETE
+  //   position: absolute;
+  //   content: "";
+  //   margin-top: 5rem;
+  //   left: 0;
+  //   right: 0;
+  //   height: 20rem;
+  //   background-color: var(--text);
+  //   z-index: -10;
+  // }
 }
 
 // .button {
