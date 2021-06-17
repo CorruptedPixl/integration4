@@ -3,7 +3,6 @@ import { useEffect } from "react";
 
 function Ctrl({ Component, pageProps }) {
   useEffect(() => {
-    // Add eventlistener for '/ or :' key to show/hide console
     const handleScroll = (e) => {
       if (e.target.body.classList.contains("on-scrollbar") === false) {
         e.target.body.classList.add("on-scrollbar");
