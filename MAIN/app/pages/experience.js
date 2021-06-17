@@ -54,7 +54,7 @@ const experience = () => {
           path_inc_x: "2",
           path_inc_y: "-2",
         });
-      }, 1000);
+      }, 500);
     } else {
       e.target.classList.add(styles.wrong);
       console.log("nah G");
@@ -62,6 +62,34 @@ const experience = () => {
         e.target.classList.remove(styles.wrong);
       }, 500);
     }
+  };
+
+  const handleFoodAd = (e) => {
+    e.target.classList.add(styles.correct);
+    setTimeout(function () {
+      e.target.classList.remove(styles.correct);
+      handleMovement({
+        first: "#experience__7",
+        second: "#experience__8",
+        direction: "left_down",
+        path_inc_x: "0",
+        path_inc_y: "-4",
+      });
+    }, 500);
+  };
+
+  const handleJewelryAd = (e) => {
+    e.target.classList.add(styles.correct);
+    setTimeout(function () {
+      e.target.classList.remove(styles.correct);
+      handleMovement({
+        first: "#experience__10",
+        second: "#experience__11",
+        direction: "right",
+        path_inc_x: "3",
+        path_inc_y: "-4.8",
+      });
+    }, 500);
   };
 
   const handleMovement = (data) => {
@@ -244,8 +272,6 @@ const experience = () => {
                         path_inc_y: "-1",
                       })
                     }
-                    //() => handleAdImage())
-
                     className={buttons.button}
                   >
                     Generate his profile
@@ -298,20 +324,6 @@ const experience = () => {
                       </li>
                     </ul>
                   </div>
-                  {/*<button
-                    onClick={() =>
-                      handleMovement({
-                        first: "#experience__5",
-                        second: "#experience__6",
-                        direction: "left_down",
-                        path_inc_x: "2",
-                        path_inc_y: "-2",
-                      })
-                    }
-                    className={buttons.button}
-                  >
-                    Advertise ...
-                  </button>*/}
                 </section>
               </section>
             </section>
@@ -377,20 +389,26 @@ const experience = () => {
                     In the meantime let’s choose something for him to eat. We know he likes pizza based on his profile,
                     but what do you think he should be offered tonight?
                   </p>
-                  <button
-                    onClick={() =>
-                      handleMovement({
-                        first: "#experience__7",
-                        second: "#experience__8",
-                        direction: "left_down",
-                        path_inc_x: "0",
-                        path_inc_y: "-4",
-                      })
-                    }
-                    className={buttons.button}
-                  >
-                    Advertise Pizza.be
-                  </button>
+                  <div className={styles.content__text_selection}>
+                    <p className={styles.text__selection_adv}>Advertise</p>
+                    <ul className={styles.text__selection_list}>
+                      <li className={styles.selection__list_item} onClick={(e) => handleFoodAd(e)}>
+                        McDonalds
+                      </li>
+                      <li className={styles.selection__list_item} onClick={(e) => handleFoodAd(e)}>
+                        UberEats
+                      </li>
+                      <li className={styles.selection__list_item} onClick={(e) => handleFoodAd(e)}>
+                        Pizza.be
+                      </li>
+                      <li className={styles.selection__list_item} onClick={(e) => handleFoodAd(e)}>
+                        Pitta
+                      </li>
+                      <li className={styles.selection__list_item} onClick={(e) => handleFoodAd(e)}>
+                        Aldi
+                      </li>
+                    </ul>
+                  </div>
                 </section>
                 <Image
                   src="/images/experience/mailbox/mailbox.gif"
@@ -493,20 +511,26 @@ const experience = () => {
                     We’ll sell his data to all of them anyways, but it’s up to you to decide who gets it first.
                   </p>
                 </section>
-                <button
-                  onClick={() =>
-                    handleMovement({
-                      first: "#experience__10",
-                      second: "#experience__11",
-                      direction: "right",
-                      path_inc_x: "3",
-                      path_inc_y: "-4.8",
-                    })
-                  }
-                  className={buttons.button}
-                >
-                  Advertise Cartier
-                </button>
+                <div className={styles.content__text_selection}>
+                  <p className={styles.text__selection_adv}>Advertise</p>
+                  <ul className={styles.text__selection_list}>
+                    <li className={styles.selection__list_item} onClick={(e) => handleJewelryAd(e)}>
+                      Gucci
+                    </li>
+                    <li className={styles.selection__list_item} onClick={(e) => handleJewelryAd(e)}>
+                      Swarovski
+                    </li>
+                    <li className={styles.selection__list_item} onClick={(e) => handleJewelryAd(e)}>
+                      Cartier
+                    </li>
+                    <li className={styles.selection__list_item} onClick={(e) => handleJewelryAd(e)}>
+                      Bvlgari
+                    </li>
+                    <li className={styles.selection__list_item} onClick={(e) => handleJewelryAd(e)}>
+                      Hermès
+                    </li>
+                  </ul>
+                </div>
               </section>
             </section>
             <section className={`${styles.experience__step} ${styles.experience__11}`} id="experience__11">
