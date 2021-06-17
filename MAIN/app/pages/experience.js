@@ -184,9 +184,9 @@ const experience = () => {
                     get online that tracks every move you make. Consider it a story that never gets deleted and stays on
                     your profile forever.
                   </p>
-                  <p>
+                  <h3 className={styles.inner__title}>
                     But is it <span className={styles.highlight}>bad?</span> What can they even acces?
-                  </p>
+                  </h3>
                   <p>
                     With every small piece of information we get to know alot of things. Sometimes they ask permission
                     for something that <b className={styles.bold}>you didn’t even know</b> could be taken.
@@ -216,7 +216,7 @@ const experience = () => {
             <section className={`${styles.experience__step} ${styles.experience__3}`} id="experience__3">
               <h2 className={styles.title}>
                 Since he <span className={styles.highlight}>gave acces</span> we can track... pretty much
-                <span className={styles.highlight}>#anything</span>.
+                <span className={styles.highlight}> #anything</span>.
               </h2>
               <section className={styles.experience__step_content}>
                 <Image
@@ -231,9 +231,9 @@ const experience = () => {
                     <b className={styles.bold}>private interests</b>, let them create a profile and they can track you{" "}
                     <b className={styles.bold}>even further</b>.
                   </p>
-                  <p>
-                    It's like <span className={styles.highlight}>adding</span> them to your best friends.
-                  </p>
+                  <h3 className={styles.inner__title}>
+                    It's like <span className={styles.highlight}>adding</span> hem to your best friends.
+                  </h3>
                   <button className={`${styles.button} ${styles.light}`}>What does this do?</button>
                   <button
                     onClick={() =>
@@ -414,9 +414,9 @@ const experience = () => {
               </h2>
               <section className={styles.experience__step_content}>
                 <section className={styles.step__content_text}>
-                  <p>
-                    Not only your <span>online relationship status</span> reveals this.
-                  </p>
+                  <h3 className={styles.inner__title}>
+                    Not only your <span className={styles.highlight}>online relationship status</span> reveals this.
+                  </h3>
                   <p>
                     They can track everyone who is using the same internet connection and even suggest ads to others!
                     It’s all linked together like a big group chat.

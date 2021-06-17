@@ -53,8 +53,10 @@ const ThreejsObjects = ({ className }) => {
     const box = new THREE.Mesh(new THREE.BoxBufferGeometry(0.5, 0.5, 0.5), material);
     const cone = new THREE.Mesh(new THREE.ConeGeometry(0.38, 0.5, 3), material);
 
-    sphere.position.x = -0.75;
-    cone.position.x = 0.75;
+    sphere.position.x = -0.85;
+    cone.position.x = 0.85;
+    sphere.position.y = -0.15;
+    cone.position.y = 0.25;
 
     group.add(sphere, box, cone);
 
@@ -94,8 +96,11 @@ const ThreejsObjects = ({ className }) => {
       cone.rotation.z = 0.3 * elapsedTime;
 
       const yOff = Math.sin(elapsedTime * 4);
+      const yOff2 = Math.sin(elapsedTime * 2);
       // move the sphere up and down
-      group.position.y = ThreeMath.lerp(0, 0.05, yOff);
+      cone.position.y = ThreeMath.lerp(0.03, 0.05, yOff);
+      box.position.y = ThreeMath.lerp(0.01, 0.05, yOff2);
+      sphere.position.y = ThreeMath.lerp(-0.01, 0.05, yOff);
 
       //rerender
       renderer.render(scene, camera);
