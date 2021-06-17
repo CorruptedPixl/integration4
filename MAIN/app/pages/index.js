@@ -21,7 +21,7 @@ export default function Home() {
   const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
 
   const [socket, setSocket] = useState();
-  const [toggleLangState, setToggleLangState] = useState(false);
+  const [toggleLangState, setToggleLangState] = useState(true);
 
   return (
     <>
