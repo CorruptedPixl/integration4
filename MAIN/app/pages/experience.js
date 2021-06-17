@@ -113,6 +113,14 @@ const experience = () => {
   };
   return (
     <>
+      <Head>
+        <title>ctrl. | Experience</title>
+        <meta
+          name="description"
+          content="ctrl. exposes what sites can track of you and how they do it. Experience the internet from the other side of the screen, become the algorithm and track Sam during their time online."
+        />
+        <link rel="icon" href="/ctrl.logo.svg" />
+      </Head>
       <main className={styles.main__container}>
         {!experience ? (
           <section className={styles.main__container_intro}>
