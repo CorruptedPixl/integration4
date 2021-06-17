@@ -355,7 +355,7 @@ const experience = () => {
                   </button>
                 </section>
                 <Image
-                  src="/images/experience/advertisement/car.png"
+                  src={`/images/experience/advertisement/${adImage}`}
                   alt="Guy holding up an advertisement"
                   width={560}
                   height={670}
