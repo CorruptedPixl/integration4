@@ -372,7 +372,7 @@
   justify-content: center;
   align-items: center;
   // padding: 25rem 0;
-  height: 50rem;
+  height: 60rem;
   // margin-top: 21rem;
 
   // background: linear-gradient(to bottom left, var(--accent), var(--text) 50%);
@@ -419,7 +419,7 @@
 
 .footer__text {
   position: relative;
-  margin-top: 20rem;
+  margin-top: 28rem;
   // &:after {
   //   //TODO FIX THIS OR DELETE
   //   position: absolute;
@@ -431,6 +431,20 @@
   //   background-color: var(--text);
   //   z-index: -10;
   // }
+}
+
+.footer__logo {
+  margin-top: 15rem;
+  // margin-left: -50rem;
+  margin-left: -30rem;
+  margin-right: 10rem;
+}
+
+.footer__logo_sub {
+  font-weight: 200;
+  font-size: 2rem;
+  color: var(--text-dark);
+  text-align: center;
 }
 
 // .button {

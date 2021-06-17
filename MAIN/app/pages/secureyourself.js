@@ -1,5 +1,6 @@
 import styles from "../styles/Secureyourself.module.scss";
 import Image from "next/image";
+import Head from "next/head";
 import { Parallax } from "react-parallax"; // Scroll parallax
 import { useSpring } from "react-spring"; // Mouse parallax
 import { useState } from "react";
@@ -18,7 +19,45 @@ export default function secureyourself() {
 
   return (
     <>
+      <Head>
+        <title>ctrl. | Secure Yourself</title>
+        <meta
+          name="description"
+          content="ctrl. exposes what sites can track of you and how they do it. Experience the internet from the other side of the screen, become the algorithm and track Sam during their time online."
+        />
+        <link rel="icon" href="/ctrl.logo.svg" />
+      </Head>
       <main className={styles.main__container}>
+        <section className={styles.main__container_mydata}>
+          <h2 className={`${styles.container__mydata_title} ${styles.title}`}>
+            Let's find out what we know about you!
+          </h2>
+          {scannerVisible ? (
+            <Scanner setVisitorData={setVisitorData} />
+          ) : (
+            <>
+              <section className={styles.container__mydata_contents}>
+                <section className={styles.container__mydata_text}>
+                  <p className={styles.mydata__text_paragraph}>
+                    It’s common sense that we like our privacy isn’t it? Sometimes it feels like google knows what we
+                    really want. isn’t that a bit scary?
+                  </p>
+                  <p className={styles.mydata__text_paragraph}>
+                    If you want to know the things we’ve tracked about you, you can track all your data right now. You
+                    can also see what’s happening right now by pressing F1 and find some dark secrets.
+                  </p>
+                  <button className={`${styles.button} ${styles.mydata__text_button}`} onClick={handleClickScan}>
+                    Scan my data now
+                  </button>
+                </section>
+                <div className={styles.container__mydata_img}>
+                  <Image src="/trackme.png" width={700} height={730}></Image>
+                </div>
+              </section>
+            </>
+          )}
+        </section>
+
         <section className={styles.cookie__container}>
           <section className={styles.main__container_intro}>
             <h2 className={`${styles.container__intro_title} ${styles.title}`}>
@@ -74,35 +113,6 @@ export default function secureyourself() {
               </p>
             </li>
           </ul>
-        </section>
-        <section className={styles.main__container_mydata}>
-          <h2 className={`${styles.container__mydata_title} ${styles.title}`}>
-            Let's find out what we know about you!
-          </h2>
-          {scannerVisible ? (
-            <Scanner setVisitorData={setVisitorData} />
-          ) : (
-            <>
-              <section className={styles.container__mydata_contents}>
-                <section className={styles.container__mydata_text}>
-                  <p className={styles.mydata__text_paragraph}>
-                    It’s common sense that we like our privacy isn’t it? Sometimes it feels like google knows what we
-                    really want. isn’t that a bit scary?
-                  </p>
-                  <p className={styles.mydata__text_paragraph}>
-                    If you want to know the things we’ve tracked about you, you can track all your data right now. You
-                    can also see what’s happening right now by pressing F1 and find some dark secrets.
-                  </p>
-                  <button className={`${styles.button} ${styles.mydata__text_button}`} onClick={handleClickScan}>
-                    Scan my data now
-                  </button>
-                </section>
-                <div className={styles.container__mydata_img}>
-                  <Image src="/trackme.png" width={700} height={730}></Image>
-                </div>
-              </section>
-            </>
-          )}
         </section>
       </main>
       <footer className={styles.footer}>
