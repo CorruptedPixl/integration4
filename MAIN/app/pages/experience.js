@@ -216,7 +216,7 @@ const experience = () => {
             <section className={`${styles.experience__step} ${styles.experience__3}`} id="experience__3">
               <h2 className={styles.title}>
                 Since he <span className={styles.highlight}>gave acces</span> we can track... pretty much
-                <span className={styles.highlight}>#anything</span>.
+                <span className={styles.highlight}> #anything</span>.
               </h2>
               <section className={styles.experience__step_content}>
                 <Image
