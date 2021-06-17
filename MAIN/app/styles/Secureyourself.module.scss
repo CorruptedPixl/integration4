@@ -36,6 +36,7 @@
 }
 
 .main__container_tips {
+  position: relative;
   margin: 30vh auto;
   text-align: center;
   display: flex;
@@ -46,7 +47,7 @@
 
 .container__tips_bg {
   position: absolute;
-  top: 26vh;
+  top: -77rem;
   z-index: -1;
 }
 
@@ -72,8 +73,9 @@
 }
 
 .list__tip_title {
+  font-weight: 600;
   font-size: 3rem;
-  font-weight: 500;
+  // font-weight: 500;
   margin-bottom: 2vh;
 }
 
@@ -87,20 +89,17 @@
   margin: auto;
 }
 
-.cookie__container{
+.cookie__container {
   display: flex;
   align-items: center;
-  
 }
 
-.threejs__cookie__object__pos{
+.threejs__cookie__object__pos {
   position: absolute;
-  left: 50vh;
-  width: 600px;
-  height: 600px;
-  
+  right: 5vw;
+  width: 80rem;
+  height: 80rem;
 }
-
 
 .main__container_mydata {
   padding: 0 10vw 20vh;
