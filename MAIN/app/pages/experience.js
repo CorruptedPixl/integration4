@@ -38,20 +38,29 @@ const experience = () => {
     setExperience(true);
   };
 
-  const handleAdImage = (selected) => {
+  const handleAdImage = (selected, e) => {
     console.log(selected);
     console.log(adImage);
+    console.log(e.target);
 
     if (selected === adImage) {
-      handleMovement({
-        first: "#experience__5",
-        second: "#experience__6",
-        direction: "left_down",
-        path_inc_x: "2",
-        path_inc_y: "-2",
-      });
+      e.target.classList.add(styles.correct);
+      setTimeout(function () {
+        e.target.classList.remove(styles.correct);
+        handleMovement({
+          first: "#experience__5",
+          second: "#experience__6",
+          direction: "left_down",
+          path_inc_x: "2",
+          path_inc_y: "-2",
+        });
+      }, 1000);
     } else {
+      e.target.classList.add(styles.wrong);
       console.log("nah G");
+      setTimeout(function () {
+        e.target.classList.remove(styles.wrong);
+      }, 500);
     }
   };
 
@@ -272,19 +281,19 @@ const experience = () => {
                   <div className={styles.content__text_selection}>
                     <p className={styles.text__selection_adv}>Advertise</p>
                     <ul className={styles.text__selection_list}>
-                      <li className={styles.selection__list_item} onClick={() => handleAdImage("clothing.png")}>
+                      <li className={styles.selection__list_item} onClick={(e) => handleAdImage("clothing.png", e)}>
                         clothing
                       </li>
-                      <li className={styles.selection__list_item} onClick={() => handleAdImage("cars.png")}>
+                      <li className={styles.selection__list_item} onClick={(e) => handleAdImage("cars.png", e)}>
                         cars
                       </li>
-                      <li className={styles.selection__list_item} onClick={() => handleAdImage("cats.png")}>
+                      <li className={styles.selection__list_item} onClick={(e) => handleAdImage("cats.png", e)}>
                         cats
                       </li>
-                      <li className={styles.selection__list_item} onClick={() => handleAdImage("food.png")}>
+                      <li className={styles.selection__list_item} onClick={(e) => handleAdImage("food.png", e)}>
                         food
                       </li>
-                      <li className={styles.selection__list_item} onClick={() => handleAdImage("dating.png")}>
+                      <li className={styles.selection__list_item} onClick={(e) => handleAdImage("dating.png", e)}>
                         dating
                       </li>
                     </ul>
