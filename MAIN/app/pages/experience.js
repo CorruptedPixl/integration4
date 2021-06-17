@@ -414,9 +414,9 @@ const experience = () => {
               </h2>
               <section className={styles.experience__step_content}>
                 <section className={styles.step__content_text}>
-                  <p>
-                    Not only your <span>online relationship status</span> reveals this.
-                  </p>
+                  <h3 className={styles.inner__title}>
+                    Not only your <span className={styles.highlight}>online relationship status</span> reveals this.
+                  </h3>
                   <p>
                     They can track everyone who is using the same internet connection and even suggest ads to others!
                     It’s all linked together like a big group chat.
