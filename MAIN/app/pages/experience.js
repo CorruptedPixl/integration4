@@ -149,7 +149,7 @@ const experience = () => {
                   </p>
                   <p>
                     Maybe you don’t know who Sam is but by the end of this you will know more about them than you could
-                    ever image. Let’s get to know them!
+                    ever image. <b className={styles.bold}>Let’s get to know them!</b>
                   </p>
                   <button
                     onClick={() =>
@@ -180,17 +180,16 @@ const experience = () => {
               <section className={styles.experience__step_content}>
                 <section className={styles.step__content_text}>
                   <p>
-                    Cookies alone don’t track you, actually, most of them are used for legitemate purposes such as
-                    keeping you logged in, making sure you have access to certain files, and to remember what items you
-                    had in your cart so they don’t dissapear on each refresh.
+                    Now you are wondering, what are Fingerprints? <br /> Well, it’s basically an unique identifier you
+                    get online that tracks every move you make. Consider it a story that never gets deleted and stays on
+                    your profile forever.
                   </p>
                   <p>
-                    “Then why are cookies bad??” I can hear you asking... Well advertisers use cookies to store a unique
-                    identifier, also called a fingerprint in that cookie. They get sent along with each request, so they
-                    know who you are before you even see the first words appear on the page.
+                    But is it <span className={styles.highlight}>bad?</span> What can they even acces?
                   </p>
                   <p>
-                    Tom’s browser fingerprint is <span className={styles.highlight}>(fpjs fingerprint of user)</span>
+                    With every small piece of information we get to know alot of things. Sometimes they ask permission
+                    for something that <b className={styles.bold}>you didn’t even know</b> could be taken.
                   </p>
                   <button
                     onClick={() =>
@@ -203,7 +202,7 @@ const experience = () => {
                     }
                     className={buttons.button}
                   >
-                    Look at what he's doing
+                    But what can we track?
                   </button>
                 </section>
                 <Image
@@ -216,7 +215,8 @@ const experience = () => {
             </section>
             <section className={`${styles.experience__step} ${styles.experience__3}`} id="experience__3">
               <h2 className={styles.title}>
-                Since he <span>gave acces</span> we can track... pretty much everything.
+                Since he <span className={styles.highlight}>gave acces</span> we can track... pretty much
+                <span className={styles.highlight}>#anything</span>.
               </h2>
               <section className={styles.experience__step_content}>
                 <Image
@@ -227,12 +227,12 @@ const experience = () => {
                 ></Image>
                 <section className={`${styles.step__content_text} ${styles.right}`}>
                   <p>
-                    Tom accepted all cookies, that means first part cookies (usually necessary to make the website work)
-                    but also third party one’s that — you guessed it — gather info to track Tom.
+                    Once you accept cookies you basically give that site a key to your{" "}
+                    <b className={styles.bold}>private interests</b>, let them create a profile and they can track you{" "}
+                    <b className={styles.bold}>even further</b>.
                   </p>
                   <p>
-                    Well maybe we should take a peek at what he’s doing, it might come in handy when we want to send him
-                    some advertisements...
+                    It's like <span className={styles.highlight}>adding</span> them to your best friends.
                   </p>
                   <button className={`${styles.button} ${styles.light}`}>What does this do?</button>
                   <button
@@ -253,15 +253,17 @@ const experience = () => {
             </section>
             <section className={`${styles.experience__step} ${styles.experience__4}`} id="experience__4">
               <h2 className={styles.title}>
-                Well yeah that's right <span className={styles.highlight}>every move</span> you make gets stored in a
+                Do you realize that <span className={styles.highlight}>every move</span> you make gets stored in a
                 profile.
               </h2>
               <section className={styles.experience__step_content}>
                 <section className={styles.step__content_text}>
                   <p>
-                    The internet doesn’t just look at what you’re doing. It stores all your preferences, interests, ...
-                    in your personal profile. That way it’s ready for the next time we need to throw you some ads.
+                    Everything you do online is being tracked and stored in your unique profile. Companies use these
+                    profiles to target ads, we can compare it a bit to a social media account that you have no ctrl.
+                    over.
                   </p>
+                  <p>Shall we take a look at what we can gather?</p>
                   <button
                     onClick={() =>
                       handleMovement({
@@ -274,7 +276,7 @@ const experience = () => {
                     }
                     className={buttons.button}
                   >
-                    Generate his profile
+                    Generate Sam's profile
                   </button>
                 </section>
                 <Image
@@ -289,7 +291,7 @@ const experience = () => {
               <h2 className={styles.title}>
                 Done!
                 <br />
-                Well I guess you can <span>see what he's doing.</span>
+                Well I guess you can <span>see what Sam's doing.</span>
               </h2>
               <section className={styles.experience__step_content}>
                 <Image
@@ -299,10 +301,9 @@ const experience = () => {
                   height={560}
                 ></Image>
                 <section className={styles.step__content_text}>
-                  <p>Now that we got his data and created a profile, let’s serve him some ads!</p>
                   <p>
-                    You can choose what advertisements we should send him. Keep in mind what he’s looking at to give him
-                    the best ads.
+                    Let’s see how good you are at targeting ads. Let’s send Sam ads based on things they search online.
+                    Have a look at the screen and send the right ad, but make sure to do it at the right time!
                   </p>
                   <div className={styles.content__text_selection}>
                     <p className={styles.text__selection_adv}>Advertise</p>
@@ -335,21 +336,12 @@ const experience = () => {
               <section className={styles.experience__step_content}>
                 <section className={styles.step__content_text}>
                   <p>
-                    Isn’t that awesome? he’s browsing the cat products we wanted him to look at. We should store his
-                    interest in cat products to his personal profile.
+                    On sites where you watch video’s you probally just skip the ads, that’s why they have to delve
+                    deeper. Let me tell you everything about it!
                   </p>
                   <p>
                     This is how we do it with everyone, we watch from a distance, collect everything we can find about
-                    them, build their profile and recommend advertisements based one that.
-                  </p>
-                  <p>
-                    You ever watch like one video about some obscure topic on Youtube, only to find like 20 of the same
-                    recoomendations on the homepage a few hours later?
-                  </p>
-                  <p>
-                    Yep... that's us!
-                    <br />
-                    That's the algorithm baby!
+                    them, build their profile and recommend advertisements based on that.
                   </p>
                   <button
                     onClick={() =>
@@ -376,19 +368,16 @@ const experience = () => {
             </section>
             <section className={`${styles.experience__step} ${styles.experience__7}`} id="experience__7">
               <h2 className={styles.title}>
-                We see Sam <span className={styles.highlight}>lives near Bruges</span> based on his{" "}
-                <span className={styles.highlight}>IP</span> and it's almost dinner time.
+                We can see that Sam <span className={styles.highlight}>lives near Bruges</span> based on their
+                <span className={styles.highlight}>IP.</span>
               </h2>
               <section className={styles.experience__step_content}>
                 <section className={styles.step__content_text}>
                   <p>
-                    I know he lives near bruges because of his IP address, it’s pretty easy. I also know that you live
-                    in (CITY). That might come in handy in the future but hey... don’t worry about it.
+                    Advertisers can always figure out in wich area you live. Once you accept all cookies they can even
+                    track your exact location.
                   </p>
-                  <p>
-                    In the meantime let’s choose something for him to eat. We know he likes pizza based on his profile,
-                    but what do you think he should be offered tonight?
-                  </p>
+                  <p>After all this cookie-talk Sam might be hungry, would you mind sending some food ads?</p>
                   <div className={styles.content__text_selection}>
                     <p className={styles.text__selection_adv}>Advertise</p>
                     <ul className={styles.text__selection_list}>
@@ -420,17 +409,18 @@ const experience = () => {
             </section>
             <section className={`${styles.experience__step} ${styles.experience__8}`} id="experience__8">
               <h2 className={styles.title}>
-                We know Sam has a partner due to his <span className={styles.highlight}>shared IP</span> and
+                We know Sam has a partner due to their <span className={styles.highlight}>shared IP</span> and
                 <span className={styles.highlight}>GPS location.</span>
               </h2>
               <section className={styles.experience__step_content}>
                 <section className={styles.step__content_text}>
                   <p>
-                    According to his GPS data (and ‘anonymous’ data from others) Tom’s usually near one single person
-                    when he’s at home. Combining this with their facebook relation status, we can figure out they are in
-                    a relationship.
+                    Not only your <span>online relationship status</span> reveals this.
                   </p>
-                  <p>Maybe we can help them to take the next step, and make some money doing it?</p>
+                  <p>
+                    They can track everyone who is using the same internet connection and even suggest ads to others!
+                    It’s all linked together like a big group chat.
+                  </p>
                   <button
                     onClick={() =>
                       handleMovement({
@@ -459,11 +449,11 @@ const experience = () => {
               <section className={styles.experience__step_content}>
                 <section className={styles.step__content_text}>
                   <h2 className={styles.title}>
-                    His partner has been looking at <span className={styles.highlight}>wedding rings</span>
+                    Their partner has been looking at <span className={styles.highlight}>wedding rings</span>
                   </h2>
                   <p>
                     Ain’t this a handy piece of information? With some cheeky little advertisements at the right time we
-                    could probably get Tom to buy a wedding ring.
+                    could probably get Sam to buy a wedding ring.
                   </p>
                   <p>
                     Wouldn’t that be beautiful?
@@ -495,20 +485,14 @@ const experience = () => {
             </section>
             <section className={`${styles.experience__step} ${styles.experience__10}`} id="experience__10">
               <h2 className={styles.title}>
-                Jewelry stores will be very grateful for these{" "}
+                Jewelry stores will be very grateful for these
                 <span className={styles.highlight}>potential customers</span>
               </h2>
               <section className={styles.experience__step_content}>
                 <section className={styles.step__content_text}>
                   <p>
-                    Advertisers can combine data from multiple devices and different people to suggest ads to you, based
-                    on their behaviour. Have you ever searched for something online, only to see an ad about that
-                    specific product on your sibling’s screen? That’s all the algorithm.
-                  </p>
-                  <p>Let’s get back to what matters though, money... I mean Tom.</p>
-                  <p>
-                    Which store should we recommend to Tom? We don’t really care, just make sure we make some money.
-                    We’ll sell his data to all of them anyways, but it’s up to you to decide who gets it first.
+                    Since we have all this power we can even choose from where they will possibly buy the ring, this
+                    time there is no right or wrong. Choose which one you think is going to be the best fit.
                   </p>
                 </section>
                 <div className={styles.content__text_selection}>
@@ -540,9 +524,9 @@ const experience = () => {
               <section className={styles.experience__step_content}>
                 <section className={styles.step__content_text}>
                   <p>
-                    You can prevent the internet collecting, selling, using your data. Protect yourself against the
-                    manipulation of the corporate world. If you want to see all data that is available to the internet
-                    at this exact moment, take a look below.
+                    You can prevent the internet collecting, selling, using your data. <b>Protect yourself</b> against
+                    the manipulation of the corporate world. If you want to see all data that is available to the
+                    internet at this exact moment, take a look below.
                   </p>
                   <button className={buttons.button}>Show me what you can track</button>
                   <button className={`${buttons.button} ${buttons.light}`}>give me tips!</button>
