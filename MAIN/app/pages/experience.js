@@ -14,6 +14,16 @@ const experience = () => {
   const adImageArray = new Array("cars.png", "cats.png", "clothing.png", "food.png", "singles.png");
   const [adImage, setAdImage] = useState();
 
+  const [bgMusic, setBgMusic] = useState(false);
+
+  const handleBgMusic = () => {
+    if ((bgMusic === true)) {
+      setBgMusic(false);
+    } else {
+      setBgMusic(true);
+    }
+  };
+
   // Set adImage every 10 seconds
 
   /*const handleAdImage = () => {
@@ -114,6 +124,17 @@ const experience = () => {
   return (
     <>
       <main className={styles.main__container}>
+        {bgMusic ? (
+          <embed
+            className={styles.music}
+            src="/music/int4-bg.mp3"
+            width="0"
+            height="0"
+            loop={true}
+            autostart="true"
+            hidden={true}
+          />
+        ) : null}
         {!experience ? (
           <section className={styles.main__container_intro}>
             <h2 className={styles.title}>Welcome ... are you ready to become Big Brother?</h2>
@@ -130,13 +151,26 @@ const experience = () => {
             <small className={styles.container__intro_disclaimer}>
               By continuing you accept the necessary cookies to make this experience work
             </small>
-            <Image src="/experience/sound_on.svg" width="56px" height="51px"></Image>
+            <div onClick={() => handleBgMusic()}>
+              {bgMusic ? (
+                <Image src="/experience/sound_on.svg" width="56px" height="51px"></Image>
+              ) : (
+                <Image src="/experience/sound_on.svg" width="56px" height="51px"></Image>
+              )}
+            </div>
             <p className={styles.container__intro_info}>
               For the ultimate experience please use sound and disable your add-blocker
             </p>
           </section>
         ) : (
           <>
+            <div className={styles.music__experiene} onClick={() => handleBgMusic()}>
+              {bgMusic ? (
+                <Image src="/experience/sound_on.svg" width="56px" height="51px"></Image>
+              ) : (
+                <Image src="/experience/sound_on.svg" width="56px" height="51px"></Image>
+              )}
+            </div>
             <section className={`${styles.experience__step} ${styles.experience__1}`} id="experience__1">
               <h2 className={styles.title}>
                 You are right on time, Noa. Sam just accepted <span className={styles.highlight}>cookies</span> again.
@@ -160,7 +194,7 @@ const experience = () => {
                         path_inc_x: "1",
                       })
                     }
-                    className={buttons.button}
+                    className={`${buttons.button} ${buttons.bottom}`}
                   >
                     Start tracking Sam
                   </button>
@@ -200,7 +234,7 @@ const experience = () => {
                         path_inc_x: "2",
                       })
                     }
-                    className={buttons.button}
+                    className={`${buttons.button} ${buttons.bottom}`}
                   >
                     But what can we track?
                   </button>
@@ -222,10 +256,10 @@ const experience = () => {
                 <Image
                   src="/images/experience/locked/lock.gif"
                   alt="padlock with data behind it"
-                  width={740}
-                  height={500}
+                  width={760}
+                  height={520}
                 ></Image>
-                <section className={`${styles.step__content_text} ${styles.right}`}>
+                <section className={`${styles.step__content_text} ${styles.acces}`}>
                   <p>
                     Once you accept cookies you basically give that site a key to your{" "}
                     <b className={styles.bold}>private interests</b>, let them create a profile and they can track you{" "}
@@ -234,7 +268,7 @@ const experience = () => {
                   <h3 className={styles.inner__title}>
                     It's like <span className={styles.highlight}>adding</span> hem to your best friends.
                   </h3>
-                  <button className={`${styles.button} ${styles.light}`}>What does this do?</button>
+                  <button className={`${buttons.button} ${buttons.light}`}>What does this do?</button>
                   <button
                     onClick={() =>
                       handleMovement({
@@ -244,7 +278,7 @@ const experience = () => {
                         path_inc_x: "3",
                       })
                     }
-                    className={buttons.button}
+                    className={`${buttons.button} ${buttons.bottom}`}
                   >
                     Let's unlock some data
                   </button>
@@ -274,24 +308,26 @@ const experience = () => {
                         path_inc_y: "-1",
                       })
                     }
-                    className={buttons.button}
+                    className={`${buttons.button} ${buttons.bottom}`}
                   >
                     Generate Sam's profile
                   </button>
                 </section>
-                <Image
-                  src="/images/experience/bunny/bunny.gif"
-                  alt="bunny taking photograph of a model"
-                  width={900}
-                  height={600}
-                ></Image>
+                <div className={styles.bunnyPicture}>
+                  <Image
+                    src="/images/experience/bunny/bunny.gif"
+                    alt="bunny taking photograph of a model"
+                    width={1000}
+                    height={800}
+                  ></Image>
+                </div>
               </section>
             </section>
             <section className={`${styles.experience__step} ${styles.experience__5}`} id="experience__5">
               <h2 className={styles.title}>
                 Done!
                 <br />
-                Well I guess you can <span>see what Sam's doing.</span>
+                Well I guess you can <span className={styles.highlight}>see what Sam's doing.</span>
               </h2>
               <section className={styles.experience__step_content}>
                 <Image
@@ -353,7 +389,7 @@ const experience = () => {
                         path_inc_y: "-3",
                       })
                     }
-                    className={buttons.button}
+                    className={`${buttons.button} ${buttons.bottom}`}
                   >
                     Skip add
                   </button>
@@ -361,7 +397,7 @@ const experience = () => {
                 <Image
                   src={`/images/experience/advertisement/${adImage}`}
                   alt="Guy holding up an advertisement"
-                  width={560}
+                  width={600}
                   height={670}
                 ></Image>
               </section>
@@ -435,7 +471,7 @@ const experience = () => {
                   >
                     Let's help them!
                   </button>
-                  <button className={`${styles.button} ${styles.light}`}>Naaaaaah...</button>
+                  <button className={`${buttons.button} ${buttons.light} ${buttons.bottom}`}>Naaaaaah...</button>
                 </section>
                 <Image
                   src="/images/experience/couple2/couple2.png"
@@ -470,7 +506,7 @@ const experience = () => {
                         path_inc_y: "-4.8",
                       })
                     }
-                    className={buttons.button}
+                    className={`${buttons.button} ${buttons.bottom}`}
                   >
                     Let's make some bank
                   </button>
@@ -529,7 +565,7 @@ const experience = () => {
                     internet at this exact moment, take a look below.
                   </p>
                   <button className={buttons.button}>Show me what you can track</button>
-                  <button className={`${buttons.button} ${buttons.light}`}>give me tips!</button>
+                  <button className={`${buttons.button} ${buttons.light} ${buttons.bottom}`}>give me tips!</button>
                 </section>
                 <div>
                   <Image
@@ -541,14 +577,20 @@ const experience = () => {
                 </div>
               </section>
             </section>
-            <div className={styles.experience__path} id="experience_path">
+            <img
+              id="experience_path"
+              className={styles.experience__path}
+              src="/images/experience/experience_path.svg"
+              alt="A path through the whole experience"
+            ></img>
+            {/*<div className={styles.experience__path} id="experience_path">
               <Image
                 src="/images/experience/experience_path.svg"
                 width={10770}
                 height={5512}
                 alt="A path through the whole experience"
               ></Image>
-            </div>
+                  </div>*/}
           </>
         )}
       </main>

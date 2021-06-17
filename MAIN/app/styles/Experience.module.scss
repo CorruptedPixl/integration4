@@ -55,8 +55,10 @@
   width: 50%;
   display: flex;
   flex-direction: column;
-  &.right {
-    align-items: flex-end;
+  font-size: 2.2rem;
+
+  &.acces {
+    width: 60%;
   }
 }
 
@@ -183,11 +185,11 @@
 }
 
 .experience__path {
-  width: 1000vw;
-  height: 1000vh;
+  width: auto;
+  height: auto;
   position: absolute;
   top: 50vh;
-  left: 10vw;
+  left: 50vw;
   z-index: -1;
 }
 
@@ -244,8 +246,23 @@
   }
 }
 
-.inner__title{
-  font-size: 2.5rem;
+.inner__title {
+  font-size: 3rem;
   font-weight: bold;
   margin-bottom: 2rem;
+}
+
+.bunnyPicture {
+  height: 40vh;
+  width: 2000px;
+  margin-right: -850px;
+}
+
+.music {
+  position: absolute;
+}
+
+.music__experience {
+  position: fixed;
+  top: 10vh;
 }
