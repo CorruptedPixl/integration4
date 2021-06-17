@@ -16,7 +16,7 @@ const ThreejsObjects = ({ className }) => {
     const renderer = new THREE.WebGLRenderer({ alpha: true });
     renderer.setClearColor("0xFF5C00", 0);
 
-    renderer.setSize(window.innerWidth / 2, window.innerHeight / 2);
+    renderer.setSize(window.innerWidth, window.innerHeight);
     mountRef.current.appendChild(renderer.domElement);
 
     const group = new THREE.Group();
@@ -49,12 +49,12 @@ const ThreejsObjects = ({ className }) => {
 
     scene.add(group);
 
-    const sphere = new THREE.Mesh(new THREE.SphereBufferGeometry(0.5, 16, 16), material);
-    const box = new THREE.Mesh(new THREE.BoxBufferGeometry(1, 1, 1), material);
-    const cone = new THREE.Mesh(new THREE.ConeGeometry(0.75, 1, 3), material);
+    const sphere = new THREE.Mesh(new THREE.SphereBufferGeometry(0.3, 16, 16), material);
+    const box = new THREE.Mesh(new THREE.BoxBufferGeometry(0.5, 0.5, 0.5), material);
+    const cone = new THREE.Mesh(new THREE.ConeGeometry(0.38, 0.5, 3), material);
 
-    sphere.position.x = -1.5;
-    cone.position.x = 1.5;
+    sphere.position.x = -0.75;
+    cone.position.x = 0.75;
 
     group.add(sphere, box, cone);
 
