@@ -114,12 +114,14 @@ export default function Home() {
                 Become the eyes behind <span className={styles.highlight}>everything</span>
               </h2>
               <p className={styles.become__text_body}>
-                We've created an experience were we take you through the dark algoritm of the internet. We'll show you
-                what happens when you blindly accept cookies and you will decide Tom's fate.
+                We've created an experience were we take you through the dark algoritm of the internet. But wait! That's
+                not everything we've created a chat system were you can see some "secret" data, and maybe even more...
               </p>
-              <a href="/experience" className={buttons.button}>
-                Become big brother
-              </a>
+              <h3 className={styles.become__text_h3}>
+                Go ahead! Press <span className={styles.highlight}>' / '</span> and find out if you are{" "}
+                <span className={styles.highlight}>the only one </span>
+                here!
+              </h3>
             </section>
             <ParallaxMouse
               xFactor={Infinity}
