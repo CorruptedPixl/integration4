@@ -18,7 +18,7 @@ const experience = () => {
   const [bgMusic, setBgMusic] = useState(false);
 
   const handleBgMusic = () => {
-    if ((bgMusic === true)) {
+    if (bgMusic === true) {
       setBgMusic(false);
     } else {
       setBgMusic(true);
@@ -414,7 +414,7 @@ const experience = () => {
             <section className={`${styles.experience__step} ${styles.experience__7}`} id="experience__7">
               <h2 className={styles.title}>
                 We can see that Sam <span className={styles.highlight}>lives near Bruges</span> based on their
-                <span className={styles.highlight}>IP.</span>
+                <span className={styles.highlight}> IP.</span>
               </h2>
               <section className={styles.experience__step_content}>
                 <section className={styles.step__content_text}>
@@ -455,7 +455,7 @@ const experience = () => {
             <section className={`${styles.experience__step} ${styles.experience__8}`} id="experience__8">
               <h2 className={styles.title}>
                 We know Sam has a partner due to their <span className={styles.highlight}>shared IP</span> and
-                <span className={styles.highlight}>GPS location.</span>
+                <span className={styles.highlight}> GPS location.</span>
               </h2>
               <section className={styles.experience__step_content}>
                 <section className={styles.step__content_text}>
@@ -531,7 +531,7 @@ const experience = () => {
             <section className={`${styles.experience__step} ${styles.experience__10}`} id="experience__10">
               <h2 className={styles.title}>
                 Jewelry stores will be very grateful for these
-                <span className={styles.highlight}>potential customers</span>
+                <span className={styles.highlight}> potential customers</span>
               </h2>
               <section className={styles.experience__step_content}>
                 <section className={styles.step__content_text}>
