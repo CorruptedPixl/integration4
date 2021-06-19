@@ -9,6 +9,8 @@ import ThreejsObjects from "../components/ThreejsObjects.js";
 import ParallaxMouse from "../components/ParallaxMouse";
 import Console from "../components/Console";
 import Toggle from "../components/Toggle";
+import translations from "../translations/index.json";
+import parse from "html-react-parser";
 
 export default function Home() {
   // Initialize Spring for mouse parallax
@@ -21,7 +23,7 @@ export default function Home() {
   const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
 
   const [socket, setSocket] = useState();
-  const [toggleLangState, setToggleLangState] = useState(true);
+  const [toggleLangState, setToggleLangState] = useState("en");
 
   return (
     <>
@@ -48,7 +50,10 @@ export default function Home() {
             <section className={styles.main__container_intro}>
               <ParallaxMouse xFactor={0} springProps={springProps}>
                 <h2 className={`${styles.title} ${styles.container__intro_title}`}>
-                  Thought you were safe <br /> surfing <span className={styles.highlight}>the web?</span>
+                  {/* Thought you were safe <br /> surfing <span className={styles.highlight}>the web?</span> */}
+                  {parse(
+                    `${translations.title.safe[toggleLangState]} <br> ${translations.title.surfing[toggleLangState]} <span className=${styles.highlight}>${translations.title.web[toggleLangState]}</span>`
+                  )}
                 </h2>
               </ParallaxMouse>
               <p className={styles.container__intro_text}>
