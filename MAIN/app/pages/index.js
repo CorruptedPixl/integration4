@@ -119,12 +119,14 @@ export default function Home() {
                 Become the eyes behind <span className={styles.highlight}>everything</span>
               </h2>
               <p className={styles.become__text_body}>
-                We've created an experience were we take you through the dark algoritm of the internet. We'll show you
-                what happens when you blindly accept cookies and you will decide Tom's fate.
+                We've created an experience were we take you through the dark algoritm of the internet. But wait! That's
+                not everything we've created a chat system were you can see some "secret" data, and maybe even more...
               </p>
-              <a href="/experience" className={buttons.button}>
-                Become big brother
-              </a>
+              <h3 className={styles.become__text_h3}>
+                Go ahead! Press <span className={styles.highlight}>' / '</span> and find out if you are{" "}
+                <span className={styles.highlight}>the only one </span>
+                here!
+              </h3>
             </section>
             <ParallaxMouse
               xFactor={Infinity}
@@ -149,18 +151,23 @@ export default function Home() {
             <section className={styles.container__whatcanido_text}>
               <h2 className={`${styles.whatcanido__text_title} ${styles.title}`}>What can I do?</h2>
               <p className={styles.whatcanido__text_body}>
+                Let's delve in the aloritm of cookies and advertisement toghetter, I see Sam might just accept cookies,
+                be quick! why are you still reading, let's go!
+              </p>
+              <p className={styles.whatcanido__text_body}>
                 Now you might be wondering what you can do to prevent such activities. Don't worry we've listed
                 everything you can do and we created a tool to scan yourself in which you can see everything companies
                 can track about you when you accept cookies.
               </p>
               <section className={styles.button__container}>
+                <a href="/experience" className={buttons.button}>
+                  Let's look at Sam!
+                </a>
+
                 <a href="/secureyourself" className={`${buttons.button} ${buttons.light}`}>
                   <div>
                     ctrl. your <span className={styles.highlight}>identity</span>
                   </div>
-                </a>
-                <a href="/experience" className={buttons.button}>
-                  Experience how they do it
                 </a>
               </section>
             </section>

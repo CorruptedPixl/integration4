@@ -41,6 +41,10 @@
     }
   }
 
+  &.bottom {
+    margin-top: 2vh;
+  }
+
   &:hover {
     background-color: #ff782d;
     // cursor: pointer;
