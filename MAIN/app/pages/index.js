@@ -10,7 +10,6 @@ import ParallaxMouse from "../components/ParallaxMouse";
 import Console from "../components/Console";
 import Toggle from "../components/Toggle";
 import translations from "../translations/index.json";
-import parse from "html-react-parser";
 
 export default function Home() {
   // Initialize Spring for mouse parallax
@@ -50,22 +49,18 @@ export default function Home() {
             <section className={styles.main__container_intro}>
               <ParallaxMouse xFactor={0} springProps={springProps}>
                 <h2 className={`${styles.title} ${styles.container__intro_title}`}>
-                  {/* Thought you were safe <br /> surfing <span className={styles.highlight}>the web?</span> */}
-                  {parse(
-                    `${translations.title.safe[toggleLangState]} <br> ${translations.title.surfing[toggleLangState]} <span className=${styles.highlight}>${translations.title.web[toggleLangState]}</span>`
-                  )}
+                  {translations.title.safe[toggleLangState]}
+                  <br />
+                  {translations.title.surfing[toggleLangState]}
+                  <span className={styles.highlight}> {translations.title.web[toggleLangState]}</span>
                 </h2>
               </ParallaxMouse>
-              <p className={styles.container__intro_text}>
-                Well you aren't. You're far from safe. Every move you make online is constantly being watched, tracked,
-                saved in a profile and used against you to not only show you targeted ads, but in the long term
-                influence the way you think.
-              </p>
+              <p className={styles.container__intro_text}>{translations.intro[toggleLangState]}</p>
               <ParallaxMouse xFactor={50} springProps={springProps}>
                 <section className={styles.container__intro_buttons}>
                   <a
                     href="/experience"
-                    onClick={() => socket.emit("consoleMessage", "Nice, it works!")}
+                    onClick={() => socket.emit("consoleMessage", "A user visited the experience")}
                     className={buttons.button}
                   >
                     Experience how they track you
