@@ -92,5 +92,21 @@
                 "nl": "Volg Sam!"
             }
         }
+    },
+    "footer": {
+        "support": {
+            "p1": {
+                "en": "Thanks to the support of",
+                "nl": "Met steun van"
+            },
+            "p2": {
+                "en": "the Flemish Government",
+                "nl": "de Vlaamse Overheid"
+            }
+        },
+        "experience": {
+            "en": "an experience brought to life by",
+            "nl": "een ervaring tot leven gebracht door"
+        }
     }
 }

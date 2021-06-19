@@ -175,14 +175,14 @@ export default function Home() {
         <div className={styles.footer__logo}>
           <Image src="/lion_icon.svg" alt={"Logo of the Flemish Government"} width={180} height={250} />
           <p className={styles.footer__logo_sub}>
-            Met steun van
+            {translations.footer.support.p1[toggleLangState]}
             <br />
-            de Vlaamse Overheid
+            {translations.footer.support.p2[toggleLangState]}
           </p>
         </div>
         <div className={styles.footer__text}>
           <h2 className={styles.footer__title}>Integration 4</h2>
-          <p className={styles.footer__body}>an experience brought to life by</p>
+          <p className={styles.footer__body}>{translations.footer.experience[toggleLangState]}</p>
           <ul className={styles.footer__names}>
             <li className={styles.footer__names_name}>Noa Lambert</li>
             <li>
