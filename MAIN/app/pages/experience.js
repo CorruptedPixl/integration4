@@ -150,10 +150,16 @@ const experience = () => {
         {!experience ? (
           <section className={styles.main__container_intro}>
             <h2 className={styles.title}>Welcome ... are you ready to become Big Brother?</h2>
-            <p className={styles.container__intro_text}>
-              Let’s take a dive into the algorithm and get to know Sam from the data that’s being tracked. Your name
-              will be used to personalize this webpage locally and will not be sent to our servers.
-            </p>
+            <div className={styles.container__intro_text}>
+              <p>
+                Let’s take a dive into the algorithm and get to know Sam from the data that’s being tracked. Your name
+                will be used to personalize this webpage locally and will not be sent to our servers.
+              </p>
+              <p>
+                You can track every move being made in the console. Just tap{" "}
+                <span className={styles.highlight}>"/"</span> on your keyboard.
+              </p>
+            </div>
             <button
               onClick={() => handleExperienceStart()}
               className={`${buttons.button} ${styles.container__intro_button}`}
@@ -177,7 +183,7 @@ const experience = () => {
             </div>
             <section className={`${styles.experience__step} ${styles.experience__1}`} id="experience__1">
               <h2 className={styles.title}>
-                You are right on time, Noa. Sam just accepted <span className={styles.highlight}>cookies</span> again.
+                You are right on time. Sam just accepted <span className={styles.highlight}>cookies</span> again.
               </h2>
               <section className={styles.experience__step_content}>
                 <section className={styles.step__content_text}>
@@ -203,12 +209,14 @@ const experience = () => {
                     Start tracking Sam
                   </button>
                 </section>
-                <Image
-                  src="/images/experience/experience_start/cookiestart.webp"
-                  alt="Girls riding on a bike with binary code in the wheels"
-                  width={420}
-                  height={600}
-                ></Image>
+                <div className={styles.step__content_img}>
+                  <Image
+                    src="/images/experience/experience_start/cookiestart.webp"
+                    alt="Girls riding on a bike with binary code in the wheels"
+                    width={420}
+                    height={600}
+                  ></Image>
+                </div>
               </section>
             </section>
             <section className={`${styles.experience__step} ${styles.experience__2}`} id="experience__2">
@@ -243,12 +251,14 @@ const experience = () => {
                     But what can we track?
                   </button>
                 </section>
-                <Image
-                  src="/images/experience/fingerprinting/dame-met-hondje.png"
-                  alt="woman walking a computerdog"
-                  width={500}
-                  height={630}
-                ></Image>
+                <div className={styles.step__content_img}>
+                  <Image
+                    src="/images/experience/fingerprinting/dame-met-hondje.png"
+                    alt="woman walking a computerdog"
+                    width={500}
+                    height={630}
+                  ></Image>
+                </div>
               </section>
             </section>
             <section className={`${styles.experience__step} ${styles.experience__3}`} id="experience__3">
@@ -257,12 +267,15 @@ const experience = () => {
                 <span className={styles.highlight}> #anything</span>.
               </h2>
               <section className={styles.experience__step_content}>
-                <Image
-                  src="/images/experience/locked/lock.gif"
-                  alt="padlock with data behind it"
-                  width={760}
-                  height={520}
-                ></Image>
+                <div className={styles.step__content_img}>
+                  <Image
+                    src="/images/experience/locked/lock.gif"
+                    alt="padlock with data behind it"
+                    width={760}
+                    height={520}
+                  ></Image>
+                </div>
+
                 <section className={`${styles.step__content_text} ${styles.acces}`}>
                   <p>
                     Once you accept cookies you basically give that site a key to your{" "}
@@ -317,7 +330,7 @@ const experience = () => {
                     Generate Sam's profile
                   </button>
                 </section>
-                <div className={styles.bunnyPicture}>
+                <div className={`${styles.bunnyPicture} ${styles.step__content_img}`}>
                   <Image
                     src="/images/experience/bunny/bunny.gif"
                     alt="bunny taking photograph of a model"
@@ -334,12 +347,14 @@ const experience = () => {
                 Well I guess you can <span className={styles.highlight}>see what Sam's doing.</span>
               </h2>
               <section className={styles.experience__step_content}>
-                <Image
-                  src={`/images/experience/guessthead/${adImage}`}
-                  alt="guy sitting on a computer that displays an ad"
-                  width={500}
-                  height={560}
-                ></Image>
+                <div className={styles.step__content_img}>
+                  <Image
+                    src={`/images/experience/guessthead/${adImage}`}
+                    alt="guy sitting on a computer that displays an ad"
+                    width={500}
+                    height={560}
+                  ></Image>
+                </div>
                 <section className={styles.step__content_text}>
                   <p>
                     Let’s see how good you are at targeting ads. Let’s send Sam ads based on things they search online.
@@ -398,12 +413,14 @@ const experience = () => {
                     Skip add
                   </button>
                 </section>
-                <Image
-                  src={`/images/experience/advertisement/${adImage}`}
-                  alt="Guy holding up an advertisement"
-                  width={600}
-                  height={670}
-                ></Image>
+                <div className={styles.step__content_img}>
+                  <Image
+                    src={`/images/experience/advertisement/${adImage}`}
+                    alt="Guy holding up an advertisement"
+                    width={600}
+                    height={670}
+                  ></Image>
+                </div>
               </section>
             </section>
             <section className={`${styles.experience__step} ${styles.experience__7}`} id="experience__7">
@@ -439,12 +456,14 @@ const experience = () => {
                     </ul>
                   </div>
                 </section>
-                <Image
-                  src="/images/experience/mailbox/mailbox.gif"
-                  alt="girls sitting on a mailbox"
-                  width={1100}
-                  height={800}
-                ></Image>
+                <div className={styles.step__content_img}>
+                  <Image
+                    src="/images/experience/mailbox/mailbox.gif"
+                    alt="girls sitting on a mailbox"
+                    width={1100}
+                    height={800}
+                  ></Image>
+                </div>
               </section>
             </section>
             <section className={`${styles.experience__step} ${styles.experience__8}`} id="experience__8">
@@ -477,12 +496,14 @@ const experience = () => {
                   </button>
                   <button className={`${buttons.button} ${buttons.light} ${buttons.bottom}`}>Naaaaaah...</button>
                 </section>
-                <Image
-                  src="/images/experience/couple2/couple2.png"
-                  alt="Couple talking to eachother"
-                  width={600}
-                  height={440}
-                ></Image>
+                <div className={styles.step__content_img}>
+                  <Image
+                    src="/images/experience/couple2/couple2.png"
+                    alt="Couple talking to eachother"
+                    width={600}
+                    height={440}
+                  ></Image>
+                </div>
               </section>
             </section>
             <section className={`${styles.experience__step} ${styles.experience__9}`} id="experience__9">
@@ -515,12 +536,14 @@ const experience = () => {
                     Let's make some bank
                   </button>
                 </section>
-                <Image
-                  src="/images/experience/couple1/couple.png"
-                  alt="Bride and groom walking hand in hand"
-                  width={700}
-                  height={900}
-                ></Image>
+                <div className={styles.step__content_img}>
+                  <Image
+                    src="/images/experience/couple1/couple.png"
+                    alt="Bride and groom walking hand in hand"
+                    width={700}
+                    height={900}
+                  ></Image>
+                </div>
               </section>
             </section>
             <section className={`${styles.experience__step} ${styles.experience__10}`} id="experience__10">
@@ -571,10 +594,10 @@ const experience = () => {
                   <button className={buttons.button}>Show me what you can track</button>
                   <button className={`${buttons.button} ${buttons.light} ${buttons.bottom}`}>give me tips!</button>
                 </section>
-                <div>
+                <div className={styles.step__content_img}>
                   <Image
                     src="/images/experience/final/final.png"
-                    alt="Guy holding up an advertisement"
+                    alt="Guy sitting on a server"
                     width={400}
                     height={500}
                   ></Image>
@@ -584,7 +607,7 @@ const experience = () => {
             <img
               id="experience_path"
               className={styles.experience__path}
-              src="/images/experience/experience_path.svg"
+              src="/images/experience/experience_path2.svg"
               alt="A path through the whole experience"
             ></img>
             {/*<div className={styles.experience__path} id="experience_path">
