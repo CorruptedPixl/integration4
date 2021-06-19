@@ -3,8 +3,8 @@
   width: 100%;
   overflow: auto;
   top: 0;
-  height: 30vh;
-  padding: 2rem;
+  height: 30vh !important;
+  padding: 2rem !important;
   //   background-color: var(--accent);
   background-color: rgba(255, 113, 30, 0.5);
   color: white;
