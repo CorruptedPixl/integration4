@@ -1,0 +1,42 @@
+{
+    "title": {
+        "safe": {
+            "en": "Thought you were safe",
+            "nl": "Denk jij dat je veilig"
+        },
+        "surfing": {
+            "en": "surfing",
+            "nl": "surft op"
+        },
+        "web": {
+            "en": "the web?",
+            "nl": "het web?"
+        }
+    },
+    "intro": {
+        "en": "Well you aren't. You're far from safe. Every move you make online is constantly being watched, tracked, saved in a profile and used against you to not only show you targeted ads, but in the long term influence the way you think.",
+        "nl": "Wel, dat ben je niet. Helemaal niet zelfs! Elke actie die je online uitvoert wordt getracked en opgeslagen in een digitaal profiel dat tegen jou gebruikt kan worden, niet alleen om je specifieke advertenties te tonen, maar ook op lange termijn je interesses te veranderen."
+    },
+    "buttons": {
+        "experience": {
+            "en": "Experience how they track you",
+            "nl": "Ervaar hoe ze je tracken"
+        },
+        "protect": {
+            "en": "Learn to protect yourself",
+            "nl": "Leer jezelf te beschermen"
+        }
+    },
+    "become": {
+        "title": {
+            "main": {
+                "en": "Become the eyes behind",
+                "nl": "Kijk achter de schermen en zie"
+            },
+            "highlight": {
+                "en": "everything",
+                "nl": "alles"
+            }
+        }
+    }
+}
