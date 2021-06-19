@@ -1,0 +1,16 @@
+{
+    "title": {
+        "safe": {
+            "en": "Thought you were safe",
+            "nl": "Denk jij dat je veilig"
+        },
+        "surfing": {
+            "en": "surfing",
+            "nl": "surft op"
+        },
+        "web": {
+            "en": "the web?",
+            "nl": "het web?"
+        }
+    }
+}
