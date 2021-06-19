@@ -263,6 +263,14 @@
 }
 
 .music__experience {
-  position: fixed;
-  top: 10vh;
+  height: 50px;
+  width: 50px;
+  &:hover {
+    cursor: url("/cursor_pointer.png"), pointer;
+  }
+  &.fixed {
+    position: fixed;
+    top: 25px;
+    left: 25px;
+  }
 }

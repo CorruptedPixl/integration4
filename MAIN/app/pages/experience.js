@@ -19,12 +19,15 @@ const experience = () => {
   const [adImage, setAdImage] = useState();
 
   const [bgMusic, setBgMusic] = useState(false);
+  const [musicButton, setMusicButton] = useState("sound_off");
 
   const handleBgMusic = () => {
     if (bgMusic === true) {
       setBgMusic(false);
+      setMusicButton("sound_off");
     } else {
       setBgMusic(true);
+      setMusicButton("sound_on");
     }
   };
 
@@ -164,12 +167,8 @@ const experience = () => {
             <small className={styles.container__intro_disclaimer}>
               By continuing you accept the necessary cookies to make this experience work
             </small>
-            <div onClick={() => handleBgMusic()}>
-              {bgMusic ? (
-                <Image src="/experience/sound_on.svg" width="56px" height="51px"></Image>
-              ) : (
-                <Image src="/experience/sound_on.svg" width="56px" height="51px"></Image>
-              )}
+            <div className={styles.music__experience} onClick={() => handleBgMusic()}>
+              <Image src={`/experience/${musicButton}.svg`} width="56px" height="51px"></Image>
             </div>
             <p className={styles.container__intro_info}>
               For the ultimate experience please use sound and disable your add-blocker
@@ -177,12 +176,8 @@ const experience = () => {
           </section>
         ) : (
           <>
-            <div className={styles.music__experiene} onClick={() => handleBgMusic()}>
-              {bgMusic ? (
-                <Image src="/experience/sound_on.svg" width="56px" height="51px"></Image>
-              ) : (
-                <Image src="/experience/sound_on.svg" width="56px" height="51px"></Image>
-              )}
+            <div className={`${styles.music__experience} ${styles.fixed}`} onClick={() => handleBgMusic()}>
+              <Image src={`/experience/${musicButton}.svg`} width="56px" height="51px"></Image>
             </div>
             <section className={`${styles.experience__step} ${styles.experience__1}`} id="experience__1">
               <h2 className={styles.title}>
