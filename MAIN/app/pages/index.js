@@ -63,11 +63,11 @@ export default function Home() {
                     onClick={() => socket.emit("consoleMessage", "A user visited the experience")}
                     className={buttons.button}
                   >
-                    Experience how they track you
+                    {translations.buttons.experience[toggleLangState]}
                   </a>
                   <p className={styles.intro__buttons_or}>or</p>
                   <a href="/secureyourself" className={`${buttons.button} ${buttons.dark}`}>
-                    Learn to protect yourself
+                    {translations.buttons.protect[toggleLangState]}
                   </a>
                 </section>
               </ParallaxMouse>
@@ -111,7 +111,8 @@ export default function Home() {
           <section className={styles.main__container_become}>
             <section className={styles.container__become_text}>
               <h2 className={`${styles.become__text_title} ${styles.title}`}>
-                Become the eyes behind <span className={styles.highlight}>everything</span>
+                {translations.become.title.main[toggleLangState]}
+                <span className={styles.highlight}> {translations.become.title.highlight[toggleLangState]}</span>
               </h2>
               <p className={styles.become__text_body}>
                 We've created an experience were we take you through the dark algoritm of the internet. But wait! That's
