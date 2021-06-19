@@ -8,8 +8,10 @@ import Scanner from "../components/Scanner";
 import ThreejsCookieObject from "../components/ThreejsCookieObject.js";
 import ThreejsObjects from "../components/ThreejsObjects.js";
 import ParallaxMouse from "../components/ParallaxMouse";
+import Console from "../components/Console";
 
 export default function secureyourself() {
+  const [socket, setSocket] = useState();
   const [scannerVisible, setScannerVisible] = useState(false);
   const [visitorData, setVisitorData] = useState();
 
@@ -28,6 +30,7 @@ export default function secureyourself() {
         <link rel="icon" href="/ctrl.logo.svg" />
       </Head>
       <main className={styles.main__container}>
+        <Console socket={socket} setSocket={setSocket} />
         <section className={styles.main__container_mydata}>
           <h2 className={`${styles.container__mydata_title} ${styles.title}`}>
             Let's find out what we know about you!

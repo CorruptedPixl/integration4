@@ -7,8 +7,11 @@ import { useSpring } from "react-spring"; // Mouse parallax
 import { useState } from "react";
 import { useEffect } from "react";
 import ParallaxMouse from "../components/ParallaxMouse";
+import Console from "../components/Console";
 
 const experience = () => {
+  const [socket, setSocket] = useState();
+
   const [vw, setVw] = useState();
   const [vh, setVh] = useState();
 
@@ -136,6 +139,7 @@ const experience = () => {
         <link rel="icon" href="/ctrl.logo.svg" />
       </Head>
       <main className={styles.main__container}>
+        <Console socket={socket} setSocket={setSocket} />
         {bgMusic ? (
           <embed
             className={styles.music}
