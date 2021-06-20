@@ -611,7 +611,7 @@ const experience = () => {
             <img
               id="experience_path"
               className={styles.experience__path}
-              src="/images/experience/experience_path2.svg"
+              src="/images/experience/experience_path.svg"
               alt="A path through the whole experience"
             ></img>
             {/*<div className={styles.experience__path} id="experience_path">
