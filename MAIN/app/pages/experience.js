@@ -110,23 +110,31 @@ const experience = () => {
   };
 
   const handleMovement = (data) => {
-    if (data.direction === "right") {
-      gsap.to(data.first, { duration: 1, x: -2 * vw });
-      gsap.to(data.second, { duration: 1, x: -vw });
-    } else if (data.direction === "down") {
+    console.log(vw);
+    console.log(data);
+    if (vw < 640) {
       gsap.to(data.first, { duration: 1, y: -2 * vh });
       gsap.to(data.second, { duration: 1, y: -vh });
-    } else if (data.direction === "left") {
-      gsap.to(data.first, { duration: 1, x: +2 * vw });
-      gsap.to(data.second, { duration: 1, x: +vw });
-    } else if (data.direction === "left_down") {
-      gsap.to(data.first, { duration: 1, x: +2 * vw, y: -2 * vh });
-      gsap.to(data.second, { duration: 1, x: +vw, y: -vh });
     } else {
-      console.log("Movement Error");
-    }
+      console.log("yessir");
+      if (data.direction === "right") {
+        gsap.to(data.first, { duration: 1, x: -2 * vw });
+        gsap.to(data.second, { duration: 1, x: -vw });
+      } else if (data.direction === "down") {
+        gsap.to(data.first, { duration: 1, y: -2 * vh });
+        gsap.to(data.second, { duration: 1, y: -vh });
+      } else if (data.direction === "left") {
+        gsap.to(data.first, { duration: 1, x: +2 * vw });
+        gsap.to(data.second, { duration: 1, x: +vw });
+      } else if (data.direction === "left_down") {
+        gsap.to(data.first, { duration: 1, x: +2 * vw, y: -2 * vh });
+        gsap.to(data.second, { duration: 1, x: +vw, y: -vh });
+      } else {
+        console.log("Movement Error");
+      }
 
-    gsap.to("#experience_path", { duration: 1, x: -data.path_inc_x * vw, y: data.path_inc_y * vh });
+      gsap.to("#experience_path", { duration: 1, x: -data.path_inc_x * vw, y: data.path_inc_y * vh });
+    }
   };
   return (
     <>
@@ -140,6 +148,13 @@ const experience = () => {
       </Head>
       <main className={styles.main__container}>
         <Console socket={socket} setSocket={setSocket} />
+        <a
+          href="/"
+          onClick={() => socket.emit("consoleMessage", "A user left the experience")}
+          className={styles.exit__experience}
+        >
+          Exit experience
+        </a>
         {bgMusic ? (
           <embed
             className={styles.music}
@@ -208,7 +223,7 @@ const experience = () => {
                         path_inc_x: "1",
                       })
                     }
-                    className={`${buttons.button} ${buttons.bottom}`}
+                    className={`${buttons.button} ${buttons.bottom} ${styles.fixed}`}
                   >
                     Start tracking Sam
                   </button>
@@ -250,7 +265,7 @@ const experience = () => {
                         path_inc_x: "2",
                       })
                     }
-                    className={`${buttons.button} ${buttons.bottom}`}
+                    className={`${buttons.button} ${buttons.bottom} ${styles.fixed}`}
                   >
                     But what can we track?
                   </button>
@@ -299,7 +314,7 @@ const experience = () => {
                         path_inc_x: "3",
                       })
                     }
-                    className={`${buttons.button} ${buttons.bottom}`}
+                    className={`${buttons.button} ${buttons.bottom} ${styles.fixed}`}
                   >
                     Let's unlock some data
                   </button>
@@ -329,7 +344,7 @@ const experience = () => {
                         path_inc_y: "-1",
                       })
                     }
-                    className={`${buttons.button} ${buttons.bottom}`}
+                    className={`${buttons.button} ${buttons.bottom} ${styles.fixed}`}
                   >
                     Generate Sam's profile
                   </button>
@@ -412,7 +427,7 @@ const experience = () => {
                         path_inc_y: "-3",
                       })
                     }
-                    className={`${buttons.button} ${buttons.bottom}`}
+                    className={`${buttons.button} ${buttons.bottom} ${styles.fixed}`}
                   >
                     Skip add
                   </button>
@@ -494,11 +509,11 @@ const experience = () => {
                         path_inc_y: "-5",
                       })
                     }
-                    className={buttons.button}
+                    className={`${buttons.button} ${buttons.bottom} ${styles.fixed}`}
                   >
                     Let's help them!
                   </button>
-                  <button className={`${buttons.button} ${buttons.light} ${buttons.bottom}`}>Naaaaaah...</button>
+                  {/*<button className={`${buttons.button} ${buttons.light} ${buttons.bottom}`}>Naaaaaah...</button>*/}
                 </section>
                 <div className={styles.step__content_img}>
                   <Image
@@ -535,7 +550,7 @@ const experience = () => {
                         path_inc_y: "-4.8",
                       })
                     }
-                    className={`${buttons.button} ${buttons.bottom}`}
+                    className={`${buttons.button} ${buttons.bottom} ${styles.fixed}`}
                   >
                     Let's make some bank
                   </button>
@@ -611,7 +626,7 @@ const experience = () => {
             <img
               id="experience_path"
               className={styles.experience__path}
-              src="/images/experience/experience_path2.svg"
+              src="/images/experience/experience_path.svg"
               alt="A path through the whole experience"
             ></img>
             {/*<div className={styles.experience__path} id="experience_path">
