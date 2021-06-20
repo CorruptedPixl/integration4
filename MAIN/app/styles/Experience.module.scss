@@ -19,8 +19,11 @@
 
 .container__intro_text {
   width: 60%;
-  margin: 10vh 0 24vh;
+  margin: 10vh 0 10vh;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
 }
 
 .container__intro_button {
@@ -185,8 +188,8 @@
 }
 
 .experience__path {
-  width: auto;
-  height: auto;
+  width: 560vw;
+  height: 510vh;
   position: absolute;
   top: 50vh;
   left: 50vw;
@@ -263,6 +266,14 @@
 }
 
 .music__experience {
-  position: fixed;
-  top: 10vh;
+  height: 50px;
+  width: 50px;
+  &:hover {
+    cursor: url("/cursor_pointer.png"), pointer;
+  }
+  &.fixed {
+    position: fixed;
+    top: 25px;
+    left: 25px;
+  }
 }

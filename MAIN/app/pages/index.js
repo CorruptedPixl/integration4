@@ -9,6 +9,7 @@ import ThreejsObjects from "../components/ThreejsObjects.js";
 import ParallaxMouse from "../components/ParallaxMouse";
 import Console from "../components/Console";
 import Toggle from "../components/Toggle";
+import translations from "../translations/index.json";
 
 export default function Home() {
   // Initialize Spring for mouse parallax
@@ -21,7 +22,7 @@ export default function Home() {
   const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
 
   const [socket, setSocket] = useState();
-  const [toggleLangState, setToggleLangState] = useState(true);
+  const [toggleLangState, setToggleLangState] = useState("en");
 
   return (
     <>
@@ -48,26 +49,25 @@ export default function Home() {
             <section className={styles.main__container_intro}>
               <ParallaxMouse xFactor={0} springProps={springProps}>
                 <h2 className={`${styles.title} ${styles.container__intro_title}`}>
-                  Thought you were safe <br /> surfing <span className={styles.highlight}>the web?</span>
+                  {translations.title.safe[toggleLangState]}
+                  <br />
+                  {translations.title.surfing[toggleLangState]}
+                  <span className={styles.highlight}> {translations.title.web[toggleLangState]}</span>
                 </h2>
               </ParallaxMouse>
-              <p className={styles.container__intro_text}>
-                Well you aren't. You're far from safe. Every move you make online is constantly being watched, tracked,
-                saved in a profile and used against you to not only show you targeted ads, but in the long term
-                influence the way you think.
-              </p>
+              <p className={styles.container__intro_text}>{translations.intro[toggleLangState]}</p>
               <ParallaxMouse xFactor={50} springProps={springProps}>
                 <section className={styles.container__intro_buttons}>
                   <a
                     href="/experience"
-                    onClick={() => socket.emit("consoleMessage", "Nice, it works!")}
+                    onClick={() => socket.emit("consoleMessage", "A user visited the experience")}
                     className={buttons.button}
                   >
-                    Experience how they track you
+                    {translations.buttons.experience[toggleLangState]}
                   </a>
                   <p className={styles.intro__buttons_or}>or</p>
                   <a href="/secureyourself" className={`${buttons.button} ${buttons.dark}`}>
-                    Learn to protect yourself
+                    {translations.buttons.protect[toggleLangState]}
                   </a>
                 </section>
               </ParallaxMouse>
@@ -111,16 +111,16 @@ export default function Home() {
           <section className={styles.main__container_become}>
             <section className={styles.container__become_text}>
               <h2 className={`${styles.become__text_title} ${styles.title}`}>
-                Become the eyes behind <span className={styles.highlight}>everything</span>
+                {translations.become.title.main[toggleLangState]}
+                <br />
+                <span className={styles.highlight}> {translations.become.title.highlight[toggleLangState]}</span>
               </h2>
-              <p className={styles.become__text_body}>
-                We've created an experience were we take you through the dark algoritm of the internet. But wait! That's
-                not everything we've created a chat system were you can see some "secret" data, and maybe even more...
-              </p>
+              <p className={styles.become__text_body}>{translations.become.body[toggleLangState]}</p>
               <h3 className={styles.become__text_h3}>
-                Go ahead! Press <span className={styles.highlight}>' / '</span> and find out if you are{" "}
-                <span className={styles.highlight}>the only one </span>
-                here!
+                {translations.become.subtitle.go[toggleLangState]} <span className={styles.highlight}>' / '</span>
+                {translations.become.subtitle.findOut[toggleLangState]}{" "}
+                <span className={styles.highlight}>{translations.become.subtitle.onlyOne[toggleLangState]} </span>
+                {translations.become.subtitle.here[toggleLangState]}
               </h3>
             </section>
             <ParallaxMouse
@@ -144,27 +144,20 @@ export default function Home() {
               </ParallaxMouse>
             </div>
             <section className={styles.container__whatcanido_text}>
-              <h2 className={`${styles.whatcanido__text_title} ${styles.title}`}>What can I do?</h2>
-              <p className={styles.whatcanido__text_body}>
-                Let's delve in the aloritm of cookies and advertisement toghetter, I see Sam might just accept cookies,
-                be quick! why are you still reading, let's go!
-              </p>
-              <p className={styles.whatcanido__text_body}>
-                Now you might be wondering what you can do to prevent such activities. Don't worry we've listed
-                everything you can do and we created a tool to scan yourself in which you can see everything companies
-                can track about you when you accept cookies.
-              </p>
-              <section className={styles.button__container}>
-                <a href="/experience" className={buttons.button}>
-                  Let's look at Sam!
-                </a>
-
-                <a href="/secureyourself" className={`${buttons.button} ${buttons.light}`}>
-                  <div>
-                    ctrl. your <span className={styles.highlight}>identity</span>
-                  </div>
-                </a>
-              </section>
+              <h2 className={`${styles.whatcanido__text_title} ${styles.title}`}>
+                {translations.what.title[toggleLangState]}
+              </h2>
+              <p className={styles.whatcanido__text_body}>{translations.what.body.p1[toggleLangState]}</p>
+              <a href="/secureyourself" className={buttons.button}>
+                <div>
+                  {translations.what.buttons.main.ctrl[toggleLangState]}{" "}
+                  <span className={styles.light}>{translations.what.buttons.main.id[toggleLangState]}</span>
+                </div>
+              </a>
+              <p className={styles.whatcanido__text_body}>{translations.what.body.p2[toggleLangState]}</p>
+              <a href="/experience" className={`${buttons.button} ${buttons.light}`}>
+                {translations.what.buttons.secondary[toggleLangState]}
+              </a>
             </section>
           </section>
         </Parallax>
@@ -182,14 +175,14 @@ export default function Home() {
         <div className={styles.footer__logo}>
           <Image src="/lion_icon.svg" alt={"Logo of the Flemish Government"} width={180} height={250} />
           <p className={styles.footer__logo_sub}>
-            Met steun van
+            {translations.footer.support.p1[toggleLangState]}
             <br />
-            de Vlaamse Overheid
+            {translations.footer.support.p2[toggleLangState]}
           </p>
         </div>
         <div className={styles.footer__text}>
           <h2 className={styles.footer__title}>Integration 4</h2>
-          <p className={styles.footer__body}>an experience brought to life by</p>
+          <p className={styles.footer__body}>{translations.footer.experience[toggleLangState]}</p>
           <ul className={styles.footer__names}>
             <li className={styles.footer__names_name}>Noa Lambert</li>
             <li>

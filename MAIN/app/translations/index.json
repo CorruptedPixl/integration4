@@ -1,0 +1,112 @@
+{
+    "title": {
+        "safe": {
+            "en": "Thought you were safe",
+            "nl": "Denk jij dat je veilig"
+        },
+        "surfing": {
+            "en": "surfing",
+            "nl": "surft op"
+        },
+        "web": {
+            "en": "the web?",
+            "nl": "het web?"
+        }
+    },
+    "intro": {
+        "en": "Well you aren't. You're far from safe. Every move you make online is constantly being watched, tracked, saved in a profile and used against you to not only show you targeted ads, but in the long term influence the way you think.",
+        "nl": "Wel, dat ben je niet. Helemaal niet zelfs! Elke actie die je online uitvoert wordt getracked en opgeslagen in een digitaal profiel dat tegen jou gebruikt kan worden, niet alleen om je specifieke advertenties te tonen, maar ook om op lange termijn je interesses te veranderen."
+    },
+    "buttons": {
+        "experience": {
+            "en": "Experience how they track you",
+            "nl": "Ervaar hoe ze je tracken"
+        },
+        "protect": {
+            "en": "Learn to protect yourself",
+            "nl": "Leer jezelf te beschermen"
+        }
+    },
+    "become": {
+        "title": {
+            "main": {
+                "en": "Become the eyes behind",
+                "nl": "Kijk achter de schermen"
+            },
+            "highlight": {
+                "en": "everything",
+                "nl": "en zie alles"
+            }
+        },
+        "body": {
+            "en": "We've created an experience were we take you through the dark algoritm of the internet. But wait, that's not everything! We've created a virtual console system were you can see some \"secret\" data, and maybe even more...",
+            "nl": "We hebben een ervaring gemaakt waarin we je meenemen door het donker algoritme van het internet. Maar dat is niet alles! We hebben een virtuele terminal gemaakt waar je \"verborgen\" data kan zien, en misschien zelfs meer..."
+        },
+        "subtitle": {
+            "go": {
+                "en": "Go ahead! Press",
+                "nl": "Probeer het uit! Druk op"
+            },
+            "findOut": {
+                "en": "and find out if you are",
+                "nl": "en ontdek of je hier"
+            },
+            "onlyOne": {
+                "en": "the only one",
+                "nl": "alleen"
+            },
+            "here": {
+                "en": "here!",
+                "nl": "bent!"
+            }
+        }
+    },
+    "what": {
+        "title": {
+            "en": "What can I do?",
+            "nl": "Wat kan ik doen?"
+        },
+        "body": {
+            "p1": {
+                "en": "Now you might be wondering what you can do to prevent such activities. Lucky for you we've created a tool to scan youself so you can see exactly what sites can track about you! We've also listed some tips to help protect you better. Check it out below!",
+                "nl": "Je vraagt je waarschijnlijk af hoe je kan voorkomen dat je getracked wordt. Gelukkig hebben we voor jou een tool gemaakt waarmee jij jezelf kan scannen en exact kan zien wat websites van jou kunnen tracken. We geven ook wat tips om jezelf beter te beschermen online. Kijk snel!"
+            },
+            "p2": {
+                "en": "If you haven't already, check out the experience to learn about how they track you! Let's delve into the algorithm of cookies and advertisements together. I can see Sam just accepted cookies, let's go!",
+                "nl": "Als je het nog niet gedaan hebt, bekijk zeker eens de experience en leer hoe websites je online tracken! Duik in het algoritme van cookies, advertenties, en ontdek hoe Sam getracked wordt nadat ze net cookies geaccepteerd heeft! "
+            }
+        },
+        "buttons": {
+            "main": {
+                "ctrl": {
+                    "en": "ctrl. your",
+                    "nl": "ctrl jouw"
+                },
+                "id": {
+                    "en": "identity",
+                    "nl": "identiteit"
+                }
+            },
+            "secondary": {
+                "en": "Let's follow Sam!",
+                "nl": "Volg Sam!"
+            }
+        }
+    },
+    "footer": {
+        "support": {
+            "p1": {
+                "en": "Thanks to the support of",
+                "nl": "Met steun van"
+            },
+            "p2": {
+                "en": "the Flemish Government",
+                "nl": "de Vlaamse Overheid"
+            }
+        },
+        "experience": {
+            "en": "an experience brought to life by",
+            "nl": "een ervaring tot leven gebracht door"
+        }
+    }
+}
