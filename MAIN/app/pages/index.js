@@ -111,7 +111,7 @@ export default function Home() {
             <section className={styles.container__become_text}>
               <h2 className={`${styles.become__text_title} ${styles.title}`}>
                 {translations.become.title.main[toggleLangState]}
-                <br />
+                <br className={styles.text__title_br} />
                 <span className={styles.highlight}> {translations.become.title.highlight[toggleLangState]}</span>
               </h2>
               <p className={styles.become__text_body}>{translations.become.body[toggleLangState]}</p>
@@ -186,22 +186,18 @@ export default function Home() {
           <p className={styles.footer__body}>{translations.footer.experience[toggleLangState]}</p>
           <ul className={styles.footer__names}>
             <li className={styles.footer__names_name}>Noa Lambert</li>
-            <li>
+            <li className={styles.footer__names_spacer}>
               <Image src="/footerlistdot.svg" alt="orange delimiter dot" width={15} height={15} />
             </li>
             <li className={styles.footer__names_name}>Kenzo Dewaegenaere</li>
-            <li>
+            <li className={styles.footer__names_spacer}>
               <Image src="/footerlistdot.svg" alt="orange delimiter dot" width={15} height={15} />
             </li>
             <li className={styles.footer__names_name}>Samuel Vanhaecke</li>
           </ul>
-          {/* <img className={styles.footer__bg} src="/footer_bg.svg"></img> */}
-          <div className={styles.footer__bg}>
-            {/* <Image src="/footer_bg.svg" alt="footer triangle" width={1920} height={913} /> */}
-          </div>
+          <div className={styles.footer__bg}></div>
         </div>
       </footer>
-      {/* </div> */}
     </>
   );
 }

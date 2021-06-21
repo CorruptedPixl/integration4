@@ -58,7 +58,7 @@ export default function secureyourself() {
                   </button>
                 </section>
                 <div className={styles.container__mydata_img}>
-                  <Image src="/trackme.png" width={700} height={730}></Image>
+                  <Image src="/images/secureyourself/trackme/tackme2.gif" width={700} height={730}></Image>
                 </div>
               </section>
             </>
