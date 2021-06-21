@@ -1,0 +1,156 @@
+{
+    "scanner": {
+        "title": {
+            "en": "Let's find out what we know about you!",
+            "nl": ""
+        },
+        "desc": {
+            "p1": {
+                "en": "It’s common sense that we like our privacy isn’t it? Sometimes it feels like google knows what we really want. isn’t that a bit scary?",
+                "nl": ""
+            },
+            "p2": {
+                "en": "If you want to know the things we’ve tracked about you, you can track all your data right now. You can also see what’s happening right now by pressing F1 and find some dark secrets.",
+                "nl": ""
+            }
+        },
+        "button": {
+            "en": "Scan my data now",
+            "nl": "Scan mijn data"
+        }
+    },
+    "cookies": {
+        "title": {
+            "p1": {
+                "en": "Let's grab some",
+                "nl": ""
+            },
+            "p1_highlight": {
+                "en": "cookies",
+                "nl": ""
+            },
+            "p2": {
+                "en": "and talk about it",
+                "nl": ""
+            }
+        },
+        "desc": {
+            "p1": {
+                "en": "Before we give you tips on what you can do to",
+                "nl": ""
+            },
+            "p1_bold": {
+                "en": "prevent",
+                "nl": ""
+            },
+            "p2": {
+                "en": "data tracking we want to tell you that",
+                "nl": ""
+            },
+            "p2_bold": {
+                "en": "not all cookies are bad",
+                "nl": ""
+            },
+            "p3": {
+                "en": "and most of them are created to give you a better experience.",
+                "nl": ""
+            }
+        },
+        "subtitle": {
+            "p1": {
+                "en": "But who doesn't like a",
+                "nl": "Maar wie lust er nu geen"
+            },
+            "p1_highlight": {
+                "en": "cookie?",
+                "nl": "cookie?"
+            }
+        },
+        "expl": {
+            "p1": {
+                "en": "There are some cookies that",
+                "nl": ""
+            },
+            "p1_bold": {
+                "en": "take advantage",
+                "nl": ""
+            },
+            "p2": {
+                "en": "of your data and that's what we want to protect.",
+                "nl": ""
+            },
+            "p3": {
+                "en": "That's why you should always",
+                "nl": ""
+            },
+            "p3_bold": {
+                "en": "be careful",
+                "nl": ""
+            },
+            "p4": {
+                "en": "accepting things left, right and center.",
+                "nl": ""
+            },
+            "p5": {
+                "en": "Below we've listed some tips that can help keep your data safe!",
+                "nl": ""
+            }
+        }
+    },
+    "tips": {
+        "title": {
+            "en": "Some tips that can help you right now!",
+            "nl": ""
+        },
+        "subtitle": {
+            "en": "We've listed some things that will prevent most data tracking. It's a great step towards safer browsing through the internet!",
+            "nl": ""
+        },
+        "tip1": {
+            "title": {
+                "en": "Use adblocker",
+                "nl": ""
+            },
+            "subtitle": {
+                "en": "Install an adblocker. Good ones will also prevent data tracking and help keep you safe from ads.",
+                "nl": ""
+            }
+        },
+        "tip2": {
+            "title": {
+                "en": "Dont' accept all cookies",
+                "nl": ""
+            },
+            "subtitle": {
+                "en": "Only accept necessary cookies. Do that extra click and press \"preferences\" and press okay. Only the necessary cookies should be selected by default, if not, deselect third party one's.",
+                "nl": ""
+            }
+        },
+        "tip3": {
+            "title": {
+                "en": "Use incognito",
+                "nl": ""
+            },
+            "subtitle": {
+                "en": "Use incognito if you don't want any cookies, those cookies get deleted when you close the tab.",
+                "nl": ""
+            }
+        }
+    },
+    "footer": {
+        "support": {
+            "p1": {
+                "en": "Thanks to the support of",
+                "nl": "Met steun van"
+            },
+            "p2": {
+                "en": "the Flemish Government",
+                "nl": "de Vlaamse Overheid"
+            }
+        },
+        "experience": {
+            "en": "an experience brought to life by",
+            "nl": "een ervaring tot leven gebracht door"
+        }
+    }
+}

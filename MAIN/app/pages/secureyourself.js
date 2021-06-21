@@ -6,12 +6,15 @@ import { useSpring } from "react-spring"; // Mouse parallax
 import { useState } from "react";
 import Scanner from "../components/Scanner";
 import ThreejsCookieObject from "../components/ThreejsCookieObject.js";
+import translations from "../translations/secureyourself.json";
+import Toggle from "../components/Toggle";
 import ThreejsObjects from "../components/ThreejsObjects.js";
 import ParallaxMouse from "../components/ParallaxMouse";
 import Console from "../components/Console";
 
 export default function secureyourself() {
   const [socket, setSocket] = useState();
+  const [toggleLangState, setToggleLangState] = useState("en");
   const [scannerVisible, setScannerVisible] = useState(false);
   const [visitorData, setVisitorData] = useState();
 
@@ -30,10 +33,17 @@ export default function secureyourself() {
         <link rel="icon" href="/ctrl.logo.svg" />
       </Head>
       <main className={styles.main__container}>
+        <Toggle
+          className={styles.toggleSwitch}
+          toggleState={toggleLangState}
+          setToggleState={setToggleLangState}
+          valueLeft={"nl"}
+          valueRight={"en"}
+        />
         {/*<Console socket={socket} setSocket={setSocket} />*/}
         <section className={styles.main__container_mydata}>
           <h2 className={`${styles.container__mydata_title} ${styles.title}`}>
-            Let's find out what we know about you!
+            {translations.scanner.title[toggleLangState]}
           </h2>
           {scannerVisible ? (
             <Scanner setVisitorData={setVisitorData} />
@@ -41,16 +51,10 @@ export default function secureyourself() {
             <>
               <section className={styles.container__mydata_contents}>
                 <section className={styles.container__mydata_text}>
-                  <p className={styles.mydata__text_paragraph}>
-                    It’s common sense that we like our privacy isn’t it? Sometimes it feels like google knows what we
-                    really want. isn’t that a bit scary?
-                  </p>
-                  <p className={styles.mydata__text_paragraph}>
-                    If you want to know the things we’ve tracked about you, you can track all your data right now. You
-                    can also see what’s happening right now by pressing F1 and find some dark secrets.
-                  </p>
+                  <p className={styles.mydata__text_paragraph}>{translations.scanner.desc.p1[toggleLangState]}</p>
+                  <p className={styles.mydata__text_paragraph}>{translations.scanner.desc.p2[toggleLangState]}</p>
                   <button className={`${styles.button} ${styles.mydata__text_button}`} onClick={handleClickScan}>
-                    Scan my data now
+                    {translations.scanner.button[toggleLangState]}
                   </button>
                 </section>
                 <div className={styles.container__mydata_img}>
@@ -64,23 +68,33 @@ export default function secureyourself() {
         <section className={styles.cookie__container}>
           <section className={styles.main__container_intro}>
             <h2 className={`${styles.container__intro_title} ${styles.title}`}>
-              Let's grab some <span className={styles.highlight}>cookies</span> and talk about it
+              {translations.cookies.title.p1[toggleLangState]}
+              <span className={styles.highlight}> {translations.cookies.title.p1_highlight[toggleLangState]} </span>
+              {translations.cookies.title.p2[toggleLangState]}
             </h2>
             <p className={styles.container__intro_text}>
-              Before we give you tips on what you can do to <b>prevent</b> data tracking we want to tell you that{" "}
-              <b>not all cookies are bad</b> and most of them are created to give you a better experience.
+              {translations.cookies.desc.p1[toggleLangState]}
+              <b> {translations.cookies.desc.p1_bold[toggleLangState]} </b>
+              {translations.cookies.desc.p2[toggleLangState]}{" "}
+              <b> {translations.cookies.desc.p2_bold[toggleLangState]} </b>{" "}
+              {translations.cookies.desc.p3[toggleLangState]}
             </p>
             <section className={styles.container__intro_expl}>
               <h2 className={styles.intro__expl_title}>
-                But who doesn't like a <span className={styles.highlight}>cookie</span>?
+                {translations.cookies.subtitle.p1[toggleLangState]}
+                <span className={styles.highlight}>{translations.cookies.subtitle.p1_highlight[toggleLangState]}</span>?
               </h2>
               <p className={styles.intro__expl_text}>
-                There are some cookies that <b>take advantage</b> of your data and that's what we want to protect.
+                {translations.cookies.expl.p1[toggleLangState]}
+                <b> {translations.cookies.expl.p1_bold[toggleLangState]} </b>
+                {translations.cookies.expl.p2[toggleLangState]}
               </p>
               <p className={styles.intro__expl_text}>
-                That's why you should always <b>be careful</b> accepting things left, right and center.
+                {translations.cookies.expl.p3[toggleLangState]}
+                <b> {translations.cookies.expl.p3_bold[toggleLangState]} </b>
+                {translations.cookies.expl.p4[toggleLangState]}
               </p>
-              <p className={styles.intro__expl_text}>Below we've listed some tips that can help keep your data safe!</p>
+              <p className={styles.intro__expl_text}>{translations.cookies.expl.p5[toggleLangState]}</p>
             </section>
           </section>
           <div className={styles.threejs__cookie__object__pos}>
@@ -92,35 +106,32 @@ export default function secureyourself() {
           <div className={styles.container__tips_bg}>
             <Image src="/tips_bg.svg" width={1920} height={2211}></Image>
           </div>
-          <h2 className={`${styles.container__tips_title} ${styles.title}`}>Some tips that can help you right now!</h2>
-          <p className={styles.container__tips_text}>
-            We've listed some things that will prevent most data tracking. It's a great step towards safer browsing
-            through the internet!
-          </p>
+          <h2 className={`${styles.container__tips_title} ${styles.title}`}>
+            {translations.tips.title[toggleLangState]}
+          </h2>
+          <p className={styles.container__tips_text}>{translations.tips.subtitle[toggleLangState]}</p>
           <ul className={styles.container__tips_list}>
             <li className={styles.tips__list_tip}>
-              <h3 className={styles.list__tip_title}>Use adblocker</h3>
+              <h3 className={styles.list__tip_title}>{translations.tips.tip1.title[toggleLangState]}</h3>
               <Image className={styles.list__tip_img} src="/adblocker.svg" width={170} height={180}></Image>
-              <p className={styles.list__tip_text}>Install an adblocker, this will prevent data tracking.</p>
+              <p className={styles.list__tip_text}>{translations.tips.tip1.subtitle[toggleLangState]}</p>
             </li>
             <li className={styles.tips__list_tip}>
-              <h3 className={styles.list__tip_title}>Don't accept all cookies</h3>
+              <h3 className={styles.list__tip_title}>{translations.tips.tip2.title[toggleLangState]}</h3>
               <Image className={styles.list__tip_img} src="/cookie.svg" width={170} height={180}></Image>
-              <p className={styles.list__tip_text}>Only accept necessary cookies.</p>
+              <p className={styles.list__tip_text}>{translations.tips.tip2.subtitle[toggleLangState]}</p>
             </li>
             <li className={styles.tips__list_tip}>
-              <h3 className={styles.list__tip_title}>Use incognito</h3>
+              <h3 className={styles.list__tip_title}>{translations.tips.tip3.title[toggleLangState]}</h3>
               <Image className={styles.list__tip_img} src="/incognito.svg" width={180} height={180}></Image>
-              <p className={styles.list__tip_text}>
-                Use incognito if you don't want any cookies, those cookies get deleted when you close the tab.
-              </p>
+              <p className={styles.list__tip_text}>{translations.tips.tip3.subtitle[toggleLangState]}</p>
             </li>
           </ul>
         </section>
       </main>
       <footer className={styles.footer}>
         <h2 className={styles.footer__title}>Integration 4</h2>
-        <p className={styles.footer__body}>an experience brought to life by</p>
+        <p className={styles.footer__body}>{translations.footer.experience[toggleLangState]}</p>
         <ul className={styles.footer__names}>
           <li className={styles.footer__names_name}>Noa Lambert</li>
           <li className={styles.footer__names_spacer}>
