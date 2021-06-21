@@ -9,6 +9,10 @@
     line-height: 3.2rem;
     width: 90vw;
     text-align: left;
+
+    &.ad {
+      margin-bottom: 1vh;
+    }
   }
 }
 
@@ -128,6 +132,24 @@
 
   @media screen and (max-width: 640px) {
     width: 90vw;
+
+    &.acces {
+      width: 90vw;
+    }
+  }
+}
+
+.step__content_img {
+  @media screen and (max-width: 640px) {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+
+    &.visible {
+      visibility: visible;
+      height: auto;
+      width: auto;
+    }
   }
 }
 
@@ -142,11 +164,21 @@
   flex-direction: row;
   align-items: center;
   gap: 2rem;
+
+  @media screen and (max-width: 640px) {
+    margin-top: 0;
+    flex-direction: column;
+    gap: 1rem;
+  }
 }
 
 .text__selection_adv {
   font-size: 4.2rem;
   font-weight: bold;
+
+  @media screen and (max-width: 640px) {
+    font-size: 2.8rem;
+  }
 }
 
 .text__selection_list {
@@ -155,6 +187,13 @@
   flex-direction: column;
   padding: 1rem;
   background-color: var(--background);
+
+  @media screen and (max-width: 640px) {
+    font-size: 2.8rem;
+    padding: .5rem;
+    text-align: center;
+    gap: 1rem;
+  }
 }
 
 .selection__list_item {
@@ -167,6 +206,12 @@
     opacity: 100%;
     border: solid var(--accent) 2px;
     cursor: pointer;
+  }
+
+  @media screen and (max-width: 640px) {
+    opacity: 100%;
+    border: solid var(--accent) 2px;
+    width: 80vw;
   }
 }
 
@@ -204,7 +249,8 @@
 
   @media screen and (max-width: 640px) {
     position: absolute;
-    top: 200vh;
+    top: 100vh;
+    left: 0;
   }
 }
 .experience__4 {
@@ -214,7 +260,7 @@
 
   @media screen and (max-width: 640px) {
     position: absolute;
-    top: 300vh;
+    top: 100vh;
     left: 0;
   }
 }
@@ -224,7 +270,7 @@
 
   @media screen and (max-width: 640px) {
     position: absolute;
-    top: 400vh;
+    top: 100vh;
     left: 0;
   }
 }
@@ -235,7 +281,7 @@
 
   @media screen and (max-width: 640px) {
     position: absolute;
-    top: 500vh;
+    top: 100vh;
     left: 0;
   }
 }
@@ -246,7 +292,7 @@
 
   @media screen and (max-width: 640px) {
     position: absolute;
-    top: 600vh;
+    top: 100vh;
     left: 0;
   }
 }
@@ -257,7 +303,7 @@
 
   @media screen and (max-width: 640px) {
     position: absolute;
-    top: 700vh;
+    top: 100vh;
     left: 0;
   }
 }
@@ -267,7 +313,7 @@
 
   @media screen and (max-width: 640px) {
     position: absolute;
-    top: 800vh;
+    top: 100vh;
     left: 0;
   }
 }
@@ -278,7 +324,7 @@
 
   @media screen and (max-width: 640px) {
     position: absolute;
-    top: 900vh;
+    top: 100vh;
     left: 0;
   }
 }
@@ -289,7 +335,7 @@
 
   @media screen and (max-width: 640px) {
     position: absolute;
-    top: 1000vh;
+    top: 100vh;
     left: 0;
   }
 }
@@ -364,12 +410,22 @@
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 2rem;
+
+  @media screen and (max-width: 640px) {
+    font-size: 2.4rem;
+  }
 }
 
 .bunnyPicture {
   height: 40vh;
   width: 2000px;
   margin-right: -850px;
+
+  @media screen and (max-width: 640px) {
+    height: auto;
+    width: auto;
+    margin: -12vh -5vw;
+  }
 }
 
 .music {
