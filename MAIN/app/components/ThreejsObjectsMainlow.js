@@ -1,27 +1,27 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
-import { Group, Math as ThreeMath } from "three";
+import { Math as ThreeMath } from "three";
 
 const loader = new THREE.TextureLoader();
 
-const ThreejsCookieObject = ({ className }) => {
+const ThreejsObjects = ({ className }) => {
   const mountRef = useRef(null);
 
   useEffect(() => {
     const scene = new THREE.Scene();
 
-    const camera = new THREE.PerspectiveCamera(105, 1, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(105, window.innerWidth / window.innerHeight, 0.1, 1000);
 
     camera.position.z = 3;
     const renderer = new THREE.WebGLRenderer({ alpha: true });
     renderer.setClearColor("0xff5c00", 0);
 
-    renderer.setSize(800, 800);
+    renderer.setSize(840, 560);
     mountRef.current.appendChild(renderer.domElement);
 
     const group = new THREE.Group();
 
-    const material = new THREE.MeshMatcapMaterial({
+    const material = new THREE.MeshStandardMaterial({
       color: 0xff5c00,
     });
 
@@ -30,8 +30,18 @@ const ThreejsCookieObject = ({ className }) => {
 
     //lights
 
-    const light = new THREE.AmbientLight(0xffffff); // soft white light
-    scene.add(light);
+    const rectLight = new THREE.RectAreaLight(0xffffff, 0.5, 6, Math.PI * 0.1, 0.25, 1);
+    rectLight.position.set(-1.5, 0, 1.5);
+    rectLight.lookAt(new THREE.Vector3());
+
+    const spotLight = new THREE.SpotLight(0xffffff);
+    spotLight.position.set(0, 2, 3);
+
+    const pointLight = new THREE.PointLight(0xffffff);
+    pointLight.position.set(0, 2, 3);
+
+    scene.add(rectLight, spotLight, pointLight);
+    spotLight.target.position.x = -0.75;
 
     //helpers
 
@@ -39,30 +49,21 @@ const ThreejsCookieObject = ({ className }) => {
 
     scene.add(group);
 
-    const sphere = new THREE.Mesh(new THREE.CylinderGeometry(1, 1, 0.11, 25), material);
+    const sphere = new THREE.Mesh(new THREE.SphereBufferGeometry(0.9, 16, 16), material);
+    const cone = new THREE.Mesh(new THREE.ConeGeometry(0.7, 1.2, 4), material);
 
-    //const sphere1 = new THREE.Mesh(new THREE.CylinderGeometry(1, 1, 0.21, 25), material);
-    //const sphere2 = new THREE.Mesh(new THREE.CylinderGeometry(1, 1, 0.21, 25), material);
-    //const sphere3 = new THREE.Mesh(new THREE.CylinderGeometry(1, 1, 0.21, 25), material);
+    sphere.position.x = -2;
+    sphere.position.z = 0.5;
+    sphere.position.y = 1;
 
-    group.add(sphere);
+    cone.position.x = 0.85;
+    cone.position.z = 1.5;
+    cone.position.y = 1.25;
 
-    /*
-    sphere1.position.z = -6;
-    sphere1.position.y = -0.7;
-    sphere2.position.z = -6;
-    sphere2.position.y = -0.7;
-    sphere3.position.z = -6;
-    sphere3.position.y = -0.7;
-    sphere1.position.x = -2.4;
-    sphere2.position.x = 2.4;
-    */
-
-    sphere.position.y = -0.91;
-    sphere.position.z = 1;
+    group.add(sphere, cone);
 
     loader.load(
-      "https://cdn.cpixl.com/img/ctrl_cookieTexture.png",
+      "https://cdn.cpixl.com/img/ctrl_texture.jpg",
       (texture) => {
         //Update Texture
         material.map = texture;
@@ -87,18 +88,18 @@ const ThreejsCookieObject = ({ className }) => {
       //clock elapsed used for same speeed on difrent monitors speed
       const elapsedTime = clock.getElapsedTime();
       //update objects
+      sphere.rotation.y = 0.1 * elapsedTime;
+      cone.rotation.y = 0.1 * elapsedTime;
+
+      sphere.rotation.x = 0.16 * elapsedTime;
+      cone.rotation.x = 0.16 * elapsedTime;
+      cone.rotation.z = 0.3 * elapsedTime;
 
       const yOff = Math.sin(elapsedTime * 4);
+      const yOff2 = Math.sin(elapsedTime * 2);
       // move the sphere up and down
-      group.position.y = ThreeMath.lerp(0, 0.05, yOff);
-
-      sphere.rotation.x += 0.005;
-      sphere.rotation.y += 0.005;
-      sphere.rotation.z += 0.005;
-
-      //sphere1.rotation.x += 0.025;
-      //sphere1.rotation.y += 0.05;
-      //sphere1.rotation.z += 0.015;
+      cone.position.y = ThreeMath.lerp(0.03, 0.05, yOff);
+      //sphere.position.y = ThreeMath.lerp(-0.01, 0.05, yOff);
 
       //rerender
       renderer.render(scene, camera);
@@ -124,4 +125,4 @@ const ThreejsCookieObject = ({ className }) => {
   return <div className={className} ref={mountRef}></div>;
 };
 
-export default ThreejsCookieObject;
+export default ThreejsObjects;
