@@ -196,11 +196,12 @@
 .container__mydata_title {
   width: 80%;
   margin-bottom: 8vh;
+  margin-top: 11vh;
 
   @media screen and (max-width: 640px) {
     margin-bottom: 3vh;
+    margin-top: 0;
   }
-  margin-top: 11vh;
 }
 
 .container__mydata_contents {
