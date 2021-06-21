@@ -40,7 +40,7 @@ export default function secureyourself() {
           valueLeft={"nl"}
           valueRight={"en"}
         />
-        {/*<Console socket={socket} setSocket={setSocket} />*/}
+        <Console socket={socket} setSocket={setSocket} />
         <section className={styles.main__container_mydata}>
           <h2 className={`${styles.container__mydata_title} ${styles.title}`}>
             {translations.scanner.title[toggleLangState]}
