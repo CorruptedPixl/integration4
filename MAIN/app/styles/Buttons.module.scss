@@ -48,7 +48,7 @@
   &:hover {
     background-color: #ff782d;
     // cursor: pointer;
-    cursor: url("/cursor_pointer.png"), pointer;
+    cursor: url("/cursor_pointer.png") 5 0, pointer;
   }
 
   &:active {
