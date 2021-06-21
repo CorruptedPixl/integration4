@@ -7,10 +7,13 @@ import { useSpring } from "react-spring"; // Mouse parallax
 import { useState } from "react";
 import { useEffect } from "react";
 import ParallaxMouse from "../components/ParallaxMouse";
+import Toggle from "../components/Toggle";
 import Console from "../components/Console";
+import translations from "../translations/experience.json";
 
 const experience = () => {
   const [socket, setSocket] = useState();
+  const [toggleLangState, setToggleLangState] = useState("en");
 
   const [vw, setVw] = useState();
   const [vh, setVh] = useState();
@@ -144,13 +147,22 @@ const experience = () => {
       </Head>
       <main className={styles.main__container}>
         <Console socket={socket} setSocket={setSocket} />
-        <a
-          href="/"
-          onClick={() => socket.emit("consoleMessage", "A user left the experience")}
-          className={styles.exit__experience}
-        >
-          Exit experience
-        </a>
+        <div className={styles.button__container}>
+          <a
+            href="/"
+            onClick={() => socket.emit("consoleMessage", "A user left the experience")}
+            className={styles.exit__experience}
+          >
+            {translations.exit[toggleLangState]}
+          </a>
+          <Toggle
+            className={styles.toggleSwitch}
+            toggleState={toggleLangState}
+            setToggleState={setToggleLangState}
+            valueLeft={"nl"}
+            valueRight={"en"}
+          />
+        </div>
         {bgMusic ? (
           <embed
             className={styles.music}
@@ -164,32 +176,28 @@ const experience = () => {
         ) : null}
         {!experience ? (
           <section className={styles.main__container_intro}>
-            <h2 className={styles.title}>Welcome ... are you ready to become Big Brother?</h2>
+            <h2 className={styles.title}>{translations.intro.title[toggleLangState]}</h2>
             <div className={styles.container__intro_text}>
               <p>
-                Let’s take a dive into the algorithm and get to know Sam from the data that’s being tracked. Your name
-                will be used to personalize this webpage locally and will not be sent to our servers.
+                {translations.intro.description.track[toggleLangState]}{" "}
+                {/* {translations.intro.description.name[toggleLangState]} */}
               </p>
               <p>
-                You can track every move being made in the console. Just tap{" "}
-                <span className={styles.highlight}>"/"</span> on your keyboard.
+                {translations.intro.console.p1[toggleLangState]} <span className={styles.highlight}>"/"</span>{" "}
+                {translations.intro.console.p2[toggleLangState]}
               </p>
             </div>
             <button
               onClick={() => handleExperienceStart()}
               className={`${buttons.button} ${styles.container__intro_button}`}
             >
-              Start the experience
+              {translations.intro.button[toggleLangState]}
             </button>
-            <small className={styles.container__intro_disclaimer}>
-              By continuing you accept the necessary cookies to make this experience work
-            </small>
+            <small className={styles.container__intro_disclaimer}>{translations.intro.accept[toggleLangState]}</small>
             <div className={styles.music__experience} onClick={() => handleBgMusic()}>
               <Image src={`/experience/${musicButton}.svg`} width="56px" height="51px"></Image>
             </div>
-            <p className={styles.container__intro_info}>
-              For the ultimate experience please use sound and disable your add-blocker
-            </p>
+            <p className={styles.container__intro_info}>{translations.intro.experience[toggleLangState]}</p>
           </section>
         ) : (
           <>
@@ -198,7 +206,8 @@ const experience = () => {
             </div>
             <section className={`${styles.experience__step} ${styles.experience__1}`} id="experience__1">
               <h2 className={styles.title}>
-                You are right on time. Sam just accepted <span className={styles.highlight}>cookies</span> again.
+                {translations.step1.title.p1[toggleLangState]} <span className={styles.highlight}>cookies</span>{" "}
+                {translations.step1.title.p2[toggleLangState]}
               </h2>
               <section className={styles.experience__step_content}>
                 <section className={styles.step__content_text}>

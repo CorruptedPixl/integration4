@@ -1,0 +1,56 @@
+{
+    "exit": {
+        "en": "Exit experience",
+        "nl": "Verlaat de experience"
+    },
+    "intro": {
+        "title": {
+            "en": "Welcome, are you ready to become Big Brother?",
+            "nl": "Welkom, ben jij klaar om Big Brother te worden?"
+        },
+        "description": {
+            "track": {
+                "en": "Let's take a dive into the algorithm and get to know Sam from the data that's being tracked.",
+                "nl": "Laten we in het algoritme duiken en Sam leren kennen via de data dat van haar getracked wordt."
+            },
+            "name": {
+                "en": "Your name will be used to personalize this webpage locally and will not be saved on our servers.",
+                "nl": "Je naam wordt gebruikt om deze pagina lokaal te personaliseren en wordt niet opgeslagen op onze servers."
+            }
+        },
+        "console": {
+            "p1": {
+                "en": "You can track every move being made in the console. Just tap",
+                "nl": "Je kan zelf elke move tracken. Druk simpelweg op"
+            },
+            "p2": {
+                "en": "on your keyboard.",
+                "nl": "om de virtuele console te openen."
+            }
+        },
+        "button": {
+            "en": "Start the experience",
+            "nl": "Start de ervaring"
+        },
+        "accept": {
+            "en": "By continuing you accept the necessary cookies to make this experience work.",
+            "nl": "Door verder te gaan ga je akkoort met de nodige cookies die deze ervaring mogelijk maken."
+        },
+        "experience": {
+            "en": "For the ultimate experience, please use sound and disable you ad-blocker",
+            "nl": "Voor de ultime ervaring, zet je geluid aan en je ad-blocker uit"
+        }
+    },
+    "step1": {
+        "title": {
+            "p1": {
+                "en": "You're right on time. Sam just accepted",
+                "nl": "Net op tijd! Sam heeft net weer"
+            },
+            "p2": {
+                "en": "again.",
+                "nl": "geaccepteerd."
+            }
+        }
+    }
+}
