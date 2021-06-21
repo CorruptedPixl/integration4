@@ -30,7 +30,7 @@ export default function secureyourself() {
         <link rel="icon" href="/ctrl.logo.svg" />
       </Head>
       <main className={styles.main__container}>
-        <Console socket={socket} setSocket={setSocket} />
+        {/*<Console socket={socket} setSocket={setSocket} />*/}
         <section className={styles.main__container_mydata}>
           <h2 className={`${styles.container__mydata_title} ${styles.title}`}>
             Let's find out what we know about you!
@@ -123,11 +123,11 @@ export default function secureyourself() {
         <p className={styles.footer__body}>an experience brought to life by</p>
         <ul className={styles.footer__names}>
           <li className={styles.footer__names_name}>Noa Lambert</li>
-          <li>
+          <li className={styles.footer__names_spacer}>
             <Image src="/footerlistdot.svg" alt="orange delimiter dot" width={15} height={15} />
           </li>
           <li className={styles.footer__names_name}>Kenzo Dewaegenaere</li>
-          <li>
+          <li className={styles.footer__names_spacer}>
             <Image src="/footerlistdot.svg" alt="orange delimiter dot" width={15} height={15} />
           </li>
           <li className={styles.footer__names_name}>Samuel Vanhaecke</li>
