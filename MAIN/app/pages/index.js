@@ -47,25 +47,23 @@ export default function Home() {
           />
           <ParallaxMouse xFactor={230} springProps={springProps}>
             <section className={styles.main__container_intro}>
-              <ParallaxMouse xFactor={0} springProps={springProps}>
-                <h2 className={`${styles.title} ${styles.container__intro_title}`}>
-                  {translations.title.safe[toggleLangState]}
-                  <br />
-                  {translations.title.surfing[toggleLangState]}
-                  <span className={styles.highlight}> {translations.title.web[toggleLangState]}</span>
-                </h2>
-              </ParallaxMouse>
+              <h2 className={`${styles.title} ${styles.container__intro_title}`}>
+                {translations.title.safe[toggleLangState]}
+                <br />
+                {translations.title.surfing[toggleLangState]}
+                <span className={styles.highlight}> {translations.title.web[toggleLangState]}</span>
+              </h2>
               <p className={styles.container__intro_text}>{translations.intro[toggleLangState]}</p>
               <ParallaxMouse xFactor={50} springProps={springProps}>
                 <section className={styles.container__intro_buttons}>
                   <a
                     href="/experience"
-                    onClick={() => socket.emit("consoleMessage", "A user visited the experience")}
+                    onClick={() => socket.emit("consoleMessage", "A user opened the console")}
                     className={buttons.button}
                   >
                     {translations.buttons.experience[toggleLangState]}
                   </a>
-                  <p className={styles.intro__buttons_or}>or</p>
+                  <p className={styles.intro__buttons_or}>{translations.buttons.or[toggleLangState]}</p>
                   <a href="/secureyourself" className={`${buttons.button} ${buttons.dark}`}>
                     {translations.buttons.protect[toggleLangState]}
                   </a>

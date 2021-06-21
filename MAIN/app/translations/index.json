@@ -2,11 +2,11 @@
     "title": {
         "safe": {
             "en": "Thought you were safe",
-            "nl": "Denk jij dat je veilig"
+            "nl": "Denk jij dat je veilig bent"
         },
         "surfing": {
             "en": "surfing",
-            "nl": "surft op"
+            "nl": "als je surft op"
         },
         "web": {
             "en": "the web?",
@@ -15,12 +15,16 @@
     },
     "intro": {
         "en": "Well you aren't. You're far from safe. Every move you make online is constantly being watched, tracked, saved in a profile and used against you to not only show you targeted ads, but in the long term influence the way you think.",
-        "nl": "Wel, dat ben je niet. Helemaal niet zelfs! Elke actie die je online uitvoert wordt getracked en opgeslagen in een digitaal profiel dat tegen jou gebruikt kan worden, niet alleen om je specifieke advertenties te tonen, maar ook om op lange termijn je interesses te veranderen."
+        "nl": "Wel, dat ben je niet! Elke actie die je online uitvoert wordt getracked en opgeslagen in een digitaal profiel dat tegen jou gebruikt kan worden, niet alleen om jou specifieke advertenties te tonen, maar ook om op lange termijn je interesses te veranderen."
     },
     "buttons": {
         "experience": {
             "en": "Experience how they track you",
-            "nl": "Ervaar hoe ze je tracken"
+            "nl": "Beleef hoe ze jou tracken"
+        },
+        "or": {
+            "en": "or",
+            "nl": "of"
         },
         "protect": {
             "en": "Learn to protect yourself",
@@ -40,7 +44,7 @@
         },
         "body": {
             "en": "We've created an experience were we take you through the dark algoritm of the internet. But wait, that's not everything! We've created a virtual console system were you can see some \"secret\" data, and maybe even more...",
-            "nl": "We hebben een ervaring gemaakt waarin we je meenemen door het donker algoritme van het internet. Maar dat is niet alles! We hebben een virtuele terminal gemaakt waar je \"verborgen\" data kan zien, en misschien zelfs meer..."
+            "nl": "We hebben een beleving gemaakt waarin we je meenemen door het donker algoritme van het internet. Maar dat is niet alles! We hebben ook een virtuele terminal ontwikkeld waar je \"verborgen\" data kan zien, en misschien zelfs meer..."
         },
         "subtitle": {
             "go": {
@@ -59,6 +63,10 @@
                 "en": "here!",
                 "nl": "bent!"
             }
+        },
+        "button": {
+            "en": "Or press this button to open the console!",
+            "nl": "Of druk op deze knop om de console te openen!"
         }
     },
     "what": {
