@@ -2,7 +2,6 @@ import styles from "../styles/Toggle.module.scss";
 
 const Toggle = ({ className, valueLeft, valueRight, toggleState, setToggleState }) => {
   const handleToggleState = () => {
-    console.log(toggleState);
     setToggleState(toggleState === valueLeft ? valueRight : valueLeft);
   };
 
