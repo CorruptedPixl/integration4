@@ -45,7 +45,7 @@
         "title": {
             "p1": {
                 "en": "You're right on time. Sam just accepted",
-                "nl": "Net op tijd! Sam heeft net weer"
+                "nl": "Net op tijd! Sam heeft alweer"
             },
             "p2": {
                 "en": "again.",
@@ -85,37 +85,37 @@
         "description": {
             "p1": {
                 "en": "Now you are wondering, what are Fingerprints?",
-                "nl": ""
+                "nl": "Nu vraag je je af, wat zijn Vingerafdrukken?"
             },
             "p2": {
                 "en": "Well, it’s basically an unique identifier you get online that tracks every move you make. Consider it a story that never gets deleted and stays on your profile forever.",
-                "nl": ""
+                "nl": "Wel, het is eigenlijk een unieke code die jou online kan identificeren en gelinkt wordt aan elke actie die je online uitvoert. Zie het als een story die nooit weggaat en voor altijd op je profiel blijft hangen."
             },
             "subtitle": {
                 "p1": {
                     "en": "But is it",
-                    "nl": ""
+                    "nl": "Maar is het"
                 },
                 "highlight": {
                     "en": "bad?",
-                    "nl": ""
+                    "nl": "gevaarlijk?"
                 },
                 "p2": {
                     "en": "What else can they even access?",
-                    "nl": ""
+                    "nl": "Wat kunnen ze zelfs zien?"
                 }
             },
             "p3": {
                 "en": "With every small piece of information we get to know alot of things. Sometimes they ask permission for something that",
-                "nl": ""
+                "nl": "Met elk stukje informatie — hoe klein dan ook — komen we veel dingen te weten over de gebruiker. Soms vragen ze zelfs toestemming voor dingen die"
             },
             "p3_bold": {
                 "en": "you didn’t even know",
-                "nl": ""
+                "nl": "jij niet wist dat"
             },
             "p4": {
                 "en": "could be taken.",
-                "nl": ""
+                "nl": "bestonden."
             }
         },
         "button": {
@@ -126,122 +126,122 @@
     "step3": {
         "title": {
             "p1": {
-                "en": "Since he",
-                "nl": ""
+                "en": "Since Sam",
+                "nl": "Omdat Sam"
             },
             "p1_highlight": {
                 "en": "gave access",
-                "nl": ""
+                "nl": "toestemming gegeven heeft,"
             },
             "p2": {
                 "en": "we can track pretty much",
-                "nl": ""
+                "nl": "kunnen we zo goed als"
             },
             "p2_highlight": {
                 "en": "#anything.",
-                "nl": ""
+                "nl": "alles zien."
             }
         },
         "description": {
             "p1": {
                 "en": "Once you accept cookies, you basically give that site a key to your",
-                "nl": ""
+                "nl": "Eens dat je alle cookies accepteert, geef je een site een sleutel tot"
             },
             "p1_bold": {
                 "en": "private interests,",
-                "nl": ""
+                "nl": "jou persoonlijke interesses"
             },
             "p2": {
                 "en": "let them create a profile and they can track you",
-                "nl": ""
+                "nl": "en laat je hun een profiel maken waarmee ze je tracken"
             },
             "p2_bold": {
                 "en": "even further.",
-                "nl": ""
+                "nl": "doorheen het internet."
             },
             "subtitle": {
                 "p1": {
                     "en": "It's like",
-                    "nl": ""
+                    "nl": "Het is alsof je ze"
                 },
                 "highlight": {
-                    "en": "adding?",
-                    "nl": ""
+                    "en": "adding",
+                    "nl": "toevoegt aan"
                 },
                 "p2": {
                     "en": "them to your best friends.",
-                    "nl": ""
+                    "nl": "je 'Beste vrienden'."
                 }
             }
         },
         "button": {
             "en": "Let's unlock some data",
-            "nl": ""
+            "nl": "Ontgrendel de data"
         }
     },
     "step4": {
         "title": {
             "p1": {
                 "en": "Do you realize that",
-                "nl": ""
+                "nl": "Wist je dat"
             },
             "p1_highlight": {
                 "en": "every move",
-                "nl": ""
+                "nl": "elke actie"
             },
             "p2": {
                 "en": "you make gets stored in a profile?",
-                "nl": ""
+                "nl": "die je uitvoert opgeslagen wordt in een profiel?"
             }
         },
         "description": {
             "p1": {
                 "en": "Everything you do online is being tracked and stored in your unique profile. Companies use these profiles to target ads, we can compare it a bit to a social media account that you have no ctrl. over.",
-                "nl": ""
+                "nl": "Alles dat je online doet wordt getracked en opgeslagen in jouw uniek profiel. Bedrijven gebruiken deze profilen om advertenties te tonen aan jou. We kunnen het vergelijken met een social media account waat je geen ctrl. over hebt."
             },
             "subtitle": {
                 "p1": {
                     "en": "Shall we take a look at what we can gather?",
-                    "nl": ""
+                    "nl": "Zullen we een kijkje nemen naar wat we allemaal kunnen zien?"
                 }
             }
         },
         "button": {
             "en": "Generate Sam's profile",
-            "nl": ""
+            "nl": "Genereer Sam's profiel"
         }
     },
     "step5": {
         "title": {
             "p1": {
                 "en": "Done!",
-                "nl": ""
+                "nl": "En... Klaar!"
             },
             "p2": {
                 "en": "Well I guess you can",
-                "nl": ""
+                "nl": "Wel, ik denk dat je wel kan"
             },
             "p2_highlight": {
                 "en": "see what Sam's doing.",
-                "nl": ""
+                "nl": "zien wat Sam aan het doen is."
             }
         },
         "description": {
             "p1": {
                 "en": "Let's see how good you are at targeting ads. Send Sam ads based on things they search for online.",
-                "nl": ""
+                "nl": "Eens kijken hoe goed jij bent in de juiste ads te tonen. Stuur Sam advertenties gebaseerd op de dingen die ze opzoekt."
             },
             "p2": {
                 "en": "Have a look at",
-                "nl": ""
+                "nl": "Kijk eens goed op"
             },
             "p2_bold": {
                 "en": "the screen on the left",
-                "nl": ""
+                "nl": "het scherm hier linkss"
             },
             "p3": {
                 "en": "and send the right ad, but make sure to do it at the right time!",
-                "nl": ""
+                "nl": "en stuur de juiste advertentie, maar zorg ervoor dat je niet te laat bent!"
             }
         },
         "ads": {
@@ -275,29 +275,29 @@
         "title": {
             "p1": {
                 "en": "Nice,",
-                "nl": ""
+                "nl": "Nice,"
             },
             "p1_highlight": {
                 "en": "your ad worked,",
-                "nl": ""
+                "nl": "je advertentie heeft gewerkt,"
             },
             "p2": {
                 "en": "we got Sam to look at",
-                "nl": ""
+                "nl": "we hebben Sam doen kijken naar"
             },
             "p3": {
                 "en": "related products!",
-                "nl": ""
+                "nl": "gerelateerde producten!"
             }
         },
         "description": {
             "p1": {
                 "en": "On sites where you watch video’s you probally just skip the ads, that’s why they have to delve deeper. Let me tell you everything about it!",
-                "nl": ""
+                "nl": "Op video sharing site, sla je meestal de advertenties zo snel mogelijk over. Dat is waarom we nog dieper moeten gaan zoeken in onze user. Kom mee en we vertellen je er alles over!"
             },
             "p2": {
                 "en": "This is how we do it with everyone, we watch from a distance, collect everything we can find about them, build their profile and recommend advertisements based on that.",
-                "nl": ""
+                "nl": "Dit is hoe we het met iedereen doen, we kijken vanop een afstand, houden al hun data bij, en bouwen telkens een accurater profiel waardoor we betere advertenties kunnen sturen."
             }
         },
         "button": {
@@ -309,25 +309,25 @@
         "title": {
             "p1": {
                 "en": "We can see that Sam",
-                "nl": ""
+                "nl": "We kunnen zien dat Sam ergens"
             },
             "p1_highlight": {
                 "en": "lives near Bruges",
-                "nl": ""
+                "nl": "in Brugge woont"
             },
             "p2": {
                 "en": "based on their",
-                "nl": ""
+                "nl": "door hun"
             }
         },
         "description": {
             "p1": {
                 "en": "Advertisers can always figure out in wich area you live. Once you accept all cookies they can even track your exact location.",
-                "nl": ""
+                "nl": "Adverteerders vinden altijd een manier om je locatie te weten te komen. Eens je alle cookies accepteert kunnen ze zelfs je exacte locatie tracken."
             },
             "p2": {
                 "en": "After all that cookie-talk Sam might be hungry, would you mind sending some food ads?",
-                "nl": ""
+                "nl": "Na al deze cookie-talk heeft Sam waarschijnlijk honger, zou jij wat suggesties willen sturen?"
             }
         },
         "ads": {
@@ -361,93 +361,93 @@
         "title": {
             "p1": {
                 "en": "We know Sam has a partner due to their",
-                "nl": ""
+                "nl": "We weten dat Sam een partner heeft door haar"
             },
             "p1_highlight": {
                 "en": "shared IP",
-                "nl": ""
+                "nl": "gedeeld IP"
             },
             "p2": {
                 "en": "and",
-                "nl": ""
+                "nl": "en"
             },
             "p2_highlight": {
                 "en": "GPS location.",
-                "nl": ""
+                "nl": "GPS locatie."
             }
         },
         "description": {
             "p1": {
                 "en": "Not only your",
-                "nl": ""
+                "nl": "Maar niet alleen jouw"
             },
             "p1_highlight": {
                 "en": "online relationship status",
-                "nl": ""
+                "nl": "online relatie status"
             },
             "p2": {
                 "en": "reveals this.",
-                "nl": ""
+                "nl": "verraad dit."
             },
             "p3": {
                 "en": "They can track everyone who is using the same internet connection and even suggest ads to others! It’s all linked together like a big group chat.",
-                "nl": ""
+                "nl": "Ze kunnen iedereen tracken die dezelfde internetverbinding gebruikt en zelfs advertenties sturen naar anderen! Het is allemaal gelinkt zoals één grote groepchat."
             }
         },
         "button": {
             "en": "Let's help them!",
-            "nl": "Sla advertentie over >"
+            "nl": "Laten we hun helpen!"
         }
     },
     "step9": {
         "title": {
             "p1": {
                 "en": "Their partner has been lookign at",
-                "nl": ""
+                "nl": "Sam's partner kijkt al een tijdje naar"
             },
             "p1_highlight": {
                 "en": "wedding rings",
-                "nl": ""
+                "nl": "trouwringen"
             }
         },
         "description": {
             "p1": {
                 "en": "Isn't this good to know? And especially profitable.",
-                "nl": ""
+                "nl": "Is dit niet een handig weetje? En vooral voordelig... voor ons."
             },
             "p2": {
                 "en": "With some perfectly timed advertisements we could probably get Sam to buy a wedding ring.",
-                "nl": ""
+                "nl": "Met wat goed getimede advertenties kunnen we Sam waarschijnlijk overhalen om een trouwring te kopen."
             },
             "p3": {
                 "en": "Wouldn’t that be beautiful?",
-                "nl": ""
+                "nl": "Zou dat niet mooi zijn?"
             },
             "p4": {
                 "en": "That was a rhetorical question, we don’t care about that, just money.",
-                "nl": ""
+                "nl": "Dat was een retorische vraag, het maakt ons niets uit. Geld is topprioriteit."
             }
         },
         "button": {
             "en": "Let's make some bank",
-            "nl": ""
+            "nl": "Laten we geld verdienen"
         }
     },
     "step10": {
         "title": {
             "p1": {
                 "en": "Jewelry stores will be very grateful for these",
-                "nl": ""
+                "nl": "Juwelierszaken zullen zeer blij zijn met deze"
             },
             "p1_highlight": {
                 "en": "potential customers",
-                "nl": ""
+                "nl": "potentiele klanten"
             }
         },
         "description": {
             "p1": {
                 "en": "Since we have all this power we can even choose from where they will possibly buy the ring, this time there is no right or wrong. Choose which one you think is going to be the best fit.",
-                "nl": ""
+                "nl": "Omdat we al deze macht hebben kunnen we zelfs kiezen waar ze mogelijk de ring zullen kopen. Deze keer is er geen juist of fout, kies simpelweg de juwelierszaak die jij denkt dat het best past."
             }
         },
         "ads": {
@@ -481,35 +481,35 @@
         "title": {
             "p1": {
                 "en": "I guess it's clear what we can do with",
-                "nl": ""
+                "nl": "Ik denk dat het nu wel duidelijk is wat we kunnen doen met"
             },
             "p1_highlight": {
                 "en": "your data",
-                "nl": ""
+                "nl": "jouw data"
             }
         },
         "description": {
             "p1": {
                 "en": "You can prevent the internet collecting, selling, using your data.",
-                "nl": ""
+                "nl": "Je kan voorkomen dat het internet al deze data verzameld, gebruikt en verkoopt."
             },
             "p1_bold": {
                 "en": "Protect yourself",
-                "nl": ""
+                "nl": "Bescherm jezelf"
             },
             "p2": {
                 "en": "against the manipulation of the corporate world. If you want to see all data that is available to the internet at this exact moment, take a look below.",
-                "nl": ""
+                "nl": "tegen de manipulatie van online marketing. Als je wilt zien welke data er beschikbaar is van jou op dit moment, neem eens een kijkje op de pagina hieronder."
             }
         },
         "buttons": {
             "primary": {
                 "en": "Show me what you can track",
-                "nl": ""
+                "nl": "Toon me wat je kan tracken van mij"
             },
             "secondary": {
                 "en": "Give me tips!",
-                "nl": ""
+                "nl": "Geef me tips!"
             }
         }
     }
