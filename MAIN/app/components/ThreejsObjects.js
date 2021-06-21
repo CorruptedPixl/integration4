@@ -14,7 +14,7 @@ const ThreejsObjects = ({ className }) => {
 
     camera.position.z = 3;
     const renderer = new THREE.WebGLRenderer({ alpha: true });
-    renderer.setClearColor("0xFF5C00", 0);
+    renderer.setClearColor("0xff5c00", 0);
 
     renderer.setSize(window.innerWidth, window.innerHeight);
     mountRef.current.appendChild(renderer.domElement);
@@ -98,8 +98,8 @@ const ThreejsObjects = ({ className }) => {
       const yOff = Math.sin(elapsedTime * 4);
       const yOff2 = Math.sin(elapsedTime * 2);
       // move the sphere up and down
-      cone.position.y = ThreeMath.lerp(0.03, 0.05, yOff);
-      box.position.y = ThreeMath.lerp(0.01, 0.05, yOff2);
+      cone.position.y = ThreeMath.lerp(-0.26, -0.3, yOff);
+      box.position.y = ThreeMath.lerp(0.4, 0.4, yOff2);
       sphere.position.y = ThreeMath.lerp(-0.01, 0.05, yOff);
 
       //rerender

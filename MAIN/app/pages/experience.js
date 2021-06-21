@@ -59,11 +59,7 @@ const experience = () => {
   };
 
   const handleAdImage = (selected, e) => {
-    console.log(selected);
-    console.log(adImage);
-    console.log(e.target);
-
-    if (selected === adImage) {
+    if (selected === adImage || vw < 640) {
       e.target.classList.add(styles.correct);
       setTimeout(function () {
         e.target.classList.remove(styles.correct);
@@ -295,7 +291,7 @@ const experience = () => {
                 <span className={styles.highlight}> #anything</span>.
               </h2>
               <section className={styles.experience__step_content}>
-                <div className={styles.step__content_img}>
+                <div className={`${styles.step__content_img} ${styles.visible}`}>
                   <Image
                     src="/images/experience/locked/lock.gif"
                     alt="padlock with data behind it"
@@ -313,7 +309,6 @@ const experience = () => {
                   <h3 className={styles.inner__title}>
                     It's like <span className={styles.highlight}>adding</span> hem to your best friends.
                   </h3>
-                  <button className={`${buttons.button} ${buttons.light}`}>What does this do?</button>
                   <button
                     onClick={() =>
                       handleMovement({
@@ -358,7 +353,7 @@ const experience = () => {
                     Generate Sam's profile
                   </button>
                 </section>
-                <div className={`${styles.bunnyPicture} ${styles.step__content_img}`}>
+                <div className={`${styles.bunnyPicture} ${styles.visible} ${styles.step__content_img}`}>
                   <Image
                     src="/images/experience/bunny/bunny.gif"
                     alt="bunny taking photograph of a model"
@@ -369,7 +364,7 @@ const experience = () => {
               </section>
             </section>
             <section className={`${styles.experience__step} ${styles.experience__5}`} id="experience__5">
-              <h2 className={styles.title}>
+              <h2 className={`${styles.title} ${styles.ad}`}>
                 Done!
                 <br />
                 Well I guess you can <span className={styles.highlight}>see what Sam's doing.</span>
@@ -452,7 +447,7 @@ const experience = () => {
               </section>
             </section>
             <section className={`${styles.experience__step} ${styles.experience__7}`} id="experience__7">
-              <h2 className={styles.title}>
+              <h2 className={`${styles.title} ${styles.ad}`}>
                 We can see that Sam <span className={styles.highlight}>lives near Bruges</span> based on their
                 <span className={styles.highlight}> IP.</span>
               </h2>
@@ -575,7 +570,7 @@ const experience = () => {
               </section>
             </section>
             <section className={`${styles.experience__step} ${styles.experience__10}`} id="experience__10">
-              <h2 className={styles.title}>
+              <h2 className={`${styles.title} ${styles.ad}`}>
                 Jewelry stores will be very grateful for these
                 <span className={styles.highlight}> potential customers</span>
               </h2>
@@ -620,7 +615,9 @@ const experience = () => {
                     internet at this exact moment, take a look below.
                   </p>
                   <button className={buttons.button}>Show me what you can track</button>
-                  <button className={`${buttons.button} ${buttons.light} ${buttons.bottom}`}>give me tips!</button>
+                  <button className={`${buttons.button} ${buttons.light} ${buttons.bottom} ${styles.fixed}`}>
+                    give me tips!
+                  </button>
                 </section>
                 <div className={styles.step__content_img}>
                   <Image

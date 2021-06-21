@@ -6,6 +6,7 @@ import { Parallax } from "react-parallax"; // Scroll parallax
 import { useSpring } from "react-spring"; // Mouse parallax
 import { useState } from "react";
 import ThreejsObjects from "../components/ThreejsObjects.js";
+import ThreejsObjectsMainlow from "../components/ThreejsObjectsMainlow.js";
 import ParallaxMouse from "../components/ParallaxMouse";
 import Console from "../components/Console";
 import Toggle from "../components/Toggle";
@@ -159,9 +160,11 @@ export default function Home() {
             </section>
           </section>
         </Parallax>
-        {/*<ThreejsObjects />*/}
       </main>
       <footer className={styles.footer}>
+        <div className={styles.threejs__cookie__object__pos2}>
+          <ThreejsObjectsMainlow className={styles.threejs__object} />
+        </div>
         <div className={styles.footer__img}>
           <Image
             src="/images/index/paraplu/paraplu.png"
