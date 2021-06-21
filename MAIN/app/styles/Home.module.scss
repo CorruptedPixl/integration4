@@ -23,15 +23,31 @@
 .main__container_intro {
   width: 60vw;
   margin: 20vh 0 26vw 10vw;
+
+  @media screen and (max-width: 640px) {
+    width: 100%;
+    padding: 10vh 5vw 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .container__intro_title {
   margin-bottom: 2.8vw;
+
+  @media screen and (max-width: 640px) {
+    margin-bottom: 4vh;
+  }
 }
 
 .container__intro_text {
   width: 60%;
   z-index: 100;
+
+  @media screen and (max-width: 640px) {
+    width: 100%;
+  }
 }
 
 .container__intro_buttons {
@@ -39,6 +55,14 @@
   display: flex;
   flex-direction: row;
   height: 7rem;
+
+  @media screen and (max-width: 640px) {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    margin-bottom: 5vh;
+    gap: 15vh;
+  }
 }
 
 .intro__buttons_primary {
@@ -47,6 +71,11 @@
   font-weight: bold;
   font-size: 2.4rem;
   padding: 0 4rem;
+
+  @media screen and (max-width: 640px) {
+    width: 100%;
+    font-size: 2.2rem;
+  }
 }
 
 .intro__buttons_secondary {
@@ -56,6 +85,11 @@
   font-weight: bold;
   font-size: 2.4rem;
   padding: 0 4rem;
+
+  @media screen and (max-width: 640px) {
+    width: 100%;
+    font-size: 2.2rem;
+  }
 }
 
 .intro__buttons_or {
@@ -66,6 +100,10 @@
   padding: 0 3rem;
   display: grid;
   align-items: center;
+
+  @media screen and (max-width: 640px) {
+    visibility: hidden;
+  }
 }
 
 .main__container_introparallax {
@@ -81,15 +119,34 @@
   align-items: center;
   width: 80vw;
   margin: 0 auto 4vw;
+
+  @media screen and (max-width: 640px) {
+    flex-direction: column;
+    margin-top: 5vh;
+  }
 }
 
 .become__text_title {
   margin-bottom: 2.8vw;
+
+  @media screen and (max-width: 640px) {
+    width: 100%;
+  }
+}
+
+.text__title_br {
+  @media screen and (max-width: 640px) {
+    display: none;
+  }
 }
 
 .become__text_body {
   width: 70%;
   margin-bottom: 4vw;
+
+  @media screen and (max-width: 640px) {
+    width: 100%;
+  }
 }
 
 .become__text_button {
@@ -111,26 +168,51 @@
   margin: auto;
   margin-bottom: 7rem;
   margin-top: 25rem;
+
+  @media screen and (max-width: 640px) {
+    width: 100%;
+    padding: 10vh 5vw 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }
 
 .container__whatcanido_img {
-  // padding: 2rem;
-  // z-index: 5;
   position: absolute;
   left: 2vw;
   top: 5rem;
+
+  @media screen and (max-width: 640px) {
+    position: static;
+    margin-top: 4vh;
+  }
 }
 
 .container__whatcanido_text {
   width: 50%;
+
+  @media screen and (max-width: 640px) {
+    width: 100%;
+  }
 }
 
 .whatcanido__text_title {
   margin-bottom: 2.8vw;
+
+  @media screen and (max-width: 640px) {
+    width: 100%;
+    margin-bottom: 4vh;
+  }
 }
 
 .whatcanido__text_body {
   margin-bottom: 4vw;
+
+  @media screen and (max-width: 640px) {
+    width: 100%;
+    margin: 4vh 0;
+  }
 }
 
 .whatcanido__text_buttons {
@@ -176,7 +258,6 @@
   z-index: -1;
 }
 
-
 .threejs__cookie__object__pos2 {
   position: absolute;
   right: 5vw;
@@ -188,7 +269,7 @@
 .infolayerstyle {
   position: absolute;
 }
-.become__text_h3{
+.become__text_h3 {
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 2rem;
@@ -214,6 +295,12 @@
   line-height: 1.15;
   font-size: 7rem;
   font-family: Renogare;
+
+  @media screen and (max-width: 640px) {
+    font-size: 2.9rem;
+    line-height: 3.2rem;
+    width: 90vw;
+  }
 }
 
 .main__container {
@@ -262,23 +349,9 @@
     top: 0;
     z-index: 20;
     position: fixed;
-
-    // animation: Animation 5s linear infinite;
   }
 
-  @keyframes Animation {
-    0% {
-      background-position: 0;
-    }
-    97% {
-      background-position: 0;
-    }
-    98% {
-      background-position: 0% 6%;
-    }
-    100% {
-      background-position: 0;
-    }
+  @media screen and (max-width: 640) {
   }
 }
 
@@ -310,6 +383,13 @@
   top: 0vh;
   right: 16vw;
   z-index: 1;
+
+  @media screen and (max-width: 640px) {
+    position: absolute;
+    top: 60vh;
+    width: 60vw;
+    margin: auto;
+  }
 }
 
 .parallax__img_bgWave {
@@ -317,6 +397,13 @@
   top: 10vh;
   right: -1vw;
   z-index: -3;
+
+  @media screen and (max-width: 640px) {
+    position: absolute;
+    top: 60vh;
+    width: 80vw;
+    margin: auto;
+  }
 }
 
 .parallax__img_mainWave {
@@ -324,6 +411,13 @@
   top: 20vh;
   right: 18vw;
   z-index: -2;
+
+  @media screen and (max-width: 640px) {
+    position: absolute;
+    top: 68vh;
+    width: 200vw;
+    margin: auto;
+  }
 }
 
 .threejs__object {
@@ -331,6 +425,10 @@
   width: auto;
   margin-top: -30vh;
   right: 3vw;
+
+  @media screen and (max-width: 640px) {
+    visibility: hidden;
+  }
 }
 
 // .footer {
@@ -348,6 +446,10 @@
   font-size: 5rem;
   font-family: renogare;
   margin-bottom: 1.8rem;
+
+  @media screen and (max-width: 640px) {
+    font-size: 2.8rem;
+  }
 }
 
 .footer__body {
@@ -355,6 +457,11 @@
   font-size: 2.8rem;
   font-weight: 100;
   margin-bottom: 4rem;
+
+  @media screen and (max-width: 640px) {
+    font-size: 2.4rem;
+    margin-bottom: 2rem;
+  }
 }
 
 .footer__names {
@@ -362,10 +469,26 @@
   display: flex;
   align-items: center;
   gap: 4rem;
+
+  @media screen and (max-width: 640px) {
+    flex-direction: column;
+    gap: 0rem;
+    align-items: flex-start;
+  }
 }
 
 .footer__names_name {
   font-size: 2.8rem;
+
+  @media screen and (max-width: 640px) {
+    font-size: 2rem;
+  }
+}
+
+.footer__names_spacer {
+  @media screen and (max-width: 640px) {
+    visibility: hidden;
+  }
 }
 
 // .footer__bg {
@@ -403,6 +526,7 @@
   //   background-color: var(--text);
   //   height: 10rem;
   // }
+
   &:before {
     content: "";
     position: absolute;
@@ -419,6 +543,10 @@
     // transform-origin: 0;
     // overflow: hidden;
     z-index: 0;
+
+    @media screen and (max-width: 640px) {
+      background-color: var(--text);
+    }
   }
 
   & * {
@@ -430,6 +558,12 @@
   position: absolute;
   left: 22vw;
   top: -34rem;
+
+  @media screen and (max-width: 640px) {
+    width: 60vw;
+    top: -25vh;
+    left: 40vw;
+  }
 }
 
 .footer__text {
@@ -495,10 +629,4 @@
   position: absolute;
   right: 5rem;
   top: -15rem;
-}
-
-@media only screen and (min-width: var(--small-screen)) and (max-width: var(--medium-screen)) {
-  .main__container {
-    color: green;
-  }
 }
