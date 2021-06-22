@@ -373,7 +373,7 @@ const experience = () => {
                       src="/images/experience/bunny/bunny.gif"
                       alt="bunny taking photograph of a model"
                       width={1000}
-                      height={800}
+                      height={500}
                     ></Image>
                   </div>
                 </section>
