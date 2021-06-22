@@ -1,0 +1,31 @@
+.navbar {
+    position: absolute;
+    width: 100%;
+}
+
+.navbar__list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 3rem;
+    justify-content: space-between;
+}
+
+.navbar__list_interactions {
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+}
+
+.list__interactions_link {
+    font-size: 2rem;
+
+    &:hover {
+        color: var(--accent);
+        cursor: pointer;
+    }
+
+    &:active {
+        text-decoration: underline;
+    }
+}

@@ -10,6 +10,7 @@ import ThreejsObjectsMainlow from "../components/ThreejsObjectsMainlow.js";
 import ParallaxMouse from "../components/ParallaxMouse";
 import Console from "../components/Console";
 import Toggle from "../components/Toggle";
+import Navbar from "../components/Navbar";
 import translations from "../translations/index.json";
 
 export default function Home() {
@@ -37,7 +38,7 @@ export default function Home() {
       </Head>
       <main className={styles.main__container} onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}>
         <Console socket={socket} setSocket={setSocket} />
-        <Parallax className={styles.main__container_introparallax} blur={10} strength={600}>
+        <Navbar>
           <Toggle
             className={styles.toggleSwitch}
             toggleState={toggleLangState}
@@ -45,6 +46,8 @@ export default function Home() {
             valueLeft={"nl"}
             valueRight={"en"}
           />
+        </Navbar>
+        <Parallax className={styles.main__container_introparallax} blur={10} strength={600}>
           <ParallaxMouse xFactor={230} springProps={springProps}>
             <section className={styles.main__container_intro}>
               <h2
