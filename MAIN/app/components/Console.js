@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import useLocalStorage from "../hooks/useLocalStorage";
 
 const Console = ({ socket, setSocket }) => {
-  // const [socket, setSocket] = useState();
   const [messageLog, setMessageLog] = useLocalStorage("messageLog", []);
   const [currentInput, setCurrentInput] = useState("");
   const [isVisible, setIsVisible] = useState(false);
@@ -19,6 +18,7 @@ const Console = ({ socket, setSocket }) => {
 
   useEffect(() => {
     const handleEvent = (message) => {
+      // Add messages to the messageLog
       setMessageLog((currentArray) => [...currentArray, message.toString()]);
     };
     if (socket) {
