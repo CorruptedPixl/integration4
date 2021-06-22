@@ -1,17 +1,3 @@
-//.main__container {
-// flex: 1;
-// display: flex;
-// flex-direction: column;
-// justify-content: center;
-// align-items: center;
-// position: relative;
-//}
-
-// .main__container {
-//   position: relative;
-//   z-index: 0;
-// }
-
 .highlight {
   color: var(--accent);
 }
@@ -224,31 +210,6 @@
   width: -moz-fit-content;
 }
 
-// .text__buttons_ctrl {
-//   background-color: var(--accent);
-//   border: none;
-//   font-weight: bold;
-//   font-size: 2.4rem;
-//   padding: 0 4rem;
-//   height: 7rem;
-// }
-
-// .text__buttons_experience {
-//   background-color: var(--text);
-//   border: none;
-//   font-weight: bold;
-//   font-size: 2.4rem;
-//   padding: 0 4rem;
-//   height: 7rem;
-// }
-
-/*.parallaxContainer {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}*/
 .threejs__cookie__object__pos {
   position: absolute;
   right: -30vw;
@@ -275,22 +236,6 @@
   margin-bottom: 2rem;
 }
 
-// .footer {
-//   width: 100%;
-//   height: 100px;
-//   border-top: 1px solid #eaeaea;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
-
-// .footer a {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   flex-grow: 1;
-// }
-
 .title {
   line-height: 1.15;
   font-size: 7rem;
@@ -309,8 +254,6 @@
   z-index: 0;
 
   // crt overlay effect
-  // line-height: 1.5;
-  // font-size: 1.5rem;
   &:before {
     background: linear-gradient(
         0deg,
@@ -372,7 +315,6 @@
 }
 
 .parallax__img_fullwidth {
-  // position: absolute;
   overflow: visible;
   min-width: 140%;
   margin-left: -10%;
@@ -432,16 +374,6 @@
   }
 }
 
-// .footer {
-//   border: none;
-//   padding: 0 10% 2vw;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: flex-start;
-//   height: 100%;
-//   margin-top: -26vw;
-// }
-
 .footer__title {
   color: black;
   font-size: 5rem;
@@ -492,57 +424,22 @@
   }
 }
 
-// .footer__bg {
-//   position: absolute;
-//   left: 0;
-//   width: 100%;
-//   height: 90rem;
-//   background-repeat: no-repeat;
-//   background-size: cover;
-//   z-index: -1;
-//   background-image: url("/footer_bg.svg");
-// }
-
 .footer {
   position: relative;
   width: 100%;
-  // height: 10rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  // padding: 25rem 0;
   height: 60rem;
-  // margin-top: 21rem;
-
-  // background: linear-gradient(to bottom left, var(--accent), var(--text) 50%);
-  // background-color: var(--text);
-  // &:before {
-  //   content: "";
-  //   position: absolute;
-  //   left: 0;
-  //   // top: 0;
-  //   right: 0;
-  //   bottom: 0;
-
-  //   background-color: var(--text);
-  //   height: 10rem;
-  // }
 
   &:before {
     content: "";
     position: absolute;
     left: 0;
-    // top: 0;
     right: 0;
-    // bottom: -65vh;
     height: 100%;
-    // max-height: 50rem;
-    // background-color: var(--text);
     background-image: linear-gradient(to bottom left, rgba(0, 0, 0, 0) 49.8%, var(--text) 50%);
     background-color: var(--background);
-    // transform: skewY(10deg);
-    // transform-origin: 0;
-    // overflow: hidden;
     z-index: 0;
 
     @media screen and (max-width: 640px) {
@@ -570,22 +467,10 @@
 .footer__text {
   position: relative;
   margin-top: 28rem;
-  // &:after {
-  //   //TODO FIX THIS OR DELETE
-  //   position: absolute;
-  //   content: "";
-  //   margin-top: 5rem;
-  //   left: 0;
-  //   right: 0;
-  //   height: 20rem;
-  //   background-color: var(--text);
-  //   z-index: -10;
-  // }
 }
 
 .footer__logo {
   margin-top: 15rem;
-  // margin-left: -50rem;
   margin-left: -30rem;
   margin-right: 10rem;
 }
@@ -596,27 +481,6 @@
   color: var(--text-dark);
   text-align: center;
 }
-
-// .button {
-//   display: grid;
-//   place-content: center;
-//   border: none;
-//   font-weight: bold;
-//   font-size: 2.4rem;
-//   padding: 0 4rem;
-//   height: 7rem;
-//   background-color: var(--accent);
-//   color: var(--text-dark);
-
-//   &.light {
-//     background-color: var(--light);
-//   }
-
-//   &.dark {
-//     background-color: var(--background);
-//     color: var(--text);
-//   }
-// }
 
 .button__container {
   display: flex;
