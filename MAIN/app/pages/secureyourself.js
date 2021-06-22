@@ -11,6 +11,7 @@ import Toggle from "../components/Toggle";
 import ThreejsObjects from "../components/ThreejsObjects.js";
 import ParallaxMouse from "../components/ParallaxMouse";
 import Console from "../components/Console";
+import Navbar from "../components/Navbar";
 
 export default function secureyourself() {
   const [socket, setSocket] = useState();
@@ -33,13 +34,14 @@ export default function secureyourself() {
         <link rel="icon" href="/ctrl.logo.svg" />
       </Head>
       <main className={styles.main__container}>
-        <Toggle
-          className={styles.toggleSwitch}
-          toggleState={toggleLangState}
-          setToggleState={setToggleLangState}
-          valueLeft={"nl"}
-          valueRight={"en"}
-        />
+        <Navbar>
+          <Toggle
+            toggleState={toggleLangState}
+            setToggleState={setToggleLangState}
+            valueLeft={"nl"}
+            valueRight={"en"}
+          />
+        </Navbar>
         <Console socket={socket} setSocket={setSocket} />
         <section className={styles.main__container_mydata}>
           <h2

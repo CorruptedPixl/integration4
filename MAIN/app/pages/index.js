@@ -40,7 +40,6 @@ export default function Home() {
         <Console socket={socket} setSocket={setSocket} />
         <Navbar>
           <Toggle
-            className={styles.toggleSwitch}
             toggleState={toggleLangState}
             setToggleState={setToggleLangState}
             valueLeft={"nl"}
