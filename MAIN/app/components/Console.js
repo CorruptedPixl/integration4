@@ -59,7 +59,7 @@ const Console = ({ socket, setSocket }) => {
         <p>
           Press <code className={styles.code}>/</code> again to close the console.
         </p>
-        <button onClick={clearConsole}>Clear console</button>
+        <button className={styles.button} onClick={clearConsole}>Clear console</button>
         <form className={styles.commandInput} action="" onSubmit={(e) => handleSubmitMessage(e)}>
           <input
             className={styles.inputField}

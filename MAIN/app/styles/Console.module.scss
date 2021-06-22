@@ -19,10 +19,27 @@
 
   & .inputField {
     width: calc(100% - 10rem);
+    border: none;
+    font-size: 2rem;
+    border: 1px solid var(--light);
+
+    &:focus {
+      outline: none;
+      border: 1px solid black;
+    }
   }
   & .submitBtn {
     width: 10rem;
     margin-left: 2rem;
+    border: none;
+    background-color: var(--light);
+    font-size: 2rem;
+    padding: 0 1rem;
+    font-weight: 500;
+
+    &:hover {
+      cursor: url("/cursor_pointer.png"), pointer;
+    }
   }
 }
 
@@ -40,5 +57,19 @@
 }
 
 .message {
-  content: "";
+  padding: 1vh 1vh 0;
+  width: 100%;
+}
+
+.button {
+  border: none;
+  background-color: white;
+  font-size: 2rem;
+  margin: 1.5vh 0 1vh;
+  padding: 0 1rem;
+  font-weight: 500;
+
+  &:hover {
+    cursor: url("/cursor_pointer.png"), pointer;
+  }
 }

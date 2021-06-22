@@ -83,7 +83,9 @@ const experience = () => {
 
   const handleExperienceStart = () => {
     setExperience(true);
-    fsHandle.enter();
+    if (vw < 640) {
+      fsHandle.enter();
+    }
   };
 
   const handleAdImage = (selected, e) => {
