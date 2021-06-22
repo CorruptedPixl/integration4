@@ -1,0 +1,135 @@
+{
+    "// Hello there, I knew you would be intersted in what we know about you, first of all, the weather there is looking great/meh thre in (place). That’s scary that we know where you live close to no?": "// We can also see that you are using (device). Are you still reading? Well let me tell you that the nearest macDonalds is at (place). You should scroll a bit dowen and look at the tips we provide you how to secure yourself more on the internet!",
+    "summary": {
+        "visited": {
+            "en": "You've visited this site",
+            "nl": "Je hebt deze site al"
+        },
+        "times": {
+            "en": "times already.",
+            "nl": "keer bezocht."
+        }
+    },
+    "story": {
+        "subtitle": {
+            "en": "Always wanted to know what we know? Well you're at the right place!",
+            "nl": ""
+        },
+        "p1": {
+            "en": "First of all",
+            "nl": "Maar eerst,"
+        },
+        "p1_weather_available": {
+            "en": "the weather looks",
+            "nl": "het weer ziet er"
+        },
+        "p1_weather_unavailable": {
+            "en": "how's the weather",
+            "nl": ""
+        },
+        "currently": {
+            "en": "seeing as it's currently",
+            "nl": ""
+        },
+        "weather_burning": {
+            "en": "like it's burning",
+            "nl": "vreselijk heet uit"
+        },
+        "weather_hot": {
+            "en": "pretty hot",
+            "nl": "redelijk warm uit"
+        },
+        "weather_avg": {
+            "en": "pretty average",
+            "nl": "redelijk uit"
+        },
+        "weather_chilly": {
+            "en": "quite chilly",
+            "nl": "nogal fris uit"
+        },
+        "weather_cold": {
+            "en": "cold",
+            "nl": "koud uit"
+        },
+        "weather_freezing": {
+            "en": "like it's freezing",
+            "nl": "superkoud uit"
+        },
+        "down": {
+            "en": "down in",
+            "nl": "daar in"
+        },
+        "live": {
+            "en": "Isn't it a bit scary that we know where you live?",
+            "nl": "Is dat niet een beetje eng dat we zomaar weten waar je woont?"
+        },
+        "coords": {
+            "en": "We can even provide coordinates, sometimes accurate down to 1m. Your current coordinates are",
+            "nl": "We kunnen je zelfs exacte coordinaten geven, soms zelfs accuraat tot op één meter. Momenteel zijn je coordinaten"
+        },
+        "id_you": {
+            "en": "You also have a",
+            "nl": "Je hebt ook een"
+        },
+        "id_unique": {
+            "en": "unique",
+            "nl": "unieke"
+        },
+        "id_id": {
+            "en": "visitor ID. This ID is used to track you across the internet. Keep track of it just like we do:",
+            "nl": "bezoekers ID. Dit ID wordt gebruikt om jou over heel het internet te tracken. Houd 'm goed bij net zoals wij dat doen:"
+        },
+        "ip_about": {
+            "en": "All of this info is available from only one datapoint, namely your IP address. (which is",
+            "nl": "Al deze info komt maar van één datapunt, namelijk jouw IP adres. (wat"
+        },
+        "ip_about2": {
+            "en": "by the way).",
+            "nl": "is by the way)"
+        },
+        "ip_address": {
+            "en": "If you want to copy and paste your address next time you order something online, feel free to copy this:",
+            "nl": "Als je je adres wilt copy/pasten de volgende keer dat je iets online besteld, dan kan dit wel eens handig zijn:"
+        },
+        "browser_using": {
+            "en": "You seem to be using",
+            "nl": "Je gebruikt"
+        },
+        "browser_v": {
+            "en": ", version",
+            "nl": ", versie"
+        },
+        "browser_on": {
+            "en": "on",
+            "nl": "op"
+        },
+        "robot": {
+            "en": "And according to some of our magic, the probability that you're a robot is",
+            "nl": "En volgens onze magische code, is de kans dat jij een robot bent"
+        },
+        "incog_true": {
+            "en": "on incognito right now, try without!",
+            "nl": "op incognito, probeern eens zonder!"
+        },
+        "incog_false": {
+            "en": "not on incognito, try it out!",
+            "nl": "niet op incognito, probeer eens met!"
+        },
+        "visits_list": {
+            "en": "Below you can see a list of the exact time you visited this site",
+            "nl": "Hieronder zie je een lijst van de exacte bezoeken op deze website"
+        },
+        "visits_today": {
+            "en": "Today at ",
+            "nl": "Vandaag om "
+        },
+        "visits_btn": {
+            "en": "Show all visits",
+            "nl": "Toon alle bezoeken"
+        },
+        "visits_btn_hide": {
+            "en": "Hide all visits",
+            "nl": "Verberg alle bezoeken"
+        }
+    }
+}
