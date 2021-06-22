@@ -110,14 +110,15 @@ const ThreejsObjects = ({ className }) => {
 
     animation();
 
-    let onWindowResize = () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    };
+    // Disabled resizing because of positioning/canvas issues. Leaving this here since it might come in handy later
+    // let onWindowResize = () => {
+    //   camera.aspect = window.innerWidth / window.innerHeight;
+    //   camera.updateProjectionMatrix();
+    //   renderer.setSize(window.innerWidth, window.innerHeight);
+    //   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    // };
 
-    window.addEventListener("resize", onWindowResize, false);
+    // window.addEventListener("resize", onWindowResize, false);
 
     return () => mountRef.current.removeChild(renderer.domElement);
   }, []);

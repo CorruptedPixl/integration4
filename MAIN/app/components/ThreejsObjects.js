@@ -28,7 +28,7 @@ const ThreejsObjects = ({ className }) => {
     material.metalness = 0.2;
     material.roughness = 1;
 
-    //lights
+    // Lights
 
     const rectLight = new THREE.RectAreaLight(0xffffff, 0.5, 6, Math.PI * 0.1, 0.25, 1);
     rectLight.position.set(-1.5, 0, 1.5);
@@ -42,10 +42,6 @@ const ThreejsObjects = ({ className }) => {
 
     scene.add(rectLight, spotLight, pointLight);
     spotLight.target.position.x = -0.75;
-
-    //helpers
-
-    ///
 
     scene.add(group);
 
@@ -81,7 +77,6 @@ const ThreejsObjects = ({ className }) => {
     const clock = new THREE.Clock();
 
     //animations
-
     const animation = () => {
       //clock elapsed used for same speeed on difrent monitors speed
       const elapsedTime = clock.getElapsedTime();
