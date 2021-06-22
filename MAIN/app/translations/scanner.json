@@ -1,5 +1,4 @@
 {
-    "// Hello there, I knew you would be intersted in what we know about you, first of all, the weather there is looking great/meh thre in (place). That’s scary that we know where you live close to no?": "// We can also see that you are using (device). Are you still reading? Well let me tell you that the nearest macDonalds is at (place). You should scroll a bit dowen and look at the tips we provide you how to secure yourself more on the internet!",
     "summary": {
         "visited": {
             "en": "You've visited this site",
@@ -13,7 +12,7 @@
     "story": {
         "subtitle": {
             "en": "Always wanted to know what we know? Well you're at the right place!",
-            "nl": ""
+            "nl": "Wou je altijd al weten wat wij weten? Wel je bent op het juiste adres!"
         },
         "p1": {
             "en": "First of all",
