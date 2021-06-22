@@ -42,7 +42,10 @@ export default function secureyourself() {
         />
         <Console socket={socket} setSocket={setSocket} />
         <section className={styles.main__container_mydata}>
-          <h2 className={`${styles.container__mydata_title} ${styles.title}`}>
+          <h2
+            data-text={translations.scanner.title[toggleLangState]}
+            className={`${styles.container__mydata_title} ${styles.title}`}
+          >
             {translations.scanner.title[toggleLangState]}
           </h2>
           {scannerVisible ? (
@@ -67,7 +70,10 @@ export default function secureyourself() {
 
         <section className={styles.cookie__container}>
           <section className={styles.main__container_intro}>
-            <h2 className={`${styles.container__intro_title} ${styles.title}`}>
+            <h2
+              data-text={`${translations.cookies.title.p1[toggleLangState]} ${translations.cookies.title.p1_highlight[toggleLangState]} ${translations.cookies.title.p2[toggleLangState]}`}
+              className={`${styles.container__intro_title} ${styles.title}`}
+            >
               {translations.cookies.title.p1[toggleLangState]}
               <span className={styles.highlight}> {translations.cookies.title.p1_highlight[toggleLangState]} </span>
               {translations.cookies.title.p2[toggleLangState]}
