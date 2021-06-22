@@ -48,7 +48,11 @@ export default function Home() {
           />
           <ParallaxMouse xFactor={230} springProps={springProps}>
             <section className={styles.main__container_intro}>
-              <h2 className={`${styles.title} ${styles.container__intro_title}`}>
+              <h2
+                data-text={`${translations.title.safe[toggleLangState]} 
+                ${translations.title.surfing[toggleLangState]} ${translations.title.web[toggleLangState]}`}
+                className={`${styles.title} ${styles.container__intro_title}`}
+              >
                 {translations.title.safe[toggleLangState]}
                 <br />
                 {translations.title.surfing[toggleLangState]}
@@ -109,7 +113,10 @@ export default function Home() {
           </div>
           <section className={styles.main__container_become}>
             <section className={styles.container__become_text}>
-              <h2 className={`${styles.become__text_title} ${styles.title}`}>
+              <h2
+                data-text={`${translations.become.title.main[toggleLangState]} ${translations.become.title.highlight[toggleLangState]}`}
+                className={`${styles.become__text_title} ${styles.title}`}
+              >
                 {translations.become.title.main[toggleLangState]}
                 <br className={styles.text__title_br} />
                 <span className={styles.highlight}> {translations.become.title.highlight[toggleLangState]}</span>
@@ -143,7 +150,10 @@ export default function Home() {
               </ParallaxMouse>
             </div>
             <section className={styles.container__whatcanido_text}>
-              <h2 className={`${styles.whatcanido__text_title} ${styles.title}`}>
+              <h2
+                data-text={translations.what.title[toggleLangState]}
+                className={`${styles.whatcanido__text_title} ${styles.title}`}
+              >
                 {translations.what.title[toggleLangState]}
               </h2>
               <p className={styles.whatcanido__text_body}>{translations.what.body.p1[toggleLangState]}</p>
