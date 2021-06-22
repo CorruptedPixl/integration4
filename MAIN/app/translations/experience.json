@@ -293,7 +293,7 @@
         "description": {
             "p1": {
                 "en": "On sites where you watch video’s you probally just skip the ads, that’s why they have to delve deeper. Let me tell you everything about it!",
-                "nl": "Op video sharing site, sla je meestal de advertenties zo snel mogelijk over. Dat is waarom we nog dieper moeten gaan zoeken in onze user. Kom mee en we vertellen je er alles over!"
+                "nl": "Op video sharing sites, sla je meestal de advertenties zo snel mogelijk over. Dat is waarom we nog dieper moeten gaan zoeken in onze user. Kom mee en we vertellen je er alles over!"
             },
             "p2": {
                 "en": "This is how we do it with everyone, we watch from a distance, collect everything we can find about them, build their profile and recommend advertisements based on that.",
@@ -430,7 +430,7 @@
         },
         "button": {
             "en": "Let's make some bank",
-            "nl": "Laten we geld verdienen"
+            "nl": "Laten we wat geld verdienen"
         }
     },
     "step10": {
@@ -505,7 +505,7 @@
         "buttons": {
             "primary": {
                 "en": "Show me what you can track",
-                "nl": "Toon me wat je kan tracken van mij"
+                "nl": "Toon me mijn data"
             },
             "secondary": {
                 "en": "Give me tips!",
