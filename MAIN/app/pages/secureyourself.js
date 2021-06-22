@@ -67,7 +67,6 @@ export default function secureyourself() {
             </>
           )}
         </section>
-
         <section className={styles.cookie__container}>
           <section className={styles.main__container_intro}>
             <h2
