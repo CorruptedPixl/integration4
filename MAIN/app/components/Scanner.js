@@ -6,8 +6,10 @@ const Scanner = ({ visible, setVisitorData }) => {
   const [visitorInfo, setVisitorInfo] = useState();
   const [responseSummary, setResponseSummary] = useState();
   const [serverData, setServerData] = useState();
+  const [lastVisit, setLastVisit] = useState();
 
   useEffect(() => {
+    // Get the fingerprint
     FingerprintJS.load({
       token: process.env.NEXT_PUBLIC_FPJS_TOKEN,
       region: process.env.NEXT_PUBLIC_FPJS_REGION,
@@ -26,6 +28,7 @@ const Scanner = ({ visible, setVisitorData }) => {
   }, [visitorInfo]);
 
   const callServerAPI = () => {
+    // Get the user's past visits and data from fpjs servers
     fetch(
       `https://metrics.pxl.zone/visitors/${visitorInfo.visitorId}?limit=${100}&token=${
         process.env.NEXT_PUBLIC_FPJS_APIKEY
@@ -37,27 +40,23 @@ const Scanner = ({ visible, setVisitorData }) => {
       .then((data) => {
         console.log(data.visits);
         setResponseSummary(
-          data.visits.length >= 100 ? (
-            <p>
-              You've visited this site <code className={styles.code}>100+</code> times already.
-            </p>
-          ) : (
-            <p>
-              You've visited this site <code className={styles.code}>{data.visits.length}</code> times already.
-            </p>
-          )
+          <p>
+            You've visited this site{" "}
+            <code className={styles.code}>{data.visits.length >= 100 ? "100+" : data.visits.length}</code> times
+            already.
+          </p>
         );
         setServerData(data);
+        setLastVisit(data.visits[0]);
       });
   };
 
+  // Send back data to parent component if asked for it
   if (serverData && setVisitorData != false) setVisitorData(serverData);
-  visitorInfo && console.log(visitorInfo);
-  serverData && console.log(serverData);
 
   return (
     <section className={visible ? styles.container : `${styles.container} ${styles.visuallyHidden}`}>
-      {serverData ? (
+      {serverData && lastVisit ? (
         <>
           {/* Would've used <Suspense/> but react dom doesn't support that right now, so we're doing it the old school way */}
           <h3 className={styles.subtitle}>Right now, this is what we can track about you</h3>
@@ -66,35 +65,33 @@ const Scanner = ({ visible, setVisitorData }) => {
             <code className={styles.code}>{visitorInfo && visitorInfo.visitorId}</code>
           </p>
           <p>
-            You're using {serverData.visits[0].browserDetails.browserName}, version{" "}
-            <code className={styles.code}>{serverData.visits[0].browserDetails.browserFullVersion}</code> on{" "}
+            You're using {lastVisit.browserDetails.browserName}, version{" "}
+            <code className={styles.code}>{lastVisit.browserDetails.browserFullVersion}</code> on{" "}
             <code className={styles.code}>
-              {serverData.visits[0].browserDetails.os} {serverData.visits[0].browserDetails.osVersion}.
+              {lastVisit.browserDetails.os} {lastVisit.browserDetails.osVersion}.
             </code>
           </p>
           <p>
             The probability that you're a robot is{" "}
-            <code className={styles.code}>{serverData.visits[0].browserDetails.botProbability * 100} %</code>
+            <code className={styles.code}>{lastVisit.browserDetails.botProbability * 100} %</code>
           </p>
           {responseSummary}
           <p>
-            {serverData && serverData.visits[0].incognito
+            {serverData && lastVisit.incognito
               ? "You're using incognito right now (try without!)"
               : "You're not using incognito right now (try it out!)"}
           </p>
           <p>
-            Your IP address is <code className={styles.code}>{serverData && serverData.visits[0].ip}</code>
+            Your IP address is <code className={styles.code}>{serverData && lastVisit.ip}</code>
           </p>
 
-          {serverData.visits[0].ipLocation.city.name &&
-          serverData.visits[0].ipLocation.postalCode &&
-          serverData.visits[0].ipLocation.country.name ? (
+          {lastVisit.ipLocation.city.name && lastVisit.ipLocation.postalCode && lastVisit.ipLocation.country.name ? (
             <>
               <p>
                 Based on your IP, you're probably in or close to{" "}
                 <code className={styles.code}>
-                  {serverData.visits[0].ipLocation.city.name}, {serverData.visits[0].ipLocation.postalCode},{" "}
-                  {serverData.visits[0].ipLocation.country.name}
+                  {lastVisit.ipLocation.city.name}, {lastVisit.ipLocation.postalCode},{" "}
+                  {lastVisit.ipLocation.country.name}
                 </code>{" "}
                 right now.
               </p>
@@ -106,7 +103,6 @@ const Scanner = ({ visible, setVisitorData }) => {
             </code>
           )}
 
-          {/*weather api, mcdonalds*/}
           <p>Feel free to copy and paste that next time you need to fill in your address online 😉</p>
 
           <p>Below you can see a list of the exact time you visited this site</p>
@@ -136,7 +132,9 @@ const Scanner = ({ visible, setVisitorData }) => {
 };
 
 Scanner.defaultProps = {
+  // When the component is loaded, should it be visible?
   visible: true,
+  // Set this from parent element of you want to pull the data out of the scanner
   setVisitorData: false,
 };
 
