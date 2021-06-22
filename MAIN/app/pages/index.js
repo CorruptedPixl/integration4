@@ -27,7 +27,6 @@ export default function Home() {
 
   return (
     <>
-      {/* <div className={styles.container}> */}
       <Head>
         <title>ctrl. | Home</title>
         <meta
@@ -72,12 +71,6 @@ export default function Home() {
               </ParallaxMouse>
             </section>
           </ParallaxMouse>
-          {/*<div // Is necessary for mouseMove event to fire for mouse parallax
-            className={styles.parallaxContainer}
-          >*/}
-          {/* This component MUST be in a container for the mouseMove event
-              to fire. The Parallax scroll bg does not register it */}
-
           <ParallaxMouse xFactor={10} className={styles.parallax__img_surfer} springProps={springProps}>
             <Image src="/surfer.png" alt="businessman on surfboard with briefcase" width={550} height={550} />
           </ParallaxMouse>
@@ -103,7 +96,6 @@ export default function Home() {
               />
             </div>
           </ParallaxMouse>
-          {/*</Parallax></div>*/}
           <div className={styles.threejs__cookie__object__pos}>
             <ParallaxMouse xFactor={100} springProps={springProps}>
               <ThreejsObjects className={styles.threejs__object} />
