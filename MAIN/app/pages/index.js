@@ -105,7 +105,9 @@ export default function Home() {
           </ParallaxMouse>
           {/*</Parallax></div>*/}
           <div className={styles.threejs__cookie__object__pos}>
-            <ThreejsObjects className={styles.threejs__object} />
+            <ParallaxMouse xFactor={100} springProps={springProps}>
+              <ThreejsObjects className={styles.threejs__object} />
+            </ParallaxMouse>
           </div>
           <section className={styles.main__container_become}>
             <section className={styles.container__become_text}>
