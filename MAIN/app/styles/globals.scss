@@ -11,7 +11,7 @@
   --large-screen: 1920px;
 }
 
-// Import Renogare font
+// Import Renogare font from cdn
 @font-face {
   font-family: "Renogare";
   src: url("https://cdn.cpixl.com/fonts/renogare/Renogare-Regular.woff2") format("woff2"),
@@ -46,7 +46,6 @@ body {
   color: var(--text);
   width: 100%;
   cursor: url("/cursor.svg"), url("/cursor.png"), auto;
-  // height: 100%;
   &:after {
     background-image: url("/bg_tex.png");
     bottom: 0;
@@ -57,7 +56,6 @@ body {
     right: 0;
     top: 0;
     opacity: 0.38;
-    // z-index: 10;
   }
 }
 
@@ -90,23 +88,23 @@ a {
   }
 }
 
-.on-scrollbar {
+* {
   scrollbar-width: thin; /* Firefox */
   -ms-overflow-style: none; /* IE 10+ */
 }
 
-.on-scrollbar::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
   box-shadow: none;
   -webkit-box-shadow: none !important;
   background-color: transparent !important;
 }
 
-.on-scrollbar::-webkit-scrollbar {
+*::-webkit-scrollbar {
   width: 6px !important;
   background-color: transparent;
 }
 
-.on-scrollbar::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
   background-color: var(--accent);
   border-radius: 3px;
 }
@@ -114,18 +112,3 @@ a {
 b {
   font-weight: 900;
 }
-
-/*::-webkit-scrollbar {
-  width: 6px;
-}*/
-
-/* Handle */
-/*::-webkit-scrollbar-thumb {
-  background: var(--accent);
-  border-radius: 3px;
-}*/
-
-/* Handle on hover */
-/*::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}*/
