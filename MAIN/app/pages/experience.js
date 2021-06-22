@@ -2,25 +2,60 @@ import styles from "../styles/Experience.module.scss";
 import buttons from "../styles/Buttons.module.scss";
 import Head from "next/head";
 import Image from "next/image";
+
 import { gsap } from "gsap";
 import { useSpring } from "react-spring"; // Mouse parallax
 import { useState } from "react";
 import { useEffect } from "react";
-import ParallaxMouse from "../components/ParallaxMouse";
-import Toggle from "../components/Toggle";
-import Console from "../components/Console";
-import translations from "../translations/experience.json";
 import { FullScreen, useFullScreenHandle } from "react-full-screen";
 
+import Toggle from "../components/Toggle";
+import Console from "../components/Console";
+import ParallaxMouse from "../components/ParallaxMouse";
+import translations from "../translations/experience.json";
+
 const experience = () => {
-  const fsHandle = useFullScreenHandle();
-  const [socket, setSocket] = useState();
-  const [toggleLangState, setToggleLangState] = useState("en");
+  // Initialize Spring for mouse parallax
+  const [springProps, set] = useSpring(() => ({
+    xy: [0, 0],
+    config: { mass: 10, tension: 600, friction: 100 },
+  }));
+
+  const fsHandle = useFullScreenHandle(); // Handle for Fullscreen
+  const [socket, setSocket] = useState(); // Saves socket connection
+  const [toggleLangState, setToggleLangState] = useState("en"); // Default language
 
   const [vw, setVw] = useState();
   const [vh, setVh] = useState();
 
-  const adImageArray = new Array("cars.png", "cats.png", "clothing.png", "food.png", "singles.png");
+  // Ad image array with path and translations built in, easier than linking through multiple files
+  const adImageArray = [
+    {
+      path: "cars.png",
+      en: "car",
+      nl: "auto",
+    },
+    {
+      path: "cats.png",
+      en: "cat",
+      nl: "katten",
+    },
+    {
+      path: "clothing.png",
+      en: "clothing",
+      nl: "kledij",
+    },
+    {
+      path: "food.png",
+      en: "food",
+      nl: "eten",
+    },
+    {
+      path: "singles.png",
+      en: "dating",
+      nl: "dating",
+    },
+  ];
   const [adImage, setAdImage] = useState();
 
   const [bgMusic, setBgMusic] = useState(false);
@@ -36,23 +71,13 @@ const experience = () => {
     }
   };
 
-  // Set adImage every 10 seconds
-
-  /*const handleAdImage = () => {
-    setTimeout(function () {
-      let whichImage = adImageArray[Math.round(Math.random() * (adImageArray.length - 1))];
-      setAdImage(whichImage);
-      console.log("setting image");
-    }, 10000);
-  };*/
-
   useEffect(() => {
     setVw(window.innerWidth);
     setVh(window.innerHeight);
 
     let whichImage = adImageArray[Math.round(Math.random() * (adImageArray.length - 1))];
     setAdImage(whichImage);
-  });
+  }, []);
 
   const [experience, setExperience] = useState(false);
 
@@ -62,9 +87,9 @@ const experience = () => {
   };
 
   const handleAdImage = (selected, e) => {
-    if (selected === adImage || vw < 640) {
+    if (selected === adImage.path || vw < 640) {
       e.target.classList.add(styles.correct);
-      setTimeout(function () {
+      setTimeout(() => {
         e.target.classList.remove(styles.correct);
         handleMovement({
           first: "#experience__5",
@@ -76,8 +101,8 @@ const experience = () => {
       }, 500);
     } else {
       e.target.classList.add(styles.wrong);
-      console.log("nah G");
-      setTimeout(function () {
+      console.warn("Wrong ad, try again");
+      setTimeout(() => {
         e.target.classList.remove(styles.wrong);
       }, 500);
     }
@@ -85,7 +110,7 @@ const experience = () => {
 
   const handleFoodAd = (e) => {
     e.target.classList.add(styles.correct);
-    setTimeout(function () {
+    setTimeout(() => {
       e.target.classList.remove(styles.correct);
       handleMovement({
         first: "#experience__7",
@@ -99,7 +124,7 @@ const experience = () => {
 
   const handleJewelryAd = (e) => {
     e.target.classList.add(styles.correct);
-    setTimeout(function () {
+    setTimeout(() => {
       e.target.classList.remove(styles.correct);
       handleMovement({
         first: "#experience__10",
@@ -112,27 +137,31 @@ const experience = () => {
   };
 
   const handleMovement = (data) => {
-    console.log(vw);
-    console.log(data);
     if (vw < 640) {
       gsap.to(data.first, { duration: 1, y: -2 * vh });
       gsap.to(data.second, { duration: 1, y: -vh });
     } else {
-      console.log("yessir");
-      if (data.direction === "right") {
-        gsap.to(data.first, { duration: 1, x: -2 * vw });
-        gsap.to(data.second, { duration: 1, x: -vw });
-      } else if (data.direction === "down") {
-        gsap.to(data.first, { duration: 1, y: -2 * vh });
-        gsap.to(data.second, { duration: 1, y: -vh });
-      } else if (data.direction === "left") {
-        gsap.to(data.first, { duration: 1, x: +2 * vw });
-        gsap.to(data.second, { duration: 1, x: +vw });
-      } else if (data.direction === "left_down") {
-        gsap.to(data.first, { duration: 1, x: +2 * vw, y: -2 * vh });
-        gsap.to(data.second, { duration: 1, x: +vw, y: -vh });
-      } else {
-        console.log("Movement Error");
+      switch (data.direction) {
+        case "right":
+          gsap.to(data.first, { duration: 1, x: -2 * vw });
+          gsap.to(data.second, { duration: 1, x: -vw });
+          break;
+        case "down":
+          gsap.to(data.first, { duration: 1, y: -2 * vh });
+          gsap.to(data.second, { duration: 1, y: -vh });
+          break;
+        case "left":
+          gsap.to(data.first, { duration: 1, x: +2 * vw });
+          gsap.to(data.second, { duration: 1, x: +vw });
+          break;
+        case "left_down":
+          gsap.to(data.first, { duration: 1, x: +2 * vw, y: -2 * vh });
+          gsap.to(data.second, { duration: 1, x: +vw, y: -vh });
+          break;
+
+        default:
+          console.warn("Movement Error");
+          break;
       }
 
       gsap.to("#experience_path", { duration: 1, x: -data.path_inc_x * vw, y: data.path_inc_y * vh });
@@ -149,6 +178,7 @@ const experience = () => {
         <link rel="icon" href="/ctrl.logo.svg" />
       </Head>
       <FullScreen handle={fsHandle}>
+        <ParallaxMouse xFactor={50} springProps={springProps}></ParallaxMouse>
         <main className={styles.main__container}>
           <Console socket={socket} setSocket={setSocket} />
           <div className={styles.button__container}>
@@ -182,10 +212,7 @@ const experience = () => {
             <section className={styles.main__container_intro}>
               <h2 className={styles.title}>{translations.intro.title[toggleLangState]}</h2>
               <div className={styles.container__intro_text}>
-                <p>
-                  {translations.intro.description.track[toggleLangState]}{" "}
-                  {/* {translations.intro.description.name[toggleLangState]} */}
-                </p>
+                <p>{translations.intro.description.track[toggleLangState]} </p>
                 <p>
                   {translations.intro.console.p1[toggleLangState]} <span className={styles.highlight}>"/"</span>{" "}
                   {translations.intro.console.p2[toggleLangState]}
@@ -388,7 +415,7 @@ const experience = () => {
                 <section className={styles.experience__step_content}>
                   <div className={styles.step__content_img}>
                     <Image
-                      src={`/images/experience/guessthead/${adImage}`}
+                      src={`/images/experience/guessthead/${adImage.path}`}
                       alt="guy sitting on a computer that displays an ad"
                       width={500}
                       height={560}
@@ -428,7 +455,7 @@ const experience = () => {
                 <h2 className={styles.title}>
                   {translations.step6.title.p1[toggleLangState]}
                   <span className={styles.highlight}> {translations.step6.title.p1_highlight[toggleLangState]} </span>
-                  {translations.step6.title.p2[toggleLangState]} {adImage.split(".")[0]}{" "}
+                  {translations.step6.title.p2[toggleLangState]} {adImage[toggleLangState]}{" "}
                   {translations.step6.title.p3[toggleLangState]}
                 </h2>
                 <section className={styles.experience__step_content}>
@@ -454,7 +481,7 @@ const experience = () => {
                   </section>
                   <div className={styles.step__content_img}>
                     <Image
-                      src={`/images/experience/advertisement/${adImage}`}
+                      src={`/images/experience/advertisement/${adImage.path}`}
                       alt="Guy holding up an advertisement"
                       width={600}
                       height={670}
@@ -661,14 +688,6 @@ const experience = () => {
                 src="/images/experience/experience_path.svg"
                 alt="A path through the whole experience"
               ></img>
-              {/*<div className={styles.experience__path} id="experience_path">
-              <Image
-                src="/images/experience/experience_path.svg"
-                width={10770}
-                height={5512}
-                alt="A path through the whole experience"
-              ></Image>
-                  </div>*/}
             </>
           )}
         </main>
