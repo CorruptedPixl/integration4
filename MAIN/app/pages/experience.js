@@ -10,8 +10,10 @@ import ParallaxMouse from "../components/ParallaxMouse";
 import Toggle from "../components/Toggle";
 import Console from "../components/Console";
 import translations from "../translations/experience.json";
+import { FullScreen, useFullScreenHandle } from "react-full-screen";
 
 const experience = () => {
+  const fsHandle = useFullScreenHandle();
   const [socket, setSocket] = useState();
   const [toggleLangState, setToggleLangState] = useState("en");
 
@@ -56,6 +58,7 @@ const experience = () => {
 
   const handleExperienceStart = () => {
     setExperience(true);
+    fsHandle.enter();
   };
 
   const handleAdImage = (selected, e) => {
@@ -145,497 +148,520 @@ const experience = () => {
         />
         <link rel="icon" href="/ctrl.logo.svg" />
       </Head>
-      <main className={styles.main__container}>
-        <Console socket={socket} setSocket={setSocket} />
-        <div className={styles.button__container}>
-          <a
-            href="/"
-            onClick={() => socket.emit("consoleMessage", "A user left the experience")}
-            className={styles.exit__experience}
-          >
-            {translations.exit[toggleLangState]}
-          </a>
-          <Toggle
-            className={styles.toggleSwitch}
-            toggleState={toggleLangState}
-            setToggleState={setToggleLangState}
-            valueLeft={"nl"}
-            valueRight={"en"}
-          />
-        </div>
-        {bgMusic ? (
-          <embed
-            className={styles.music}
-            src="/music/int4-bg.mp3"
-            width="0"
-            height="0"
-            loop={true}
-            autostart="true"
-            hidden={true}
-          />
-        ) : null}
-        {!experience ? (
-          <section className={styles.main__container_intro}>
-            <h2 className={styles.title}>{translations.intro.title[toggleLangState]}</h2>
-            <div className={styles.container__intro_text}>
-              <p>
-                {translations.intro.description.track[toggleLangState]}{" "}
-                {/* {translations.intro.description.name[toggleLangState]} */}
-              </p>
-              <p>
-                {translations.intro.console.p1[toggleLangState]} <span className={styles.highlight}>"/"</span>{" "}
-                {translations.intro.console.p2[toggleLangState]}
-              </p>
-            </div>
-            <button
-              onClick={() => handleExperienceStart()}
-              className={`${buttons.button} ${styles.container__intro_button}`}
+      <FullScreen handle={fsHandle}>
+        <main className={styles.main__container}>
+          <Console socket={socket} setSocket={setSocket} />
+          <div className={styles.button__container}>
+            <a
+              href="/"
+              onClick={() => socket.emit("consoleMessage", "A user left the experience")}
+              className={styles.exit__experience}
             >
-              {translations.intro.button[toggleLangState]}
-            </button>
-            <small className={styles.container__intro_disclaimer}>{translations.intro.accept[toggleLangState]}</small>
-            <div className={styles.music__experience} onClick={() => handleBgMusic()}>
-              <Image src={`/experience/${musicButton}.svg`} width="56px" height="51px"></Image>
-            </div>
-            <p className={styles.container__intro_info}>{translations.intro.experience[toggleLangState]}</p>
-          </section>
-        ) : (
-          <>
-            <div className={`${styles.music__experience} ${styles.fixed}`} onClick={() => handleBgMusic()}>
-              <Image src={`/experience/${musicButton}.svg`} width="56px" height="51px"></Image>
-            </div>
-            <section className={`${styles.experience__step} ${styles.experience__1}`} id="experience__1">
-              <h2 className={styles.title}>
-                {translations.step1.title.p1[toggleLangState]} <span className={styles.highlight}>cookies</span>{" "}
-                {translations.step1.title.p2[toggleLangState]}
-              </h2>
-              <section className={styles.experience__step_content}>
-                <section className={styles.step__content_text}>
-                  <p>
-                    It’s amazing... Sam just blindly accepted cookies on a website. Looks like we’re gonna get some
-                    interesting data to go through.
-                  </p>
-                  <p>
-                    Maybe you don’t know who Sam is but by the end of this you will know more about them than you could
-                    ever image. <b className={styles.bold}>Let’s get to know them!</b>
-                  </p>
-                  <button
-                    onClick={() =>
-                      handleMovement({
-                        first: "#experience__1",
-                        second: "#experience__2",
-                        direction: "right",
-                        path_inc_x: "1",
-                      })
-                    }
-                    className={`${buttons.button} ${buttons.bottom} ${styles.fixed}`}
-                  >
-                    Start tracking Sam
-                  </button>
-                </section>
-                <div className={styles.step__content_img}>
-                  <Image
-                    src="/images/experience/experience_start/cookiestart.webp"
-                    alt="Girls riding on a bike with binary code in the wheels"
-                    width={420}
-                    height={600}
-                  ></Image>
-                </div>
-              </section>
+              {translations.exit[toggleLangState]}
+            </a>
+            <Toggle
+              className={styles.toggleSwitch}
+              toggleState={toggleLangState}
+              setToggleState={setToggleLangState}
+              valueLeft={"nl"}
+              valueRight={"en"}
+            />
+          </div>
+          {bgMusic ? (
+            <embed
+              className={styles.music}
+              src="/music/int4-bg.mp3"
+              width="0"
+              height="0"
+              loop={true}
+              autostart="true"
+              hidden={true}
+            />
+          ) : null}
+          {!experience ? (
+            <section className={styles.main__container_intro}>
+              <h2 className={styles.title}>{translations.intro.title[toggleLangState]}</h2>
+              <div className={styles.container__intro_text}>
+                <p>
+                  {translations.intro.description.track[toggleLangState]}{" "}
+                  {/* {translations.intro.description.name[toggleLangState]} */}
+                </p>
+                <p>
+                  {translations.intro.console.p1[toggleLangState]} <span className={styles.highlight}>"/"</span>{" "}
+                  {translations.intro.console.p2[toggleLangState]}
+                </p>
+              </div>
+              <button
+                onClick={() => handleExperienceStart()}
+                className={`${buttons.button} ${styles.container__intro_button}`}
+              >
+                {translations.intro.button[toggleLangState]}
+              </button>
+              <small className={styles.container__intro_disclaimer}>{translations.intro.accept[toggleLangState]}</small>
+              <div className={styles.music__experience} onClick={() => handleBgMusic()}>
+                <Image src={`/experience/${musicButton}.svg`} width="56px" height="51px"></Image>
+              </div>
+              <p className={styles.container__intro_info}>{translations.intro.experience[toggleLangState]}</p>
             </section>
-            <section className={`${styles.experience__step} ${styles.experience__2}`} id="experience__2">
-              <h2 className={styles.title}>
-                But first, how do we track Sam? One word: <span className={styles.highlight}>Fingerprints.</span>
-              </h2>
-              <section className={styles.experience__step_content}>
-                <section className={styles.step__content_text}>
-                  <p>
-                    Now you are wondering, what are Fingerprints? <br /> Well, it’s basically an unique identifier you
-                    get online that tracks every move you make. Consider it a story that never gets deleted and stays on
-                    your profile forever.
-                  </p>
-                  <h3 className={styles.inner__title}>
-                    But is it <span className={styles.highlight}>bad?</span> What can they even acces?
-                  </h3>
-                  <p>
-                    With every small piece of information we get to know alot of things. Sometimes they ask permission
-                    for something that <b className={styles.bold}>you didn’t even know</b> could be taken.
-                  </p>
-                  <button
-                    onClick={() =>
-                      handleMovement({
-                        first: "#experience__2",
-                        second: "#experience__3",
-                        direction: "right",
-                        path_inc_x: "2",
-                      })
-                    }
-                    className={`${buttons.button} ${buttons.bottom} ${styles.fixed}`}
-                  >
-                    But what can we track?
-                  </button>
+          ) : (
+            <>
+              <div className={`${styles.music__experience} ${styles.fixed}`} onClick={() => handleBgMusic()}>
+                <Image src={`/experience/${musicButton}.svg`} width="56px" height="51px"></Image>
+              </div>
+              <section className={`${styles.experience__step} ${styles.experience__1}`} id="experience__1">
+                <h2 className={styles.title}>
+                  {translations.step1.title.p1[toggleLangState]} <span className={styles.highlight}>cookies</span>{" "}
+                  {translations.step1.title.p2[toggleLangState]}
+                </h2>
+                <section className={styles.experience__step_content}>
+                  <section className={styles.step__content_text}>
+                    <p>{translations.step1.description.p1[toggleLangState]}</p>
+                    <p>
+                      {translations.step1.description.p2[toggleLangState]}{" "}
+                      <b className={styles.bold}>{translations.step1.description.p2_1[toggleLangState]}</b>
+                    </p>
+                    <button
+                      onClick={() =>
+                        handleMovement({
+                          first: "#experience__1",
+                          second: "#experience__2",
+                          direction: "right",
+                          path_inc_x: "1",
+                        })
+                      }
+                      className={`${buttons.button} ${buttons.bottom} ${styles.fixed}`}
+                    >
+                      {translations.step1.button[toggleLangState]}
+                    </button>
+                  </section>
+                  <div className={styles.step__content_img}>
+                    <Image
+                      src="/images/experience/experience_start/cookiestart.webp"
+                      alt="Girls riding on a bike with binary code in the wheels"
+                      width={420}
+                      height={600}
+                    ></Image>
+                  </div>
                 </section>
-                <div className={styles.step__content_img}>
-                  <Image
-                    src="/images/experience/fingerprinting/dame-met-hondje.png"
-                    alt="woman walking a computerdog"
-                    width={500}
-                    height={630}
-                  ></Image>
-                </div>
               </section>
-            </section>
-            <section className={`${styles.experience__step} ${styles.experience__3}`} id="experience__3">
-              <h2 className={styles.title}>
-                Since he <span className={styles.highlight}>gave acces</span> we can track... pretty much
-                <span className={styles.highlight}> #anything</span>.
-              </h2>
-              <section className={styles.experience__step_content}>
-                <div className={`${styles.step__content_img} ${styles.visible}`}>
-                  <Image
-                    src="/images/experience/locked/lock.gif"
-                    alt="padlock with data behind it"
-                    width={760}
-                    height={520}
-                  ></Image>
-                </div>
+              <section className={`${styles.experience__step} ${styles.experience__2}`} id="experience__2">
+                <h2 className={styles.title}>
+                  {translations.step2.title.p1[toggleLangState]}{" "}
+                  <span className={styles.highlight}>{translations.step2.title.p2[toggleLangState]}</span>
+                </h2>
+                <section className={styles.experience__step_content}>
+                  <section className={styles.step__content_text}>
+                    <p>
+                      {translations.step2.description.p1[toggleLangState]}
+                      <br />
+                      {translations.step2.description.p2[toggleLangState]}
+                    </p>
+                    <h3 className={styles.inner__title}>
+                      {translations.step2.description.subtitle.p1[toggleLangState]}
+                      <span className={styles.highlight}>
+                        {" "}
+                        {translations.step2.description.subtitle.highlight[toggleLangState]}
+                      </span>{" "}
+                      {translations.step2.description.subtitle.p2[toggleLangState]}
+                    </h3>
+                    <p>
+                      {translations.step2.description.p3[toggleLangState]}
+                      <b className={styles.bold}> {translations.step2.description.p3_bold[toggleLangState]}</b>{" "}
+                      {translations.step2.description.p4[toggleLangState]}
+                    </p>
+                    <button
+                      onClick={() =>
+                        handleMovement({
+                          first: "#experience__2",
+                          second: "#experience__3",
+                          direction: "right",
+                          path_inc_x: "2",
+                        })
+                      }
+                      className={`${buttons.button} ${buttons.bottom} ${styles.fixed}`}
+                    >
+                      {translations.step2.button[toggleLangState]}
+                    </button>
+                  </section>
+                  <div className={styles.step__content_img}>
+                    <Image
+                      src="/images/experience/fingerprinting/dame-met-hondje.png"
+                      alt="woman walking a computerdog"
+                      width={500}
+                      height={630}
+                    ></Image>
+                  </div>
+                </section>
+              </section>
+              <section className={`${styles.experience__step} ${styles.experience__3}`} id="experience__3">
+                <h2 className={styles.title}>
+                  {translations.step3.title.p1[toggleLangState]}
+                  <span className={styles.highlight}>
+                    {" "}
+                    {translations.step3.title.p1_highlight[toggleLangState]}
+                  </span>{" "}
+                  {translations.step3.title.p2[toggleLangState]}
+                  <span className={styles.highlight}> {translations.step3.title.p2_highlight[toggleLangState]}</span>
+                </h2>
+                <section className={styles.experience__step_content}>
+                  <div className={`${styles.step__content_img} ${styles.visible}`}>
+                    <Image
+                      src="/images/experience/locked/lock.gif"
+                      alt="padlock with data behind it"
+                      width={760}
+                      height={520}
+                    ></Image>
+                  </div>
 
-                <section className={`${styles.step__content_text} ${styles.acces}`}>
-                  <p>
-                    Once you accept cookies you basically give that site a key to your{" "}
-                    <b className={styles.bold}>private interests</b>, let them create a profile and they can track you{" "}
-                    <b className={styles.bold}>even further</b>.
-                  </p>
-                  <h3 className={styles.inner__title}>
-                    It's like <span className={styles.highlight}>adding</span> hem to your best friends.
-                  </h3>
-                  <button
-                    onClick={() =>
-                      handleMovement({
-                        first: "#experience__3",
-                        second: "#experience__4",
-                        direction: "right",
-                        path_inc_x: "3",
-                      })
-                    }
-                    className={`${buttons.button} ${buttons.bottom} ${styles.fixed}`}
-                  >
-                    Let's unlock some data
-                  </button>
+                  <section className={`${styles.step__content_text} ${styles.acces}`}>
+                    <p>
+                      {translations.step3.description.p1[toggleLangState]}{" "}
+                      <b className={styles.bold}>{translations.step3.description.p1_bold[toggleLangState]} </b>{" "}
+                      {translations.step3.description.p2[toggleLangState]}{" "}
+                      <b className={styles.bold}>{translations.step3.description.p2_bold[toggleLangState]}</b>
+                    </p>
+                    <h3 className={styles.inner__title}>
+                      {translations.step3.description.subtitle.p1[toggleLangState]}{" "}
+                      <span className={styles.highlight}>
+                        {translations.step3.description.subtitle.highlight[toggleLangState]}
+                      </span>{" "}
+                      {translations.step3.description.subtitle.p2[toggleLangState]}
+                    </h3>
+                    <button
+                      onClick={() =>
+                        handleMovement({
+                          first: "#experience__3",
+                          second: "#experience__4",
+                          direction: "right",
+                          path_inc_x: "3",
+                        })
+                      }
+                      className={`${buttons.button} ${buttons.bottom} ${styles.fixed}`}
+                    >
+                      {translations.step3.button[toggleLangState]}
+                    </button>
+                  </section>
                 </section>
               </section>
-            </section>
-            <section className={`${styles.experience__step} ${styles.experience__4}`} id="experience__4">
-              <h2 className={styles.title}>
-                Do you realize that <span className={styles.highlight}>every move</span> you make gets stored in a
-                profile.
-              </h2>
-              <section className={styles.experience__step_content}>
-                <section className={styles.step__content_text}>
-                  <p>
-                    Everything you do online is being tracked and stored in your unique profile. Companies use these
-                    profiles to target ads, we can compare it a bit to a social media account that you have no ctrl.
-                    over.
-                  </p>
-                  <p>Shall we take a look at what we can gather?</p>
-                  <button
-                    onClick={() =>
-                      handleMovement({
-                        first: "#experience__4",
-                        second: "#experience__5",
-                        direction: "down",
-                        path_inc_x: "3",
-                        path_inc_y: "-1",
-                      })
-                    }
-                    className={`${buttons.button} ${buttons.bottom} ${styles.fixed}`}
-                  >
-                    Generate Sam's profile
-                  </button>
+              <section className={`${styles.experience__step} ${styles.experience__4}`} id="experience__4">
+                <h2 className={styles.title}>
+                  {translations.step4.title.p1[toggleLangState]}
+                  <span className={styles.highlight}> {translations.step4.title.p1_highlight[toggleLangState]} </span>
+                  {translations.step4.title.p2[toggleLangState]}
+                </h2>
+                <section className={styles.experience__step_content}>
+                  <section className={styles.step__content_text}>
+                    <p>{translations.step4.description.p1[toggleLangState]}</p>
+                    <p>{translations.step4.description.subtitle[toggleLangState]}</p>
+                    <button
+                      onClick={() =>
+                        handleMovement({
+                          first: "#experience__4",
+                          second: "#experience__5",
+                          direction: "down",
+                          path_inc_x: "3",
+                          path_inc_y: "-1",
+                        })
+                      }
+                      className={`${buttons.button} ${buttons.bottom} ${styles.fixed}`}
+                    >
+                      {translations.step4.button[toggleLangState]}
+                    </button>
+                  </section>
+                  <div className={`${styles.bunnyPicture} ${styles.visible} ${styles.step__content_img}`}>
+                    <Image
+                      src="/images/experience/bunny/bunny.gif"
+                      alt="bunny taking photograph of a model"
+                      width={1000}
+                      height={800}
+                    ></Image>
+                  </div>
                 </section>
-                <div className={`${styles.bunnyPicture} ${styles.visible} ${styles.step__content_img}`}>
-                  <Image
-                    src="/images/experience/bunny/bunny.gif"
-                    alt="bunny taking photograph of a model"
-                    width={1000}
-                    height={800}
-                  ></Image>
-                </div>
               </section>
-            </section>
-            <section className={`${styles.experience__step} ${styles.experience__5}`} id="experience__5">
-              <h2 className={`${styles.title} ${styles.ad}`}>
-                Done!
-                <br />
-                Well I guess you can <span className={styles.highlight}>see what Sam's doing.</span>
-              </h2>
-              <section className={styles.experience__step_content}>
-                <div className={styles.step__content_img}>
-                  <Image
-                    src={`/images/experience/guessthead/${adImage}`}
-                    alt="guy sitting on a computer that displays an ad"
-                    width={500}
-                    height={560}
-                  ></Image>
-                </div>
-                <section className={styles.step__content_text}>
-                  <p>
-                    Let’s see how good you are at targeting ads. Let’s send Sam ads based on things they search online.
-                    Have a look at the screen and send the right ad, but make sure to do it at the right time!
-                  </p>
+              <section className={`${styles.experience__step} ${styles.experience__5}`} id="experience__5">
+                <h2 className={`${styles.title} ${styles.ad}`}>
+                  {translations.step5.title.p1[toggleLangState]}
+                  <br />
+                  {translations.step5.title.p2[toggleLangState]}
+                  <span className={styles.highlight}> {translations.step5.title.p2_highlight[toggleLangState]}</span>
+                </h2>
+                <section className={styles.experience__step_content}>
+                  <div className={styles.step__content_img}>
+                    <Image
+                      src={`/images/experience/guessthead/${adImage}`}
+                      alt="guy sitting on a computer that displays an ad"
+                      width={500}
+                      height={560}
+                    ></Image>
+                  </div>
+                  <section className={styles.step__content_text}>
+                    <p>
+                      {translations.step5.description.p1[toggleLangState]}
+                      {translations.step5.description.p2[toggleLangState]}
+                      <b className={styles.highlight}>{translations.step5.description.p2_bold[toggleLangState]} </b>
+                      {translations.step5.description.p3[toggleLangState]}
+                    </p>
+                    <div className={styles.content__text_selection}>
+                      <p className={styles.text__selection_adv}>{translations.step5.ads.adv[toggleLangState]}</p>
+                      <ul className={styles.text__selection_list}>
+                        <li className={styles.selection__list_item} onClick={(e) => handleAdImage("clothing.png", e)}>
+                          {translations.step5.ads.clothing[toggleLangState]}
+                        </li>
+                        <li className={styles.selection__list_item} onClick={(e) => handleAdImage("cars.png", e)}>
+                          {translations.step5.ads.cars[toggleLangState]}
+                        </li>
+                        <li className={styles.selection__list_item} onClick={(e) => handleAdImage("cats.png", e)}>
+                          {translations.step5.ads.cats[toggleLangState]}
+                        </li>
+                        <li className={styles.selection__list_item} onClick={(e) => handleAdImage("food.png", e)}>
+                          {translations.step5.ads.food[toggleLangState]}
+                        </li>
+                        <li className={styles.selection__list_item} onClick={(e) => handleAdImage("dating.png", e)}>
+                          {translations.step5.ads.dating[toggleLangState]}
+                        </li>
+                      </ul>
+                    </div>
+                  </section>
+                </section>
+              </section>
+              <section className={`${styles.experience__step} ${styles.experience__6}`} id="experience__6">
+                <h2 className={styles.title}>
+                  {translations.step6.title.p1[toggleLangState]}
+                  <span className={styles.highlight}> {translations.step6.title.p1_highlight[toggleLangState]} </span>
+                  {translations.step6.title.p2[toggleLangState]} {adImage.split(".")[0]}{" "}
+                  {translations.step6.title.p3[toggleLangState]}
+                </h2>
+                <section className={styles.experience__step_content}>
+                  <section className={styles.step__content_text}>
+                    <p>{translations.step6.description.p1[toggleLangState]}</p>
+                    <p>
+                      <p>{translations.step6.description.p2[toggleLangState]}</p>
+                    </p>
+                    <button
+                      onClick={() =>
+                        handleMovement({
+                          first: "#experience__6",
+                          second: "#experience__7",
+                          direction: "left_down",
+                          path_inc_x: "1",
+                          path_inc_y: "-3",
+                        })
+                      }
+                      className={`${buttons.button} ${buttons.bottom} ${styles.fixed}`}
+                    >
+                      {translations.step6.button[toggleLangState]}
+                    </button>
+                  </section>
+                  <div className={styles.step__content_img}>
+                    <Image
+                      src={`/images/experience/advertisement/${adImage}`}
+                      alt="Guy holding up an advertisement"
+                      width={600}
+                      height={670}
+                    ></Image>
+                  </div>
+                </section>
+              </section>
+              <section className={`${styles.experience__step} ${styles.experience__7}`} id="experience__7">
+                <h2 className={`${styles.title} ${styles.ad}`}>
+                  {translations.step7.title.p1[toggleLangState]}
+                  <span className={styles.highlight}> {translations.step7.title.p1_highlight[toggleLangState]} </span>
+                  {translations.step7.title.p2[toggleLangState]}
+                  <span className={styles.highlight}> IP.</span>
+                </h2>
+                <section className={styles.experience__step_content}>
+                  <section className={styles.step__content_text}>
+                    <p>{translations.step7.description.p1[toggleLangState]}</p>
+                    <p>{translations.step7.description.p2[toggleLangState]}</p>
+                    <div className={styles.content__text_selection}>
+                      <p className={styles.text__selection_adv}>{translations.step7.ads.adv[toggleLangState]}</p>
+                      <ul className={styles.text__selection_list}>
+                        <li className={styles.selection__list_item} onClick={(e) => handleFoodAd(e)}>
+                          {translations.step7.ads.mcDonalds[toggleLangState]}
+                        </li>
+                        <li className={styles.selection__list_item} onClick={(e) => handleFoodAd(e)}>
+                          {translations.step7.ads.uberEats[toggleLangState]}
+                        </li>
+                        <li className={styles.selection__list_item} onClick={(e) => handleFoodAd(e)}>
+                          {translations.step7.ads.pizzaBe[toggleLangState]}
+                        </li>
+                        <li className={styles.selection__list_item} onClick={(e) => handleFoodAd(e)}>
+                          {translations.step7.ads.pitta[toggleLangState]}
+                        </li>
+                        <li className={styles.selection__list_item} onClick={(e) => handleFoodAd(e)}>
+                          {translations.step7.ads.aldi[toggleLangState]}
+                        </li>
+                      </ul>
+                    </div>
+                  </section>
+                  <div className={styles.step__content_img}>
+                    <Image
+                      src="/images/experience/mailbox/mailbox.gif"
+                      alt="girls sitting on a mailbox"
+                      width={1100}
+                      height={800}
+                    ></Image>
+                  </div>
+                </section>
+              </section>
+              <section className={`${styles.experience__step} ${styles.experience__8}`} id="experience__8">
+                <h2 className={styles.title}>
+                  {translations.step8.title.p1[toggleLangState]}
+                  <span className={styles.highlight}> {translations.step8.title.p1_highlight[toggleLangState]} </span>
+                  {translations.step8.title.p2[toggleLangState]}
+                  <span className={styles.highlight}> {translations.step8.title.p2_highlight[toggleLangState]}</span>
+                </h2>
+                <section className={styles.experience__step_content}>
+                  <section className={styles.step__content_text}>
+                    <h3 className={styles.inner__title}>
+                      {translations.step8.description.p1[toggleLangState]}
+                      <span className={styles.highlight}>
+                        {" "}
+                        {translations.step8.description.p1_highlight[toggleLangState]}{" "}
+                      </span>
+                      {translations.step8.description.p2[toggleLangState]}
+                    </h3>
+                    <p>{translations.step8.description.p3[toggleLangState]}</p>
+                    <button
+                      onClick={() =>
+                        handleMovement({
+                          first: "#experience__8",
+                          second: "#experience__9",
+                          direction: "down",
+                          path_inc_x: "1",
+                          path_inc_y: "-5",
+                        })
+                      }
+                      className={`${buttons.button} ${buttons.bottom} ${styles.fixed}`}
+                    >
+                      {translations.step8.button[toggleLangState]}
+                    </button>
+                    {/*<button className={`${buttons.button} ${buttons.light} ${buttons.bottom}`}>Naaaaaah...</button>*/}
+                  </section>
+                  <div className={styles.step__content_img}>
+                    <Image
+                      src="/images/experience/couple2/couple2.png"
+                      alt="Couple talking to eachother"
+                      width={600}
+                      height={440}
+                    ></Image>
+                  </div>
+                </section>
+              </section>
+              <section className={`${styles.experience__step} ${styles.experience__9}`} id="experience__9">
+                <section className={styles.experience__step_content}>
+                  <section className={styles.step__content_text}>
+                    <h2 className={styles.title}>
+                      {translations.step9.title.p1[toggleLangState]}
+                      <span className={styles.highlight}>
+                        {" "}
+                        {translations.step9.title.p1_highlight[toggleLangState]}{" "}
+                      </span>
+                    </h2>
+                    <p>
+                      {translations.step9.description.p1[toggleLangState]}
+                      {translations.step9.description.p2[toggleLangState]}
+                    </p>
+                    <p>
+                      {translations.step9.description.p3[toggleLangState]}
+                      <br />
+                      {translations.step9.description.p4[toggleLangState]}
+                    </p>
+                    <button
+                      onClick={() =>
+                        handleMovement({
+                          first: "#experience__9",
+                          second: "#experience__10",
+                          direction: "right",
+                          path_inc_x: "2",
+                          path_inc_y: "-4.8",
+                        })
+                      }
+                      className={`${buttons.button} ${buttons.bottom} ${styles.fixed}`}
+                    >
+                      {translations.step9.button[toggleLangState]}
+                    </button>
+                  </section>
+                  <div className={styles.step__content_img}>
+                    <Image
+                      src="/images/experience/couple1/couple.png"
+                      alt="Bride and groom walking hand in hand"
+                      width={700}
+                      height={900}
+                    ></Image>
+                  </div>
+                </section>
+              </section>
+              <section className={`${styles.experience__step} ${styles.experience__10}`} id="experience__10">
+                <h2 className={`${styles.title} ${styles.ad}`}>
+                  {translations.step10.title.p1[toggleLangState]}
+                  <span className={styles.highlight}> {translations.step10.title.p1_highlight[toggleLangState]}</span>
+                </h2>
+                <section className={styles.experience__step_content}>
+                  <section className={styles.step__content_text}>
+                    <p>{translations.step10.description.p1[toggleLangState]}</p>
+                  </section>
                   <div className={styles.content__text_selection}>
-                    <p className={styles.text__selection_adv}>Advertise</p>
+                    <p className={styles.text__selection_adv}>{translations.step10.ads.adv[toggleLangState]}</p>
                     <ul className={styles.text__selection_list}>
-                      <li className={styles.selection__list_item} onClick={(e) => handleAdImage("clothing.png", e)}>
-                        clothing
+                      <li className={styles.selection__list_item} onClick={(e) => handleJewelryAd(e)}>
+                        {translations.step10.ads.gucci[toggleLangState]}
                       </li>
-                      <li className={styles.selection__list_item} onClick={(e) => handleAdImage("cars.png", e)}>
-                        cars
+                      <li className={styles.selection__list_item} onClick={(e) => handleJewelryAd(e)}>
+                        {translations.step10.ads.swarovski[toggleLangState]}
                       </li>
-                      <li className={styles.selection__list_item} onClick={(e) => handleAdImage("cats.png", e)}>
-                        cats
+                      <li className={styles.selection__list_item} onClick={(e) => handleJewelryAd(e)}>
+                        {translations.step10.ads.cartier[toggleLangState]}
                       </li>
-                      <li className={styles.selection__list_item} onClick={(e) => handleAdImage("food.png", e)}>
-                        food
+                      <li className={styles.selection__list_item} onClick={(e) => handleJewelryAd(e)}>
+                        {translations.step10.ads.bvlgari[toggleLangState]}
                       </li>
-                      <li className={styles.selection__list_item} onClick={(e) => handleAdImage("dating.png", e)}>
-                        dating
+                      <li className={styles.selection__list_item} onClick={(e) => handleJewelryAd(e)}>
+                        {translations.step10.ads.hermes[toggleLangState]}
                       </li>
                     </ul>
                   </div>
                 </section>
               </section>
-            </section>
-            <section className={`${styles.experience__step} ${styles.experience__6}`} id="experience__6">
-              <h2 className={styles.title}>
-                Nice, <span className={styles.highlight}>your ad worked</span>, we got him to look at (choice) related
-                products!
-              </h2>
-              <section className={styles.experience__step_content}>
-                <section className={styles.step__content_text}>
-                  <p>
-                    On sites where you watch video’s you probally just skip the ads, that’s why they have to delve
-                    deeper. Let me tell you everything about it!
-                  </p>
-                  <p>
-                    This is how we do it with everyone, we watch from a distance, collect everything we can find about
-                    them, build their profile and recommend advertisements based on that.
-                  </p>
-                  <button
-                    onClick={() =>
-                      handleMovement({
-                        first: "#experience__6",
-                        second: "#experience__7",
-                        direction: "left_down",
-                        path_inc_x: "1",
-                        path_inc_y: "-3",
-                      })
-                    }
-                    className={`${buttons.button} ${buttons.bottom} ${styles.fixed}`}
-                  >
-                    Skip add
-                  </button>
-                </section>
-                <div className={styles.step__content_img}>
-                  <Image
-                    src={`/images/experience/advertisement/${adImage}`}
-                    alt="Guy holding up an advertisement"
-                    width={600}
-                    height={670}
-                  ></Image>
-                </div>
-              </section>
-            </section>
-            <section className={`${styles.experience__step} ${styles.experience__7}`} id="experience__7">
-              <h2 className={`${styles.title} ${styles.ad}`}>
-                We can see that Sam <span className={styles.highlight}>lives near Bruges</span> based on their
-                <span className={styles.highlight}> IP.</span>
-              </h2>
-              <section className={styles.experience__step_content}>
-                <section className={styles.step__content_text}>
-                  <p>
-                    Advertisers can always figure out in wich area you live. Once you accept all cookies they can even
-                    track your exact location.
-                  </p>
-                  <p>After all this cookie-talk Sam might be hungry, would you mind sending some food ads?</p>
-                  <div className={styles.content__text_selection}>
-                    <p className={styles.text__selection_adv}>Advertise</p>
-                    <ul className={styles.text__selection_list}>
-                      <li className={styles.selection__list_item} onClick={(e) => handleFoodAd(e)}>
-                        McDonalds
-                      </li>
-                      <li className={styles.selection__list_item} onClick={(e) => handleFoodAd(e)}>
-                        UberEats
-                      </li>
-                      <li className={styles.selection__list_item} onClick={(e) => handleFoodAd(e)}>
-                        Pizza.be
-                      </li>
-                      <li className={styles.selection__list_item} onClick={(e) => handleFoodAd(e)}>
-                        Pitta
-                      </li>
-                      <li className={styles.selection__list_item} onClick={(e) => handleFoodAd(e)}>
-                        Aldi
-                      </li>
-                    </ul>
+              <section className={`${styles.experience__step} ${styles.experience__11}`} id="experience__11">
+                <h2 className={styles.title}>
+                  {translations.step11.title.p1[toggleLangState]}
+                  <span className={styles.highlight}> {translations.step10.title.p1_highlight[toggleLangState]} </span>
+                </h2>
+                <section className={styles.experience__step_content}>
+                  <section className={styles.step__content_text}>
+                    <p>{translations.step11.description.p1[toggleLangState]}</p>
+                    <p>
+                      <b className={styles.bold}> {translations.step11.description.p1_bold[toggleLangState]} </b>
+                      {translations.step11.description.p2[toggleLangState]}
+                    </p>
+                    <a href="/secureyourself#scanner" className={buttons.button}>
+                      {translations.step11.buttons.primary[toggleLangState]}
+                    </a>
+                    <a
+                      href="/secureyourself#tips"
+                      className={`${buttons.button} ${buttons.light} ${buttons.bottom} ${styles.fixed}`}
+                    >
+                      {translations.step11.buttons.secondary[toggleLangState]}
+                    </a>
+                  </section>
+                  <div className={styles.step__content_img}>
+                    <Image
+                      src="/images/experience/final/final.png"
+                      alt="Guy sitting on a server"
+                      width={400}
+                      height={500}
+                    ></Image>
                   </div>
                 </section>
-                <div className={styles.step__content_img}>
-                  <Image
-                    src="/images/experience/mailbox/mailbox.gif"
-                    alt="girls sitting on a mailbox"
-                    width={1100}
-                    height={800}
-                  ></Image>
-                </div>
               </section>
-            </section>
-            <section className={`${styles.experience__step} ${styles.experience__8}`} id="experience__8">
-              <h2 className={styles.title}>
-                We know Sam has a partner due to their <span className={styles.highlight}>shared IP</span> and
-                <span className={styles.highlight}> GPS location.</span>
-              </h2>
-              <section className={styles.experience__step_content}>
-                <section className={styles.step__content_text}>
-                  <h3 className={styles.inner__title}>
-                    Not only your <span className={styles.highlight}>online relationship status</span> reveals this.
-                  </h3>
-                  <p>
-                    They can track everyone who is using the same internet connection and even suggest ads to others!
-                    It’s all linked together like a big group chat.
-                  </p>
-                  <button
-                    onClick={() =>
-                      handleMovement({
-                        first: "#experience__8",
-                        second: "#experience__9",
-                        direction: "down",
-                        path_inc_x: "1",
-                        path_inc_y: "-5",
-                      })
-                    }
-                    className={`${buttons.button} ${buttons.bottom} ${styles.fixed}`}
-                  >
-                    Let's help them!
-                  </button>
-                  {/*<button className={`${buttons.button} ${buttons.light} ${buttons.bottom}`}>Naaaaaah...</button>*/}
-                </section>
-                <div className={styles.step__content_img}>
-                  <Image
-                    src="/images/experience/couple2/couple2.png"
-                    alt="Couple talking to eachother"
-                    width={600}
-                    height={440}
-                  ></Image>
-                </div>
-              </section>
-            </section>
-            <section className={`${styles.experience__step} ${styles.experience__9}`} id="experience__9">
-              <section className={styles.experience__step_content}>
-                <section className={styles.step__content_text}>
-                  <h2 className={styles.title}>
-                    Their partner has been looking at <span className={styles.highlight}>wedding rings</span>
-                  </h2>
-                  <p>
-                    Ain’t this a handy piece of information? With some cheeky little advertisements at the right time we
-                    could probably get Sam to buy a wedding ring.
-                  </p>
-                  <p>
-                    Wouldn’t that be beautiful?
-                    <br />
-                    That was a rhetorical question, we don’t care about that, we only care about money.
-                  </p>
-                  <button
-                    onClick={() =>
-                      handleMovement({
-                        first: "#experience__9",
-                        second: "#experience__10",
-                        direction: "right",
-                        path_inc_x: "2",
-                        path_inc_y: "-4.8",
-                      })
-                    }
-                    className={`${buttons.button} ${buttons.bottom} ${styles.fixed}`}
-                  >
-                    Let's make some bank
-                  </button>
-                </section>
-                <div className={styles.step__content_img}>
-                  <Image
-                    src="/images/experience/couple1/couple.png"
-                    alt="Bride and groom walking hand in hand"
-                    width={700}
-                    height={900}
-                  ></Image>
-                </div>
-              </section>
-            </section>
-            <section className={`${styles.experience__step} ${styles.experience__10}`} id="experience__10">
-              <h2 className={`${styles.title} ${styles.ad}`}>
-                Jewelry stores will be very grateful for these
-                <span className={styles.highlight}> potential customers</span>
-              </h2>
-              <section className={styles.experience__step_content}>
-                <section className={styles.step__content_text}>
-                  <p>
-                    Since we have all this power we can even choose from where they will possibly buy the ring, this
-                    time there is no right or wrong. Choose which one you think is going to be the best fit.
-                  </p>
-                </section>
-                <div className={styles.content__text_selection}>
-                  <p className={styles.text__selection_adv}>Advertise</p>
-                  <ul className={styles.text__selection_list}>
-                    <li className={styles.selection__list_item} onClick={(e) => handleJewelryAd(e)}>
-                      Gucci
-                    </li>
-                    <li className={styles.selection__list_item} onClick={(e) => handleJewelryAd(e)}>
-                      Swarovski
-                    </li>
-                    <li className={styles.selection__list_item} onClick={(e) => handleJewelryAd(e)}>
-                      Cartier
-                    </li>
-                    <li className={styles.selection__list_item} onClick={(e) => handleJewelryAd(e)}>
-                      Bvlgari
-                    </li>
-                    <li className={styles.selection__list_item} onClick={(e) => handleJewelryAd(e)}>
-                      Hermès
-                    </li>
-                  </ul>
-                </div>
-              </section>
-            </section>
-            <section className={`${styles.experience__step} ${styles.experience__11}`} id="experience__11">
-              <h2 className={styles.title}>
-                I guess it's clear what we can do with <span className={styles.highlight}>your data</span>
-              </h2>
-              <section className={styles.experience__step_content}>
-                <section className={styles.step__content_text}>
-                  <p>
-                    You can prevent the internet collecting, selling, using your data. <b>Protect yourself</b> against
-                    the manipulation of the corporate world. If you want to see all data that is available to the
-                    internet at this exact moment, take a look below.
-                  </p>
-                  <button className={buttons.button}>Show me what you can track</button>
-                  <button className={`${buttons.button} ${buttons.light} ${buttons.bottom} ${styles.fixed}`}>
-                    give me tips!
-                  </button>
-                </section>
-                <div className={styles.step__content_img}>
-                  <Image
-                    src="/images/experience/final/final.png"
-                    alt="Guy sitting on a server"
-                    width={400}
-                    height={500}
-                  ></Image>
-                </div>
-              </section>
-            </section>
-            <img
-              id="experience_path"
-              className={styles.experience__path}
-              src="/images/experience/experience_path.svg"
-              alt="A path through the whole experience"
-            ></img>
-            {/*<div className={styles.experience__path} id="experience_path">
+              <img
+                id="experience_path"
+                className={styles.experience__path}
+                src="/images/experience/experience_path.svg"
+                alt="A path through the whole experience"
+              ></img>
+              {/*<div className={styles.experience__path} id="experience_path">
               <Image
                 src="/images/experience/experience_path.svg"
                 width={10770}
@@ -643,9 +669,10 @@ const experience = () => {
                 alt="A path through the whole experience"
               ></Image>
                   </div>*/}
-          </>
-        )}
-      </main>
+            </>
+          )}
+        </main>
+      </FullScreen>
     </>
   );
 };

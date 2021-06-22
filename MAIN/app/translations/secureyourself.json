@@ -1,0 +1,156 @@
+{
+    "scanner": {
+        "title": {
+            "en": "Let's find out what we know about you!",
+            "nl": "Ontdek wat we weten over jou!"
+        },
+        "desc": {
+            "p1": {
+                "en": "It’s common sense that we like our privacy isn’t it? Sometimes it feels like Google knows what we really want. Isn’t that a bit scary?",
+                "nl": "Iedereen weet dat onze privacy belangrijk is, maar toch voelt het soms alsof Google weet wat we echt willen. Vind je dat ook niet eng?"
+            },
+            "p2": {
+                "en": "If you want to know the things we’ve tracked about you, you can scan all your data right now. You can also see what’s happening right now by pressing '/' and find some dark secrets.",
+                "nl": "Als je wilt weten wat wij op dit moment allemaal over jou weten, scan dan snel je data. Je kan ook zien wat er op dit moment gebeurt door de console te openen met '/'"
+            }
+        },
+        "button": {
+            "en": "Scan my data now",
+            "nl": "Scan mijn data"
+        }
+    },
+    "cookies": {
+        "title": {
+            "p1": {
+                "en": "Let's grab some",
+                "nl": "Laten we een"
+            },
+            "p1_highlight": {
+                "en": "cookies",
+                "nl": "cookie"
+            },
+            "p2": {
+                "en": "and talk about it",
+                "nl": "nemen en een koffie drinken."
+            }
+        },
+        "desc": {
+            "p1": {
+                "en": "Before we give you tips on what you can do to",
+                "nl": "Voordat we je tips geven over hoe je data tracking kan"
+            },
+            "p1_bold": {
+                "en": "prevent",
+                "nl": "voorkomen,"
+            },
+            "p2": {
+                "en": "data tracking we want to tell you that",
+                "nl": "willen we je eerst zeggen dat"
+            },
+            "p2_bold": {
+                "en": "not all cookies are bad",
+                "nl": "niet alle cookies slecht zijn,"
+            },
+            "p3": {
+                "en": "and most of them are created to give you a better experience.",
+                "nl": "en de meeste het doel hebben om jou ervaring op het web te verbeteren."
+            }
+        },
+        "subtitle": {
+            "p1": {
+                "en": "But who doesn't like a",
+                "nl": "Maar wie lust er nu geen"
+            },
+            "p1_highlight": {
+                "en": "cookie?",
+                "nl": "cookie?"
+            }
+        },
+        "expl": {
+            "p1": {
+                "en": "There are some cookies that",
+                "nl": "Er zijn sommige cookies die"
+            },
+            "p1_bold": {
+                "en": "take advantage",
+                "nl": "misbruik maken"
+            },
+            "p2": {
+                "en": "of your data and that's what we want to protect.",
+                "nl": "van jouw data, en dat is wat we willen beschermen."
+            },
+            "p3": {
+                "en": "That's why you should always",
+                "nl": "Dat is de reden waarom je altijd"
+            },
+            "p3_bold": {
+                "en": "be careful",
+                "nl": "voorzichtig"
+            },
+            "p4": {
+                "en": "accepting things left, right and center.",
+                "nl": "moet zijn en niet zomaar alle cookies mag accepteren."
+            },
+            "p5": {
+                "en": "Below we've listed some tips that can help keep your data safe!",
+                "nl": "Hieronder geven we je tips over hoe je jou data kan beschermen!"
+            }
+        }
+    },
+    "tips": {
+        "title": {
+            "en": "Some tips that can help you right now!",
+            "nl": "Deze tips kunnen je nu helpen!"
+        },
+        "subtitle": {
+            "en": "We've listed some things that will prevent most data tracking. It's a great step towards safer browsing through the internet!",
+            "nl": "Hieronder staan een aantal simpele tips die de meest voorkomende data tracking tegenhouden. Het is een goede begin van een veiliger en privatere internet ervaring."
+        },
+        "tip1": {
+            "title": {
+                "en": "Use adblocker",
+                "nl": "Gebruik een adblocker"
+            },
+            "subtitle": {
+                "en": "Install an adblocker. Good ones will also prevent data tracking while keeping you safe from ads.",
+                "nl": "Installeer een adblocker. Goede adblockers gaan ook data tracking blokkeren terwijl ze je veilig houden van advertenties."
+            }
+        },
+        "tip2": {
+            "title": {
+                "en": "Dont' accept all cookies",
+                "nl": "Accepteer nooit alle cookies"
+            },
+            "subtitle": {
+                "en": "Only accept necessary cookies. Do that extra click and press \"preferences\" and press okay. Only the necessary cookies should be selected by default, if not, deselect third party one's.",
+                "nl": "Accepteer alleen de noodzakelijke cookies. Doe die extra klik en ga naar \"opties\" de volgende keer dat je een popup krijgt. Klik daar op opslaan nadat je alleen de noodzakelijke cookies geselecteerd hebt. (Deze staan meestal al geselecteerd, je hoeft alleen nog maar op opslaan te drukken!)"
+            }
+        },
+        "tip3": {
+            "title": {
+                "en": "Use incognito",
+                "nl": "Gebruik incognito modus"
+            },
+            "subtitle": {
+                "en": "Use incognito if you don't want any cookies, those cookies get deleted when you close the tab.",
+                "nl": "Gebruik incognito of private browsing als je geen cookies wilt. Deze cookies worden verwijderd nadat je het tabblad afsluit."
+            }
+        }
+    },
+    "footer": {
+        "support": {
+            "p1": {
+                "en": "Thanks to the support of",
+                "nl": "Met steun van"
+            },
+            "p2": {
+                "en": "the Flemish Government",
+                "nl": "de Vlaamse Overheid"
+            }
+        },
+        "experience": {
+            "en": "an experience brought to life by",
+            "nl": "een ervaring tot leven gebracht door"
+        }
+    }
+}

@@ -133,7 +133,7 @@ export default function Home() {
           </section>
           <section className={styles.main__container_whatcanido}>
             <div>
-              <ParallaxMouse xFactor={-80} className={styles.container__whatcanido_img} springProps={springProps}>
+              <ParallaxMouse xFactor={80} className={styles.container__whatcanido_img} springProps={springProps}>
                 <Image
                   src="/images/index/paraplu/satelietje.gif"
                   alt="satellite beaming data down"
