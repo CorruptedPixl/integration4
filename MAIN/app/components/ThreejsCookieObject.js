@@ -19,7 +19,7 @@ const ThreejsCookieObject = ({ className }) => {
     renderer.setSize(800, 800);
     mountRef.current.appendChild(renderer.domElement);
 
-    const group = new THREE.Group();
+    const group = new Group();
 
     const material = new THREE.MeshMatcapMaterial({
       color: 0xff5c00,
@@ -28,35 +28,16 @@ const ThreejsCookieObject = ({ className }) => {
     material.metalness = 0.2;
     material.roughness = 1;
 
-    //lights
+    // Lights
 
     const light = new THREE.AmbientLight(0xffffff); // soft white light
     scene.add(light);
-
-    //helpers
-
-    ///
 
     scene.add(group);
 
     const sphere = new THREE.Mesh(new THREE.CylinderGeometry(1, 1, 0.11, 25), material);
 
-    //const sphere1 = new THREE.Mesh(new THREE.CylinderGeometry(1, 1, 0.21, 25), material);
-    //const sphere2 = new THREE.Mesh(new THREE.CylinderGeometry(1, 1, 0.21, 25), material);
-    //const sphere3 = new THREE.Mesh(new THREE.CylinderGeometry(1, 1, 0.21, 25), material);
-
     group.add(sphere);
-
-    /*
-    sphere1.position.z = -6;
-    sphere1.position.y = -0.7;
-    sphere2.position.z = -6;
-    sphere2.position.y = -0.7;
-    sphere3.position.z = -6;
-    sphere3.position.y = -0.7;
-    sphere1.position.x = -2.4;
-    sphere2.position.x = 2.4;
-    */
 
     sphere.position.y = -0.91;
     sphere.position.z = 1;
@@ -78,29 +59,25 @@ const ThreejsCookieObject = ({ className }) => {
       }
     );
 
-    //clock
+    // Clock
     const clock = new THREE.Clock();
 
-    //animations
+    // Animations
 
     const animation = () => {
-      //clock elapsed used for same speeed on difrent monitors speed
+      // Clock elapsed used for same speed on difrent monitors refresh rates
       const elapsedTime = clock.getElapsedTime();
-      //update objects
+      // Update objects
 
       const yOff = Math.sin(elapsedTime * 4);
-      // move the sphere up and down
+      // Move the sphere up and down
       group.position.y = ThreeMath.lerp(0, 0.05, yOff);
 
       sphere.rotation.x += 0.005;
       sphere.rotation.y += 0.005;
       sphere.rotation.z += 0.005;
 
-      //sphere1.rotation.x += 0.025;
-      //sphere1.rotation.y += 0.05;
-      //sphere1.rotation.z += 0.015;
-
-      //rerender
+      // Rerender
       renderer.render(scene, camera);
       window.requestAnimationFrame(animation);
     };
@@ -109,14 +86,15 @@ const ThreejsCookieObject = ({ className }) => {
 
     animation();
 
-    let onWindowResize = () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    };
+    // Disabled resizing because of positioning/canvas issues. Leaving this here since it might come in handy later
+    // let onWindowResize = () => {
+    //   camera.aspect = window.innerWidth / window.innerHeight;
+    //   camera.updateProjectionMatrix();
+    //   renderer.setSize(window.innerWidth, window.innerHeight);
+    //   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    // };
 
-    window.addEventListener("resize", onWindowResize, false);
+    // window.addEventListener("resize", onWindowResize, false);
 
     return () => mountRef.current.removeChild(renderer.domElement);
   }, []);
