@@ -1,0 +1,45 @@
+.navbar {
+  position: absolute;
+  width: 90vw;
+  margin-left: 5vw;
+  top: 0;
+}
+
+.navbar__list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 3rem;
+  justify-content: space-between;
+}
+
+.navbar__list_logo {
+  &>a:hover {
+    cursor: url("/cursor_pointer.png") 5 0, pointer;
+  }
+}
+
+.navbar__list_interactions {
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+}
+
+.list__interactions_link {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    color: var(--accent);
+    cursor: url("/cursor_pointer.png") 5 0, pointer;
+  }
+
+  &:active {
+    text-decoration: underline;
+  }
+
+  & > a {
+    cursor: url("/cursor_pointer.png") 5 0, pointer;
+  }
+}
