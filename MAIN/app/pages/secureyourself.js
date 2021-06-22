@@ -46,7 +46,7 @@ export default function secureyourself() {
             {translations.scanner.title[toggleLangState]}
           </h2>
           {scannerVisible ? (
-            <Scanner setVisitorData={setVisitorData} />
+            <Scanner setVisitorData={setVisitorData} currentLang={toggleLangState} />
           ) : (
             <>
               <section className={styles.container__mydata_contents}>
