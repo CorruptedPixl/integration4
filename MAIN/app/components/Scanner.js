@@ -78,22 +78,22 @@ const Scanner = ({ visible, setVisitorData, currentLang }) => {
     const temp = weatherData.main.temp;
     switch (true) {
       case temp >= 30:
-        return "like it's burning";
+        return translations.story.weather_burning[currentLang];
         break;
       case temp >= 20:
-        return "pretty hot";
+        return translations.story.weather_hot[currentLang];
         break;
       case temp >= 15:
-        return "pretty average";
+        return translations.story.weather_avg[currentLang];
         break;
       case temp >= 10:
-        return "quite chilly";
+        return translations.story.weather_chilly[currentLang];
         break;
       case temp < 10:
-        return "cold";
+        return translations.story.weather_cold[currentLang];
         break;
       case temp <= 0:
-        return "like it's freezing";
+        return translations.story.weather_freezing[currentLang];
         break;
 
       default:
