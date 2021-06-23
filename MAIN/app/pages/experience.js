@@ -144,8 +144,9 @@ const experience = () => {
 
   const handleMovement = (data) => {
     if (vw < 640) {
-      gsap.to(data.first, { duration: 1, y: -2 * vh });
-      gsap.to(data.second, { duration: 1, y: -vh });
+      // Fix for mobile vh not being read correctly
+      gsap.to(data.first, { duration: 1, y: -2 * window.innerHeight });
+      gsap.to(data.second, { duration: 1, y: -window.innerHeight });
     } else {
       switch (data.direction) {
         case "right":
