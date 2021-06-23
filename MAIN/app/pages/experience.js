@@ -430,9 +430,9 @@ const experience = () => {
                   </div>
                   <section className={styles.step__content_text}>
                     <p>
-                      {translations.step5.description.p1[toggleLangState]}
-                      {translations.step5.description.p2[toggleLangState]}
-                      <b className={styles.highlight}>{translations.step5.description.p2_bold[toggleLangState]} </b>
+                      {translations.step5.description.p1[toggleLangState]}{" "}
+                      {translations.step5.description.p2[toggleLangState]}{" "}
+                      <b className={styles.highlight}> {translations.step5.description.p2_bold[toggleLangState]} </b>
                       {translations.step5.description.p3[toggleLangState]}
                     </p>
                     <div className={styles.content__text_selection}>
