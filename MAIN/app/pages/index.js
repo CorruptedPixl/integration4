@@ -14,6 +14,7 @@ import Scanner from "../components/Scanner";
 import StudentBanner from "../components/StudentBanner";
 import Navbar from "../components/Navbar";
 import translations from "../translations/index.json";
+import { Helmet } from "react-helmet";
 
 export default function Home() {
   const [vw, setVw] = useState();
@@ -41,6 +42,9 @@ export default function Home() {
 
   return (
     <>
+      <Helmet>
+        <html lang={toggleLangState} />
+      </Helmet>
       <Head>
         <title>ctrl. | Home</title>
         <meta

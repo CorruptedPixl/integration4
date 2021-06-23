@@ -32,6 +32,9 @@ export default function secureyourself() {
 
   return (
     <>
+      <Helmet>
+        <html lang={toggleLangState} />
+      </Helmet>
       <Head>
         <title>ctrl. | Secure Yourself</title>
         <meta

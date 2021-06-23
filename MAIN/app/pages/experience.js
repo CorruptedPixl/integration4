@@ -177,6 +177,9 @@ const experience = () => {
   };
   return (
     <>
+      <Helmet>
+        <html lang={toggleLangState} />
+      </Helmet>
       <Head>
         <title>ctrl. | Experience</title>
         <meta
