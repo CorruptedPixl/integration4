@@ -3,7 +3,7 @@ import styles from "../styles/Scanner.module.scss";
 import translations from "../translations/scanner.json";
 import FingerprintJS from "@fingerprintjs/fingerprintjs-pro";
 
-const Scanner = ({ visible, setVisitorData, currentLang }) => {
+const Scanner = ({ visible, setVisitorData, setExtWeatherData, currentLang }) => {
   const [visitorInfo, setVisitorInfo] = useState();
   const [responseSummary, setResponseSummary] = useState();
   const [serverData, setServerData] = useState();
@@ -103,6 +103,7 @@ const Scanner = ({ visible, setVisitorData, currentLang }) => {
 
   // Send back data to parent component if asked for it
   if (serverData && setVisitorData != false) setVisitorData(serverData);
+  if (weatherData && setExtWeatherData != false) setExtWeatherData(weatherData);
 
   return (
     <section className={visible ? styles.container : `${styles.container} ${styles.visuallyHidden}`}>
@@ -229,6 +230,7 @@ Scanner.defaultProps = {
   visible: true,
   // Set this from parent element of you want to pull the data out of the scanner
   setVisitorData: false,
+  setExtWeatherData: false,
 };
 
 export default Scanner;

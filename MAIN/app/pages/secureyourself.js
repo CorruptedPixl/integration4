@@ -12,16 +12,23 @@ import ThreejsObjects from "../components/ThreejsObjects.js";
 import ParallaxMouse from "../components/ParallaxMouse";
 import Console from "../components/Console";
 import Navbar from "../components/Navbar";
+import StudentBanner from "../components/StudentBanner";
 
 export default function secureyourself() {
   const [socket, setSocket] = useState();
   const [toggleLangState, setToggleLangState] = useState("en");
   const [scannerVisible, setScannerVisible] = useState(false);
   const [visitorData, setVisitorData] = useState();
+  const [weatherData, setWeatherData] = useState();
 
   const handleClickScan = () => {
     setScannerVisible(!scannerVisible);
+    socket.emit("consoleMessage", "A user is scanning themselves");
   };
+
+  {
+    weatherData && socket.emit("consoleMessage", `A user from ${weatherData.name} finished a scan`);
+  }
 
   return (
     <>
@@ -34,6 +41,7 @@ export default function secureyourself() {
         <link rel="icon" href="/ctrl.logo.svg" />
       </Head>
       <main className={styles.main__container}>
+        <StudentBanner />
         <Navbar>
           <Toggle
             toggleState={toggleLangState}
@@ -51,7 +59,7 @@ export default function secureyourself() {
             {translations.scanner.title[toggleLangState]}
           </h2>
           {scannerVisible ? (
-            <Scanner setVisitorData={setVisitorData} currentLang={toggleLangState} />
+            <Scanner setVisitorData={setVisitorData} setExtWeatherData={setWeatherData} currentLang={toggleLangState} />
           ) : (
             <>
               <section className={styles.container__mydata_contents}>

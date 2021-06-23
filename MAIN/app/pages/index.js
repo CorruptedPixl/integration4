@@ -10,6 +10,7 @@ import ThreejsObjectsMainlow from "../components/ThreejsObjectsMainlow.js";
 import ParallaxMouse from "../components/ParallaxMouse";
 import Console from "../components/Console";
 import Toggle from "../components/Toggle";
+import Scanner from "../components/Scanner";
 import StudentBanner from "../components/StudentBanner";
 import Navbar from "../components/Navbar";
 import translations from "../translations/index.json";
@@ -26,6 +27,11 @@ export default function Home() {
 
   const [socket, setSocket] = useState();
   const [toggleLangState, setToggleLangState] = useState("en");
+  const [visitorData, setVisitorData] = useState();
+
+  {
+    visitorData && visitorData.visits.length <= 5 && socket.emit("consoleMessage", "A new user visited the site");
+  }
 
   return (
     <>
@@ -39,6 +45,7 @@ export default function Home() {
       </Head>
       <main className={styles.main__container} onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}>
         <StudentBanner />
+        <Scanner setVisitorData={setVisitorData} visible={false} />
         <Console socket={socket} setSocket={setSocket} />
         <Navbar>
           <Toggle
@@ -66,13 +73,17 @@ export default function Home() {
                 <section className={styles.container__intro_buttons}>
                   <a
                     href="/experience"
-                    onClick={() => socket.emit("consoleMessage", "A user opened the console")}
+                    onClick={() => socket.emit("consoleMessage", "A user visited the experience")}
                     className={buttons.button}
                   >
                     {translations.buttons.experience[toggleLangState]}
                   </a>
                   <p className={styles.intro__buttons_or}>{translations.buttons.or[toggleLangState]}</p>
-                  <a href="/secureyourself" className={`${buttons.button} ${buttons.dark}`}>
+                  <a
+                    href="/secureyourself"
+                    onClick={() => socket.emit("consoleMessage", "A user wants to learn to protect themselves")}
+                    className={`${buttons.button} ${buttons.dark}`}
+                  >
                     {translations.buttons.protect[toggleLangState]}
                   </a>
                 </section>
@@ -155,14 +166,22 @@ export default function Home() {
                 {translations.what.title[toggleLangState]}
               </h2>
               <p className={styles.whatcanido__text_body}>{translations.what.body.p1[toggleLangState]}</p>
-              <a href="/secureyourself" className={buttons.button}>
+              <a
+                href="/secureyourself"
+                onClick={() => socket.emit("consoleMessage", "A user wants to learn to protect themselves")}
+                className={buttons.button}
+              >
                 <div>
                   {translations.what.buttons.main.ctrl[toggleLangState]}{" "}
                   <span className={styles.light}>{translations.what.buttons.main.id[toggleLangState]}</span>
                 </div>
               </a>
               <p className={styles.whatcanido__text_body}>{translations.what.body.p2[toggleLangState]}</p>
-              <a href="/experience" className={`${buttons.button} ${buttons.light}`}>
+              <a
+                href="/experience"
+                onClick={() => socket.emit("consoleMessage", "A user visited the experience")}
+                className={`${buttons.button} ${buttons.light}`}
+              >
                 {translations.what.buttons.secondary[toggleLangState]}
               </a>
             </section>

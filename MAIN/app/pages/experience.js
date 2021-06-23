@@ -12,6 +12,7 @@ import { FullScreen, useFullScreenHandle } from "react-full-screen";
 import Toggle from "../components/Toggle";
 import Console from "../components/Console";
 import ParallaxMouse from "../components/ParallaxMouse";
+import Scanner from "../components/Scanner";
 import translations from "../translations/experience.json";
 
 const experience = () => {
@@ -62,6 +63,7 @@ const experience = () => {
   const [musicButton, setMusicButton] = useState("sound_off");
 
   const handleBgMusic = () => {
+    socket.emit("consoleMessage", "A user toggled sound in the experience");
     if (bgMusic === true) {
       setBgMusic(false);
       setMusicButton("sound_off");
@@ -86,6 +88,7 @@ const experience = () => {
     if (vw < 640) {
       fsHandle.enter();
     }
+    socket.emit("consoleMessage", "A user started the experience");
   };
 
   const handleAdImage = (selected, e) => {
@@ -104,6 +107,7 @@ const experience = () => {
     } else {
       e.target.classList.add(styles.wrong);
       console.warn("Wrong ad, try again");
+      socket.emit("consoleMessage", "A user failed to show the right ad to Sam");
       setTimeout(() => {
         e.target.classList.remove(styles.wrong);
       }, 500);
@@ -183,6 +187,7 @@ const experience = () => {
         <ParallaxMouse xFactor={50} springProps={springProps}></ParallaxMouse>
         <main className={styles.main__container}>
           <Console socket={socket} setSocket={setSocket} />
+          <Scanner visible={false} />
           <div className={styles.button__container}>
             <a
               href="/"
