@@ -27,15 +27,17 @@ const Navbar = ({ children }) => {
               <Image src="/ctrl.logo.svg" alt="ctrl. logo" width={100} height={50}></Image>
             </a>
           </li>
-          <ul className={`${styles.navbar__list_interactions} ${active}`}>
-            <li className={styles.list__interactions_link}>
-              <a href="/secureyourself">secure yourself</a>
-            </li>
-            <li className={styles.list__interactions_link}>
-              <a href="experience">follow Sam</a>
-            </li>
-            <li className={styles.list__interactions_toggle}>{children}</li>
-          </ul>
+          <li>
+            <ul className={`${styles.navbar__list_interactions} ${active}`}>
+              <li className={styles.list__interactions_link}>
+                <a href="/secureyourself">secure yourself</a>
+              </li>
+              <li className={styles.list__interactions_link}>
+                <a href="experience">follow Sam</a>
+              </li>
+              <li className={styles.list__interactions_toggle}>{children}</li>
+            </ul>
+          </li>
           <li onClick={() => handleMobile()} className={styles.navbar__list_hamburger}>
             {!navOpen ? (
               <Image src="/images/navbar/hamburger.svg" alt="hamburger menu icon" height={40} width={60}></Image>
@@ -46,29 +48,33 @@ const Navbar = ({ children }) => {
         </ul>
       ) : (
         <ul className={`${styles.navbar__list} ${styles.active}`}>
-          <ul className={styles.navbar__list_top}>
-            <li className={styles.navbar__list_logo}>
-              <a href="/">
-                <Image src="/ctrl.logo.svg" width={100} height={50}></Image>
-              </a>
-            </li>
-            <li onClick={() => handleMobile()} className={styles.navbar__list_hamburger}>
-              {!navOpen ? (
-                <Image src="/images/navbar/hamburger.svg" height={40} width={60}></Image>
-              ) : (
-                <Image src="/images/navbar/cross.svg" height={50} width={50}></Image>
-              )}
-            </li>
-          </ul>
-          <ul className={`${styles.navbar__list_interactions} ${active}`}>
-            <li className={styles.list__interactions_link}>
-              <a href="/secureyourself">secure yourself</a>
-            </li>
-            <li className={styles.list__interactions_link}>
-              <a href="experience">follow Sam</a>
-            </li>
-            <li className={styles.list__interactions_toggle}>{children}</li>
-          </ul>
+          <li className={styles.navbar__top_mobile}>
+            <ul className={styles.navbar__list_top}>
+              <li className={styles.navbar__list_logo}>
+                <a href="/">
+                  <Image src="/ctrl.logo.svg" width={100} height={50}></Image>
+                </a>
+              </li>
+              <li onClick={() => handleMobile()} className={styles.navbar__list_hamburger}>
+                {!navOpen ? (
+                  <Image src="/images/navbar/hamburger.svg" height={40} width={60}></Image>
+                ) : (
+                  <Image src="/images/navbar/cross.svg" height={50} width={50}></Image>
+                )}
+              </li>
+            </ul>
+          </li>
+          <li>
+            <ul className={`${styles.navbar__list_interactions} ${active}`}>
+              <li className={styles.list__interactions_link}>
+                <a href="/secureyourself">secure yourself</a>
+              </li>
+              <li className={styles.list__interactions_link}>
+                <a href="experience">follow Sam</a>
+              </li>
+              <li className={styles.list__interactions_toggle}>{children}</li>
+            </ul>
+          </li>
         </ul>
       )}
     </nav>
