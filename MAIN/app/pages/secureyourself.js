@@ -97,7 +97,7 @@ export default function secureyourself() {
             <section className={styles.container__intro_expl}>
               <h2 className={styles.intro__expl_title}>
                 {translations.cookies.subtitle.p1[toggleLangState]}
-                <span className={styles.highlight}>{translations.cookies.subtitle.p1_highlight[toggleLangState]}</span>?
+                <span className={styles.highlight}> {translations.cookies.subtitle.p1_highlight[toggleLangState]}</span>
               </h2>
               <p className={styles.intro__expl_text}>
                 {translations.cookies.expl.p1[toggleLangState]}
