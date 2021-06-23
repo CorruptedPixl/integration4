@@ -56,6 +56,7 @@ const Console = ({ socket, setSocket }) => {
   return (
     <>
       <section className={isVisible ? `${styles.container}` : `${styles.container} ${styles.visuallyHidden}`}>
+        <h2 className={styles.hidden}>Console</h2>
         <p>
           Press <code className={styles.code}>/</code> again to close the console.
         </p>

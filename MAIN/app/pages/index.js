@@ -76,7 +76,7 @@ export default function Home() {
               </h2>
               <p className={styles.container__intro_text}>{translations.intro[toggleLangState]}</p>
               <ParallaxMouse xFactor={50} springProps={springProps}>
-                <section className={styles.container__intro_buttons}>
+                <div className={styles.container__intro_buttons}>
                   <a
                     href="/experience"
                     onClick={() => socket.emit("consoleMessage", "A user visited the experience")}
@@ -92,7 +92,7 @@ export default function Home() {
                   >
                     {translations.buttons.protect[toggleLangState]}
                   </a>
-                </section>
+                </div>
               </ParallaxMouse>
             </section>
           </ParallaxMouse>
@@ -136,7 +136,7 @@ export default function Home() {
               <ThreejsObjects className={styles.threejs__object} />
             </ParallaxMouse>
           </div>
-          <section className={styles.main__container_become}>
+          <div className={styles.main__container_become}>
             <section className={styles.container__become_text}>
               <h2
                 data-text={`${translations.become.title.main[toggleLangState]} ${translations.become.title.highlight[toggleLangState]}`}
@@ -171,8 +171,8 @@ export default function Home() {
                 height={650}
               />
             </ParallaxMouse>
-          </section>
-          <section className={styles.main__container_whatcanido}>
+          </div>
+          <div className={styles.main__container_whatcanido}>
             <div>
               <ParallaxMouse xFactor={80} className={styles.container__whatcanido_img} springProps={springProps}>
                 <Image
@@ -210,7 +210,7 @@ export default function Home() {
                 {translations.what.buttons.secondary[toggleLangState]}
               </a>
             </section>
-          </section>
+          </div>
         </Parallax>
       </main>
       <footer className={styles.footer}>
