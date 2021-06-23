@@ -230,7 +230,7 @@ export default function Home() {
           />
         </div>
         <div className={styles.footer__logo}>
-          <Image src="/lion_icon.svg" alt={"Logo of the Flemish Government"} width={180} height={250} />
+          <Image src="/lion_icon.svg" alt="Logo of the Flemish Government" width={180} height={250} />
           <p className={styles.footer__logo_sub}>
             {translations.footer.support.p1[toggleLangState]}
             <br />
