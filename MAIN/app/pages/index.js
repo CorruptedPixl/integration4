@@ -102,6 +102,7 @@ export default function Home() {
               alt="businessman on surfboard with briefcase"
               width={550}
               height={550}
+              priority={true}
             />
           </ParallaxMouse>
 
@@ -111,6 +112,7 @@ export default function Home() {
               alt="smaller wave in the background"
               width={1000}
               height={400}
+              priority={true}
             />
           </ParallaxMouse>
 
@@ -128,6 +130,7 @@ export default function Home() {
                 alt="Wave in the background where the surfer is surfing on"
                 width={3000}
                 height={800}
+                priority={true}
               />
             </div>
           </ParallaxMouse>
@@ -169,6 +172,7 @@ export default function Home() {
                 alt="computer with a person inside"
                 width={900}
                 height={650}
+                priority={true}
               />
             </ParallaxMouse>
           </div>
@@ -180,6 +184,7 @@ export default function Home() {
                   alt="satellite beaming data down"
                   width={1123 * 0.4}
                   height={987 * 0.4}
+                  priority={true}
                 />
               </ParallaxMouse>
             </div>
@@ -223,10 +228,11 @@ export default function Home() {
             alt="woman with umbrella shielding her from the data from the satellite"
             width={582 * 0.5}
             height={1137 * 0.5}
+            priority={true}
           />
         </div>
         <div className={styles.footer__logo}>
-          <Image src="/lion_icon.svg" alt="Logo of the Flemish Government" width={180} height={250} />
+          <Image src="/lion_icon.svg" alt="Logo of the Flemish Government" width={180} height={250} priority={true} />
           <p className={styles.footer__logo_sub}>
             {translations.footer.support.p1[toggleLangState]}
             <br />

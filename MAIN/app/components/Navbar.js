@@ -24,7 +24,7 @@ const Navbar = ({ children }) => {
         <ul className={styles.navbar__list}>
           <li className={styles.navbar__list_logo}>
             <a href="/">
-              <Image src="/ctrl.logo.svg" alt="ctrl. logo" width={100} height={50}></Image>
+              <Image src="/ctrl.logo.svg" alt="ctrl. logo" width={100} height={50} priority={true}></Image>
             </a>
           </li>
           <li>
@@ -40,9 +40,21 @@ const Navbar = ({ children }) => {
           </li>
           <li onClick={() => handleMobile()} className={styles.navbar__list_hamburger}>
             {!navOpen ? (
-              <Image src="/images/navbar/hamburger.svg" alt="hamburger menu icon" height={40} width={60}></Image>
+              <Image
+                src="/images/navbar/hamburger.svg"
+                alt="hamburger menu icon"
+                height={40}
+                width={60}
+                priority={true}
+              ></Image>
             ) : (
-              <Image src="/images/navbar/cross.svg" alt="cross to close hamburger menu" height={50} width={50}></Image>
+              <Image
+                src="/images/navbar/cross.svg"
+                alt="cross to close hamburger menu"
+                height={50}
+                width={50}
+                priority={true}
+              ></Image>
             )}
           </li>
         </ul>
@@ -52,14 +64,14 @@ const Navbar = ({ children }) => {
             <ul className={styles.navbar__list_top}>
               <li className={styles.navbar__list_logo}>
                 <a href="/">
-                  <Image src="/ctrl.logo.svg" width={100} height={50}></Image>
+                  <Image src="/ctrl.logo.svg" width={100} height={50} priority={true}></Image>
                 </a>
               </li>
               <li onClick={() => handleMobile()} className={styles.navbar__list_hamburger}>
                 {!navOpen ? (
-                  <Image src="/images/navbar/hamburger.svg" height={40} width={60}></Image>
+                  <Image src="/images/navbar/hamburger.svg" height={40} width={60} priority={true}></Image>
                 ) : (
-                  <Image src="/images/navbar/cross.svg" height={50} width={50}></Image>
+                  <Image src="/images/navbar/cross.svg" height={50} width={50} priority={true}></Image>
                 )}
               </li>
             </ul>

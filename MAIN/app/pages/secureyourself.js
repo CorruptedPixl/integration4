@@ -76,6 +76,7 @@ export default function secureyourself() {
                   alt="2 girls on a computer that is connected to a building"
                   width={700}
                   height={730}
+                  priority={true}
                 ></Image>
               </div>
             </section>
@@ -123,7 +124,7 @@ export default function secureyourself() {
 
         <section className={styles.main__container_tips}>
           <div className={styles.container__tips_bg}>
-            <Image src="/tips_bg.svg" alt="background for the tips" width={1920} height={2211}></Image>
+            <Image src="/tips_bg.svg" alt="background for the tips" width={1920} height={2211} priority={true}></Image>
           </div>
           <h2 className={`${styles.container__tips_title} ${styles.title}`}>
             {translations.tips.title[toggleLangState]}
@@ -139,6 +140,7 @@ export default function secureyourself() {
                   alt="adblocker logo"
                   width={170}
                   height={180}
+                  priority={true}
                 ></Image>
               </div>
               <p className={styles.list__tip_text}>{translations.tips.tip1.subtitle[toggleLangState]}</p>
@@ -146,7 +148,14 @@ export default function secureyourself() {
             <li className={styles.tips__list_tip}>
               <h3 className={styles.list__tip_title}>{translations.tips.tip2.title[toggleLangState]}</h3>
               <div className={styles.tip__img_container}>
-                <Image className={styles.list__tip_img} src="/cookie.svg" alt="cookie" width={170} height={180}></Image>
+                <Image
+                  className={styles.list__tip_img}
+                  src="/cookie.svg"
+                  alt="cookie"
+                  width={170}
+                  height={180}
+                  priority={true}
+                ></Image>
               </div>
               <p className={styles.list__tip_text}>{translations.tips.tip2.subtitle[toggleLangState]}</p>
             </li>
@@ -159,6 +168,7 @@ export default function secureyourself() {
                   alt="incognito mask"
                   width={180}
                   height={180}
+                  priority={true}
                 ></Image>
               </div>
               <p className={styles.list__tip_text}>{translations.tips.tip3.subtitle[toggleLangState]}</p>

@@ -234,6 +234,7 @@ const experience = () => {
                   alt="toggle for music"
                   width="56px"
                   height="51px"
+                  priority={true}
                 ></Image>
               </div>
               <p className={styles.container__intro_info}>{translations.intro.experience[toggleLangState]}</p>
@@ -241,7 +242,7 @@ const experience = () => {
           ) : (
             <>
               <div className={`${styles.music__experience} ${styles.fixed}`} onClick={() => handleBgMusic()}>
-                <Image src={`/images/experience/${musicButton}.svg`} width="56px" height="51px"></Image>
+                <Image src={`/images/experience/${musicButton}.svg`} width="56px" height="51px" priority={true}></Image>
               </div>
               <section className={`${styles.experience__step} ${styles.experience__1}`} id="experience__1">
                 <h2 className={styles.title}>
@@ -275,6 +276,7 @@ const experience = () => {
                       alt="Girls riding on a bike with binary code in the wheels"
                       width={420}
                       height={600}
+                      priority={true}
                     ></Image>
                   </div>
                 </div>
@@ -324,6 +326,7 @@ const experience = () => {
                       alt="woman walking a computerdog"
                       width={500}
                       height={630}
+                      priority={true}
                     ></Image>
                   </div>
                 </div>
@@ -345,6 +348,7 @@ const experience = () => {
                       alt="padlock with data behind it"
                       width={760}
                       height={520}
+                      priority={true}
                     ></Image>
                   </div>
 
@@ -409,6 +413,7 @@ const experience = () => {
                       alt="bunny taking photograph of a model"
                       width={1000}
                       height={500}
+                      priority={true}
                     ></Image>
                   </div>
                 </div>
@@ -427,6 +432,7 @@ const experience = () => {
                       alt="guy sitting on a computer that displays an ad"
                       width={500}
                       height={560}
+                      priority={true}
                     ></Image>
                   </div>
                   <div className={styles.step__content_text}>
@@ -493,6 +499,7 @@ const experience = () => {
                       alt="Guy holding up an advertisement"
                       width={600}
                       height={670}
+                      priority={true}
                     ></Image>
                   </div>
                 </div>
@@ -535,6 +542,7 @@ const experience = () => {
                       alt="girls sitting on a mailbox"
                       width={1100}
                       height={800}
+                      priority={true}
                     ></Image>
                   </div>
                 </div>
@@ -579,6 +587,7 @@ const experience = () => {
                       alt="Couple talking to eachother"
                       width={600}
                       height={440}
+                      priority={true}
                     ></Image>
                   </div>
                 </div>
@@ -623,6 +632,7 @@ const experience = () => {
                       alt="Bride and groom walking hand in hand"
                       width={700}
                       height={900}
+                      priority={true}
                     ></Image>
                   </div>
                 </div>
@@ -686,6 +696,7 @@ const experience = () => {
                       alt="Guy sitting on a server"
                       width={400}
                       height={600}
+                      priority={true}
                     ></Image>
                   </div>
                 </dev>
