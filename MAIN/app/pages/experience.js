@@ -632,10 +632,10 @@ const experience = () => {
                   {translations.step10.title.p1[toggleLangState]}
                   <span className={styles.highlight}> {translations.step10.title.p1_highlight[toggleLangState]}</span>
                 </h2>
-                <section className={styles.experience__step_content}>
-                  <section className={styles.step__content_text}>
+                <dev className={styles.experience__step_content}>
+                  <dev className={styles.step__content_text}>
                     <p>{translations.step10.description.p1[toggleLangState]}</p>
-                  </section>
+                  </dev>
                   <div className={styles.content__text_selection}>
                     <p className={styles.text__selection_adv}>{translations.step10.ads.adv[toggleLangState]}</p>
                     <ul className={styles.text__selection_list}>
@@ -656,15 +656,15 @@ const experience = () => {
                       </li>
                     </ul>
                   </div>
-                </section>
+                </dev>
               </section>
               <section className={`${styles.experience__step} ${styles.experience__11}`} id="experience__11">
                 <h2 className={styles.title}>
                   {translations.step11.title.p1[toggleLangState]}
                   <span className={styles.highlight}> {translations.step10.title.p1_highlight[toggleLangState]} </span>
                 </h2>
-                <section className={styles.experience__step_content}>
-                  <section className={styles.step__content_text}>
+                <dev className={styles.experience__step_content}>
+                  <dev className={styles.step__content_text}>
                     <p>{translations.step11.description.p1[toggleLangState]}</p>
                     <p>
                       <b className={styles.bold}> {translations.step11.description.p1_bold[toggleLangState]} </b>
@@ -679,16 +679,16 @@ const experience = () => {
                     >
                       {translations.step11.buttons.secondary[toggleLangState]}
                     </a>
-                  </section>
+                  </dev>
                   <div className={styles.step__content_img}>
                     <Image
                       src="/images/experience/final/final.png"
                       alt="Guy sitting on a server"
                       width={400}
-                      height={500}
+                      height={600}
                     ></Image>
                   </div>
-                </section>
+                </dev>
               </section>
               <img
                 id="experience_path"
