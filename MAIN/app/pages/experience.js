@@ -229,7 +229,12 @@ const experience = () => {
               </button>
               <small className={styles.container__intro_disclaimer}>{translations.intro.accept[toggleLangState]}</small>
               <div className={styles.music__experience} onClick={() => handleBgMusic()}>
-                <Image src={`/images/experience/${musicButton}.svg`} width="56px" height="51px"></Image>
+                <Image
+                  src={`/images/experience/${musicButton}.svg`}
+                  alt="toggle for music"
+                  width="56px"
+                  height="51px"
+                ></Image>
               </div>
               <p className={styles.container__intro_info}>{translations.intro.experience[toggleLangState]}</p>
             </section>
@@ -243,8 +248,8 @@ const experience = () => {
                   {translations.step1.title.p1[toggleLangState]} <span className={styles.highlight}>cookies</span>{" "}
                   {translations.step1.title.p2[toggleLangState]}
                 </h2>
-                <section className={styles.experience__step_content}>
-                  <section className={styles.step__content_text}>
+                <div className={styles.experience__step_content}>
+                  <div className={styles.step__content_text}>
                     <p>{translations.step1.description.p1[toggleLangState]}</p>
                     <p>
                       {translations.step1.description.p2[toggleLangState]}{" "}
@@ -263,7 +268,7 @@ const experience = () => {
                     >
                       {translations.step1.button[toggleLangState]}
                     </button>
-                  </section>
+                  </div>
                   <div className={styles.step__content_img}>
                     <Image
                       src="/images/experience/experience_start/cookiestart.webp"
@@ -272,15 +277,15 @@ const experience = () => {
                       height={600}
                     ></Image>
                   </div>
-                </section>
+                </div>
               </section>
               <section className={`${styles.experience__step} ${styles.experience__2}`} id="experience__2">
                 <h2 className={styles.title}>
                   {translations.step2.title.p1[toggleLangState]}{" "}
                   <span className={styles.highlight}>{translations.step2.title.p2[toggleLangState]}</span>
                 </h2>
-                <section className={styles.experience__step_content}>
-                  <section className={styles.step__content_text}>
+                <div className={styles.experience__step_content}>
+                  <div className={styles.step__content_text}>
                     <p>
                       {translations.step2.description.p1[toggleLangState]}
                       <br />
@@ -312,7 +317,7 @@ const experience = () => {
                     >
                       {translations.step2.button[toggleLangState]}
                     </button>
-                  </section>
+                  </div>
                   <div className={styles.step__content_img}>
                     <Image
                       src="/images/experience/fingerprinting/dame-met-hondje.png"
@@ -321,7 +326,7 @@ const experience = () => {
                       height={630}
                     ></Image>
                   </div>
-                </section>
+                </div>
               </section>
               <section className={`${styles.experience__step} ${styles.experience__3}`} id="experience__3">
                 <h2 className={styles.title}>
@@ -333,7 +338,7 @@ const experience = () => {
                   {translations.step3.title.p2[toggleLangState]}
                   <span className={styles.highlight}> {translations.step3.title.p2_highlight[toggleLangState]}</span>
                 </h2>
-                <section className={styles.experience__step_content}>
+                <div className={styles.experience__step_content}>
                   <div className={`${styles.step__content_img} ${styles.visible}`}>
                     <Image
                       src="/images/experience/locked/lock.gif"
@@ -343,7 +348,7 @@ const experience = () => {
                     ></Image>
                   </div>
 
-                  <section className={`${styles.step__content_text} ${styles.acces}`}>
+                  <div className={`${styles.step__content_text} ${styles.acces}`}>
                     <p>
                       {translations.step3.description.p1[toggleLangState]}{" "}
                       <b className={styles.bold}>{translations.step3.description.p1_bold[toggleLangState]} </b>{" "}
@@ -370,8 +375,8 @@ const experience = () => {
                     >
                       {translations.step3.button[toggleLangState]}
                     </button>
-                  </section>
-                </section>
+                  </div>
+                </div>
               </section>
               <section className={`${styles.experience__step} ${styles.experience__4}`} id="experience__4">
                 <h2 className={styles.title}>
@@ -379,8 +384,8 @@ const experience = () => {
                   <span className={styles.highlight}> {translations.step4.title.p1_highlight[toggleLangState]} </span>
                   {translations.step4.title.p2[toggleLangState]}
                 </h2>
-                <section className={styles.experience__step_content}>
-                  <section className={styles.step__content_text}>
+                <div className={styles.experience__step_content}>
+                  <div className={styles.step__content_text}>
                     <p>{translations.step4.description.p1[toggleLangState]}</p>
                     <p>{translations.step4.description.subtitle[toggleLangState]}</p>
                     <button
@@ -397,7 +402,7 @@ const experience = () => {
                     >
                       {translations.step4.button[toggleLangState]}
                     </button>
-                  </section>
+                  </div>
                   <div className={`${styles.bunnyPicture} ${styles.visible} ${styles.step__content_img}`}>
                     <Image
                       src="/images/experience/bunny/bunny.gif"
@@ -406,7 +411,7 @@ const experience = () => {
                       height={500}
                     ></Image>
                   </div>
-                </section>
+                </div>
               </section>
               <section className={`${styles.experience__step} ${styles.experience__5}`} id="experience__5">
                 <h2 className={`${styles.title} ${styles.ad}`}>
@@ -415,7 +420,7 @@ const experience = () => {
                   {translations.step5.title.p2[toggleLangState]}
                   <span className={styles.highlight}> {translations.step5.title.p2_highlight[toggleLangState]}</span>
                 </h2>
-                <section className={styles.experience__step_content}>
+                <div className={styles.experience__step_content}>
                   <div className={styles.step__content_img}>
                     <Image
                       src={`/images/experience/guessthead/${adImage.path}`}
@@ -424,7 +429,7 @@ const experience = () => {
                       height={560}
                     ></Image>
                   </div>
-                  <section className={styles.step__content_text}>
+                  <div className={styles.step__content_text}>
                     <p>
                       {translations.step5.description.p1[toggleLangState]}{" "}
                       {translations.step5.description.p2[toggleLangState]}{" "}
@@ -451,8 +456,8 @@ const experience = () => {
                         </li>
                       </ul>
                     </div>
-                  </section>
-                </section>
+                  </div>
+                </div>
               </section>
               <section className={`${styles.experience__step} ${styles.experience__6}`} id="experience__6">
                 <h2 className={styles.title}>
@@ -461,8 +466,8 @@ const experience = () => {
                   {translations.step6.title.p2[toggleLangState]} {adImage[toggleLangState]}{" "}
                   {translations.step6.title.p3[toggleLangState]}
                 </h2>
-                <section className={styles.experience__step_content}>
-                  <section className={styles.step__content_text}>
+                <div className={styles.experience__step_content}>
+                  <div className={styles.step__content_text}>
                     <p>{translations.step6.description.p1[toggleLangState]}</p>
                     <p>
                       <p>{translations.step6.description.p2[toggleLangState]}</p>
@@ -481,7 +486,7 @@ const experience = () => {
                     >
                       {translations.step6.button[toggleLangState]}
                     </button>
-                  </section>
+                  </div>
                   <div className={styles.step__content_img}>
                     <Image
                       src={`/images/experience/advertisement/${adImage.path}`}
@@ -490,7 +495,7 @@ const experience = () => {
                       height={670}
                     ></Image>
                   </div>
-                </section>
+                </div>
               </section>
               <section className={`${styles.experience__step} ${styles.experience__7}`} id="experience__7">
                 <h2 className={`${styles.title} ${styles.ad}`}>
@@ -499,8 +504,8 @@ const experience = () => {
                   {translations.step7.title.p2[toggleLangState]}
                   <span className={styles.highlight}> IP.</span>
                 </h2>
-                <section className={styles.experience__step_content}>
-                  <section className={styles.step__content_text}>
+                <div className={styles.experience__step_content}>
+                  <div className={styles.step__content_text}>
                     <p>{translations.step7.description.p1[toggleLangState]}</p>
                     <p>{translations.step7.description.p2[toggleLangState]}</p>
                     <div className={styles.content__text_selection}>
@@ -523,7 +528,7 @@ const experience = () => {
                         </li>
                       </ul>
                     </div>
-                  </section>
+                  </div>
                   <div className={styles.step__content_img}>
                     <Image
                       src="/images/experience/mailbox/mailbox.gif"
@@ -532,7 +537,7 @@ const experience = () => {
                       height={800}
                     ></Image>
                   </div>
-                </section>
+                </div>
               </section>
               <section className={`${styles.experience__step} ${styles.experience__8}`} id="experience__8">
                 <h2 className={styles.title}>
@@ -541,8 +546,8 @@ const experience = () => {
                   {translations.step8.title.p2[toggleLangState]}
                   <span className={styles.highlight}> {translations.step8.title.p2_highlight[toggleLangState]}</span>
                 </h2>
-                <section className={styles.experience__step_content}>
-                  <section className={styles.step__content_text}>
+                <div className={styles.experience__step_content}>
+                  <div className={styles.step__content_text}>
                     <h3 className={styles.inner__title}>
                       {translations.step8.description.p1[toggleLangState]}
                       <span className={styles.highlight}>
@@ -567,7 +572,7 @@ const experience = () => {
                       {translations.step8.button[toggleLangState]}
                     </button>
                     {/*<button className={`${buttons.button} ${buttons.light} ${buttons.bottom}`}>Naaaaaah...</button>*/}
-                  </section>
+                  </div>
                   <div className={styles.step__content_img}>
                     <Image
                       src="/images/experience/couple2/couple2.png"
@@ -576,11 +581,11 @@ const experience = () => {
                       height={440}
                     ></Image>
                   </div>
-                </section>
+                </div>
               </section>
               <section className={`${styles.experience__step} ${styles.experience__9}`} id="experience__9">
-                <section className={styles.experience__step_content}>
-                  <section className={styles.step__content_text}>
+                <div className={styles.experience__step_content}>
+                  <div className={styles.step__content_text}>
                     <h2 className={styles.title}>
                       {translations.step9.title.p1[toggleLangState]}
                       <span className={styles.highlight}>
@@ -611,7 +616,7 @@ const experience = () => {
                     >
                       {translations.step9.button[toggleLangState]}
                     </button>
-                  </section>
+                  </div>
                   <div className={styles.step__content_img}>
                     <Image
                       src="/images/experience/couple1/couple.png"
@@ -620,17 +625,17 @@ const experience = () => {
                       height={900}
                     ></Image>
                   </div>
-                </section>
+                </div>
               </section>
               <section className={`${styles.experience__step} ${styles.experience__10}`} id="experience__10">
                 <h2 className={`${styles.title} ${styles.ad}`}>
                   {translations.step10.title.p1[toggleLangState]}
                   <span className={styles.highlight}> {translations.step10.title.p1_highlight[toggleLangState]}</span>
                 </h2>
-                <section className={styles.experience__step_content}>
-                  <section className={styles.step__content_text}>
+                <dev className={styles.experience__step_content}>
+                  <dev className={styles.step__content_text}>
                     <p>{translations.step10.description.p1[toggleLangState]}</p>
-                  </section>
+                  </dev>
                   <div className={styles.content__text_selection}>
                     <p className={styles.text__selection_adv}>{translations.step10.ads.adv[toggleLangState]}</p>
                     <ul className={styles.text__selection_list}>
@@ -651,15 +656,15 @@ const experience = () => {
                       </li>
                     </ul>
                   </div>
-                </section>
+                </dev>
               </section>
               <section className={`${styles.experience__step} ${styles.experience__11}`} id="experience__11">
                 <h2 className={styles.title}>
                   {translations.step11.title.p1[toggleLangState]}
                   <span className={styles.highlight}> {translations.step10.title.p1_highlight[toggleLangState]} </span>
                 </h2>
-                <section className={styles.experience__step_content}>
-                  <section className={styles.step__content_text}>
+                <dev className={styles.experience__step_content}>
+                  <dev className={styles.step__content_text}>
                     <p>{translations.step11.description.p1[toggleLangState]}</p>
                     <p>
                       <b className={styles.bold}> {translations.step11.description.p1_bold[toggleLangState]} </b>
@@ -674,16 +679,16 @@ const experience = () => {
                     >
                       {translations.step11.buttons.secondary[toggleLangState]}
                     </a>
-                  </section>
+                  </dev>
                   <div className={styles.step__content_img}>
                     <Image
                       src="/images/experience/final/final.png"
                       alt="Guy sitting on a server"
                       width={400}
-                      height={500}
+                      height={600}
                     ></Image>
                   </div>
-                </section>
+                </dev>
               </section>
               <img
                 id="experience_path"
