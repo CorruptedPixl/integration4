@@ -61,29 +61,28 @@ export default function secureyourself() {
           {scannerVisible ? (
             <Scanner setVisitorData={setVisitorData} setExtWeatherData={setWeatherData} currentLang={toggleLangState} />
           ) : (
-            <>
-              <section className={styles.container__mydata_contents}>
-                <section className={styles.container__mydata_text}>
-                  <p className={styles.mydata__text_paragraph}>{translations.scanner.desc.p1[toggleLangState]}</p>
-                  <p className={styles.mydata__text_paragraph}>{translations.scanner.desc.p2[toggleLangState]}</p>
-                  <button className={`${styles.button} ${styles.mydata__text_button}`} onClick={handleClickScan}>
-                    {translations.scanner.button[toggleLangState]}
-                  </button>
-                </section>
-                <div className={styles.container__mydata_img}>
-                  <Image
-                    src="/images/secureyourself/trackme/tackme2.gif"
-                    alt="2 girls on a computer that is connected to a building"
-                    width={700}
-                    height={730}
-                  ></Image>
-                </div>
-              </section>
-            </>
+            <section className={styles.container__mydata_contents}>
+              <h3 className={styles.hidden}>Explanation about securing yourself</h3>
+              <div className={styles.container__mydata_text}>
+                <p className={styles.mydata__text_paragraph}>{translations.scanner.desc.p1[toggleLangState]}</p>
+                <p className={styles.mydata__text_paragraph}>{translations.scanner.desc.p2[toggleLangState]}</p>
+                <button className={`${styles.button} ${styles.mydata__text_button}`} onClick={handleClickScan}>
+                  {translations.scanner.button[toggleLangState]}
+                </button>
+              </div>
+              <div className={styles.container__mydata_img}>
+                <Image
+                  src="/images/secureyourself/trackme/tackme2.gif"
+                  alt="2 girls on a computer that is connected to a building"
+                  width={700}
+                  height={730}
+                ></Image>
+              </div>
+            </section>
           )}
         </section>
         <section className={styles.cookie__container}>
-          <section className={styles.main__container_intro}>
+          <div className={styles.main__container_intro}>
             <h2
               data-text={`${translations.cookies.title.p1[toggleLangState]} ${translations.cookies.title.p1_highlight[toggleLangState]} ${translations.cookies.title.p2[toggleLangState]}`}
               className={`${styles.container__intro_title} ${styles.title}`}
@@ -99,11 +98,11 @@ export default function secureyourself() {
               <b> {translations.cookies.desc.p2_bold[toggleLangState]} </b>{" "}
               {translations.cookies.desc.p3[toggleLangState]}
             </p>
-            <section className={styles.container__intro_expl}>
-              <h2 className={styles.intro__expl_title}>
+            <div className={styles.container__intro_expl}>
+              <h3 className={styles.intro__expl_title}>
                 {translations.cookies.subtitle.p1[toggleLangState]}
                 <span className={styles.highlight}> {translations.cookies.subtitle.p1_highlight[toggleLangState]}</span>
-              </h2>
+              </h3>
               <p className={styles.intro__expl_text}>
                 {translations.cookies.expl.p1[toggleLangState]}
                 <b> {translations.cookies.expl.p1_bold[toggleLangState]} </b>
@@ -115,8 +114,8 @@ export default function secureyourself() {
                 {translations.cookies.expl.p4[toggleLangState]}
               </p>
               <p className={styles.intro__expl_text}>{translations.cookies.expl.p5[toggleLangState]}</p>
-            </section>
-          </section>
+            </div>
+          </div>
           <div className={styles.threejs__cookie__object__pos}>
             <ThreejsCookieObject className={styles.threejs__cookie__object} />
           </div>
