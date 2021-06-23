@@ -205,15 +205,9 @@ const experience = () => {
             />
           </div>
           {bgMusic ? (
-            <embed
-              className={styles.music}
-              src="/music/int4-bg.mp3"
-              width="0"
-              height="0"
-              loop={true}
-              autostart="true"
-              hidden={true}
-            />
+            <audio controls loop autoPlay hidden>
+              <source src="music/int4-bg.mp3" type="audio/mp3" />
+            </audio>
           ) : null}
           {!experience ? (
             <section className={styles.main__container_intro}>
