@@ -62,6 +62,10 @@
             "here": {
                 "en": "here!",
                 "nl": "bent!"
+            },
+            "mobile": {
+                "en": "Sorry! The console is only available on desktop, check it out!",
+                "nl": "Sorry! De console is alleen beschikbaar op desktop, probeer het eens uit!"
             }
         },
         "button": {
