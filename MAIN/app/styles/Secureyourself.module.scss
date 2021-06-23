@@ -260,6 +260,11 @@
   &.dark {
     background-color: var(--background);
   }
+  &:hover {
+    background-color: #ff782d;
+    // cursor: pointer;
+    cursor: url("/cursor_pointer.png") 5 0, pointer;
+  }
 }
 
 .title {
