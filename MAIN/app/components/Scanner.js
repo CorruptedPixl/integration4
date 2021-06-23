@@ -105,6 +105,7 @@ const Scanner = ({ visible, setVisitorData, setExtWeatherData, currentLang }) =>
 
   return (
     <section className={visible ? styles.container : `${styles.container} ${styles.visuallyHidden}`}>
+      <h2 className={styles.hidden}>Scanner</h2>
       {serverData && lastVisit ? (
         <>
           {/* Would've used <Suspense/> but react dom doesn't support that right now, so we're doing it the old school way */}
