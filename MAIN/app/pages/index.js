@@ -10,6 +10,7 @@ import ThreejsObjectsMainlow from "../components/ThreejsObjectsMainlow.js";
 import ParallaxMouse from "../components/ParallaxMouse";
 import Console from "../components/Console";
 import Toggle from "../components/Toggle";
+import StudentBanner from "../components/StudentBanner";
 import Navbar from "../components/Navbar";
 import translations from "../translations/index.json";
 
@@ -37,6 +38,7 @@ export default function Home() {
         <link rel="icon" href="/ctrl.logo.svg" />
       </Head>
       <main className={styles.main__container} onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}>
+        <StudentBanner />
         <Console socket={socket} setSocket={setSocket} />
         <Navbar>
           <Toggle
