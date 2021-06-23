@@ -91,11 +91,21 @@ export default function Home() {
             </section>
           </ParallaxMouse>
           <ParallaxMouse xFactor={10} className={styles.parallax__img_surfer} springProps={springProps}>
-            <Image src="/surfer.png" alt="businessman on surfboard with briefcase" width={550} height={550} />
+            <Image
+              src="/images/index/landing_surfer/surfer.png"
+              alt="businessman on surfboard with briefcase"
+              width={550}
+              height={550}
+            />
           </ParallaxMouse>
 
           <ParallaxMouse xFactor={50} className={styles.parallax__img_bgWave} springProps={springProps}>
-            <Image src="/datawave.png" alt="smaller wave in the background" width={1000} height={400} />
+            <Image
+              src="/images/index/landing_surfer/datawave.png"
+              alt="smaller wave in the background"
+              width={1000}
+              height={400}
+            />
           </ParallaxMouse>
 
           <ParallaxMouse xFactor={30} className={styles.parallax__img_mainWave} springProps={springProps}>
@@ -108,7 +118,7 @@ export default function Home() {
                   minWidth: "150%",
                   left: "-25%",
                 }}
-                src="/mainwave.png"
+                src="/images/index/landing_surfer/mainwave.png"
                 alt="Wave in the background where the surfer is surfing on"
                 width={3000}
                 height={800}
@@ -144,7 +154,12 @@ export default function Home() {
               className={styles.container__become_img}
               springProps={springProps}
             >
-              <Image src="/pcmeneer.gif" alt="computer with a person inside" width={900} height={650} />
+              <Image
+                src="/images/index/pcmeneer/pcmeneer.gif"
+                alt="computer with a person inside"
+                width={900}
+                height={650}
+              />
             </ParallaxMouse>
           </section>
           <section className={styles.main__container_whatcanido}>

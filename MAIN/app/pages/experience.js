@@ -233,14 +233,14 @@ const experience = () => {
               </button>
               <small className={styles.container__intro_disclaimer}>{translations.intro.accept[toggleLangState]}</small>
               <div className={styles.music__experience} onClick={() => handleBgMusic()}>
-                <Image src={`/experience/${musicButton}.svg`} width="56px" height="51px"></Image>
+                <Image src={`/images/experience/${musicButton}.svg`} width="56px" height="51px"></Image>
               </div>
               <p className={styles.container__intro_info}>{translations.intro.experience[toggleLangState]}</p>
             </section>
           ) : (
             <>
               <div className={`${styles.music__experience} ${styles.fixed}`} onClick={() => handleBgMusic()}>
-                <Image src={`/experience/${musicButton}.svg`} width="56px" height="51px"></Image>
+                <Image src={`/images/experience/${musicButton}.svg`} width="56px" height="51px"></Image>
               </div>
               <section className={`${styles.experience__step} ${styles.experience__1}`} id="experience__1">
                 <h2 className={styles.title}>
