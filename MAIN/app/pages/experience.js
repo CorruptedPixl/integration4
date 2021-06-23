@@ -208,7 +208,7 @@ const experience = () => {
           </div>
           {bgMusic ? (
             <audio controls loop autoPlay hidden>
-              <source src="music/int4-bg.mp3" type="audio/mp3" />
+              <source src="music/int4-bg_new_3.mp3" type="audio/mp3" />
             </audio>
           ) : null}
           {!experience ? (
