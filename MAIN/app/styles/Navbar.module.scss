@@ -3,6 +3,7 @@
   width: 90vw;
   margin-left: 5vw;
   top: 0;
+  z-index: 1000;
 
   @media screen and (max-width: 640px) {
     width: 100%;
