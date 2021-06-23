@@ -16,14 +16,32 @@ const Console = ({ socket, setSocket }) => {
     };
   }, []);
 
+  const updateMessageLog = (newArray) => {
+    setMessageLog(newArray);
+  };
+
   useEffect(() => {
     const handleEvent = (message) => {
-      // Add messages to the messageLog
-      setMessageLog((currentArray) => [...currentArray, message.toString()]);
+      // So, memory leaks eh?
+      // Don't you love it when the project is done, and you're doing user tests,
+      // and suddenly users start complaining about the site 'crashing their browsers',
+      // 'crashing extensions'... They're the user, so it must be their fault you think...
+      // Until you visit it yourself and woah look at that! 10GB RAM usage!
+      // panic.mp4 ensues.
+      // What could be causing this!? Well, in short, socket.io events. The long explaination is that callbacks grew exponentially on each message received, but the thing is, we fixed it.
+      // In case you ever have a memory leak in react, and you're using either socket.io or useEffect, make sure that you CLEAN UP.
+      updateMessageLog((currentArray) => [...currentArray, message.toString()]);
     };
+
     if (socket) {
       socket.on("consoleMessage", handleEvent);
     }
+
+    // Added cleanup for socket.io events
+    return () => {
+      // I ain't taking chances with socket.off, so we're removing ALL OF THEM
+      if (socket) socket.removeAllListeners("consoleMessage");
+    };
   }, [socket, messageLog]);
 
   useEffect(() => {
