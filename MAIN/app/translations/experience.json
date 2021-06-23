@@ -37,7 +37,7 @@
             "nl": "Door verder te gaan ga je akkoort met de nodige cookies die deze ervaring mogelijk maken."
         },
         "experience": {
-            "en": "For the ultimate experience, please use sound and disable you ad-blocker",
+            "en": "For the ultimate experience, please use sound and disable your ad-blocker",
             "nl": "Voor de ultime ervaring, zet je geluid aan en je ad-blocker uit"
         }
     },
@@ -106,7 +106,7 @@
                 }
             },
             "p3": {
-                "en": "With every small piece of information we get to know alot of things. Sometimes they ask permission for something that",
+                "en": "With every small piece of information we get to know a lot of things. Sometimes they ask permission for something that",
                 "nl": "Met elk stukje informatie — hoe klein dan ook — komen we veel dingen te weten over de gebruiker. Soms vragen ze zelfs toestemming voor dingen die"
             },
             "p3_bold": {
@@ -402,7 +402,7 @@
     "step9": {
         "title": {
             "p1": {
-                "en": "Their partner has been lookign at",
+                "en": "Their partner has been looking at",
                 "nl": "Sam's partner kijkt al een tijdje naar"
             },
             "p1_highlight": {
