@@ -160,6 +160,13 @@
   }
 }
 
+.tip__img_container {
+  @media screen and (max-width: 640px) {
+    width: 50%;
+    margin: auto;
+  }
+}
+
 .list__tip_text {
   margin-top: 2vh;
   width: 80%;

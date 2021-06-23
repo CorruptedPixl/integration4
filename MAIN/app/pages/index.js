@@ -4,7 +4,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { Parallax } from "react-parallax"; // Scroll parallax
 import { useSpring } from "react-spring"; // Mouse parallax
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ThreejsObjects from "../components/ThreejsObjects.js";
 import ThreejsObjectsMainlow from "../components/ThreejsObjectsMainlow.js";
 import ParallaxMouse from "../components/ParallaxMouse";
@@ -16,6 +16,11 @@ import Navbar from "../components/Navbar";
 import translations from "../translations/index.json";
 
 export default function Home() {
+  const [vw, setVw] = useState();
+
+  useEffect(() => {
+    setVw(window.innerWidth);
+  }, []);
   // Initialize Spring for mouse parallax
   const [springProps, set] = useSpring(() => ({
     xy: [0, 0],
@@ -141,12 +146,21 @@ export default function Home() {
                 <span className={styles.highlight}> {translations.become.title.highlight[toggleLangState]}</span>
               </h2>
               <p className={styles.become__text_body}>{translations.become.body[toggleLangState]}</p>
-              <h3 className={styles.become__text_h3}>
-                {translations.become.subtitle.go[toggleLangState]} <span className={styles.highlight}>' / '</span>
-                {translations.become.subtitle.findOut[toggleLangState]}{" "}
-                <span className={styles.highlight}>{translations.become.subtitle.onlyOne[toggleLangState]} </span>
-                {translations.become.subtitle.here[toggleLangState]}
-              </h3>
+              {vw < 640 ? (
+                <h3 className={styles.become__text_h3}>
+                  {translations.become.subtitle.go[toggleLangState]} <span className={styles.highlight}>' / '</span>
+                  {translations.become.subtitle.findOut[toggleLangState]}{" "}
+                  <span className={styles.highlight}>{translations.become.subtitle.onlyOne[toggleLangState]} </span>
+                  {translations.become.subtitle.here[toggleLangState]}
+                </h3>
+              ) : (
+                <h3 className={styles.become__text_h3}>
+                  {translations.become.subtitle.go[toggleLangState]} <span className={styles.highlight}>' / '</span>
+                  {translations.become.subtitle.findOut[toggleLangState]}{" "}
+                  <span className={styles.highlight}>{translations.become.subtitle.onlyOne[toggleLangState]} </span>
+                  {translations.become.subtitle.here[toggleLangState]}
+                </h3>
+              )}
             </section>
             <ParallaxMouse
               xFactor={Infinity}

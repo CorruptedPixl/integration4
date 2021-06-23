@@ -87,6 +87,7 @@ const experience = () => {
     setExperience(true);
     if (vw < 640) {
       fsHandle.enter();
+      setVh(window.innerHeight);
     }
     socket.emit("consoleMessage", "A user started the experience");
   };
