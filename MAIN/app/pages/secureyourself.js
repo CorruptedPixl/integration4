@@ -128,17 +128,23 @@ export default function secureyourself() {
           <ul className={styles.container__tips_list}>
             <li className={styles.tips__list_tip}>
               <h3 className={styles.list__tip_title}>{translations.tips.tip1.title[toggleLangState]}</h3>
-              <Image className={styles.list__tip_img} src="/adblocker.svg" width={170} height={180}></Image>
+              <div className={styles.tip__img_container}>
+                <Image className={styles.list__tip_img} src="/adblocker.svg" width={170} height={180}></Image>
+              </div>
               <p className={styles.list__tip_text}>{translations.tips.tip1.subtitle[toggleLangState]}</p>
             </li>
             <li className={styles.tips__list_tip}>
               <h3 className={styles.list__tip_title}>{translations.tips.tip2.title[toggleLangState]}</h3>
-              <Image className={styles.list__tip_img} src="/cookie.svg" width={170} height={180}></Image>
+              <div className={styles.tip__img_container}>
+                <Image className={styles.list__tip_img} src="/cookie.svg" width={170} height={180}></Image>
+              </div>
               <p className={styles.list__tip_text}>{translations.tips.tip2.subtitle[toggleLangState]}</p>
             </li>
             <li className={styles.tips__list_tip}>
               <h3 className={styles.list__tip_title}>{translations.tips.tip3.title[toggleLangState]}</h3>
-              <Image className={styles.list__tip_img} src="/incognito.svg" width={180} height={180}></Image>
+              <div className={styles.tip__img_container}>
+                <Image className={styles.list__tip_img} src="/incognito.svg" width={180} height={180}></Image>
+              </div>
               <p className={styles.list__tip_text}>{translations.tips.tip3.subtitle[toggleLangState]}</p>
             </li>
           </ul>
