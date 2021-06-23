@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: black;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.5em;
+  font-size: 12px;
+  font-family: sans-serif;
+  z-index: 9999;
+}
+
+.button {
+  border: 0;
+  padding: 0;
+  background: black;
+  color: white;
+  margin: 0 0.5em;
+  padding: 0 0.5em;
+  cursor: url("/cursor_pointer.png") 5 0, pointer;
+  font-size: 12px;
+}
+
+.link {
+  color: white;
+  cursor: url("/cursor_pointer.png") 5 0, pointer;
+  text-decoration: underline;
+}
