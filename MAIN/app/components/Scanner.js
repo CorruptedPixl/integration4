@@ -49,7 +49,6 @@ const Scanner = ({ visible, setVisitorData, setExtWeatherData, currentLang }) =>
           </p>
         );
         setServerData(data);
-        console.log(data);
         setLastVisit(data.visits[0]);
       });
   };
@@ -69,7 +68,6 @@ const Scanner = ({ visible, setVisitorData, setExtWeatherData, currentLang }) =>
         return response.json();
       })
       .then((data) => {
-        console.log(data);
         setWeatherData(data);
       });
   };
