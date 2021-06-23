@@ -4,6 +4,12 @@
   font-family: Renogare;
   margin-bottom: 4vh;
 
+  @media screen and (max-width: 1400px) {
+    font-size: 4vw;
+    margin-bottom: 0;
+    width: 100%;
+  }
+
   @media screen and (max-width: 640px) {
     font-size: 2.9rem;
     line-height: 3.2rem;
