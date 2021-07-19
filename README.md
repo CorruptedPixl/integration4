@@ -11,7 +11,7 @@
     ctrl. aims to inform you about tracking on the web and how algorithms influence your behaviour all in an interactive 3D experience.
     <br />
     <br />
-    <a href="https://ctrl.corruptedpixl.com">Visit the experience</a>
+    <a href="https://integration4.corruptedpixl.com/">Visit the experience</a>
   </p>
 </p>
 <br />
